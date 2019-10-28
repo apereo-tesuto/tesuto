@@ -337,6 +337,7 @@ admin,activation,content,delivery,drools-editor,placement, qti-importer, preview
 tesuto build XXXX      builds XXXX
 tesuto build ui        builds only npm
 tesuto build database  builds the database for all microservices
+tesuto start services  (optional starts third party services if setup properly, see tesuto help for more info)
 tesuto start XXXX      runs the ui microservice
 tesuto debug XXXX      sets the ui microservice up for debugging on channel 8001
 tesuto start router    launches the Zuul router
@@ -383,6 +384,8 @@ https://cccnext.jira.com/wiki/spaces/CCCAS/pages/172107738/Assess+Mothball+and+F
 ```
 ##Useful URLS for local development
 
+* Import Assessments/Competency Maps: ``https://localhost:8443/import``
+* Add sample user data: ``https://localhost:8443/import`` (bottom of page}
 * Activation Service Endpoints: ``https://localhost:8443/activation-service/swagger-ui.html``
 * Admin Service Endpoints: ``https://localhost:8443/admin-service/swagger-ui.html``
 * Content Service Endpoints: ``https://localhost:8443/content-service/swagger-ui.html``
@@ -392,14 +395,13 @@ https://cccnext.jira.com/wiki/spaces/CCCAS/pages/172107738/Assess+Mothball+and+F
 * Reports Service Endpoints: ``https://localhost:8443/reports-service/swagger-ui.html``
 * Rules Service Endpoints: ``https://localhost:8443/rules-service/swagger-ui.html``
 * UI Service Endpoints: ``https://localhost:8443/ui-service/swagger-ui.html``
+* HealthChecks are the same but with ``https://localhost:8443/xxx-service/HealthCheck``
+* Confirm Hookups to outside services: ``https://localhost:8443/xxx-service/rest-client/validate``
+* Confirm Hookups to outside services: ``https://localhost:8443/xxx-service/configuration/clients/status``
+* Troubleshoot configurations: ``https://localhost:8443/xxx-service/configuration``
+* View version of service when on aws: ``https://localhost:8443/xxx-service/version``
 
-HealthChecks are the same but with ``https://localhost:8443/xxx-service/HealthCheck``
-Confirm Hookups to outside services: ``https://localhost:8443/xxx-service/rest-client/validate``
-Confirm Hookups to outside services: ``https://localhost:8443/xxx-service/configuration/clients/status``
-Troubleshoot configurations: ``https://localhost:8443/xxx-service/configuration``
-View version of service when on aws: ``https://localhost:8443/xxx-service/version``
+* DynamoDb Local Database console: ``http://localhost:8000/shell/``
 
-DynamoDb Local Database console: ``http://localhost:8000/shell/``
-
-Drools/Rules Editor: ``https://localhost:8448/rules-editor/ui``
+* Drools/Rules Editor: ``https://localhost:8448/rules-editor/ui``
 

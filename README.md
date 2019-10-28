@@ -94,9 +94,6 @@ It has been noted that default installs do not allow access from a Docker contai
 Reference this to address this issue:
 https://blog.bigbinary.com/2016/01/23/configure-postgresql-to-allow-remote-connection.html 
 
-## Maven Repository Settings.xml
-!!!!IMPORTANT PREREQUISITE: setup authentication for the Maven artifact repository nexus.ccctechcenter.org, per: https://cccnext.jira.com/wiki/display/CE/Nexus
-
 
 ## Install and Launch Redis
     Redis is installed using default settings follow the quick start for your OS here:
@@ -214,10 +211,7 @@ url: http://localhost:8080/openid-connect-server-webapp/login
 The Rules Editor is not strictly required to run tesuto.  It is useful for updating and adding
 rules to the rules engine.
 
-Rules Editor can be found at: https://bitbucket.org/cccnext/docker-drools-editor
-
-```
-git clone https://bitbucket.org/cccnext/docker-drools-editor
+cd {project-root}/tesuto-drools-services/tesuto-drools-editor
 ```
 ```
 mvn clean install
@@ -228,12 +222,12 @@ mvn spring-boot:run
 
 ## Initial Build ##
  * Insure that script ccc.sh is set to executable. (scripts/ccc.sh)
- * ``ccc.sh build_all complete`` to build all microservices and router to run assessments and placements.
- * ``ccc.sh build_all`` (default build_all) to build microservices and router to run placements.
+ * ``ccc.sh build complete`` to build all microservices and router to run assessments and placements.
+ * ``ccc.sh build place`` (default build_all) to build microservices and router to run placements.
  * ``ccc.sh build_all assessment`` build microservices and router to run assessments only.
  
 ## To Launch Microservices ## 
- * ``ccc.sh start_all complete``
+ * ``ccc.sh start complete``
  * ``ccc.sh help `` to see available options.
 
 ## To View and Initial Seed Data ## 
@@ -264,44 +258,12 @@ https://cccnext.jira.com/wiki/spaces/CCCAS/pages/72745130/UI+Development+Build+S
 
 Reference: https://github.com/zurb/foundation-emails-template
 
-### Additional Information
-https://cccnext.jira.com/wiki/spaces/CCCAS/pages/269615180/Email+Authoring+System 
 
-Configuration and Running (Production)
-======================================
-Note: Many of the resources are defined in the assess-infrastructure provisioning scripts.
- * Provision the AWS Infrastructure - See git@bitbucket.org:cccnext/assess-infrastructure.git 
- * Firewall Configuration - AWSWAF. Note the ACM is used with Cloud Front for the SSL Certificate.
- * Load Balancer - ALB because of context routing of microservices
- * 3 Images are deployed from the Docker registry: docker.dev.ccctechcenter.org/tesuto-ui:2.1.0-SNAPSHOT, 
- docker.dev.ccctechcenter.org/tesuto-placement:2.1.0-SNAPSHOT, 
- docker.dev.ccctechcenter.org/tesuto-rules:2.1.0-SNAPSHOT
- * S3 bucket contents, ccc-ci-assess-assess-config, are mounted to /opt/ccc/config
- * Credstash is used in conjunction with the above file, see [[[]]] values, to fill in sensitive 
- information such as passwords.
- * Data Stores:
-   * RDS instance setup with 2 databases: tesuto and tesuto_placement
-   * S3 locations for Assessment Media content and reports: ccc-ci-assess-assess-resources (public) 
-   and s3://ccc-ci-assess-assess-reports (not public)
-   * Elasticcache (Redis): web sessions (share between microservices), preview upload, 
-   database second level cache, application level caching.
-   * Mongo Cluster: Assessments, Competencies, Assessment Sessions (not web sessions), 
-   unsent queue messages, versioned (published) subject areas.
-   * DynamoDB: All Drools content, variables sets (student specific), 
-   multiple measures (student specific)
-   * SQS: assess-ci-assessment-complete-queue, assess-ci-multiple-measures-queue, 
-   assess-ci-placement-notification-queue
- * Lambdas (different repositories, defined in Cloud Formation scripts): 
-   * ODS Lambda
-   * Application Placement Lambda
-   * Placement Notification Lambda
- * Import User, proctor, and student configurations
- * Import test content - English, ESL, and Math Assessments.
 
-CCC Assess UI Build and Dev Scripts
+TESUTO UI Build and Dev Scripts
 ===================================
 
-CCC Assess utilizes NodeJS as a tool to separate out UI code management from Maven. This allows 
+TESUTO utilizes NodeJS as a tool to separate out UI code management from Maven. This allows 
 UX developers the opportunity to modify and expand upon tools necessary for producing final UI files for deployments.
 
 The tools include a main build script to be run by Maven which performs all tasks necessary for a deployment. 
@@ -365,28 +327,25 @@ NOTE: Adding a new Javascript module, adding a new library file will require cha
 * Main Service Endpoints ``https://localhost:8443/swagger-ui.html``
 * Placement Service Endpoints: ``https://localhost:8443/placement-service/swagger-ui.html``
 
-#USE SIMPLE SCRIPT FILE TO BUILD AND RUN
+#USE TESUTO SCRIPT FILE TO BUILD AND RUN
 
-script file is in scripts/ccc.sh
+script file is found at scripts/tesuto
 create a system variable $TESUTO_HOME that points to the tesuto home directory on your system.
-ccc.sh help will give the following help:
+XXXX can be: 
+complete, assess, assess_app, min_assess_app, min_assess, place, place_app, (set of microservices)
+or
+admin,activation,content,delivery,drools-editor,placement, qti-importer, preview, reports, rules or ui
 
-build_all       builds everything but does not test
-build_ui        builds only npm
-build_test      builds and runs test
-build_database  builds the database for all microservices
-run_ui          runs the ui microservice
-debug_ui        sets the ui microservice up for debugging on channel 8001
-run_placement   runs the placement microservice
-debug_placement sets the placement microservice up for debugging on channel 8002
-run_router      launches the Zuul router
+tesuto build XXXX      builds XXXX
+tesuto build ui        builds only npm
+tesuto build database  builds the database for all microservices
+tesuto start XXXX      runs the ui microservice
+tesuto debug XXXX      sets the ui microservice up for debugging on channel 8001
+tesuto start router    launches the Zuul router
+tesuto stop  XXXX      stops microservice or services
 
-TO BUILD AND RUN APP:
-    ccc.sh build_all
-    in separate terminal windows with $TESUTO_HOME
-    ccc.sh run_router
-    ccc.sh run_ui
-    ccc.sh run_placement
+
+
 
 # Run Assess Dockerized
 ## Need Docker Registry credentials

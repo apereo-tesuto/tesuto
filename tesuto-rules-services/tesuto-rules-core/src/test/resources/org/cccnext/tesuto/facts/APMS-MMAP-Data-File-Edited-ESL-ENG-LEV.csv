@@ -1,0 +1,15 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result
+cccid,EP01,EP02,EP03,EP04,DATA_SOURCE,DATA_SOURCE_TYPE,EP05,EP06,EP07,EP08,EP09,HIGHEST_READING_LEVEL_COURSE,transferLevel
+1,a,a,a,f,APMS,Self Reported,n,k,n,f,j,1,A
+82,a,a,k,a,APMS,Self Reported,f,f,f,f,f,1,A
+134,a,a,b,d,APMS,Self Reported,g, , , , ,1,A
+911,a,a,k,h,APMS,Self Reported,n, , , , ,1,A
+939,a,a,i,c,APMS,Self Reported,d,k,c,m,c,1,A
+1057,a,b,k,c,APMS,Self Reported,f, , , , ,1,A
+1096,a,a,c,h,APMS,Self Reported,c, , , , ,1,A
+1116,a,a,b,c,APMS,Self Reported,c, , , , ,1,A
+1153,a,a,h,c,APMS,Self Reported,c,b,a,f,a,1,A
+1281,a,a,k,b,APMS,Self Reported,c, , , , ,1,A
+1297,a,a,l,g,APMS,Self Reported,c, , , , ,1,A
+745,a,a,u,c,APMS,Self Reported,g,i,e,m,e,1,C
+815,a,a,r,h,APMS,Self Reported,n, , , , ,1,C

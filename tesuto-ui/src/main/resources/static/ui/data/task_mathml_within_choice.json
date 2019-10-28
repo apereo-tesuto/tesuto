@@ -1,0 +1,54 @@
+{
+    "taskSetId": "AFDD-SDFD-SDFD-FE10",
+    "tasks": [{
+        "taskId": "AFGY-JEMD-SKJD-JKSL",
+        "stimulus": "<p>This is an example of MathML rendered in the item bundle stimulus as well as within the options within a choice interaction.</p><p>Below is the derivation of the quadratic forumla:</p><p><math style=\"\"> <mtable columnalign=\"left\"> <mtr> <mtd> <mrow> <mrow> <mrow> <mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> <mi>a</mi> <mo>⁢</mo> <msup> <mi>x</mi> <mn>2</mn> </msup></mrow> <mo> + </mo> <mi>b</mi> <mo>⁢</mo> <mi>x</mi> </mrow> <mo> + </mo> <mi>c</mi> </mrow> <mo>=</mo> <mn>0</mn> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> <mi>a</mi> <mo>⁢</mo> <msup> <mi>x</mi> <mn>2</mn> </msup></mrow> <mo> + </mo> <mi>b</mi> <mo>⁢</mo> <mi>x</mi> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> </mrow> <mo>=</mo> <mo>-</mo><mi> c</mi><mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> </mtd> </mtr> <mtr> <mtd> <mrow> <mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> <msup> <mi>x</mi> <mn>2</mn> </msup></mrow> <mo> + </mo> <mfrac> <mrow> <mi>b</mi> </mrow> <mi>a</mi> </mfrac> <mo>⁤</mo> <mi>x</mi> </mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> <mo>=</mo> <mfrac> <mrow> <mo>-</mo><mi>c</mi> </mrow> <mi>a</mi> </mfrac> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2ex\"></mspace><mrow><mtext mathcolor=\"red\" >Divide out leading coefficient.</mtext> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mrow> <mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> <msup> <mi>x</mi> <mn>2</mn> </msup></mrow> <mo> + </mo> <mfrac> <mrow> <mi>b</mi> </mrow> <mi>a</mi> </mfrac> <mo>⁤</mo> <mi>x</mi> <mo> + </mo> <msup> <mfenced> <mfrac> <mrow> <mi>b</mi> </mrow> <mrow> <mn>2</mn> <mi>a</mi> </mrow> </mfrac> </mfenced> <mn>2</mn> </msup> </mrow> <mo>=</mo> <mfrac> <mrow> <mo>-</mo> <mi>c</mi> <mo>(</mo> <mn>4</mn> <mi>a</mi> <mo>)</mo> </mrow> <mrow> <mi>a</mi> <mo>(</mo> <mn>4</mn> <mi>a</mi> <mo>)</mo> </mrow></mfrac> </mrow> <mo> + </mo> <mfrac> <mrow> <msup> <mi>b</mi> <mn>2</mn> </msup> </mrow> <mrow> <mn>4</mn> <msup> <mi>a</mi> <mn>2</mn> </msup> </mrow></mfrac> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2ex\"></mspace><mrow><mtext mathcolor=\"red\" >Complete the square.</mtext> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> <mo>(</mo> <mi>x</mi> <mo> + </mo> <mfrac> <mrow> <mi>b</mi> </mrow> <mrow> <mn>2</mn> <mi>a</mi> </mrow></mfrac> <mo>)</mo> <mo>(</mo> <mi>x</mi> <mo> + </mo> <mfrac> <mrow> <mi>b</mi> </mrow> <mrow> <mn>2</mn> <mi>a</mi> </mrow></mfrac> <mo>)</mo> <mo>=</mo> <mfrac> <mrow> <msup> <mi>b</mi> <mn>2</mn> </msup> <mo> - </mo> <mn>4</mn> <mi>a</mi> <mi>c</mi> </mrow> <mrow> <mn>4</mn> <msup> <mi>a</mi> <mn>2</mn> </msup> </mrow></mfrac> </mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2ex\"></mspace><mrow><mtext mathcolor=\"red\" >Discriminant revealed.</mtext> </mrow> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> <msup> <mrow> <mo>(</mo> <mi>x</mi> <mo> + </mo> <mfrac> <mrow> <mi>b</mi> </mrow> <mrow> <mn>2</mn> <mi>a</mi> </mrow></mfrac> <mo>)</mo> </mrow> <mn>2</mn> </msup> <mo>=</mo> <mfrac> <mrow> <msup> <mi>b</mi> <mn>2</mn> </msup> <mo> - </mo> <mn>4</mn> <mi>a</mi> <mi>c</mi> </mrow> <mrow> <mn>4</mn> <msup> <mi>a</mi> <mn>2</mn> </msup> </mrow></mfrac> </mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2ex\"></mspace><mrow><mtext mathcolor=\"red\" ></mtext> </mrow> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> <mrow> <mi>x</mi> <mo> + </mo> <mfrac> <mrow> <mi>b</mi> </mrow> <mrow> <mn>2</mn> <mi>a</mi> </mrow></mfrac> </mrow> <mo>=</mo> <msqrt> <mfrac> <mrow> <msup> <mi>b</mi> <mn>2</mn> </msup> <mo> - </mo> <mn>4</mn> <mi>a</mi> <mi>c</mi> </mrow> <mrow> <mn>4</mn> <msup> <mi>a</mi> <mn>2</mn> </msup> </mrow></mfrac> </msqrt> </mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2ex\"></mspace><mrow><mtext mathcolor=\"red\" ></mtext> </mrow> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> <mrow> <mi>x</mi> </mrow> <mo>=</mo> <mfrac> <mrow> <mo>-</mo><mi>b</mi> </mrow> <mrow> <mn>2</mn> <mi>a</mi> </mrow></mfrac> <mo>±</mo><mrow><mo>{</mo><mi>C</mi><mo>}</mo></mrow> <msqrt> <mfrac> <mrow> <msup> <mi>b</mi> <mn>2</mn> </msup> <mo> - </mo> <mn>4</mn> <mi>a</mi> <mi>c</mi> </mrow> <mrow> <mn>4</mn> <msup> <mi>a</mi> <mn>2</mn> </msup> </mrow></mfrac> </msqrt> </mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2ex\"></mspace><mrow><mtext mathcolor=\"red\" >There's the vertex formula.</mtext> </mrow> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2.5ex\"></mspace> <mrow> <mi>x</mi> </mrow> <mo>=</mo> <mfrac> <mrow> <mo>-</mo> <mi> b</mi> <mo>±</mo><mrow><mo>{</mo><mi>C</mi><mo>}</mo></mrow> <msqrt> <msup> <mi>b</mi> <mn>2</mn> </msup> <mo> - </mo> <mn>4</mn> <mi>a</mi> <mi>c</mi> </msqrt></mrow> <mrow> <mn>2</mn> <mi>a</mi> </mrow></mfrac> </mrow> <mspace depth=\"1ex\" height=\"0.5ex\" width=\"2ex\"></mspace> <mrow><mtext mathcolor=\"red\" ></mtext> </mrow> </mrow> </mtd> </mtr> </mtable></math></p>",
+        "itemSessions": [
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                "itemSessionIndex": 19,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE1",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c85\"/>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c85",
+                        "responseIdentifier": "RESPONSE1",
+                        "type": "choiceInteraction",
+                        "maxChoices": "1",
+                        "minChoices": "1",
+                        "prompt": "Which of these lines looks interesting?",
+                        "choices": [
+                            {
+                                "content": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"inline\"><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn></math>",
+                                "identifier": "ChoiceA"
+                            },
+                            {
+                                "content": "<math display=\"inline\"> <mrow> <mi>f</mi> <mo stretchy=\"false\">(</mo> <mi>x</mi> <mo stretchy=\"false\">)</mo> <mo>=</mo> <mrow> <mo>{</mo> <mtable> <mtr> <mtd columnalign=\"center\"> <mrow> <mn>1</mn> <mo>/</mo> <mn>3</mn> </mrow> </mtd> <mtd columnalign=\"left\"> <mrow> <mtext>if&nbsp;</mtext> <mn>0</mn> <mo>≤</mo> <mi>x</mi> <mo>≤</mo> <mn>1</mn> <mo>;</mo> </mrow> </mtd> </mtr> <mtr> <mtd columnalign=\"center\"> <mrow> <mn>2</mn> <mo>/</mo> <mn>3</mn> </mrow> </mtd> <mtd columnalign=\"center\"> <mrow> <mtext>if&nbsp;</mtext> <mn>3</mn> <mo>≤</mo> <mi>x</mi> <mo>≤</mo> <mn>4</mn> <mo>;</mo> </mrow> </mtd> </mtr> <mtr> <mtd columnalign=\"center\"> <mn>0</mn> </mtd> <mtd columnalign=\"left\"> <mtext>elsewhere.</mtext> </mtd> </mtr> </mtable> </mrow> </mrow> </math>",
+                                "identifier": "ChoiceB"
+                            },
+                            {
+                                "content": "<math display=\"inline\"> <mrow> <msqrt> <mn>1</mn> <mo>+</mo> <msqrt> <mn>1</mn> <mo>+</mo> <msqrt> <mn>1</mn> <mo>+</mo> <msqrt> <mn>1</mn> <mo>+</mo> <msqrt> <mn>1</mn> <mo>+</mo> <msqrt> <mn>1</mn> <mo>+</mo> <msqrt> <mn>1</mn> <mo>+</mo> <mi>x</mi> </msqrt> </msqrt> </msqrt> </msqrt> </msqrt> </msqrt> </msqrt> </mrow> </math>",
+                                "identifier": "ChoiceC"
+                            },
+                            {
+                                "content": "<math display=\"inline\"> <mrow> <mi>det</mi> <mo>|</mo> <mtable> <mtr> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mn>0</mn> </msub> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mn>1</mn> </msub> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mn>2</mn> </msub> </mtd> <mtd columnalign=\"center\"> <mo>…</mo> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mi>n</mi> </msub> </mtd> </mtr> <mtr> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mn>1</mn> </msub> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mn>2</mn> </msub> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mn>3</mn> </msub> </mtd> <mtd columnalign=\"center\"> <mo>…</mo> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mrow> <mi>n</mi> <mo>+</mo> <mn>1</mn> </mrow> </msub> </mtd> </mtr> <mtr> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mn>2</mn> </msub> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mn>3</mn> </msub> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mn>4</mn> </msub> </mtd> <mtd columnalign=\"center\"> <mo>…</mo> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mrow> <mi>n</mi> <mo>+</mo> <mn>2</mn> </mrow> </msub> </mtd> </mtr> <mtr> <mtd columnalign=\"center\"> <mo>⋮</mo> </mtd> <mtd columnalign=\"center\"> <mo>⋮</mo> </mtd> <mtd columnalign=\"center\"> <mo>⋮</mo> </mtd> <mtd columnalign=\"center\"> </mtd> <mtd columnalign=\"center\"> <mo>⋮</mo> </mtd> </mtr> <mtr> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mi>n</mi> </msub> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mrow> <mi>n</mi> <mo>+</mo> <mn>1</mn> </mrow> </msub> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mrow> <mi>n</mi> <mo>+</mo> <mn>2</mn> </mrow> </msub> </mtd> <mtd columnalign=\"center\"> <mo>…</mo> </mtd> <mtd columnalign=\"center\"> <msub> <mi>c</mi> <mrow> <mn>2</mn> <mi>n</mi> </mrow> </msub> </mtd> </mtr> </mtable> <mo>|</mo> <mo>&gt;</mo> <mn>0</mn> </mrow> </math>",
+                                "identifier": "ChoiceD"
+                            }
+                        ]
+                    }]
+                }
+            }
+        ]
+    }]
+}

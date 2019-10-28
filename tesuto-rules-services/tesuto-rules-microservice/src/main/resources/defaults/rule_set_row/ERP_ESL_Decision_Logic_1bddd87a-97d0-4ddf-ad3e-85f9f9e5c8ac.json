@@ -1,0 +1,388 @@
+{
+	"id": "1bddd87a-97d0-4ddf-ad3e-85f9f9e5c8ac",
+	"family": "SYS",
+	"engine": "tesuto",
+	"version": "1",
+	"title": "ERP ESL Decision Logic",
+	"status": "published",
+	"event": "MULTIPLE_MEASURE_PLACEMENT",
+	"category": "mmComponentPlacementLogic",
+	"competencyMapDiscipline": "ESL",
+	"description": "<p>Use Calpass Endpoint to determine placement.</p>",
+	"ruleId": "0e29aaa5-bdb2-46b8-a3b4-3a81de60521a",
+	"variableRows": [
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "eslY_UboundY",
+					"value": "true"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "0"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "0"
+				},
+				{
+					"name": "transfer_level",
+					"value": "A"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "1"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslA_UboundY",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "0"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslB_UboundY",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "1"
+				},
+				{
+					"name": "transfer_level",
+					"value": "A"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "1"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslA_UboundA",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "1"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslB_UboundA",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "1"
+				},
+				{
+					"name": "transfer_level",
+					"value": "C"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "3"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslC_UboundA",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslB_UboundB",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "C"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "3"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslC_UboundB",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "D"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "4"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslD_UboundB",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "eslY_UboundY",
+					"value": "false"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "0"
+				},
+				{
+					"name": "transfer_level",
+					"value": "C"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "3"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslA_UboundY",
+					"value": "false"
+				},
+				{
+					"name": "eslB_UboundY",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "1"
+				},
+				{
+					"name": "transfer_level",
+					"value": "D"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "4"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslA_UboundA",
+					"value": "false"
+				},
+				{
+					"name": "eslB_UboundA",
+					"value": "false"
+				},
+				{
+					"name": "eslC_UboundA",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "highest_level_reading_course",
+					"value": "2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "E"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "5"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "eslB_UboundB",
+					"value": "false"
+				},
+				{
+					"name": "eslC_UboundB",
+					"value": "false"
+				},
+				{
+					"name": "eslD_UboundB",
+					"value": "false"
+				}
+			]
+		}
+	],
+	"validationCsv": "attribute,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result,result,result,result,result,result,result,result,result,result,result,result\nHIGHEST_READING_LEVEL_COURSE,eslY_UboundY,eslA_UboundY,eslB_UboundY,eslA_UboundA,eslB_UboundA,eslC_UboundA,eslB_UboundB,eslC_UboundB,eslD_UboundB,highest_level_reading_course,transfer_level,levels_below_transfer,insufficient_data,competencymapdiscipline,subjectArea,program,rowNumber,ruleSetId,ruleSetRowId,ruleId,trackingId,dataSource,dataSourceType,dataSourceDate,standAlonePlacement,insufficeintData\n0,true,,,,,,,,,0,Y,0,false,ESL,test_subject_area,esl,1,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n0,,true,,,,,,,,0,A,1,false,ESL,test_subject_area,esl,2,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n0,,,true,,,,,,,0,B,2,false,ESL,test_subject_area,esl,3,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n1,,,,true,,,,,,1,A,1,false,ESL,test_subject_area,esl,4,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n1,,,,,true,,,,,1,B,2,false,ESL,test_subject_area,esl,5,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n1,,,,,,true,,,,1,C,3,false,ESL,test_subject_area,esl,6,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n2,,,,,,,true,,,2,B,2,false,ESL,test_subject_area,esl,7,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n2,,,,,,,,true,,2,C,3,false,ESL,test_subject_area,esl,8,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n2,,,,,,,,,true,2,D,4,false,ESL,test_subject_area,esl,9,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n0,false,false,false,,,,,,,0,C,3,false,ESL,test_subject_area,esl,10,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n1,,,,false,false,false,,,,1,D,4,false,ESL,test_subject_area,esl,11,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n2,,,,,,,false,false,false,2,E,5,false,ESL,test_subject_area,esl,12,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false"
+}

@@ -1,0 +1,5 @@
+title:CAL_Pass-Plus English Decision Tree
+description: <p>English Decision Rules as set forth in the document: Multiple Measures High School Variables Model Summary – Phase 2 - Updated (Updated on May 18, 2016}.
+
+<a href="http://rpgroup.org/Portals/0/Documents/Projects/MultipleMeasures/DecisionRulesandAnalysisCode/Phase-2-Resources/Current-Phase-2-Rule-Sets/Statewide-Decision-Rules-5.18.16.pdf?ver=2016-11-03-134514-703&timestamp=1480539547303">Link to decision tree.</>
+</p>

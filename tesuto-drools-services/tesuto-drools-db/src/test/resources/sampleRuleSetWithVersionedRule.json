@@ -1,0 +1,15 @@
+{
+	"id":"dummy-uuid-published-rule",
+	"family":"ZZ1",
+	"application":"sns-listener",
+	"version":"",
+	"status":"draft",
+	"category":"category",
+	"event":"event",
+	"competencyMapDiscipline":"competencyMapDsicipline",
+	"description":"description",
+	"title":"title",
+	"ruleSetRowIds":[
+		"6774c572-10dc-413c-bfef-6a70af5577d7"
+	]
+}

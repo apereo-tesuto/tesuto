@@ -1,0 +1,154 @@
+{
+    "taskSetId": "AFDD-SDFD-SDFD-FE03",
+    "tasks": [{
+        "taskId": "AFGY-JEMD-SKJD-JKSM",
+        "stimulus": "<p>These are different variations of the text entry interaction. The variations include placement within the item body, expected length (which provides a visual to the user that the answer may require a longer answer), and use of the placeholder attribute.</p>",
+        "itemSessions": [
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                "itemSessionIndex": 6,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [
+                    {
+                        "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                        "responseIdentifier": "RESPONSE1",
+                        "values": ["Light Urple"]
+                    }
+                ],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE1",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<prompt id='ci1_prompt'>What is your favorite color?</prompt><interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c85\" aria-labelledby='ci1_prompt'/>",
+                    "interactions": [{
+                        "id": null,
+                        "type": "textEntryInteraction",
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c85",
+                        "responseIdentifier": "RESPONSE1",
+                        "expectedLength": "0",
+                        "ariaControls": "example",
+                        "ariaDescribedBy":"example",
+                        "ariaFlowsTo": "RESPONSE2",
+                        "ariaLabel": "This is my choice interaction",
+                        "ariaLabelledBy": "RESPONSE2",
+                        "ariaLevel":"42",
+                        "ariaLive":"off",
+                        "ariaOrientation":"horizontal",
+                        "ariaOwns":"RESPONSE2"
+                    }]
+                }
+            },
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK02",
+                "itemSessionIndex": 7,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [
+                    {
+                        "itemSessionId": "AFGY-JEMD-SKJD-JK02",
+                        "responseIdentifier": "RESPONSE2",
+                        "values": ["723892"]
+                    }
+                ],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE2",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheets": ".lsi-interaction {color:red;} .lsi-prompt {color: red;}",
+                    "itemBody": "<div class='lsi-interaction' style='color: green; font-weight:bold; text-align: right; font-family: arial; text-transform: uppercase;'><interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c82\"/></div>",
+                    "interactions": [{
+                        "id": null,
+                        "type": "textEntryInteraction",
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c82",
+                        "responseIdentifier": "RESPONSE2",
+                        "expectedLength": "20",
+                        "patternMask": "/\\(\\s*[0-9]{3}\\s*\\)\\s*[0-9]{3}\\s*\\-\\s*[0-9]{4}\\s*/gi",
+                        "prompt": "What is your favorite pizza place's phone number? Please follow this format: (xxx) xxx - xxxx <span class='sr-only'>format instructions: open paren, xxx, close paren, xxx, hyphen, xxxx</span>"
+                    }]
+                }
+            },
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK03",
+                "itemSessionIndex": 8,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [
+                        {
+                            "identifier": "RESPONSE4",
+                            "cardinality": "SINGLE",
+                            "baseType": "IDENTIFIER",
+                            "defaultValue": null
+                        },
+                        {
+                            "identifier": "RESPONSE5",
+                            "cardinality": "SINGLE",
+                            "baseType": "IDENTIFIER",
+                            "defaultValue": null
+                        },
+                        {
+                            "identifier": "RESPONSE6",
+                            "cardinality": "SINGLE",
+                            "baseType": "IDENTIFIER",
+                            "defaultValue": null
+                        },
+                        {
+                            "identifier": "RESPONSE7",
+                            "cardinality": "SINGLE",
+                            "baseType": "IDENTIFIER",
+                            "defaultValue": null
+                        }
+                    ],
+                    "stylesheet": "",
+                    "itemBody": "<prompt>Identify the missing words from this madlib: </prompt><p>Yesterday I <interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c86\" aria-label='enter the missing word'/> to the grocery store. I found a <interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c87\" aria-label='enter the missing word'/> apple and <interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c88\" aria-label='enter the missing word'/> it. It was the the most <interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c89\" aria-label='enter the missing word' /> apple I had ever had.</p>",
+                    "interactions": [
+                        {
+                            "id": null,
+                            "type": "textEntryInteraction",
+                            "uiid": "864f765b-10da-401a-94e6-4dbd87f40c86",
+                            "responseIdentifier": "RESPONSE4",
+                            "type": "textEntryInteraction",
+                            "placeholderText": "verb (past tense)"
+                        },
+                        {
+                            "id": null,
+                            "type": "textEntryInteraction",
+                            "uiid": "864f765b-10da-401a-94e6-4dbd87f40c87",
+                            "responseIdentifier": "RESPONSE5",
+                            "type": "textEntryInteraction",
+                            "placeholderText": "adjective"
+                        },
+                        {
+                            "id": null,
+                            "type": "textEntryInteraction",
+                            "uiid": "864f765b-10da-401a-94e6-4dbd87f40c88",
+                            "responseIdentifier": "RESPONSE6",
+                            "type": "textEntryInteraction",
+                            "placeholderText": "verb (past tense)"
+                        },
+                        {
+                            "id": null,
+                            "type": "textEntryInteraction",
+                            "uiid": "864f765b-10da-401a-94e6-4dbd87f40c89",
+                            "responseIdentifier": "RESPONSE7",
+                            "type": "textEntryInteraction",
+                            "placeholderText": "adjective"
+                        }
+                    ]
+                }
+            }
+        ]
+    }]
+}

@@ -1,0 +1,281 @@
+{
+	"lastUpdatedDate": 1525103356951,
+	"createdOnDate": 1525101760285,
+	"disciplineId": 3693,
+	"collegeId": "SYS",
+	"title": "POC Math",
+	"description": "",
+	"competencyMapDiscipline": "MATH",
+	"competencyMapVersion": 1,
+	"sisCode": "MATH",
+	"noPlacementMessage": "Other factors must be considered before we can generate a placement recommendation for you.  Please see a counselor for details.",
+	"usePrereqPlacementMethod": false,
+	"competencyAttributes": {
+		"@type": "MATH",
+		"competencyAttributeId": 3694,
+		"optInMultiMeasure": true,
+		"placementComponentMmaplogout": true,
+		"placementComponentAssess": false,
+		"useSelfReportedDataForMM": true,
+		"mmDecisionLogic": "354ce557-c75f-426c-b2c0-dbf7427a5bee",
+		"mmPlacementLogic": "47185ccd-efaf-44de-8ef0-f1664f512827",
+		"mmAssignedPlacementLogic": "2c1e0c79-eb67-403d-bfb9-94f2d2fd09c1",
+		"prerequisiteGeneralEducation": "Intermediate Algebra",
+		"prerequisiteStatistics": "Intermediate Algebra",
+		"competencyCode": "MATH"
+	},
+	"disciplineSequences": [
+		{
+			"disciplineId": 3693,
+			"cb21Code": "Y",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1510162307011,
+				"updatedOn": 1510162307011
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 3693,
+					"courseId": 3698,
+					"cb21Code": "Y",
+					"courseGroup": 1,
+					"auditId": 36583,
+					"course": {
+						"courseId": 3698,
+						"name": "Transfer Level: Algebra I",
+						"cid": "CIDMATALGI",
+						"subject": "MATH",
+						"number": "Algebra I",
+						"description": "Transfer Level Math - Algebra I",
+						"mmapEquivalentCode": "math_col_alg",
+						"sisTestCode": "MATAlgebraI",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				},
+				{
+					"disciplineId": 3693,
+					"courseId": 3704,
+					"cb21Code": "Y",
+					"courseGroup": 1,
+					"auditId": 36585,
+					"course": {
+						"courseId": 3704,
+						"name": "Transfer Level:  General Education Mathematics",
+						"cid": "CIDMATGE",
+						"subject": "Math",
+						"number": "General Education Mathematics",
+						"description": "Transfer Level Mathematics for General Education",
+						"mmapEquivalentCode": "math_ge",
+						"sisTestCode": "MATGE",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 3693,
+			"cb21Code": "Y",
+			"courseGroup": 4,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1510162307011,
+				"updatedOn": 1510162307011
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 3693,
+					"courseId": 3714,
+					"cb21Code": "Y",
+					"courseGroup": 4,
+					"auditId": 37150,
+					"course": {
+						"courseId": 3714,
+						"name": "Transfer Level Mathematics:  Calculus",
+						"cid": "CIDCALC",
+						"subject": "MATH",
+						"number": "Calculus",
+						"description": "Transfer Level Mathematics - Calculus",
+						"mmapEquivalentCode": "math_calc_i",
+						"sisTestCode": "MATCALC",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 3693,
+			"cb21Code": "Y",
+			"courseGroup": 3,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1510162307011,
+				"updatedOn": 1510162307011
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 3693,
+					"courseId": 3710,
+					"cb21Code": "Y",
+					"courseGroup": 3,
+					"auditId": 36588,
+					"course": {
+						"courseId": 3710,
+						"name": "Transfer Level Mathematics:  Trigonometry",
+						"cid": "CIDTRIG",
+						"subject": "MATH",
+						"number": "Trigonometry",
+						"description": "Transfer Level Mathematics:  Trigonometry",
+						"mmapEquivalentCode": "math_trig",
+						"sisTestCode": "MATTRIG",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				},
+				{
+					"disciplineId": 3693,
+					"courseId": 3708,
+					"cb21Code": "Y",
+					"courseGroup": 3,
+					"auditId": 36587,
+					"course": {
+						"courseId": 3708,
+						"name": "Transfer Level Mathematics:  College Algebra",
+						"cid": "CIDCALG",
+						"subject": "MATH",
+						"number": "College Algebra",
+						"description": "Transfer Level Mathematics:  College Algebra",
+						"mmapEquivalentCode": "math_col_alg",
+						"sisTestCode": "MATCALG",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				},
+				{
+					"disciplineId": 3693,
+					"courseId": 3712,
+					"cb21Code": "Y",
+					"courseGroup": 3,
+					"auditId": 36589,
+					"course": {
+						"courseId": 3712,
+						"name": "Transfer Level Mathematics:  Pre-Calculus",
+						"cid": "CIDPRECAL",
+						"subject": "MATH",
+						"number": "Pre-Calculus",
+						"description": "Transfer Level Mathematics in Pre-Calculus",
+						"mmapEquivalentCode": "math_pre_calc",
+						"sisTestCode": "MATPREC",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 3693,
+			"cb21Code": "Y",
+			"courseGroup": 2,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1510162307011,
+				"updatedOn": 1510162307011
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 3693,
+					"courseId": 3700,
+					"cb21Code": "Y",
+					"courseGroup": 2,
+					"auditId": 36584,
+					"course": {
+						"courseId": 3700,
+						"name": "Transfer Level:  Algebra II",
+						"cid": "CIDALGII",
+						"subject": "MATH",
+						"number": "Algebra II",
+						"description": "Transfer Level Mathematics - Algebra II",
+						"mmapEquivalentCode": "math_col_alg",
+						"sisTestCode": "MATAlgebraII",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				},
+				{
+					"disciplineId": 3693,
+					"courseId": 3706,
+					"cb21Code": "Y",
+					"courseGroup": 2,
+					"auditId": 36586,
+					"course": {
+						"courseId": 3706,
+						"name": "Transfer Level Mathematics:  Statistics",
+						"cid": "CIDSTATS",
+						"subject": "MATH",
+						"number": "Statistics",
+						"description": "Transfer Level Mathematics - Statistics",
+						"mmapEquivalentCode": "math_stat",
+						"sisTestCode": "MATSTATS",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 3693,
+			"cb21Code": "A",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "A",
+				"levelsBelowTransfer": 1,
+				"createdOn": 1510162307011,
+				"updatedOn": 1510162307011
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 3693,
+					"courseId": 3696,
+					"cb21Code": "A",
+					"courseGroup": 1,
+					"auditId": 36582,
+					"course": {
+						"courseId": 3696,
+						"name": "One Level Below Transfer",
+						"cid": "CIDMATA",
+						"subject": "Math",
+						"number": "Pre-Algebra",
+						"description": "One Level below Transfer level - Pre-Algebra",
+						"mmapEquivalentCode": "math_na",
+						"sisTestCode": "MATpreAlgebra",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				}
+			]
+		}
+	],
+	"dirty": false
+}

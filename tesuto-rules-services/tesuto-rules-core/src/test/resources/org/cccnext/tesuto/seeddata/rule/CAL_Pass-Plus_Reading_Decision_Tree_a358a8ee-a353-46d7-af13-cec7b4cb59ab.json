@@ -1,0 +1,131 @@
+{
+	"id": "a358a8ee-a353-46d7-af13-cec7b4cb59ab",
+	"family": "SYS",
+	"engine": "tesuto",
+	"version": "1",
+	"title": "Statewide MMAP Reading Decision Logic",
+	"status": "published",
+	"event": "MULTIPLE_MEASURE_PLACEMENT",
+	"category": "mmComponentPlacementLogic",
+	"competencyMapDiscipline": "ENGLISH",
+	"description": "<p>Execute the statewide MMAP Reading decision logic to generate the Multiple Measures, High School Transcript based placement component.</p>",
+	"conditionFreetext": "map : Map()\n    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())\n    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())\n    subjectArea : String() from map.get(SUBJECT_AREA_KEY())\n    cccMisCode : String() from map.get(MISCODE_KEY())\n    trackingId : String() from map.get(TRACKING_ID_KEY())\n    facts : Map() from variableSet.facts\n    multipleMeasureVariableSetId: String() from variableSet.id\n    dataSourceType: String() from variableSet.sourceType\n    dataSource: String() from variableSet.source\n    dataSourceDate: Date() from variableSet.sourceDate  ",
+	"conditionRows": [
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "ruleSetId :  String(this == \"${rule_set_id}\" ) from map.get(RULE_SET_ID_KEY())",
+			"tokensFromFreeText": [
+				"rule_set_id"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "cum_gpa : Double(this >= ${gpa_cum}) from parseFactToDouble((Fact)facts.get(\"gpa_cum\"))",
+			"tokensFromFreeText": [
+				"gpa_cum"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "cst : Integer(this >= ${cst}) from parseFactToInteger((Fact)facts.get(\"cst\"))",
+			"tokensFromFreeText": [
+				"cst"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "cst_english : Integer(this >= ${cst_english}) from parseFactToInteger((Fact)facts.get(\"cst_english\"))",
+			"tokensFromFreeText": [
+				"cst_english"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "grade : Integer(this == ${grade_level}) from parseFactToInteger((Fact)facts.get(\"grade_level\"))",
+			"tokensFromFreeText": [
+				"grade_level"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "english : Double(this >= ${english}) from parseFactToDouble((Fact)facts.get(\"english\"))",
+			"tokensFromFreeText": [
+				"english"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "highestReadingLevel : String(this.equals(\"${highest_level_reading_course}\")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())",
+			"tokensFromFreeText": [
+				"highest_level_reading_course"
+			]
+		}
+	],
+	"actionFreetext": "     \tList<RulesAction> actions = (List<RulesAction>) map.get(\"actions\");\n     \tPlacementComponentActionResult placement = new PlacementComponentActionResult();\n        placement.setCccid(student.getCccid());\n        placement.setTransferLevel(\"${transfer_level}\");\n        placement.setLevelsBelowTransfer(${levels_below_transfer});\n        placement.setSubjectArea(subjectArea);\n        placement.setCollegeId(cccMisCode);\n         placement.setTrackingId(trackingId);\n         placement.setRuleId(\"${rule_id}\");\n        placement.setRuleSetId(ruleSetId);\n        placement.setRuleSetRowId(\"${rule_set_row_id}\");\n        placement.setRowNumber(\"${row_number}\");\n        placement.setCompetencyMapDiscipline(\"ENGLISH\");\n        placement.addProgram(\"reading\");\n        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);\n        placement.setDataSource(dataSource);\n        placement.setDataSourceDate(dataSourceDate);\n        placement.setDataSourceType(dataSourceType);\n        placement.setStandalonePlacement(true);\n        placement.setInsufficientData(${insufficient_data});\n        filterByCollegeSubjectPlacement(actions, placement);",
+	"actionRows": [],
+	"variableTypes": {
+
+	},
+	"customImports": [
+		"java.util.Date",
+		"org.cccnext.tesuto.placement.view.MmapDataSourceType",
+		"java.lang.Double",
+		"java.lang.String",
+		"java.util.stream.Collectors",
+		"org.cccnext.tesuto.rules.view.BasicStudentView",
+		"org.cccnext.tesuto.domain.multiplemeasures.VariableSet",
+		"org.cccnext.tesuto.domain.multiplemeasures.Fact",
+		"org.cccnext.tesuto.domain.multiplemeasures.PlacementComponentActionResult",
+		"function org.apache.commons.lang3.StringUtils.isBlank",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.STUDENT_VIEW_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.MULTIPLE_MEASURE_VARIABLE_SET_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.SUBJECT_AREA_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.TRACKING_ID_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.MISCODE_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.RULE_SET_ID_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.HIGHEST_READING_LEVEL_COURSE_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToDouble",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToInteger",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToString",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseDouble",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseInteger",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement"
+	],
+	"testTokenValues": "rule_set_id,highest_level_reading_course,gpa_cum,grade_level,english,cst,cst_english,transfer_level,levels_below_transfer,insufficient_data\n${rule_set_id},0,2.7,11,3,,,TO,1,false",
+	"customFunctions": null
+}

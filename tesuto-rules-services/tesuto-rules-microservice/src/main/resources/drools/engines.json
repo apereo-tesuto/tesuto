@@ -1,0 +1,7 @@
+[
+{
+	"id":"mmppPlacementEngine",
+	"enabledPreProcessors":["MULTIPLE_MEASURE_VARIABLE_SET","PLACEMENT_FACTS","ASSIGN_PLACEMENT_FACTS"],
+	"enabledActionServices":["ASSIGNED_PLACEMENT_ACTION","PLACEMENT_ACTION","MULTIPLE_MEASURE_PLACEMENT"]
+}
+]

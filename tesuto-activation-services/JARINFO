@@ -1,0 +1,3 @@
+JAR_BASE=tesuto-activation-microservice
+JAR_NAME=/tesuto-activation.jar
+JAR_OUTPUT_PATH=/opt/ccc/

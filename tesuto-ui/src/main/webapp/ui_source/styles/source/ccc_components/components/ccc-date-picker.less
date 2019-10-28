@@ -1,0 +1,30 @@
+ccc-date-picker {
+
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+
+    .ccc-date-picker-date-preview {
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 3px;
+        color: darken(@brand-primary, 5%);
+        font-size: 90%;
+        font-weight: bold;
+
+        .ccc-validation-messages {
+            font-weight: 400;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        &>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+}

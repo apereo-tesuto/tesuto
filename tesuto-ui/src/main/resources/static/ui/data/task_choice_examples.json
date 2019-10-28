@@ -1,0 +1,111 @@
+{
+    "taskSetId": "AFDD-SDFD-SDFD-FE01",
+    "tasks": [{
+        "taskId": "AFGY-JEMD-SKJD-JKSA",
+        "stimulus": "<p>This is an example of choice interactions. The first is multiple select. The second is single select. They are presented in an item bundle with a top level stimulus.</p>",
+        "itemSessions": [
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                "itemSessionIndex": 1,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [
+                    {
+                        "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                        "responseIdentifier": "RESPONSE1",
+                        "values": ["ChoiceA", "ChoiceD"]
+                    }
+                ],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE1",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheets": ".lsi-interaction {color:red;} .lsi-make-blue {color: blue;} .lsi-choice-prompt {color: red;}",
+                    "itemBody": "<div class='lsi-interaction' style='color: green; font-weight:bold; text-align: right; font-family: arial; text-transform: uppercase;'><interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c82\"/></div>",
+                    "interactions": [{
+                        "id": null,
+                        "type": "choiceInteraction",
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c82",
+                        "maxChoices": 0,
+                        "minChoices": 0,
+                        "prompt": "<span class='lsi-choice-prompt'>Which of these are configurations for a QTI choice interaction? (choose all that apply) NOTE: This example has styles within it.</span>",
+                        "responseIdentifier": "RESPONSE1",
+                        "choices": [
+                            {
+                                "content": "<span class='lsi-make-blue'>minChoices</span>",
+                                "identifier": "ChoiceA"
+                            },
+                            {
+                                "content": "maxChoices",
+                                "identifier": "ChoiceB"
+                            },
+                            {
+                                "content": "orientation",
+                                "identifier": "ChoiceC"
+                            },
+                            {
+                                "content": "compatability",
+                                "identifier": "ChoiceD"
+                            }
+                        ]
+                    }]
+                }
+            },
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK02",
+                "itemSessionIndex": 2,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [
+                    {
+                        "itemSessionId": "AFGY-JEMD-SKJD-JK02",
+                        "responseIdentifier": "RESPONSE2",
+                        "values": ["ChoiceC"]
+                    }
+                ],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE2",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c83\"/>",
+                    "interactions": [{
+                        "id": null,
+                        "type": "choiceInteraction",
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c83",
+                        "maxChoices": 1,
+                        "minChoices": 0,
+                        "prompt": "Which of these is not a configuration for a QTI choice interaction?",
+                        "responseIdentifier": "RESPONSE2",
+                        "choices": [
+                            {
+                                "content": "minChoices",
+                                "identifier": "ChoiceA"
+                            },
+                            {
+                                "content": "maxChoices",
+                                "identifier": "ChoiceB"
+                            },
+                            {
+                                "content": "orientation",
+                                "identifier": "ChoiceC"
+                            },
+                            {
+                                "content": "compatability",
+                                "identifier": "ChoiceD"
+                            }
+                        ]
+                    }]
+                }
+            }
+        ]
+    }]
+}

@@ -1,0 +1,55 @@
+package org.jasig.portlet.survey.rules
+
+import org.jasig.portlet.rules.service.Message
+import java.util.Map
+import java.util.HashMap
+import java.util.List
+import java.util.Collection
+import org.springframework.web.client.RestTemplate
+import org.springframework.http.HttpHeaders
+import org.springframework.http.MediaType
+import org.springframework.http.HttpEntity
+import org.springframework.http.HttpMethod
+import java.util.Arrays
+
+rule "rule 1" when
+   m : Message( )
+then
+    System.out.println( m.getFrom() + ": " +  m.getText() );
+end
+
+rule "rule 2" when
+    m : Message( text == "Hello, " + to + ". Do you read me, " + to + "?" )
+then
+    insert( new Message(m.getTo(), m.getFrom(), m.getFrom() + ". I read you." ) ); 
+end
+
+rule "rule 3a" when
+    m : Map()
+then
+    System.out.println("has a map as a fact");
+    System.out.println("map:[" + m + "]");
+    System.out.println("users:[" + m.get("users") + "]");
+    System.out.println("subject:[" + m.get("subject") + "]");
+end
+
+rule "rule 3" when
+    map : Map()
+    users : List() from collect(String() from map.get("users"))
+    m : String(this.equals("AAA1237")) from users
+then
+    System.out.println("users:[" + users + "]");
+    System.out.println("sending a message to " + map.get("users"));
+    
+    // send a message to message service
+    RestTemplate restTemplate = new RestTemplate();
+    String profileUrl = "http://local.ccctech.org:8081/ccc/api/messages/v1/sendMessages";
+    Map id_token = new HashMap();
+    id_token.put("misCode", "999");
+    HttpHeaders headers = new HttpHeaders();
+    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+    headers.set("id_token", "{\"misCode\":\"999\"}");
+
+//    HttpEntity<Object> entity = new HttpEntity<Object>(map, headers);
+//    restTemplate.exchange(profileUrl, HttpMethod.POST, entity, String.class);    
+end

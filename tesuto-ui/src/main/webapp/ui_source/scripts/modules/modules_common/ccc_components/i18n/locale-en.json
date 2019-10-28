@@ -1,0 +1,65 @@
+{
+    "CCC_COMP": {
+
+        "CCC-LABEL-REQUIRED": {
+            "REQUIRED": "Indicates required field"
+        },
+
+        "CCC-ITEM-DROPDOWN": {
+            "NO_ITEMS": "No Items Available",
+            "PLEASE_SELECT": "-- Please select --"
+        },
+
+        "DEFAULT_PAGE_TITLE": "Tesuto",
+
+        "SCROLL_INDICATOR": {
+            "MORE": "More"
+        },
+
+        "MODALS": {
+
+            "BUTTONS": {
+                "CANCEL": "CANCEL",
+                "OKAY": "OKAY",
+                "CONFIRM": "CONFIRM",
+                "SHOW_DETAILS": "Show Details",
+                "STAY": "Stay",
+                "LEAVE": "Leave"
+            },
+
+            "UNAUTHORIZED": {
+                "TITLE": "Warning",
+                "BODY": "Whoops you don't have permission to do that."
+            },
+
+            "SERVER_ERROR": {
+                "TITLE": "UNEXPECTED SERVER ERROR",
+                "BODY": "There was an unexpected server error."
+            }
+        },
+
+        "CCC_DATE_PICKER": {
+            "PLACEHOLDER": "Enter a Date",
+            "ERROR": {
+                "INVALID": "Valid date (mm/dd/yyyy) required.",
+                "MIN_DATE": "Minimum date not met.",
+                "MAX_DATE": "Maximum date exceeded."
+            }
+        },
+
+        "CONTENT_LOADING": "Loading",
+        "CONTENT_NO_RESULTS": "No Results Found",
+
+        "GLOBAL_OPTIONS": {
+            "LANGUAGE": {
+                "HEADER": "Language"
+            }
+        },
+
+        "INSTRUCTIONS_PLAYER": {
+            "PREVIOUS": "Previous",
+            "NEXT": "Next"
+        }
+
+    }
+}

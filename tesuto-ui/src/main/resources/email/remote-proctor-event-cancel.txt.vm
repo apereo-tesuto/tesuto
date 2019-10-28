@@ -1,0 +1,16 @@
+---
+CCC Assess – Remote Proctor Event - CANCELED
+---
+
+Hello ${remoteProctorViewDto.remoteProctorDisplayName}
+
+The test event for ${collegeName} you were scheduled to
+proctor on ${remoteProctorViewDto.startDate} has been canceled.
+
+If the test event is rescheduled, you will be notified via email.
+
+If you have any questions, please contact the Assessment Center at
+${collegeName}.
+
+Regards,
+${collegeName} Assessment Center

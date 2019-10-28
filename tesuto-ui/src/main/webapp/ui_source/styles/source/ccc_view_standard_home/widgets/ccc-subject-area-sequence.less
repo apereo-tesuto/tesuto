@@ -1,0 +1,229 @@
+ccc-subject-area-sequence {
+
+    table.subject-area-sequence {
+
+
+        tr {
+            .transition-properties(background 1500ms @ccc-cubic);
+
+            border-left: 2px solid rgba(0,0,0, 0);
+
+            td, th {
+                border-top: 1px solid rgba(0,0,0,0);
+            }
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .cb-21 {
+            opacity: 0;
+        }
+
+        .cb-21, .transfer-level, .sis-code {
+            display: inline-block;
+        }
+
+        .cb-21, .transfer-level, .explanation, .sis-code {
+            padding-top: 7px;
+        }
+
+        .sis-code {
+            max-width: 150px;
+        }
+
+        .explanation {
+            max-width: 450px;
+        }
+
+        .no-match {
+            display: block;
+            background: white;
+            border: 1px dashed @brand-warning;
+            color: @brand-warning-dark;
+            border-radius: 0.3em;
+            padding: 0.5em 1em;
+        }
+
+        .course-group-box {
+
+            display: block;
+            position: relative;
+
+            background: white;
+            border: 1px dotted rgba(0, 0, 0, 0.2);
+            border-radius: 0.3em;
+            padding: 8px 8px 8px 40px;
+
+            .course-group-box-number {
+
+                position: absolute;
+                top: 8px;
+                left: 8px;
+
+                padding: 1px 5px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                .border-radius(3px);
+
+                font-weight: bold;
+            }
+        }
+
+        .checkbox {
+
+            text-align: left;
+
+            i {
+                opacity: 1;
+            }
+
+            label {
+                min-height: 0px;
+                padding-bottom: 0px;
+                padding-top: 0px;
+            }
+
+            margin-bottom: 10px;
+        }
+
+
+        tr {
+
+            &.sequence-highlighted {
+                .transition-properties(background 0ms @ccc-cubic);
+                background: lighten(@brand-primary, 10%) !important;
+            }
+
+            &.row-first {
+
+                td, th {
+                    border-top: 1px solid #ddd;
+                }
+
+                .cb-21 {
+                    opacity: 1;
+                }
+            }
+
+            &.row-odd {
+                background: #f1f1f1;
+            }
+
+            &.row-last {
+                td, th {
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+        }
+    }
+
+    &.ccc-subject-area-sequence-read-only {
+
+        tbody td:before, tbody th:before {
+            display: none !important;
+        }
+
+        .responsive-table-cell-content-button {
+            display: none !important;
+        }
+    }
+}
+
+@media (min-width: @screen-sm-max) {
+
+    ccc-subject-area-sequence.ccc-subject-area-sequence-responsive {
+
+        tbody td:before, tbody th:before {
+            display: none !important;
+        }
+    }
+}
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-sm-max) {
+
+    ccc-subject-area-sequence.ccc-subject-area-sequence-responsive {
+
+        table {
+
+            &.table > tbody > tr > td,
+            &.table > tbody > tr > th {
+                padding: 15px;
+            }
+
+            /* Force table to not be like tables anymore */
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            .responsive-table-cell-content {
+
+                position: relative;
+
+                .cb-21 {
+                    opacity: 1.0;
+                }
+
+                .cb-21, .transfer-level, .explanation, .sis-code {
+                    padding-top: 0px;
+                }
+
+                .sis-code {
+                    display: inline-block;
+                    padding-bottom: 15px;
+                }
+
+                .explanation {
+                    padding-bottom: 15px;
+                }
+
+                padding: 0px 52px 0px 100px;
+                text-align: left;
+
+                ccc-sequence-course-list ul, .explanation, .sis-code {
+                    max-width: none;
+                }
+
+                .responsive-table-cell-content-button {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    margin-right: 0px;
+                }
+            }
+
+            /* Hide table headers (but not display: none;, for accessibility) */
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr { border: 1px solid #ccc; }
+
+            tbody td, tbody th {
+                /* Behave  like a "row" */
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+            }
+
+            tbody td:before, tbody th:before {
+                /* Now like a table header */
+                position: absolute;
+                /* Top/left values mimic padding */
+                top: 14px;
+                left: 14px;
+                padding-right: 10px;
+                width: 100px;
+                white-space: nowrap;
+                text-align: right;
+                font-weight: bold;
+                font-size: 14px;
+                vertical-align: middle;
+            }
+        }
+    }
+}

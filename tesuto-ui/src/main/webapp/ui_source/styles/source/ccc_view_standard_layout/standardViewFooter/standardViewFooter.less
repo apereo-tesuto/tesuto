@@ -1,0 +1,40 @@
+.app-footer {
+    background: #E5E5E5;
+    border-top: 1px solid fade(black, 10%);
+    color: #3e3e3e;
+    font-size: 0.8em;
+    padding: 2.5rem;
+    min-height: 10vh;
+
+    a {
+        color: #000;
+    }
+
+    .footer-logo {
+        opacity: 0.75;
+        padding-top: 0.75em;
+        margin-left: 4rem;
+        width: 20em;
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+
+}
+
+@media (max-width: @screen-sm-max) {
+    .app-footer {
+
+        text-align: center;
+
+        .footer-logo {
+            margin-left: 0px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+}

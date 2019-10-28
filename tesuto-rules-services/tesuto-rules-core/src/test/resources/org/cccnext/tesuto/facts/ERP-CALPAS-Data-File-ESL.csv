@@ -1,0 +1,14 @@
+attribute,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result,result,result,result,result,result,result,result
+HIGHEST_READING_LEVEL_COURSE,eslY_UboundY,eslA_UboundY,eslB_UboundY,eslA_UboundA,eslB_UboundA,eslC_UboundA,eslB_UboundB,eslC_UboundB,eslD_UboundB,cccid,miscode,competencymapdiscipline,subjectArea,program,transferLevel,transferLevelIndex,rowNumber,insufficeintData
+0,true,,,,,,,,,A123456,${miscode},ESL,test_subject_area,esl,Y,0,1,false
+0,,true,,,,,,,,A123456,${miscode},ESL,test_subject_area,esl,A,1,2,false
+0,,,true,,,,,,,A123456,${miscode},ESL,test_subject_area,esl,B,2,3,false
+1,,,,true,,,,,,A123456,${miscode},ESL,test_subject_area,esl,A,1,4,false
+1,,,,,true,,,,,A123456,${miscode},ESL,test_subject_area,esl,B,2,5,false
+1,,,,,,true,,,,A123456,${miscode},ESL,test_subject_area,esl,C,3,6,false
+2,,,,,,,true,,,A123456,${miscode},ESL,test_subject_area,esl,B,2,7,false
+2,,,,,,,,true,,A123456,${miscode},ESL,test_subject_area,esl,C,3,8,false
+2,,,,,,,,,true,A123456,${miscode},ESL,test_subject_area,esl,D,4,9,false
+0,false,false,false,,,,,,,A123456,${miscode},ESL,test_subject_area,esl,C,3,10,false
+1,,,,false,false,false,,,,A123456,${miscode},ESL,test_subject_area,esl,D,4,11,false
+2,,,,,,,false,false,false,A123456,${miscode},ESL,test_subject_area,esl,E,5,12,false

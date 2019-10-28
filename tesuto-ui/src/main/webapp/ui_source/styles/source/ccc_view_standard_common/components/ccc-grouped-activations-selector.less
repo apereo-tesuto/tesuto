@@ -1,0 +1,44 @@
+ccc-grouped-activations-selector {
+
+    display: block;
+    margin-bottom: 1em;
+
+    .nav-pills {
+
+        li a {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .sub-list {
+        background: rgba(0, 0, 0, 0.05);
+        padding: 15px;
+
+        li {
+            position: relative;
+
+            a {
+                background: #fff;
+
+                span {
+                    display: block;
+                    font-weight: 300;
+
+                    &.date {
+                        font-weight: 600;
+                    }
+
+                    &.location {
+                        font-size: 85%;
+                    }
+                }
+            }
+
+            &.active .icon {
+                position: absolute;
+                top: 15px;
+                right: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+{
+		"userAccountId": "dd6dee60-1cf6-4be2-b8d7-870d81924cde",
+		"username": "cproctor@democollege.edu",
+		"emailAddress": "cproctor@democollege.edu",
+		"password": "$2a$10$MvvD6QnN98OU3ck6oOajSOnbtIWUI0V2zsXsgu/Axc158AAps9EAO",
+		"displayName": "Chris",
+		"firstName": "Chris",
+		"middleInitial": "A",
+		"lastName": "Proctor",
+		"phoneNumber": null,
+		"extension": null,
+		"enabled": true,
+		"securityGroupDtos": [
+			{
+				"securityGroupId": 3,
+				"groupName": "PROCTOR",
+				"description": "Proctor security group",
+				"securityPermissionDtos": []
+			}
+		],
+		"namespace": null,
+		"colleges": [
+			{
+				"cccId": "ZZ3",
+				"districtCCCId": "ZZ0",
+				"name": "CCCTC College A",
+				"streetAddress1": "1 Apereo Drive",
+				"streetAddress2": "",
+				"city": "Oroville",
+				"postalCode": "95965",
+				"url": "http://cccnext.net/",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+					{
+						"id": "1000003",
+						"name": "CCCTC College A Test Center",
+						"streetAddress1": "1 Apereo Drive",
+						"streetAddress2": "",
+						"city": "Oroville",
+						"postalCode": "95965",
+						"locationType": "ON_SITE",
+						"locationStatus": "ACTIVE",
+						"collegeId": "ZZ3",
+						"collegeName": "CCCTC College A",
+						"capacity": 30,
+						"lastUpdatedDate": 1485793699290,
+						"enabled": true,
+						"createdOnDate": 1483769001566
+					}
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ3",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			}
+		],
+		"collegeIds": [
+			"ZZ3"
+		],
+		"districts": null,
+		"primaryCollegeId": "ZZ3",
+		"testLocations": [
+			{
+				"id": "1000003",
+				"name": "CCCTC College A Test Center",
+				"streetAddress1": "1 Apereo Drive",
+				"streetAddress2": "",
+				"city": "Oroville",
+				"postalCode": "95965",
+				"locationType": "ON_SITE",
+				"locationStatus": "ACTIVE",
+				"collegeId": "ZZ3",
+				"collegeName": "CCCTC College A",
+				"capacity": 30,
+				"lastUpdatedDate": 1485793699290,
+				"enabled": true,
+				"createdOnDate": 1483769001566
+			}
+		]
+	}

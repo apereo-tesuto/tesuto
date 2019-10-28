@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+						   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+						   http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd
+						   http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+						   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+						   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+
+
+	<context:annotation-config />
+	
+	<import resource="test-properties-context.xml" />
+	<bean id="mapperBean" class="org.dozer.spring.DozerBeanMapperFactoryBean">
+    <property name="mappingFiles" value="classpath*:/*mapping.xml"/>
+  </bean>
+
+	<context:component-scan
+		base-package="org.cccnext.tesuto.content">
+		<context:exclude-filter type="regex"
+			expression="org.cccnext.tesuto.content.controller.*" />
+	   <context:exclude-filter type="regex"
+			expression="org.cccnext.tesuto.content.service.Assessment.*" />
+	   <context:exclude-filter type="regex"
+			expression="org.cccnext.tesuto.content.client.*" />
+	</context:component-scan>
+	<context:component-scan
+		base-package="org.cccnext.tesuto.importer.qti" >
+		<context:exclude-filter type="regex" expression="org.cccnext.tesuto.importer.qti.qa.*"/>
+	</context:component-scan>
+		<bean id="validationUtil" class="org.cccnext.tesuto.util.ValidationUtil">
+		<property name="useFullBranchRuleEvaluation" value="${full.branch.rule.evaluation:false}" />
+	</bean>
+
+	<bean id="importService"
+		class="org.cccnext.tesuto.importer.service.upload.ImportService"></bean>
+	<bean id="assessmentQtiImportService"
+		class="org.cccnext.tesuto.importer.qti.service.AssessmentQtiImportServiceImpl" />
+	<!-- Supporting beans -->
+	<bean id="jqtiExtensionManager"
+		class="uk.ac.ed.ph.jqtiplus.JqtiExtensionManager">
+		<constructor-arg>
+			<!-- this is a varargs param, so it has to be an empty list -->
+			<list>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- This is backed by a Map. Worry about memory leaks -->
+	<bean id="schemaCache"
+		class="uk.ac.ed.ph.jqtiplus.xmlutils.SimpleSchemaCache" />
+	<bean id="qtiXmlReader"
+		class="uk.ac.ed.ph.jqtiplus.reading.QtiXmlReader">
+		<constructor-arg ref="jqtiExtensionManager" />
+		<constructor-arg ref="schemaCache" />
+	</bean>
+	<bean id="qtiResourceLocator"
+		class="org.cccnext.tesuto.importer.qti.service.QtiResourceLocator" />
+	<bean id="zipFileExtractor"
+		class="org.cccnext.tesuto.domain.util.ZipFileExtractor" />
+	<bean id="simpleJqtiFacade"
+		class="uk.ac.ed.ph.jqtiplus.SimpleJqtiFacade" />
+	<bean id="qtiSerializer"
+		class="uk.ac.ed.ph.jqtiplus.serialization.QtiSerializer"
+		factory-bean="simpleJqtiFacade" factory-method="createQtiSerializer" />
+
+	
+
+	<bean id="validateStudentService"
+		class="org.cccnext.tesuto.importer.qti.test.ValidateStudentServiceStub" />
+
+
+	<bean id="staticStorage"
+		class="org.cccnext.tesuto.domain.util.LocalStorage" />
+	<bean id="qtiResourceFinder"
+		class="org.cccnext.tesuto.importer.qti.service.QtiResourceRelocator" />
+
+	<bean id="assessmentItemMapCache"
+		class="org.springframework.cache.concurrent.ConcurrentMapCache">
+		<constructor-arg value="assessmentItemCache" />
+	</bean>
+
+	<bean id="assessmentItemCacheDao"
+		class="org.cccnext.tesuto.importer.qti.test.AssessmentItemRepositoryStub">
+		<constructor-arg ref="assessmentItemMapCache" />
+	</bean>
+
+	<bean id="assessmentItemCacheService"
+		class="org.cccnext.tesuto.content.service.AssessmentItemServiceImpl">
+		<property name="assessmentItemRepository"
+			ref="assessmentItemCacheDao" />
+	</bean>
+
+	<bean id="assessmentMapCache"
+		class="org.springframework.cache.concurrent.ConcurrentMapCache">
+		<constructor-arg value="assessmentCache" />
+	</bean>
+
+	<bean id="assessmentCacheDao"
+		class="org.cccnext.tesuto.importer.qti.test.AssessmentRepositoryStub">
+		<constructor-arg ref="assessmentMapCache" />
+	</bean>
+
+	<bean id="assessmentAccessService"
+		class="org.cccnext.tesuto.importer.qti.test.AssessmentAccessServiceStub">
+	</bean>
+
+	<bean id="assessmentViewDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.view.assessment.AssessmentViewDtoAssemblerImpl" />
+
+	<bean id="assessmentCacheService"
+		class="org.cccnext.tesuto.content.service.AssessmentServiceImpl">
+		<property name="assessmentRepository"
+			ref="assessmentCacheDao" />
+		<property name="assessmentItemService"
+			ref="assessmentItemCacheService" />
+		<property name="assessmentAccessService"
+			ref="assessmentAccessService" />
+		<property name="assessmentViewDtoAssembler"
+			ref="assessmentViewDtoAssembler" />
+	</bean>
+	<bean id="resourceRelocatorEncoded"
+		class="org.cccnext.tesuto.importer.qti.service.QtiResourceRelocator">
+		<property name="staticStorage" ref="staticStorage" />
+	</bean>
+
+	<!-- These next 2 beans are just a way to format a java.util.Date object 
+		with Spring -->
+	<bean id="dateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="MM/dd/yyyy" />
+	</bean>
+	<bean id="date" factory-bean="dateFormat" factory-method="parse">
+		<constructor-arg value="09/25/2015" />
+	</bean>
+
+	<bean id="competencyImportService"
+		class="org.cccnext.tesuto.importer.service.competency.CompetencyImportServiceImpl" />
+
+	<bean id="networkHttpResourceLocator"
+		class="org.cccnext.tesuto.importer.service.upload.NetworkHttpResourceLocator" />
+
+	<bean id="classPathHttpResourceLocator"
+		class="org.cccnext.tesuto.importer.service.upload.ClasspathHttpResourceLocator" />
+
+<bean id="childExpressionEvaluationService" class="org.cccnext.tesuto.importer.qti.service.validate.ChildExpressionEvaluationServiceImport" />
+	<bean id="expressionEvaluationService" class="org.cccnext.tesuto.content.service.scoring.ExpressionEvaluationService">
+		<property name="childExpressionEvaluationService" ref="childExpressionEvaluationService" />
+	</bean>
+	<bean id="validateAssessmentService" class="org.cccnext.tesuto.importer.qti.service.validate.ValidateAssessmentServiceImpl" >
+		<property name="expressionEvaluationService" ref="expressionEvaluationService" />
+	</bean>
+	<bean id="validateAssessmentItemService" class="org.cccnext.tesuto.importer.qti.service.validate.ValidateAssessmentItemServiceImpl" />
+	<bean id="validateAssessmentMetadataService" class="org.cccnext.tesuto.importer.qti.service.validate.ValidateAssessmentMetadataServiceImpl" />
+	<bean id="validateItemMetadataService" class="org.cccnext.tesuto.importer.qti.service.validate.ValidateItemMetadataServiceImpl" />
+	<bean id="normalizeItemMetadataService" class="org.cccnext.tesuto.service.importer.normalize.NormalizeItemMetadataServiceImpl" />
+	<bean id="normalizeAssessmentItemService" class="org.cccnext.tesuto.service.importer.normalize.NormalizeAssessmentItemServiceImpl" />
+	<bean id="normalizeAssessmentMetadataService" class="org.cccnext.tesuto.service.importer.normalize.NormalizeAssessmentMetadataServiceImpl" />
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
+</beans>
+

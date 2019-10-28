@@ -1,0 +1,36 @@
+{
+    "taskSetId": "AFDD-SDFD-SDFD-FE09",
+    "tasks": [{
+        "taskId": "AFGY-JEMD-SKJD-JKSK",
+        "stimulus": "<p>This is an example of MathML rendered in the stimulus.</p><p>Take a look at the following equation:</p><p><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><mrow><mover accent=\"true\"><mrow><mo>&#x2207;</mo></mrow><mrow><mo>&#x2192;</mo></mrow></mover><mo>&#xD7;</mo><mover accent=\"true\"><mrow><mi>F</mi></mrow><mrow><mo>&#x2192;</mo></mrow></mover><mo>=</mo><mrow><mo>(</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>y</mi></mrow></mfrac><mo>&#x2212;</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>y</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>z</mi></mrow></mfrac><mo>)</mo></mrow><mstyle mathvariant=\"bold\" mathsize=\"normal\"><mrow><mi>i</mi></mrow></mstyle><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>x</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>z</mi></mrow></mfrac><mo>&#x2212;</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>z</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>x</mi></mrow></mfrac><mo>)</mo></mrow><mstyle mathvariant=\"bold\" mathsize=\"normal\"><mrow><mi>j</mi></mrow></mstyle><mo>+</mo><mrow><mo>(</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>y</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>x</mi></mrow></mfrac><mo>&#x2212;</mo><mfrac><mrow><mo>&#x2202;</mo><msub><mrow><mi>F</mi></mrow><mrow><mi>x</mi></mrow></msub></mrow><mrow><mo>&#x2202;</mo><mi>y</mi></mrow></mfrac><mo>)</mo></mrow><mstyle mathvariant=\"bold\" mathsize=\"normal\"><mrow><mi>k</mi></mrow></mstyle></mrow></math></p>",
+        "itemSessions": [
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                "itemSessionIndex": 18,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE1",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c85\"/>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c85",
+                        "responseIdentifier": "RESPONSE1",
+                        "type": "extendedTextInteraction",
+                        "expectedLines": 20,
+                        "minStrings": "3",
+                        "prompt": "What is this equation used for?"
+                    }]
+                }
+            }
+        ]
+    }]
+}

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.cccnext.tesuto</groupId>
+		<artifactId>tesuto</artifactId>
+		<version>2.2.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>tesuto-operational-data-store-service</artifactId>
+
+	<properties>
+		<jar.name>tesuto-operational-data-store-service</jar.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-lambda-java-core</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-ssm</artifactId>
+			<version>1.11.328</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-lambda-java-events</artifactId>
+			<version>1.3.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.amazonaws</groupId>
+					<artifactId>aws-java-sdk-dynamodb</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>io.symphonia</groupId>
+			<artifactId>lambda-logging</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-sqs-listener</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-operational-data-store</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-common-web</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-message</artifactId>
+			<version>${tesuto.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.data</groupId>
+					<artifactId>spring-data-commons</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework.data</groupId>
+					<artifactId>spring-data-jpa</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.postgresql</groupId>
+					<artifactId>postgresql</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.elasticmq</groupId>
+					<artifactId>elasticmq-rest-sqs_2.11</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.elasticmq</groupId>
+					<artifactId>elasticmq-server_2.11</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.elasticmq</groupId>
+					<artifactId>elasticmq-core_2.11</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-placement-view</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.mashape.unirest</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>1.4.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+	</dependencies>
+</project>

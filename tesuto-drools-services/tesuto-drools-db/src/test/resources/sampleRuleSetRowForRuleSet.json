@@ -1,0 +1,28 @@
+{
+	"id": "b2f8a596-caad-4f76-b689-3d3b7d358612",
+	"ruleId": "efbb69b1-c2ac-4d1c-a562-c991426827bb",
+	"application": "sns-listener",
+	"category": "mmap_placement_english",
+	"competencyMapDiscipline": "english",
+	"title": "Is Veteran",
+	"version": "",
+	"event":"event",
+	"family":"cccMisCode",
+	"description":"description",
+	"status":"draft",
+	"variableRows": [
+		{
+			"name": "variableRowName",
+			"variables": [
+				{
+					"name": "cccid",
+					"value": "AAA4444"
+				},
+				{
+					"name": "lower",
+					"value": "1.0"
+				}
+			]
+		}
+	]
+}

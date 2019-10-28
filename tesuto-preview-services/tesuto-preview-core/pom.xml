@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.cccnext.tesuto</groupId>
+		<artifactId>tesuto-preview-services</artifactId>
+		<version>2.2.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>tesuto-preview-core</artifactId>
+	<packaging>jar</packaging>
+
+	<name>tesuto-preview-core</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<jar.name>tesuto-preview-core</jar.name>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-qti-importer-core</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-delivery-core</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+
+		<dependency>
+            <groupId>org.cccnext.tesuto</groupId>
+            <artifactId>tesuto-test-dependencies</artifactId>
+            <version>${tesuto.version}</version>
+            <scope>test</scope>
+        </dependency>
+        		<dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <scope>test</scope>
+      </dependency>
+      
+	</dependencies>
+</project>

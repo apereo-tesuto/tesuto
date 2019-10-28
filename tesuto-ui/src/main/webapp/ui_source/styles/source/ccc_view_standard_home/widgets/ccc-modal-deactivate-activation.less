@@ -1,0 +1,56 @@
+ccc-modal-deactivate-activation {
+
+    ccc-activation-card {
+        width: 100%;
+        margin-bottom: 1em;
+
+        &:only-child {
+            margin-bottom: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .wrapper {
+            margin: 0;
+        }
+    }
+
+    ccc-student-user {
+        display: block;
+        padding: 0 0 1em 0;
+        border: 1px dotted #ddd;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        margin-bottom: 1em;
+
+        .name {
+            margin-bottom: 5px;
+        }
+
+        .last-name {
+            color: @blue3;
+        }
+
+        .ccc-user-data-items {
+            font-size: 85%;
+
+            .ccc-user-data-label {
+                text-transform: uppercase;
+                color: rgba(0, 0, 0, 0.6);
+                font-size: .8em;
+            }
+
+            div {
+                display: inline-block;
+                margin-right: 1.3em;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

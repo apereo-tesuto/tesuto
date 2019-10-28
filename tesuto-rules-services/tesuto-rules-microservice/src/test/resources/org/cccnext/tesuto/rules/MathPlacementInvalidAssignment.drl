@@ -1,0 +1,132 @@
+package net.ccctechcenter.drools
+
+import java.util.Map
+import java.util.List
+import java.util.ArrayList
+import org.ccctc.common.droolscommon.RulesAction
+
+import java.lang.Double
+import java.lang.String
+import java.util.stream.Collectors
+import org.cccnext.tesuto.rules.view.BasicStudentView
+import org.cccnext.tesuto.domain.multiplemeasures.VariableSet
+import org.cccnext.tesuto.domain.multiplemeasures.Fact
+import org.cccnext.tesuto.domain.multiplemeasures.PlacementComponentActionResult
+import function org.apache.commons.lang3.StringUtils.isBlank
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToString
+import function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement
+
+rule "Math Final:ef48effa-d358-472e-936f-eb102431b06a::9ccd8c83-f65c-4b1e-bafe-58bb443d04d0:1"
+when
+	map : Map()
+	student : BasicStudentView() from map.get("STUDENT_VIEW")
+	variableSet : VariableSet() from map.get("MULTIPLE_MEASURE_VARIABLE_SET")
+	facts : Map() from variableSet.facts
+	multipleMeasureVariableSetId: String() from variableSet.id
+	cum_gpa :  Double(this >= 3.6 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 4.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	collegeAssociations : Map( this.containsKey("${miscode}") ) from student.collegeStatuse
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	 PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	 placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea("${subject_area}");
+	placement.setCollegeId("${miscode}");
+	placement.setRuleSetId("${rule_set_id}");
+	placement.setRuleId("ef48effa-d358-472e-936f-eb102431b06a");
+	placement.setRowNumber("1");
+	placement.setRuleSetRowId("9ccd8c83-f65c-4b1e-bafe-58bb443d04d0");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_calc_i");
+	 placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Final:ef48effa-d358-472e-936f-eb102431b06a::9ccd8c83-f65c-4b1e-bafe-58bb443d04d0:2"
+when
+	map : Map()
+	student : BasicStudentView() from map.get("STUDENT_VIEW")
+	variableSet : VariableSet() from map.get("MULTIPLE_MEASURE_VARIABLE_SET")
+	facts : Map() from variableSet.facts
+	multipleMeasureVariableSetId: String() from variableSet.id
+	cum_gpa :  Double(this >= 3.2 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 5.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	collegeAssociations : Map( this.containsKey("${miscode}") ) from student.collegeStatuses
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	 PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	 placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea("${subject_area}");
+	placement.setCollegeId("${miscode}");
+	placement.setRuleSetId("${rule_set_id}");
+	placement.setRuleId("ef48effa-d358-472e-936f-eb102431b06a");
+	placement.setRowNumber("2");
+	placement.setRuleSetRowId("9ccd8c83-f65c-4b1e-bafe-58bb443d04d0");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_calc_i");
+	 placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Final:ef48effa-d358-472e-936f-eb102431b06a::9ccd8c83-f65c-4b1e-bafe-58bb443d04d0:3"
+when
+	map : Map()
+	student : BasicStudentView() from map.get("STUDENT_VIEW")
+	variableSet : VariableSet() from map.get("MULTIPLE_MEASURE_VARIABLE_SET")
+	facts : Map() from variableSet.facts
+	multipleMeasureVariableSetId: String() from variableSet.id
+	cum_gpa :  Double(this >= 3.4 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 2.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	collegeAssociations : Map( this.containsKey("${miscode}") ) from student.collegeStatuses
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	 PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	 placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea("${subject_area}");
+	placement.setCollegeId("${miscode}");
+	placement.setRuleSetId("${rule_set_id}");
+	placement.setRuleId("ef48effa-d358-472e-936f-eb102431b06a");
+	placement.setRowNumber("3");
+	placement.setRuleSetRowId("9ccd8c83-f65c-4b1e-bafe-58bb443d04d0");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_pre_calc");
+	 placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Final:ef48effa-d358-472e-936f-eb102431b06a::9ccd8c83-f65c-4b1e-bafe-58bb443d04d0:4"
+when
+	map : Map()
+	student : BasicStudentView() from map.get("STUDENT_VIEW")
+	variableSet : VariableSet() from map.get("MULTIPLE_MEASURE_VARIABLE_SET")
+	facts : Map() from variableSet.facts
+	multipleMeasureVariableSetId: String() from variableSet.id
+	cum_gpa :  Double(this >= 2.6 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 6) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	collegeAssociations : Map( this.containsKey("${miscode}") ) from student.collegeStatuses
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	 PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	 placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea("${subject_area}");
+	placement.setCollegeId("${miscode}");
+	placement.setRuleSetId("${rule_set_id}");
+	placement.setRuleId("ef48effa-d358-472e-936f-eb102431b06a");
+	placement.setRowNumber("4");
+	placement.setRuleSetRowId("9ccd8c83-f65c-4b1e-bafe-58bb443d04d0");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_pre_calc");
+	 placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end

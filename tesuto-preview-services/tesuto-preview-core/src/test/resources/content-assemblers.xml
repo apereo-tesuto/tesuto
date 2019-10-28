@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+						   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+						   http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+						   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+						   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+	
+	<bean id="inlineChoiceDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.interaction.AssessmentInlineChoiceDtoAssemblerImpl" />
+	<bean id="inlineChoiceInteractionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.interaction.AssessmentInlineChoiceInteractionDtoAssemblerImpl" />
+
+	<bean id="assessmentDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.assessment.AssessmentDtoAssemblerImpl" />
+	<bean id="metadataDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.assessment.metadata.AssessmentMetadataDtoAssemblerImpl" />
+	<bean id="deliveryTypeMetadataDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.assessment.metadata.DeliveryTypeMetadataDtoAssemblerImpl" />
+	<bean id="prerequisiteMetadataDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.assessment.metadata.PrerequisiteMetadataDtoAssemblerImpl" />
+	<bean id="sectionsMetadataDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.assessment.metadata.SectionMetadataDtoAssemblerImpl" />
+    <bean id="performanceRangeMetadataDtoAssembler"
+        class="org.cccnext.tesuto.content.assembler.assessment.metadata.PerformanceRangeMetadataDtoAssemblerImpl" />
+	<bean id="outcomeDeclarationDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.shared.AssessmentOutcomeDeclarationDtoAssemblerImpl" />
+	<bean id="defaultValueDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.AssessmentDefaultValueDtoAssemblerImpl" />
+	<bean id="outcomeProcessingDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.assessment.AssessmentOutcomeProcessingDtoAssemblerImpl" />
+	<bean id="assessmentPartDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.assessment.AssessmentPartDtoAssemblerImpl" />
+	<bean id="assessmentSectionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentSectionDtoAssemblerImpl" />
+	<bean id="assessmentItemDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.AssessmentItemDtoAssemblerImpl" />
+	<bean id="itemMetadataDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.metadata.ItemMetadataDtoAssemblerImpl" />
+	<bean id="competenciesItemMetadataDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.metadata.CompetenciesItemMetadataDtoAssemblerImpl" />
+	<bean id="competencyMapRefItemMetadataAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.metadata.CompetencyRefItemMetadataAssemblerImpl" />
+	<bean id="toolsItemMetadataDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.metadata.ToolsItemMetadataDtoAssemblerImpl" />
+	<bean id="responseVarDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.AssessmentResponseVarDtoAssemblerImpl" />
+	<bean id="correctResponseDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.AssessmentCorrectResponseDtoAssemblerImpl" />
+	<bean id="templateDeclarationDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.AssessmentTemplateDeclarationDtoAssemblerImpl" />
+	<bean id="templateProcessingDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.AssessmentTemplateProcessingDtoAssemblerImpl" />
+	<bean id="assessmentStimulusRefDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.AssessmentStimulusRefDtoAssemblerImpl" />
+	<bean id="responseProcessingDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.AssessmentResponseProcessingDtoAssemblerImpl" />
+	<bean id="interactionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.interaction.AssessmentInteractionDtoAssemblerImpl" />
+	<bean id="choiceInteractionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.interaction.AssessmentChoiceInteractionDtoAssemblerImpl" />
+	<bean id="simpleChoiceDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.interaction.AssessmentSimpleChoiceDtoAssemblerImpl" />
+	<bean id="textEntryInteractionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.interaction.AssessmentTextEntryInteractionDtoAssemblerImpl" />
+	<bean id="extendedTextInteractionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.interaction.AssessmentExtendedTextInteractionDtoAssemblerImpl" />
+	<bean id="assessmentMatchInteractionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.interaction.AssessmentMatchInteractionDtoAssemblerImpl" />
+	<bean id="assessmentSimpleMatchSetDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.interaction.AssessmentSimpleMatchSetDtoAssemblerImpl" />
+	<bean id="assessmentSimpleAssociableChoiceDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.interaction.AssessmentSimpleAssociableChoiceDtoAssemblerImpl" />
+	<bean id="itemSessionControlDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentItemSessionControlDtoAssemblerImpl" />
+	<bean id="orderingDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentOrderingDtoAssemblerImpl" />
+	<bean id="preconditionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentPreconditionDtoAssemblerImpl" />
+	<bean id="rubricBlockDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentRubricBlockDtoAssemblerImpl" />
+	<bean id="selectionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentSelectionDtoAssemblerImpl" />
+	<bean id="branchRuleDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentBranchRuleDtoAssemblerImpl" />
+	<bean id="parentExpressionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentParentExpressionDtoAssemblerImpl" />
+	<bean id="childExpressionDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentChildExpressionDtoAssemblerImpl" />
+	<bean id="assessmentItemRefDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentItemRefDtoAssemblerImpl" />
+	<bean id="assessmentComponentDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.section.AssessmentComponentDtoAssemblerImpl" />
+	<bean id="competencyRefDtoAssembler" class="org.cccnext.tesuto.content.assembler.competency.CompetencyRefDtoAssembler" />
+	
+	<bean id="componentDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.competency.CompetencyDtoAssemblerImpl" />
+	<bean id="componentMapDtoAssembler"
+		  class="org.cccnext.tesuto.content.assembler.competency.CompetencyMapDtoAssemblerImpl" />
+	<bean id="componentMapDisciplineDtoAssembler"
+		  class="org.cccnext.tesuto.content.assembler.competency.CompetencyMapDisciplineDtoAssemblerImpl" />
+	<bean id="AssessmentItemResponseMappingDtoAssembler"
+		class="org.cccnext.tesuto.content.assembler.item.AssessmentItemResponseMappingDtoAssemblerImpl" />
+	<bean id="overallPerformanceMetadataDtoAssembler"
+		  class="org.cccnext.tesuto.content.assembler.assessment.metadata.OverallPerformanceMetadataDtoAssemblerImpl" />
+	<bean id="competencyCategoryMetadataDtoAssembler"
+		  class="org.cccnext.tesuto.content.assembler.assessment.metadata.CompetencyCategoryMetadataDtoAssemblerImpl" />
+	<bean id="competencyPerformanceMetadataDtoAssembler"
+		  class="org.cccnext.tesuto.content.assembler.assessment.metadata.CompetencyPerformanceMetadataDtoAssemblerImpl" />
+	
+	
+	<!-- These next 2 beans are just a way to format a java.util.Date object 
+		with Spring -->
+		
+  
+
+	<bean id="dateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="MM/dd/yyyy" />
+	</bean>
+	<bean id="date" factory-bean="dateFormat" factory-method="parse">
+		<constructor-arg value="09/25/2015" />
+	</bean>
+
+</beans>

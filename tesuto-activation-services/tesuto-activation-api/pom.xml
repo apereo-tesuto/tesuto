@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.cccnext.tesuto</groupId>
+		<artifactId>tesuto-activation-services</artifactId>
+		<version>2.2.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>tesuto-activation-api</artifactId>
+	<packaging>jar</packaging>
+
+	<name>tesuto-activation-api</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<jar.name>tesuto-activation-api</jar.name>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-content-domain</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-delivery-api</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-admin-domain</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-test-dependencies</artifactId>
+			<version>${tesuto.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

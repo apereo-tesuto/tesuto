@@ -1,0 +1,27 @@
+{
+	"id": "6774c572-10dc-413c-bfef-6a70af5577d7",
+	"ruleId": "efbb69b1-c2ac-4d1c-a562-c991426827bz",
+	"application": "sns-listener",
+	"category": "mmap_placement_english",
+	"competencyMapDiscipline": "english",
+	"title": "Is Veteran",
+	"version": "1",
+	"event": "event",
+	"description": "description",
+	"status":"draft",
+	"variableRows": [
+		{
+			"name": "variableRowName",
+			"variables": [
+				{
+					"name": "cccid",
+					"value": "AAA4444"
+				},
+				{
+					"name": "lower",
+					"value": "1.0"
+				}
+			]
+		}
+	]
+}

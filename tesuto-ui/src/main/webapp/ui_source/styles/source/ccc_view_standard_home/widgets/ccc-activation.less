@@ -1,0 +1,134 @@
+@status-green: #1e681e;
+@status-gray: #666;
+@status-orange: #f0ad4e;
+
+ccc-activation {
+
+    display: block;
+    width: 100%;
+
+    &.clickable {
+        &:hover, &:focus {
+            .ccc-activation-inner {
+                box-shadow: 0 0 12px @brand-primary;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                cursor: pointer;
+                transform: scale(1.025);
+            }
+        }
+        &:active {
+            .ccc-activation-inner {
+                box-shadow: 0 0 5px @brand-primary;
+            }
+        }
+    }
+
+    .ccc-activation-inner {
+
+        position: relative;
+        padding: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+
+        .border-radius(3px);
+
+        .ccc-activation-status {
+
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 18px;
+            height: 100%;
+
+            .border-radius(2px);
+            -webkit-border-top-right-radius: 0px;
+            -webkit-border-bottom-right-radius: 0px;
+            -moz-border-radius-topright: 0px;
+            -moz-border-radius-bottomright: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+
+            i {
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-size: 10px;
+                margin-left: -5px;
+                margin-top: -5px;
+            }
+        }
+
+        &.status-in-progress {
+            .ccc-activation-status {
+                background: @brand-warning;
+            }
+        }
+        &.status-paused {
+            .ccc-activation-status {
+                background: @brand-warning;
+            }
+        }
+        &.status-complete {
+            .ccc-activation-status {
+                background: @brand-success;
+            }
+        }
+        &.status-ready {
+            .ccc-activation-status {
+                background: @brand-primary;
+                i {
+                    margin-left: -4px;
+                }
+            }
+        }
+        &.status-incomplete,
+        &.status-expired {
+            .ccc-activation-status {
+                background: @status-gray;
+                i {
+                    margin-left: -4px;
+                }
+            }
+        }
+
+        .ccc-activation-details {
+            padding-left: 25px;
+
+            .ccc-activation-details-student {
+                position: relative;
+                max-width: 100%;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow-x: hidden;
+                overflow-y: hidden;
+
+                .text-fade {
+                    top: 0;
+                }
+
+                ccc-user-name {
+
+                    .last-name {
+                        font-size: 1.1em;
+                        font-weight: 600;
+                    }
+                }
+            }
+            .ccc-activation-details-cccid {
+                font-size: 80%;
+            }
+            .print {
+                position: absolute;
+                bottom: .45em;
+                right: 1em;
+                padding: 0;
+            }
+            .text {
+                text-transform: capitalize;
+            }
+        }
+
+    }
+
+}

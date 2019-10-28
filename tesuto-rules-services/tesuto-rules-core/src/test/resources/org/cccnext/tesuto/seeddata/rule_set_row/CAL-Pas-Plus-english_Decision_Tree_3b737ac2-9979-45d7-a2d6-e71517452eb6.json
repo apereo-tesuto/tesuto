@@ -1,0 +1,318 @@
+{
+	"id": "3b737ac2-9979-45d7-a2d6-e71517452eb6",
+	"family": "SYS",
+	"engine": "tesuto",
+	"version": "1",
+	"title": "Statewide MMAP English Decision Logic",
+	"status": "published",
+	"event": "MULTIPLE_MEASURE_PLACEMENT",
+	"category": "mmComponentPlacementLogic",
+	"competencyMapDiscipline": "ENGLISH",
+	"description": "<p>Execute the statewide MMAP English decision logic to generate the Multiple Measures, High School Transcript based placement component</p>",
+	"ruleId": "8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3",
+	"variableRows": [
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.6"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.3"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "transfer_level",
+					"value": "A"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "1"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "1.4"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "transfer_level",
+					"value": "C"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "3"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.6"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.2"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "transfer_level",
+					"value": "A"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "1"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "english",
+					"value": "2"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "1.8"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "english",
+					"value": "1"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "1.8"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "cst",
+					"value": "288"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "1.7"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "transfer_level",
+					"value": "C"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "3"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "1.5"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "transfer_level",
+					"value": "C"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "3"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		}
+	],
+	"validationCsv": "fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result\ncst,grade_level,gpa_cum,ap_any,english,cst_english,english_ap,pre_alg,pre_alg_ap,alg_i,alg_i_ap,alg_ii,geo,geo_ap,trig_ap,pre_calc,calc,calc_ap,stat,stat_ap,cccid,miscode,competencymapdiscipline,subjectArea,program,transferLevel,levelsBelowTransfer,rowNumber,ruleSetId,ruleSetRowId,ruleId,trackingId,dataSource,dataSourceType,dataSourceDate,standAlonePlacement,insufficeintData\n,11,2.6,,,,,,,,,,,,,,,,,,A123456,test_college_id,ENGLISH,test_subject_area,English,Y,0,1,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false\n,11,2.3,,,,,,,,,,,,,,,,,,A123456,test_college_id,ENGLISH,test_subject_area,English,A,1,2,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false\n,11,2,,,,,,,,,,,,,,,,,,A123456,test_college_id,ENGLISH,test_subject_area,English,B,2,3,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false\n,11,1.4,,,,,,,,,,,,,,,,,,A123456,test_college_id,ENGLISH,test_subject_area,English,C,3,4,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false\n,12,2.6,,,,,,,,,,,,,,,,,,A123456,test_college_id,ENGLISH,test_subject_area,English,Y,0,5,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false\n,12,2.2,,2,,,,,,,,,,,,,,,,A123456,test_college_id,ENGLISH,test_subject_area,English,A,1,6,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false\n,12,1.8,,1,,,,,,,,,,,,,,,,A123456,test_college_id,ENGLISH,test_subject_area,English,B,2,7,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false\n288,12,1.8,,,,,,,,,,,,,,,,,,A123456,test_college_id,ENGLISH,test_subject_area,English,B,2,8,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false\n,12,1.7,,,,,,,,,,,,,,,,,,A123456,test_college_id,ENGLISH,test_subject_area,English,C,3,9,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false\n,12,1.5,,,,,,,,,,,,,,,,,,A123456,test_college_id,ENGLISH,test_subject_area,English,C,3,10,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false"
+}

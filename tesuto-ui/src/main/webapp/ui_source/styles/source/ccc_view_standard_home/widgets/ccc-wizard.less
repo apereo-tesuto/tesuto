@@ -1,0 +1,55 @@
+ccc-wizard {
+
+    .form-body {}
+
+    .ccc-wizard-step {
+
+        position: relative;
+        display: block;
+
+        opacity: 1.0;
+
+        right: 0px;
+
+        &.ng-enter {
+            .transition-properties(0.4s @ccc-cubic all);
+        }
+
+        &.ng-leave {
+            .transition-properties(0s @ccc-cubic all);
+            opacity: 0.0;
+        }
+    }
+
+    &.ccc-wizard-direction-right {
+
+        .ccc-wizard-step {
+
+            &.ng-enter {
+                opacity: 0;
+                right: -60px;
+
+                &.ng-enter-active {
+                    right: 0px;
+                    opacity: 1.0;
+                }
+            }
+        }
+    }
+
+    &.ccc-wizard-direction-left {
+
+        .ccc-wizard-step {
+
+            &.ng-enter {
+                opacity: 0;
+                right: 60px;
+
+                &.ng-enter-active {
+                    right: 0px;
+                    opacity: 1.0;
+                }
+            }
+        }
+    }
+}

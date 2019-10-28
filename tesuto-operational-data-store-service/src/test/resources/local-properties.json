@@ -1,0 +1,24 @@
+{
+    "studentMultipleMeasuresTable" : "student-multiple-measures",
+    "variableSetTable" : "variable-set",
+    "self.reported.allowed" : true,
+    "cal.pass.allowed" : true,
+    "calpas_client_id" : "remote",
+    "calpas_grant_type" : "password",
+    "calpas_password" : "9sQLVw0%w122",
+    "calpas_resource_url" : "remote",
+    "calpas_scope" : "api",
+    "calpas_token_url" : "https://oauth.calpassplus.org/connect/token",
+    "calpas_resource_url" : "https://mmap.calpassplus.org/api/placement/",
+    "calpas_username" : "jstanley",
+    "cloud.aws.region.static" : "us-west-2",
+    "aws.endpoint" :  "http://localhost:8000",
+    "aws.messages.endpoint" : "https://sqs.us-west-2.amazonaws.com/",
+    "messages.region.name" : "us-west-2",
+    "aws_multiple_measure_request_queue_url" : "http://localhost:9324/queue/multiple-measure-requested",
+    "openid.client.id" : "assess_api",
+    "openid.client.secret" : "LDiVp9r6o3BHwi9mCd1hHQpbyRespB_HeqWlJYC8JsFjcksJ0pzfrIW0REky3zTersHfBZ7dxcPU1W9L9EOhGA" ,
+    "openid.base.endpoint" : "http://login.ci.cccmypath.org/f/",
+    "placement.request.service.url" : "http://localhost:8081/placement-service/service/v1/placement-request"
+}
+

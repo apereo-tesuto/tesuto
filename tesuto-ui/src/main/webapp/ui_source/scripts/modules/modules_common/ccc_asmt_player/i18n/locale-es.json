@@ -1,0 +1,36 @@
+{
+    "CCC_PLAYER": {
+
+        "CONTROLS": {
+            "NEXT": {
+                "BUTTON": "Siguiente",
+                "TOOLTIP": "navegar a la siguiente tarea"
+            },
+            "NEXT": {
+                "BUTTON": "Marcar",
+                "TOOLTIP": "Obtener Marcar para la tarea"
+            },
+            "PREV": {
+                "BUTTON": "Anterior",
+                "TOOLTIP": "navegar a la tarea anterior"
+            },
+            "PAUSE": {
+                "BUTTON": "Pausa",
+                "TOOLTIP": "hacer una pausa en la evaluación"
+            },
+            "TOOLS": {
+                "BUTTON": "Herramientas",
+                "TOOLTIP": "herramientas para esta evaluación"
+            },
+            "STUDENT_OPTIONS": {
+                "TOOLTIP": "opciones para estudiantes"
+            }
+        },
+
+        "PARTS": {
+            "PRE": "Este artículo tiene",
+            "POST": "{PARTS, plural, one {parte} other {partes}}"
+        }
+
+    }
+}

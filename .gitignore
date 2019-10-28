@@ -21,3 +21,94 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Maven build binaries
+target/
+tesuto-web/overlays
+**/pom.xml.versionsBackup
+
+# Runtime generated
+log/
+logs/
+**/tesuto*.log
+**/tesuto*.log*
+**/cccassess*.log
+**/cccassess*.log*
+tesuto-local-resources
+/tesuto-reports/downloaded-reports/
+
+# Eclipse generated structures
+.settings/
+.classpath
+.project
+.fact
+bin/
+.factorypath
+
+# Intellij generated structures
+.idea
+*.iml
+
+# Mac OSX files
+.DS_Store
+
+# VS Code Artifacts
+**/.vscode/*
+**/!.vscode/settings.json
+**/!.vscode/tasks.json
+**/!.vscode/launch.json
+**/!.vscode/extensions.json
+
+# UI Artifacts
+npm-debug.log
+/tesuto-web/src/main/resources/static/ui/scripts
+/tesuto-web/src/main/resources/static/ui/styles
+/tesuto-web/src/main/webapp/node
+/tesuto-web/src/main/webapp/node_modules
+/tesuto-web/src/main/resources/static/node
+/tesuto-ui/src/main/resources/static/ui/scripts
+/tesuto-ui/src/main/resources/static/ui/styles
+/tesuto-ui/src/main/webapp/node
+/tesuto-ui/src/main/webapp/node_modules
+/tesuto-ui/src/main/resources/static/node
+npm-debug.log
+/tesuto-web/src/main/webapp/ui_source/**/templateCache.js
+
+# Internationalized CSV KeyPhrase file ( generated to share with business )
+**/i18nCOPY.csv
+
+# UI Testing
+/tesuto-web/src/test/node_modules
+/tesuto-web/src/test/coverage
+/tesuto-ui/src/test/node_modules
+/tesuto-ui/src/test/coverage
+
+# Jenkins generated directories
+.repository/
+artifacts/
+
+# UI Development environment.json file to customize watches
+tesuto-web/src/main/webapp/environment.json
+tesuto-ui/src/main/webapp/environment.json
+
+# Dynamic JSPs generated during UI build
+/tesuto-web/src/main/webapp/dynamic
+/tesuto-web/src/main/webapp/WEB-INF/common/dynamic/
+/tesuto-web/src/main/resources/META-INF/resources/WEB-INF/common/dynamic/
+/tesuto-ui/src/main/webapp/dynamic
+/tesuto-ui/src/main/webapp/WEB-INF/common/dynamic/
+/tesuto-ui/src/main/resources/META-INF/resources/WEB-INF/common/dynamic/
+
+/tesuto-rules-services/tesuto-rules-core/src/test/resources/org/cccnext/tesuto/results
+
+# Database dump
+**/dump.rdb
+
+# vi undo files
+*.un~
+
+# Docker files
+Dockerfile.dev
+Dockerfile.bak
+VERSION.dev
+/includes/opt/ccc/tesuto-ui.jar

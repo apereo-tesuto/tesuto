@@ -1,0 +1,286 @@
+.ccc-user { // to reduce CSS size we avoided doing ccc-student-user, ccc-system-user {} <-- so we add a class instead
+
+    font-family: 'Open Sans', sans-serif;
+
+    display: block;
+    width: 100%;
+    border-left: 10px solid white;
+    overflow: hidden;
+    padding: 15px 10px;
+    position: relative;
+
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-left: 10px solid rgba(0, 0, 0, 0.125);
+    background-color: #fff;
+
+    .border-radius(1px);
+
+    &.clickable {
+        &:hover, &:focus {
+            border: 1px solid @brand-primary;
+            border-left: 10px solid @brand-primary;
+            box-shadow: 0px 0px 4px rgba(0,0,0, 0.4);
+            cursor: pointer;
+        }
+        &:active {
+            border: 1px solid darken(@brand-primary, 20%);
+            border-left: 10px solid darken(@brand-primary, 20%);
+            box-shadow: none;
+        }
+    }
+
+    &.ccc-user-as-header {
+
+        padding: 20px 15px;
+        font-size: 130%;
+
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-left: 10px solid rgba(0, 0, 0, 0.125);
+
+        .identity {
+            .name {
+                .text-fade {
+                    height: 36px;
+                }
+            }
+        }
+    }
+
+    &.ccc-student-user {
+        display: block;
+        margin-bottom: 1em;
+        border: 2px solid white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        font-size: 120%;
+        padding: 0;
+        width: 100%;
+        .border-radius(5px);
+
+        .identity {
+
+            .name {
+                background: @blueDark;
+                padding: 5px .5em;
+                color: #fff;
+                white-space: normal;
+                word-break: break-word;
+                .border-radiuses(3px, 0, 0, 3px);
+
+                .last-name {
+                    color: inherit;
+                }
+            }
+            .text-fade {
+                display: none;
+            }
+            .ccc-user-data-items {
+                padding: .5em 0 0 1em;
+                margin-bottom: .75em;
+
+                .ccc-user-data-label {
+                    color: rgba(0, 0, 0, 0.6);
+                    font-size: 0.7em;
+                    text-transform: uppercase;
+                }
+                .ccc-user-data-value {
+                    font-size: .85em;
+                    margin-right: 2em;
+                    word-wrap: break-word;
+                }
+            }
+        }
+    }
+
+    .identity {
+
+        .name {
+
+            font-size: 160%;
+            line-height: 160%;
+            font-weight: 300;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+            margin-bottom: 0px;
+
+            .last-name {
+                color: @blue;
+                font-weight: 600;
+            }
+
+            .text-fade {
+                height: 28px;
+            }
+        }
+
+        .ccc-user-data-items {
+
+            display: block;
+            font-size: 90%;
+            white-space: normal;
+            word-wrap: break-word;
+
+            .ccc-user-data-label {
+                color: rgba(0, 0, 0, 0.6);
+                font-size: 85%;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .badges {
+
+        position: absolute;
+        top: 3px;
+        left: 20px;
+
+        .badge {
+            border-radius: 0;
+        }
+    }
+}
+
+.user-list {
+    margin: 0px;
+    padding: 0px;
+    li {
+        list-style: none;
+    }
+    &.row {
+        margin: 0px -15px 0px -15px;
+    }
+}
+
+.user-list.concise {
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    ccc-user {
+        border: 1px solid fade(black, 10%);
+        padding: 0.5rem;
+        .clearfix();
+        .border-radius(5px);
+
+        img {
+            float: left;
+            margin-right: 1rem;
+            width: 15%;
+            overflow: hidden;
+            .border-radius(5px);
+        }
+
+        .roles {
+            font-size: 0.8em;
+            font-style: italic;
+            margin: 0;
+        }
+    }
+}
+
+.user-table {
+
+    .options {
+
+        a {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+    }
+}
+
+.roles {
+    margin-bottom: 2rem;
+
+    h3 {
+        margin: 0 0 1rem 0;
+    }
+}
+
+@media (max-width: @screen-md-max) {
+    ccc-user {
+        &.ccc-user-as-header {
+
+            font-size: 120%;
+            padding: 10px 15px;
+
+            .identity {
+                .name {
+                    .text-fade {
+                        height: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Extra small devices (phones, 768px and less)
+@media (min-width: 580px) {
+    .user-list.concise {
+
+        li {
+            .clearfix;
+            margin-bottom: 10px;
+        }
+
+        ccc-user {
+            padding: 1rem;
+
+            img {
+                width: 20%;
+            }
+        }
+    }
+}
+
+// Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+
+    ccc-user-badge {
+
+        .avatar {
+            float: left;
+            margin-bottom: 0;
+        }
+    }
+
+    ccc-user-badge.small {
+
+        .avatar {
+            height: 75px;
+            width: 75px;
+
+            img {
+                max-height: 75px;
+            }
+        }
+
+        .user-name,
+        .colleges,
+        .id {
+            margin-left: 85px;
+        }
+    }
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) {
+
+    .user-list.concise {
+
+        li:nth-child(7),
+        li:nth-child(8) {
+            display: block;
+        }
+
+        ccc-user {
+
+            img {
+                width: 25%;
+            }
+        }
+    }
+}

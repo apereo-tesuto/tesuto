@@ -1,0 +1,55 @@
+# Docker build:
+# make build
+# Docker image tag
+# make tag TAG=2.1.0-SNAPSHOT
+# docker run --name tesuto-router --net=host -it --rm -p 8443:8443 docker.dev.ccctechcenter.org/tesuto-router:2.1.0-SNAPSHOT
+# Note that the container ID can be used if the image is not tagged.
+# docker run --name tesuto-ui --net=host -it --rm -p 8080:8080 -p 8444:8444 464a126691ec
+# docker run --name tesuto-ui --net=host -it --rm -p 8080:8080 -p 8444:8444 docker.dev.ccctechcenter.org/tesuto-ui:2.1.0-SNAPSHOT
+# docker run --name tesuto-placement --net=host -it --rm -p 8081:8081 -p 8445:8445 docker.dev.ccctechcenter.org/tesuto-placement:2.1.0-SNAPSHOT
+# docker run --name tesuto-rules --net=host -it --rm -v $HOME/.aws:/root/.aws -p 8086:8086 -p 8446:8446 docker.dev.ccctechcenter.org/tesuto-rules:2.1.0-SNAPSHOT
+
+tesuto-router:
+  image: docker.dev.ccctechcenter.org/tesuto-router:2.1.0-SNAPSHOT
+  container_name: tesuto-router
+  ports:
+    - 8443:8443
+  net: host
+
+tesuto-ui:
+  image: docker.dev.ccctechcenter.org/tesuto-ui:2.1.0-SNAPSHOT
+  container_name: tesuto-ui
+  ports:
+    - 8080:8080
+    - 8444:8444
+# Uncomment to enable remote debugging and JVM inspection with JMX
+#    - 10000:10000
+#    - 10001:10001
+#    - 1099:1099
+  net: host
+
+tesuto-placement:
+  image: docker.dev.ccctechcenter.org/tesuto-placement:2.1.0-SNAPSHOT
+  container_name: tesuto-placement
+  ports:
+    - 8081:8081
+    - 8445:8445
+# Uncomment to enable remote debugging and JVM inspection with JMX
+#    - 10000:10000
+#    - 10001:10001
+#    - 1099:1099
+  net: host
+
+tesuto-rules:
+  image: docker.dev.ccctechcenter.org/tesuto-rules:2.1.0-SNAPSHOT
+  container_name: tesuto-rules
+  volumes:
+    - ~/.aws:/root/.aws
+  ports:
+    - 8086:8086
+    - 8446:8446
+# Uncomment to enable remote debugging and JVM inspection with JMX
+#    - 10000:10000
+#    - 10001:10001
+#    - 1099:1099
+  net: host

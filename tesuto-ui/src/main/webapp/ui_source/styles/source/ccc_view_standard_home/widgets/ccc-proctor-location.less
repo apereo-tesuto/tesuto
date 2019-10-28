@@ -1,0 +1,58 @@
+ccc-proctor-location {
+
+    .ccc-proctor-location-create-activation {
+        margin-right: 10px;
+    }
+
+    ccc-locations-list {
+
+        button {
+            overflow: hidden;
+            max-width: 600px;
+            text-overflow: ellipsis;
+            padding-right: 25px !important;
+            margin-right: 10px !important;
+
+            @media (max-width: @screen-md-min) {
+                max-width: 500px;
+            }
+            @media (max-width: @screen-sm-min) {
+                max-width: none;
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .caret {
+            position: absolute;
+            right: 10px;
+            top: 15px;
+        }
+    }
+
+    .ccc-proctor-location-date-filter {
+
+        .dropdown-menu {
+
+            li.selected {
+                text-decoration: none;
+                a {
+                    color: #fff;
+                    background: @brand-primary;
+                }
+
+                &:hover,
+                &:focus {
+                    a {
+                        background: @brand-primary;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: @screen-sm-min) {
+            display: block;
+            min-height: 35px;
+        }
+    }
+}

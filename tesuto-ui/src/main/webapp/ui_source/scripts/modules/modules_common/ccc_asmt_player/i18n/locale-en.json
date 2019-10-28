@@ -1,0 +1,117 @@
+{
+    "CCC_PLAYER": {
+
+        "CONTROLS": {
+            "NEXT": {
+                "BUTTON": "Next",
+                "TOOLTIP": "goto next assessment task"
+            },
+            "SCORE": {
+                "BUTTON": "Show Scores",
+                "TOOLTIP": "see current score for current task"
+            },
+            "SUBMIT": {
+                "BUTTON": "Submit",
+                "TOOLTIP": "submit your assessment"
+            },
+            "PREV": {
+                "BUTTON": "Previous",
+                "TOOLTIP": "goto previous assessment task"
+            },
+            "PAUSE": {
+                "BUTTON": "Pause",
+                "TOOLTIP": "pause assessment"
+            },
+            "TOOLS": {
+                "BUTTON": "Tools",
+                "TOOLTIP": "tools for this assessment"
+            },
+            "ASSESSMENT_OPTIONS": {
+                "BUTTON": "Assessment Options",
+                "SETTINGS": "Settings",
+                "EXIT": "Quit"
+            }
+        },
+
+        "MODAL_BUTTONS": {
+            "OKAY": "Okay",
+            "CANCEL": "Cancel"
+        },
+
+        "PARTS": {
+            "PRE": "This task has",
+            "POST": "{PARTS, plural, one {part} other {parts}}"
+        },
+
+        "NAVIGATION": {
+            "HEADER": "Assessment Navigation"
+        },
+
+        "VALIDATION": {
+            "WARNING_MODAL": {
+                "TITLE": "Validation errors are present",
+                "BODY": "Oops it looks like you forgot something. You can stay and make some changes or move on. What would you like to do?",
+                "BUTTON_CANCEL": "Stay on this task",
+                "BUTTON_CONFIRM": "Go to the NEXT Task",
+                "BODY_FORCE_STAY": "Oops it looks like there is an issue with one of your inputs. Please see the highlighted fields to resolve the issue.",
+                "BUTTON_FORCE_STAY": "Okay"
+            }
+        },
+
+        "STUDENT_OPTIONS": {
+            "HEADER": "Assessment Settings",
+            "ZOOM": {
+                "HEADER": "Zoom"
+            },
+            "COLOR": {
+                "HEADER": "Color"
+            },
+            "MATH": {
+                "HEADER": "Math",
+                "RENDERER": {
+                    "TITLE": "Render math using MathML",
+                    "DESCRIPTION": "WARNING. This should only be checked if you require the use of assistive technologies. Question may not display correctly if you select this setting."
+                }
+            }
+        },
+
+        "TOOLS": {
+            "DICTIONARY": "Dictionary",
+            "CALCULATOR": "Calculator",
+            "NOTEPAD": "Notepad"
+        },
+
+        "PROGRESS": {
+            "WARNING_MODAL": {
+                "TITLE": "Server Error",
+                "BODY": "Oh no! There was an issue saving. Try clicking Next again and if the problem persists notify the proctor.",
+                "BUTTON_OKAY": "Okay"
+            }
+        },
+
+        "SERVER_ERROR_MODAL": {
+            "TITLE": "Server Error",
+            "BODY": "Oh no! There was an unexpected server issue. If the issue persists, please let your proctor know."
+        },
+
+        "SERVER_SYNC_ERROR": {
+            "MODAL": {
+                "TITLE": "Oops! There was an error saving this item.",
+                "BODY": "We were unable to save your progress for this item.  Reloading the item will likely solve this problem, but you will need to reselect your response.",
+                "BUTTON_CANCEL": "Cancel",
+                "BUTTON_OKAY": "Reload Current Item"
+            }
+        },
+
+        "PAUSE_MODAL": {
+            "TITLE": "Pause Your Assessment Session?",
+            "BODY": "You are about to end your assessment session. Please notify the proctor when you are ready to resume.",
+            "BUTTON_OKAY": "End Session"
+        },
+
+        "SERVER_ERRORS": {
+            "NOT_FOUND_TITLE": "Not Found",
+            "NOT_FOUND": "Oops! A resource you were looking for could not be found. If this issue persists, please let your proctor know."
+        }
+    }
+}

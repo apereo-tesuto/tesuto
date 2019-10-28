@@ -1,0 +1,114 @@
+{
+    "CCC_STUDENT": {
+        "CCC_STUDENT_TEST_RESULTS": {
+            "EXPLAIN": "Assessment results are determined by competency associated with the institution developing the examination",
+            "RESULTS_ERROR": "Unfortunately your test results are not available at this time. Please see a counselor if you have any questions.",
+            "TITLE": {
+                "OVERALL": "Overall Performance",
+                "CATEGORY": "Performance by category",
+                "TYPICALLY": "Students with this performance typically:"
+            }
+        },
+        "CCC-WORKFLOW-STUDENT-HELP": {
+            "PAGE_TITLES": {
+                "HELP": "Help"
+            }
+        },
+        "PAGE_TITLES": {
+            "HOME": "Tesuto Student Home",
+            "ACTIVATION_STATUS": "Assessment Activation Status",
+            "HELP": "Help"
+        },
+        "GLOBAL_OPTIONS": {
+            "TITLE": "Student Options"
+        },
+        "WORKFLOW": {
+            "STUDENT_DASHBOARD": {
+                "MY_ASSESSMENTS": "My Assessments",
+                "BREADCRUMB": {
+                    "BACK": "Back"
+                },
+                "GENERAL_INSTRUCTIONS": "General Instructions",
+                "COLLEGE_SELECTION": "Select A College",
+                "COLLEGE_SELECTION_BREADCRUMB": "Select a College",
+                "STUDENT_PLACEMENT": "Student Placement",
+                "STUDENT_PLACEMENT_BREADCRUMB": "Student Placement",
+                "UPCOMING_MODAL": {
+                    "TITLE": "Future Assessment",
+                    "MESSAGE": "Whoops, this assessment isn't ready yet. It can be started {{ fromTime }}."
+                },
+                "TEST_RESULTS": "Test Results"
+            }
+        },
+        "CCC-STUDENT-TEST-RESULTS-VIEW": {
+            "ERROR_TITLE": "Yikes! There was a problem retrieving your test results.",
+            "ERROR_MESSAGE": "Contact a counselor for help getting your results."
+        },
+        "ACTIVATIONS": {
+            "ACTIVE": "Active Assessments",
+            "ACTIVE_HELP": "You can take these assessments, as long as you are in a proctored location.",
+            "COMPLETE": "Completed Assessments",
+            "COMPLETE_HELP": "You have finished these assessments and can view the results and corresponding college placements.",
+            "INACTIVE": "Inactive Assessments",
+            "INACTIVE_HELP": "These assessments are no longer active and were not completed.",
+            "NO_ACTIVATIONS": "You don't have any assigned assessments. Think you should have one? Ask your proctor.",
+            "NO_COLLEGE_PLACEMENTS": "There are no placements ready. If you think there is an issue please talk with a counselor.",
+            "NO_ASSESSMENTS": "You have not completed any assessments yet.",
+            "LABEL": {
+                "READY": "Ready",
+                "IN_PROGRESS": "In Progress",
+                "COMPLETE": "Complete",
+                "DEACTIVATED": "Deactivated"
+            },
+            "MY_PLACEMENTS": "My Placements",
+            "MY_PLACEMENTS_HELP": "Course placements by Open Apereo Demo.",
+            "EXPIRES_IN": "Expires in",
+            "COMPLETED": "Completed",
+            "DEACTIVATED": "Deactivated",
+            "PROCTOR_CODE": {
+                "TITLE": "Passcode Required",
+                "ALERT": "A proctor-provided passcode must be entered to continue. Please notify the proctor if you do not have a passcode.",
+                "VALIDATION_CODE": "Passcode",
+                "ENTER_CODE": "Enter Passcode",
+                "ERROR_REQUIRED": "Proctor passcode is required.",
+                "ERROR_INVALID": "Invalid passcode. Please try again or ask the proctor for assistance.",
+                "ERROR_ACTIVATIONLOCKED": "Too many invalid passcode attempts have been made, which appears suspicious. To prevent unauthorized access, this assessment has been locked for 3 minutes. Please try again later. Notify your proctor if you are having difficulty entering the passcode.",
+                "ERROR_MAXLENGTH": "A passcode cannot be longer than 100 characters. Please try again.",
+                "CONTINUE": "Continue",
+                "CANCEL": "Cancel"
+            },
+            "ASSESSMENT_INSTRUCTIONS": {
+                "TITLE": "Assessment Instructions",
+                "SUB_TITLE": "The following instructions are for",
+                "BODY": "<p>Please make sure that you have reviewed the testing location rules and the policies enforced by the educational facility. Please ask for assistance if needed.</p>",
+                "BEGIN_ASSESSMENT": "Begin Assessment",
+                "RESUME_ASSESSMENT": "Resume Assessment",
+                "CANCEL": "Cancel"
+            },
+            "START_INSTRUCTIONS": {
+                "TITLE": "<i class='fa fa-check-circle' aria-hidden='true'></i> You're ready to begin!",
+                "BODY": "<p>Please make sure that you have reviewed the testing location rules and the policies enforced by the educational facility. Please ask for assistance if needed.</p>",
+                "BEGIN_ASSESSMENT": "Begin Assessment",
+                "RESUME_ASSESSMENT": "Resume Assessment",
+                "CANCEL": "Cancel"
+            },
+            "IN_PROGRESS_INSTRUCTIONS": {
+                "TITLE": "Assessment Started",
+                "BODY": "<p>Your assessment should have opened in a new window.</p><p>If it did not open in a new window:<ol><li>Change your browser's settings to allow pop-ups for this site</li><li>Click the button below to attempt to open your assessment again</li></ol></p>",
+                "RE_OPEN": "Tesutoment"
+            },
+            "FINISHED_INSTRUCTIONS": {
+                "TITLE": "Finished",
+                "ALERT": "You did it. Congratulations on completing your assessment.",
+                "BODY": "Please see the proctor for next steps."
+            },
+            "NOT_FOUND": "Sorry, we couldn't find this activation. Please notify the proctor.",
+            "READY": "Accept and Continue",
+            "DECLINE": "Decline",
+            "MODAL_PAPER_WARNING": {
+                "TITLE": "Paper Pencil Assessment",
+                "BODY": "This assessment is a paper and pencil assessment. If you need help accessing this assessment, please see a proctor."
+            }
+        }
+    }
+}

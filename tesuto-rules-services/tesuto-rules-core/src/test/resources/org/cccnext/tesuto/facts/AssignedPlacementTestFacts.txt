@@ -1,0 +1,4 @@
+Placement structure:
+id:cb21code:cb21level:createdOn
+
+createdOn = yyyy-mm-dd

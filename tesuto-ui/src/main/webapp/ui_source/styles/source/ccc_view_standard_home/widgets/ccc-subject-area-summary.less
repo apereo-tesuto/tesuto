@@ -1,0 +1,155 @@
+ccc-subject-area-summary {
+
+    h3.ccc-subject-area-summary-header {
+
+        border-bottom: 1px dashed rgba(0,0,0, 0.5);
+        padding-bottom: 5px;
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    .ccc-subject-area-summary-content {
+        padding-left: 15px;
+    }
+
+    ccc-wizard-summary {
+
+        ul li {
+            font-size: 12px;
+            strong {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    ccc-subject-area-course-summary {
+        display: block;
+        margin-bottom: 30px;
+    }
+}
+
+
+/*============ PRINT MEDIA MODE =============*/
+
+@media print {
+
+    ccc-subject-area-sequence {
+
+        font-size: 80%;
+
+        table.subject-area-sequence {
+
+            thead {
+                tr {
+                    border: 2px solid rgba(0,0,0, 0.6);
+                }
+            }
+
+            tr {
+                border-left: 2px solid rgba(0,0,0, 0.6);
+
+                &.row-odd {
+                    border-left: 2px dotted rgba(0,0,0, 0.2);
+                }
+            }
+        }
+
+        @media (min-width: @screen-sm-max) {
+            tbody td:before, tbody th:before {
+                display: none !important;
+            }
+        }
+
+        // Extra small devices (phones, 768px and less)
+        @media (max-width: @screen-sm-max) {
+
+            ccc-subject-area-sequence {
+
+                table {
+
+                    &.table > tbody > tr > td,
+                    &.table > tbody > tr > th {
+                        padding: 15px;
+                    }
+
+                    /* Force table to not be like tables anymore */
+                    table, thead, tbody, th, td, tr {
+                        display: block;
+                    }
+
+                    .responsive-table-cell-content {
+
+                        position: relative;
+
+                        .cb-21 {
+                            opacity: 1.0;
+                        }
+
+                        .cb-21, .transfer-level, .explanation, .sis-code {
+                            padding-top: 0px;
+                        }
+
+                        .sis-code {
+                            display: inline-block;
+                            padding-bottom: 15px;
+                        }
+
+                        .explanation {
+                            padding-bottom: 15px;
+                        }
+
+                        padding: 0px 52px 0px 100px;
+                        text-align: left;
+
+                        ccc-sequence-course-list ul, .explanation, .sis-code {
+                            max-width: none;
+                        }
+
+                        .responsive-table-cell-content-button {
+                            position: absolute;
+                            top: 0px;
+                            right: 0px;
+                            margin-right: 0px;
+                        }
+                    }
+
+                    /* Hide table headers (but not display: none;, for accessibility) */
+                    thead tr {
+                        position: absolute;
+                        top: -9999px;
+                        left: -9999px;
+                    }
+
+                    tr { border: 1px solid #ccc; }
+
+                    tbody td, tbody th {
+                        /* Behave  like a "row" */
+                        border: none;
+                        border-bottom: 1px solid #eee;
+                        position: relative;
+                        padding-left: 50%;
+                    }
+
+                    tbody td:before, tbody th:before {
+                        /* Now like a table header */
+                        position: absolute;
+                        /* Top/left values mimic padding */
+                        top: 14px;
+                        left: 14px;
+                        padding-right: 10px;
+                        width: 100px;
+                        white-space: nowrap;
+                        text-align: right;
+                        font-weight: bold;
+                        font-size: 14px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+
+    }
+
+}

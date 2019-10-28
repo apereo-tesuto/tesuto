@@ -1,0 +1,497 @@
+ccc-test-event-list {
+
+    .events {
+        margin-bottom: 3em;
+    }
+
+    .event-list {
+
+        .list-unstyled();
+
+        li {
+            background: white;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 15px;
+            position: relative;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+
+            &:hover, &:focus {
+                border-color: @brand-primary;
+                cursor: pointer;
+
+                .date {
+                    background: @brand-primary;
+                    color: #fff;
+                }
+            }
+
+            .title {
+                color: darken(@blue, 10%);
+                margin: 0 0 0.1em 0;
+            }
+
+            .title,
+            .proctor {
+                margin-left: 75px;
+                .name {
+                    font-weight: bold;
+                }
+            }
+
+            .date {
+                background: #eee;
+                text-align: center;
+                border-radius: 5px;
+                -moz-border-radius: 5px;
+                display: block;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                height: 67px;
+                width: 67px;
+                overflow: hidden;
+
+                .month,
+                .day {
+                    display: block;
+                }
+
+                .month {
+                    margin-top: 0.5em;
+                }
+
+                .day {
+                    font-size: 2em;
+                    position: relative;
+                    top: -0.25em;
+                }
+            }
+        }
+    }
+
+    &.ccc-test-event-list-inactive {
+
+        .event-list li {
+
+            &:hover, &:focus {
+
+                border-color: #ddd;
+                cursor: default;
+
+                .date {
+                    background: #eee;
+                    color: @ccc-fg;
+                }
+            }
+        }
+    }
+}
+
+.test-event-info {
+
+    .event-header {
+
+        .event-header-details {
+            min-height: 120px;
+        }
+
+        section {}
+
+        .title {
+            color: darken(@blue, 10%);
+            font-size: 1em;
+            margin: 0 0 0.5em 0;
+            text-transform: uppercase;
+        }
+
+        .fa-stack {
+            margin-right: 5px;
+            .fa-square {
+                color: fade(@blue, 50%);
+            }
+        }
+    }
+
+    .dates {
+        .clearfix();
+
+        .date {
+            display: inline-block;
+
+            > .title {
+                .sr-only();
+            }
+            margin-right: 5px;
+        }
+
+        .date-block {
+            background: fade(@blue, 50%);
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            height: 67px;
+            width: 67px;
+            overflow: hidden;
+
+            .weekday,
+            .month,
+            .day {
+                display: block;
+            }
+
+            .weekday {
+                background: fade(black, 10%);
+                font-size: 0.55em;
+                text-transform: uppercase;
+                position: relative;
+                top: -0.85em;
+            }
+
+            .month {
+                margin-top: 0.2em;
+            }
+
+            .day {
+                font-size: 2em;
+                position: relative;
+                top: -0.25em;
+            }
+        }
+    }
+
+    .assessment-list {
+        .list-unstyled();
+    }
+
+    .proctor-instructions {
+        margin: 1em 0 2em;
+
+        p {
+            font-size: 15px;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 300;
+            line-height: 23px;
+            margin-bottom: 1.2em;
+            max-width: 55em;
+        }
+    }
+}
+
+
+
+.test-event-info {
+
+    .event-header {
+        .well();
+
+        section {}
+
+        .title {
+            color: darken(@blue, 10%);
+            font-size: 1em;
+            margin: 0 0 0.5em 0;
+            text-transform: uppercase;
+        }
+
+        .fa-stack {
+
+            .fa-square {
+                color: fade(@blue, 50%);
+            }
+        }
+    }
+
+}
+.calendar {
+    position: relative;
+
+    .hours {
+
+        .hour {
+            border-top: 1px solid #ddd;
+            height: 3em;
+            position: relative;
+
+            span {
+                background: white;
+                color: #999;
+                font-size: 0.8em;
+                padding: 0.25em;
+                text-align: right;
+
+                display: block;
+                position: absolute;
+                top: -1em;
+                left: 0;
+                width: 3.75em;
+            }
+        }
+    }
+
+    .events {
+
+        .event {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            .wrapper {
+                background: fade(@brand-info, 25%);
+                border-left: 2px solid @brand-info;
+                color: darken(@brand-primary, 12.5%);
+                cursor: pointer;
+                height: 3em;
+                margin-left: 4em;
+                padding: 0.25em 0.5em;
+            }
+
+            .details {
+                font-size: 0.9em;
+            }
+
+            .title {
+                margin: 0;
+                font-size: 1em;
+                font-weight: 600;
+            }
+        }
+
+        .hour-2 {
+            top: 3em;
+        }
+
+        .hour-3 {
+            top: 6em;
+        }
+
+        .hour-4 {
+            top: 9em;
+        }
+
+        .hour-5 {
+            top: 12em;
+        }
+
+        .hour-6 {
+            top: 15em;
+        }
+
+        .hour-7 {
+            top: 18em;
+        }
+
+        .hour-8 {
+            top: 21em;
+        }
+
+        .duration-2 .wrapper {
+            height: 6em;
+        }
+
+        .duration-3 .wrapper {
+            height: 9em;
+        }
+
+        .duration-4 .wrapper {
+            height: 12em;
+        }
+    }
+}
+
+.day-view {
+
+    .hours {
+        margin-top: 1.5em;
+    }
+}
+
+.sidebar {
+
+    .test-event-card {
+        border: 1px solid #ddd;
+        margin-bottom: 2em;
+        padding: 2em;
+        position: relative;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+
+        .name {
+            margin: 0 0 0.75em 0;
+        }
+
+        .start-date,
+        .end-date {
+            float: none;
+        }
+
+        .actions {
+            margin: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            .icon {
+                display: none;
+            }
+        }
+
+        &:hover, &:focus {
+            border-color: @brand-primary;
+            cursor: pointer;
+
+            .actions {
+
+                .icon {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .user-list {
+
+        .user {
+            border: 1px solid #eee;
+            border-bottom: 1px solid #ddd;
+            padding: 1em;
+            margin: 0;
+            width: 100% !important;
+
+            .name {
+                font-size: 1.15em;
+                margin-bottom: 0.2em;
+            }
+
+            .profile-data {
+
+                .id, .age, .phone {
+                    display: inline-block;
+                }
+            }
+
+            .actions {
+                margin: 0;
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                .icon {
+                    display: none;
+                }
+            }
+
+            &:hover, &:focus {
+
+                .actions {
+
+                    .icon {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.bulk-activation-form {
+
+    .form-group {
+        .clearfix();
+    }
+
+    label {
+        display: block;
+    }
+
+    .remote-event-dates {
+
+        .dates {
+            .clearfix();
+        }
+
+        .start-date,
+        .end-date {
+            float: left;
+        }
+
+        .start-date {
+            margin-right: 2em;
+        }
+
+        .date,
+        .time,
+        .am-pm {
+            float: left;
+        }
+
+        .date,
+        .time {
+            margin-right: 0.5em;
+        }
+
+        .date {
+            width: 7.5em;
+        }
+
+        .time,
+        .am-pm {
+            width: 4em;
+        }
+    }
+
+    .assessments-selector {
+        margin-top: 2em;
+    }
+
+    .actions {
+        //margin-top: 3em;
+        //text-align: right;
+    }
+}
+
+
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {
+
+    .event {
+
+        > .actions {
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}
+
+// Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+
+    .event {
+
+        .event-header {
+
+            section {
+                min-height: 110px;
+            }
+        }
+    }
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) {}
+
+// Large screen (wide desktop, 1200px and up)
+@media (min-width: @screen-lg-min) {}

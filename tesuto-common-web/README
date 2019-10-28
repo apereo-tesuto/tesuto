@@ -1,0 +1,26 @@
+# ccc-web-common
+Built for Java 11
+```xml
+    <groupId>org.ccctc.common</groupId>
+    <artifactId>common-web</artifactId>
+    <version>1.8.0-SNAPSHOT</version>
+```
+## Available Features
+  - Service clients to easy rest calls: Apply, Audit, Messaging, Student Profile Service (MyPath), File Manager
+  - CORS configuration (basic default CORS configuration for the Spring CORS filter)
+  - RestClientHandler - make authenticated rest calls without all the broilerplate code every call
+  - Spring Actuator extensions
+
+*see also*: https://bitbucket.org/cccnext/common-identity -  a number of code features depend on common-identity classes.
+
+### Service Clients
+Each service client depends on a configuration file for the environmental setup (typically OAUTH credentials and URL to endpoint(s) that are used by the client). See the class javadoc for individual requirements. The service clients do NOT make available all of the possible service calls. Please extend as needed.
+
+### CORS Configuration
+Use with Spring HttpSecurity like:
+```java
+httpSecurity.addFilterBefore(new CorsFilter(new CorsConfigurationSourceImpl()), BasicAuthenticationFilter.class);
+```
+
+### CCCRestCallHandler
+Use with ServiceAccountManager ( from common-identity ) to handle making authenticated REST calls (can be used for unauthenticated calls as well as authenticated calls). 

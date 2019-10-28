@@ -1,0 +1,72 @@
+{
+		"userAccountId": null,
+		"username": "placero@democollege.edu",
+		"emailAddress": "placero@democollege.edu",
+		"password": "$2a$10$WfbBwf4Ap9JiunJf/.6fD.eDcdhJffJvVuyTZqY5odtzYUJCQka9m",
+		"displayName": "PlaceRO",
+		"firstName": "Placement",
+		"middleInitial": "A",
+		"lastName": "ReadOnly",
+		"phoneNumber": null,
+		"extension": null,
+		"enabled": true,
+		"securityGroupDtos": [
+			{
+				"securityGroupId": 13,
+				"groupName": "PLACEMENT_READ_ONLY",
+				"description": "Placement read-only role",
+				"securityPermissionDtos": []
+			}
+		],
+		"namespace": null,
+		"colleges": [
+			{
+				"cccId": "ZZ1",
+				"districtCCCId": "ZZ0",
+				"name": "Unicollege",
+				"streetAddress1": "1760 East Pecos Road",
+				"streetAddress2": "Suite 432",
+				"city": "Gilbert",
+				"postalCode": "85295",
+				"url": "http://www.unicon.net",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ1",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			},
+			{
+				"cccId": "ZZ2",
+				"districtCCCId": "ZZ0",
+				"name": "Rainforest College",
+				"streetAddress1": "1760 East Pecos Road",
+				"streetAddress2": "Suite 432",
+				"city": "Gilbert",
+				"postalCode": "85295",
+				"url": "http://www.unicon.net",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ2",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			}
+		],
+		"collegeIds": [
+			"ZZ1",
+			"ZZ2"
+		],
+		"districts": null,
+		"primaryCollegeId": "ZZ1",
+		"testLocations": [
+		]
+	}

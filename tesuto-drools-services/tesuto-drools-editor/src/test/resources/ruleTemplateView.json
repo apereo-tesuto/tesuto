@@ -1,0 +1,16 @@
+{
+	"id":"efbb69b1-c2ac-4d1c-a562-c991426827be",
+	"application":"sns-listener",
+	"title":"Is Veteran",
+	"status":"draft",
+	"version":"",
+	"category":"category",
+	"event":"event",
+	"competencyMapDiscipline":"competencyMapDsicipline",
+	"family":"cccMisCode",
+	"description":"description",
+	"definitions":"map : Map()\nstudent : StudentViewDto() from map.get(\"STUDENT_VIEW\")\nvariableSet : VariableSet() from map.get(\"MULTIPLE_MEASURE_VARIABLE_SET\")\nfacts : Map() from variableSet.facts\nmultipleMeasureVariableSetId: String() from variableSet.id",
+	"imports":"import java.util.Map\nimport java.util.List\nimport java.util.ArrayList\nimport net.ccctechcenter.drools.RulesAction\nimport java.lang.Double\nimport java.lang.String\nimport java.util.HashMap\nimport java.util.stream.Collectors\nimport org.cccnext.tesuto.domain.viewdto.user.StudentViewDto\nimport org.cccnext.tesuto.domain.multiplemeasures.VariableSet\nimport org.cccnext.tesuto.domain.multiplemeasures.Fact\nimport org.cccnext.tesuto.domain.multiplemeasures.MultipleMeasurePlacement\nimport function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement\nimport function org.apache.commons.lang3.StringUtils.isBlank\nimport function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToDouble\nimport function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToInteger\nimport function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToString\nimport function org.cccnext.tesuto.rules.function.DrlFunctions.parseDouble\nimport function org.cccnext.tesuto.rules.function.DrlFunctions.parseInteger\n",
+	"whenStatement":"cum_gpa : Double(isBlank(\"${gpa_cum}\") || this >= parseDouble(\"${gpa_cum}\")) from parseFactToDouble((Fact)facts.get(\"gpa_cum\"))\ngrade : Integer(isBlank(\"${grade_level}\") || this == parseInteger(\"${grade_level}\")) from parseFactToInteger((Fact)facts.get(\"grade_level\"))\nmath_ranking : Double(isBlank(\"${math_ranking}\") || this >= parseDouble(\"${math_ranking}\")) from parseFactToDouble((Fact)facts.get(\"math_ranking\"))\nalgebra_II_cst : Double(isBlank(\"${algebra_II_cst}\") || this >= parseDouble(\"${algebra_II_cst}\")) from parseFactToDouble((Fact)facts.get(\"algebra_II_cst\"))\nalg_i_clut_1 : Double(isBlank(\"${alg_i_clut_1}\") || this >= parseDouble(\"${alg_i_clut_1}\")) from parseFactToDouble((Fact)facts.get(\"alg_i_clut_1\"))\nstat : Double(isBlank(\"${stat}\") || this >= parseDouble(\"${stat}\")) from parseFactToDouble((Fact)facts.get(\"stat\"))\ncollegeAssociations : Map(isBlank(\"${miscode}\") || this.containsKey(\"${miscode}\")) from student.collegeStatuses\n",
+	"thenClause":"List<RulesAction> actions = (List<RulesAction>) map.get(\"actions\");\nMultipleMeasurePlacement placement = new MultipleMeasurePlacement();\nplacement.setCccid(student.getCccid());\nplacement.setTransferLevel(\"${transfer_level}\");\nplacement.setTransferLevelIndex(${transfer_level_index});\nplacement.setSubjectArea(\"${subject_area}\");\nplacement.setMiscode(\"${miscode}\");\nplacement.setRuleSetId(\"${rule_id}\");\nplacement.setCompetencyMapDiscipline(\"MATH\");\nplacement.addProgram(\"${program}\");\nplacement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);\nfilterByCollegeSubjectPlacement(actions, placement);"
+}

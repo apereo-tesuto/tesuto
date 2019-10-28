@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                               http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd
+                               http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd
+                               http://www.springframework.org/schema/context
+                               http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+    <!-- Root Context: defines shared resources visible to all other web components -->
+    <import resource="test-properties-context.xml"/>
+    <import resource="servicesContext.xml"/>
+
+    <bean id="childExpressionEvaluationService" class="org.cccnext.tesuto.delivery.service.ChildExpressionEvaluationServiceDelivery" />
+
+    <bean id="expressionEvaluationService" class="org.cccnext.tesuto.content.service.scoring.ExpressionEvaluationService">
+        <property name="childExpressionEvaluationService" ref="childExpressionEvaluationService" />
+    </bean>
+
+    <bean id="childExpressionEvaluationServiceImport" class="org.cccnext.tesuto.delivery.service.ChildExpressionEvaluationServiceImport" />
+
+    <bean id="expressionEvaluationUtilImport" class="org.cccnext.tesuto.content.service.scoring.ExpressionEvaluationService">
+        <property name="childExpressionEvaluationService" ref="childExpressionEvaluationServiceImport" />
+    </bean>
+
+    <bean id="validationUtil" class="org.cccnext.tesuto.util.ValidationUtil" />
+
+    <bean id="validateAssessmentService" class="org.cccnext.tesuto.importer.qti.service.validate.ValidateAssessmentServiceImpl" >
+        <property name="expressionEvaluationService" ref="expressionEvaluationUtilImport" />
+    </bean>
+
+    <bean id="validateAssessmentItemService" class="org.cccnext.tesuto.importer.qti.service.validate.ValidateAssessmentItemServiceImpl" >
+    </bean>
+
+</beans>
+

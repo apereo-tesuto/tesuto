@@ -1,0 +1,300 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result
+cccid,DATA_SOURCE,DATA_SOURCE_TYPE,EP01,EP02,EP03,EP04,EP05,EP06,EP07,EP08,EP09,transferLevel,program
+7,APMS,Self Reported,a,a,m,c,f,f,g,f,g,B,math_alg_i
+10,APMS,Self Reported,a,a,o,c,b,f,h,f,h,B,math_alg_i
+13,APMS,Self Reported,a,a,m,c,g,f,g,e,e,B,math_alg_i
+17,APMS,Self Reported,a,a,n,b,g,f,g,f,g,B,math_alg_i
+19,APMS,Self Reported,a,a,p,c,g,h,g,h,g,B,math_alg_i
+20,APMS,Self Reported,a,a,r,b,f,f,g,f,g,B,math_alg_i
+27,APMS,Self Reported,a,a,p,c,a,f,d,f,d,B,math_alg_i
+32,APMS,Self Reported,a,a,o,c,f,f,d,f,d,B,math_alg_i
+41,APMS,Self Reported,a,a,m,c,j,f,d,f,d,B,math_alg_i
+46,APMS,Self Reported,a,a,p,c,d,f,g,f,d,B,math_alg_i
+52,APMS,Self Reported,a,a,p,b,d,f,j,e,g,B,math_alg_i
+55,APMS,Self Reported,a,a,o, , ,h,g,f,g,B,math_alg_i
+57,APMS,Self Reported,a,a,o,c,e,f,d,f,d,B,math_alg_i
+60,APMS,Self Reported,a,a,i, , ,m,f,m,f,B,math_alg_i
+78,APMS,Self Reported,a,a,m,a,e,k,g,f,g,B,math_alg_i
+79,APMS,Self Reported,a,a,p,c,c,f,f,f,b,B,math_alg_i
+86,APMS,Self Reported,a,a,n,c,g,f,j,e,a,B,math_alg_i
+88,APMS,Self Reported,a,a,q,c,f,j,g,j,g,B,math_alg_i
+91,APMS,Self Reported,a,a,o,c,g,f,d,f,d,B,math_alg_i
+97,APMS,Self Reported,a,a,i,h,c,m,f,m,f,B,math_alg_i
+102,APMS,Self Reported,a,a,q,b,d,m,g,f,c,B,math_alg_i
+103,APMS,Self Reported,a,b,p,c,g,h,j,f,g,B,math_alg_i
+115,APMS,Self Reported,a,a,n,f,f,f,j,b,b,B,math_alg_i
+116,APMS,Self Reported,a,a,m,b,a,f,g,f,g,B,math_alg_i
+118,APMS,Self Reported,a,a,o, , ,h,d,h,c,B,math_alg_i
+123,APMS,Self Reported,a,a,n,c,e,f,g,f,a,B,math_alg_i
+126,APMS,Self Reported,a,a,f,b,a,m,a,m,a,B,math_alg_i
+127,APMS,Self Reported,a,a,o,b,d,f,d,f,d,B,math_alg_i
+142,APMS,Self Reported,a,a,p,a,n,k,k,f,g,B,math_alg_i
+156,APMS,Self Reported,a,a,n,c,e,f,h,f,h,B,math_alg_i
+159,APMS,Self Reported,a,a,m,c,a,e,d,e,b,B,math_alg_i
+171,APMS,Self Reported,a,a,n,c,n,m,n,e,j,B,math_alg_i
+173,APMS,Self Reported,a,a,k,a,n,m,n,m,j,B,math_alg_i
+177,APMS,Self Reported,a,a,f,c,c,m,n,m,j,B,math_alg_i
+183,APMS,Self Reported,a,a,n, , ,f,f,f,f,B,math_alg_i
+195,APMS,Self Reported,a,a,r,c,j,g,g,f,c,B,math_alg_i
+197,APMS,Self Reported,a,a,r, , ,i,k,j,f,B,math_alg_i
+204,APMS,Self Reported,a,a,m,c,a,f,f,b,a,B,math_alg_i
+208,APMS,Self Reported,a,a,n,c,d,g,g,g,g,B,math_alg_i
+214,APMS,Self Reported,a,a,m,c,h,l,j,h,j,B,math_alg_i
+219,APMS,Self Reported,a,a,p,c,d,k,j,f,c,B,math_alg_i
+222,APMS,Self Reported,a,a,o,c,c,f,g,f,g,B,math_alg_i
+223,APMS,Self Reported,a,a,n,a,c,b,e,b,e,B,math_alg_i
+225,APMS,Self Reported,a,a,p,b,h,l,h,l,h,B,math_alg_i
+226,APMS,Self Reported,a,a,j,a,j,l,j,m,e,B,math_alg_i
+228,APMS,Self Reported,a,a,m,c,c,h,c,h,c,B,math_alg_i
+234,APMS,Self Reported,a,a,p,a,d,f,k,e,j,B,math_alg_i
+237,APMS,Self Reported,a,a,r,b,c,f,g,f,g,B,math_alg_i
+240,APMS,Self Reported,a,a,p, , ,f,f,f,f,B,math_alg_i
+243,APMS,Self Reported,a,a,n,b,d,f,d,e,c,B,math_alg_i
+259,APMS,Self Reported,a,a,r, , ,f,g,f,g,B,math_alg_i
+264,APMS,Self Reported,a,a,n,b,d,d,d,d,d,B,math_alg_i
+267,APMS,Self Reported,a,a,q,c,f,h,j,h,g,B,math_alg_i
+284,APMS,Self Reported,a,a,q,c,e,h,j,f,b,B,math_alg_i
+285,APMS,Self Reported,a,a,m,c,d,h,d,h,d,B,math_alg_i
+286,APMS,Self Reported,a,a,p,b,g,h,g,h,g,B,math_alg_i
+288,APMS,Self Reported,a,a,n,b,d,k,h,k,h,B,math_alg_i
+289,APMS,Self Reported,a,a,o,c,a,h,g,h,g,B,math_alg_i
+290,APMS,Self Reported,a,a,o,c,g,f,d,f,d,B,math_alg_i
+292,APMS,Self Reported,a,a,p,c,h,j,d,j,c,B,math_alg_i
+293,APMS,Self Reported,a,b,n, , ,f,j,e,g,B,math_alg_i
+296,APMS,Self Reported,a,a,q,c,f,k,j,f,f,B,math_alg_i
+297,APMS,Self Reported,a,a,p,a,c,f,c,f,c,B,math_alg_i
+298,APMS,Self Reported,a,a,p,c,g,j,c,j,c,B,math_alg_i
+302,APMS,Self Reported,a,a,o,c,g,f,a,f,a,B,math_alg_i
+307,APMS,Self Reported,a,a,p,f,g,f,g,f,g,B,math_alg_i
+308,APMS,Self Reported,a,a,n,c,c,f,c,e,a,B,math_alg_i
+309,APMS,Self Reported,a,a,p,c,d,b,g,b,g,B,math_alg_i
+312,APMS,Self Reported,a,a,n,c,e,f,e,f,c,B,math_alg_i
+320,APMS,Self Reported,a,a,p,c,g,h,g,h,g,B,math_alg_i
+321,APMS,Self Reported,a,a,r,c,g,h,g,h,g,B,math_alg_i
+323,APMS,Self Reported,a,a,n,c,g,h,d,h,d,B,math_alg_i
+325,APMS,Self Reported,a,a,m,b,c,f,a,f,a,B,math_alg_i
+329,APMS,Self Reported,a,a,m,c,n,m,n,m,j,B,math_alg_i
+331,APMS,Self Reported,a,a,m,h,n,a,n,a,j,B,math_alg_i
+337,APMS,Self Reported,a,b,p, , ,f,f,e,c,B,math_alg_i
+338,APMS,Self Reported,a,a,r,a,e,f,d,f,d,B,math_alg_i
+342,APMS,Self Reported,a,a,o,b,d,f,d,f,d,B,math_alg_i
+346,APMS,Self Reported,a,a,c,c,d,m,b,m,j,B,math_alg_i
+349,APMS,Self Reported,a,a,n, , ,h,a,h,a,B,math_alg_i
+350,APMS,Self Reported,a,a,o,c,d,f,n,f,j,B,math_alg_i
+353,APMS,Self Reported,a,a,k,c,n,b,c,a,f,B,math_alg_i
+354,APMS,Self Reported,a,a,p,c,a,f,g,f,g,B,math_alg_i
+359,APMS,Self Reported,a,a,n,c,f,g,d,g,d,B,math_alg_i
+364,APMS,Self Reported,a,a,o,c,j,f,b,f,b,B,math_alg_i
+365,APMS,Self Reported,a,b,p,c,g,f,f,f,g,B,math_alg_i
+366,APMS,Self Reported,a,a,m, , ,h,c,e,a,B,math_alg_i
+367,APMS,Self Reported,a,a,g,h,g,m,n,m,j,B,math_alg_i
+371,APMS,Self Reported,a,a,p,c,d,f,g,f,g,B,math_alg_i
+377,APMS,Self Reported,a,a,n,c,f,e,f,e,f,B,math_alg_i
+383,APMS,Self Reported,a,a,q,b,g,k,d,k,d,B,math_alg_i
+390,APMS,Self Reported,a,a,q,c,h,f,d,f,e,B,math_alg_i
+392,APMS,Self Reported,a,a,p,c,f,f,f,f,f,B,math_alg_i
+396,APMS,Self Reported,a,a,p,c,g,k,j,f,d,B,math_alg_i
+399,APMS,Self Reported,a,a,k,h,d,f,d,m,j,B,math_alg_i
+400,APMS,Self Reported,a,a,m,c,a,b,g,b,g,B,math_alg_i
+405,APMS,Self Reported,a,a,r,b,j,k,j,f,d,B,math_alg_i
+406,APMS,Self Reported,a,a,k,c,f,m,n,m,j,B,math_alg_i
+407,APMS,Self Reported,a,a,p,c,d,c,c,b,b,B,math_alg_i
+408,APMS,Self Reported,a,a,r,c,d,f,d,f,b,B,math_alg_i
+416,APMS,Self Reported,a,a,n,c,d,f,d,f,d,B,math_alg_i
+420,APMS,Self Reported,a,a,p,c,a,h,g,h,g,B,math_alg_i
+426,APMS,Self Reported,a,a,c,a,c,m,d,m,d,B,math_alg_i
+442,APMS,Self Reported,a,a,r,b,d,f,d,f,d,B,math_alg_i
+443,APMS,Self Reported,a,a,n,c,h,e,e,e,e,B,math_alg_i
+447,APMS,Self Reported,a,a,p,c,g,f,f,f,f,B,math_alg_i
+453,APMS,Self Reported,a,a,n, , ,b,g,b,g,B,math_alg_i
+456,APMS,Self Reported,a,a,m, , ,f,g,f,g,B,math_alg_i
+457,APMS,Self Reported,a,a,m,c,d,e,g,e,g,B,math_alg_i
+467,APMS,Self Reported,a,a,q,b,d,f,f,f,f,B,math_alg_i
+473,APMS,Self Reported,a,a,n,c,h,h,h,h,h,B,math_alg_i
+480,APMS,Self Reported,a,a,m,h,a,h,d,h,j,B,math_alg_i
+481,APMS,Self Reported,a,a,n, , ,g,g,d,e,B,math_alg_i
+484,APMS,Self Reported,a,a,p,c,g,k,j,h,g,B,math_alg_i
+488,APMS,Self Reported,a,a,p,c,f,f,g,f,g,B,math_alg_i
+491,APMS,Self Reported,a,b,j, , ,a,g,a,g,B,math_alg_i
+492,APMS,Self Reported,a,a,m,c,n,m,n,m,j,B,math_alg_i
+503,APMS,Self Reported,a,a,o,c,h,k,m,f,c,B,math_alg_i
+506,APMS,Self Reported,a,a,o,c,j,g,k,d,d,B,math_alg_i
+508,APMS,Self Reported,a,a,m, , ,f,c,f,b,B,math_alg_i
+510,APMS,Self Reported,a,a,m,a,g,f,c,f,c,B,math_alg_i
+511,APMS,Self Reported,a,a,r, , ,f,g,f,g,B,math_alg_i
+517,APMS,Self Reported,a,a,m,c,a,f,g,f,g,B,math_alg_i
+518,APMS,Self Reported,a,a,m, , ,f,d,e,a,B,math_alg_i
+520,APMS,Self Reported,a,a,p,a,f,e,f,e,g,B,math_alg_i
+523,APMS,Self Reported,a,a,m,a,f,k,h,f,c,B,math_alg_i
+533,APMS,Self Reported,a,a,m,c,f,f,d,f,d,B,math_alg_i
+539,APMS,Self Reported,a,a,m,c,f,k,h,h,b,B,math_alg_i
+546,APMS,Self Reported,a,a,q,h,n,f,g,f,g,B,math_alg_i
+549,APMS,Self Reported,a,a,p,c,j,f,g,f,g,B,math_alg_i
+556,APMS,Self Reported,a,b,o,c,a,f,k,b,g,B,math_alg_i
+558,APMS,Self Reported,a,a,p,c,g,f,f,e,f,B,math_alg_i
+562,APMS,Self Reported,a,b,n, , ,f,f,b,a,B,math_alg_i
+563,APMS,Self Reported,a,a,n,c,f,f,f,f,f,B,math_alg_i
+566,APMS,Self Reported,a,a,o,c,d,d,d,c,d,B,math_alg_i
+579,APMS,Self Reported,a,a,p,c,f,f,f,e,f,B,math_alg_i
+581,APMS,Self Reported,a,b,e,a,b,d,k,a,d,B,math_alg_i
+587,APMS,Self Reported,a,a,o,c,c,f,e,f,e,B,math_alg_i
+589,APMS,Self Reported,a,a,m,c,d,f,g,f,g,B,math_alg_i
+592,APMS,Self Reported,a,a,q,c,d,f,d,f,d,B,math_alg_i
+596,APMS,Self Reported,a,b,l,f,n,c,n,m,j,B,math_alg_i
+601,APMS,Self Reported,a,a,m,b,f,f,f,f,f,B,math_alg_i
+607,APMS,Self Reported,a,a,r,c,c,f,f,f,f,B,math_alg_i
+608,APMS,Self Reported,a,a,l,c,a,m,n,m,j,B,math_alg_i
+610,APMS,Self Reported,a,a,k,c,c,f,j,m,i,B,math_alg_i
+625,APMS,Self Reported,a,a,p,c,d,c,d,c,d,B,math_alg_i
+638,APMS,Self Reported,a,b,p, , ,k,d,f,d,B,math_alg_i
+640,APMS,Self Reported,a,a,p,e,c,f,g,f,e,B,math_alg_i
+641,APMS,Self Reported,a,a,n, , ,h,g,h,g,B,math_alg_i
+654,APMS,Self Reported,a,a,p,c,g,h,d,h,d,B,math_alg_i
+655,APMS,Self Reported,a,a,q,c,a,k,k,f,d,B,math_alg_i
+662,APMS,Self Reported,a,a,j,c,c,m,c,m,c,B,math_alg_i
+666,APMS,Self Reported,a,a,k,h,n,m,n,m,j,B,math_alg_i
+671,APMS,Self Reported,a,a,m,f,f,j,h,j,h,B,math_alg_i
+673,APMS,Self Reported,a,a,n, , ,e,a,e,a,B,math_alg_i
+680,APMS,Self Reported,a,a,o,c,g,k,k,g,d,B,math_alg_i
+686,APMS,Self Reported,a,a,p,c,c,f,d,f,d,B,math_alg_i
+687,APMS,Self Reported,a,a,r,c,f,k,g,f,c,B,math_alg_i
+704,APMS,Self Reported,a,a,p,c,d,h,d,f,g,B,math_alg_i
+714,APMS,Self Reported,a,b,p,c,n,f,n,f,j,B,math_alg_i
+717,APMS,Self Reported,a,a,o, , ,f,g,f,g,B,math_alg_i
+718,APMS,Self Reported,a,a,m,c,f,h,d,h,d,B,math_alg_i
+722,APMS,Self Reported,a,a,l,c,a,b,j,m,i,B,math_alg_i
+725,APMS,Self Reported,a,b,q,c,g,f,f,f,f,B,math_alg_i
+727,APMS,Self Reported,a,a,o,c,d,f,g,f,g,B,math_alg_i
+729,APMS,Self Reported,a,b,n, , ,f,h,f,h,B,math_alg_i
+747,APMS,Self Reported,a,b,p,b,g,f,n,m,j,B,math_alg_i
+750,APMS,Self Reported,a,a,q,c,j,f,f,f,f,B,math_alg_i
+756,APMS,Self Reported,a,a,m, , ,h,j,h,g,B,math_alg_i
+757,APMS,Self Reported,a,a,o,c,d,k,k,f,d,B,math_alg_i
+763,APMS,Self Reported,a,a,n, , ,h,g,h,g,B,math_alg_i
+773,APMS,Self Reported,a,a,i,c,n,m,n,m,j,B,math_alg_i
+777,APMS,Self Reported,a,a,o,c,d,f,g,f,g,B,math_alg_i
+785,APMS,Self Reported,a,a,p,b,c,f,a,f,a,B,math_alg_i
+790,APMS,Self Reported,a,a,m,c,d,f,g,f,g,B,math_alg_i
+792,APMS,Self Reported,a,b,p, , ,f,j,f,g,B,math_alg_i
+794,APMS,Self Reported,a,a,o,c,d,e,h,e,h,B,math_alg_i
+797,APMS,Self Reported,a,a,r,c,j,f,g,f,c,B,math_alg_i
+809,APMS,Self Reported,a,b,n, , ,h,d,h,d,B,math_alg_i
+823,APMS,Self Reported,a,a,o,c,d,k,m,f,f,B,math_alg_i
+826,APMS,Self Reported,a,c,p, , ,f,f,f,h,B,math_alg_i
+836,APMS,Self Reported,a,c,p, , ,f,c,f,c,B,math_alg_i
+846,APMS,Self Reported,a,a,k,a,n,f,n,m,j,B,math_alg_i
+853,APMS,Self Reported,a,a,n,c,f,b,e,b,d,B,math_alg_i
+854,APMS,Self Reported,a,a,r,c,d,f,c,f,c,B,math_alg_i
+855,APMS,Self Reported,a,a,k,h,n,m,n,m,j,B,math_alg_i
+867,APMS,Self Reported,a,b,o,c,g,f,a,f,a,B,math_alg_i
+869,APMS,Self Reported,a,a,o,c,d,e,g,g,g,B,math_alg_i
+887,APMS,Self Reported,a,a,o, , ,h,d,h,d,B,math_alg_i
+892,APMS,Self Reported,a,a,q,c,j,m,n,f,b,B,math_alg_i
+894,APMS,Self Reported,a,a,p,c,d,f,g,f,g,B,math_alg_i
+896,APMS,Self Reported,a,a,a,h,c,m,d,m,j,B,math_alg_i
+900,APMS,Self Reported,a,a,n,c,d,b,h,b,g,B,math_alg_i
+907,APMS,Self Reported,a,a,p,b,g,e,g,e,g,B,math_alg_i
+916,APMS,Self Reported,a,a,o, , ,m,d,b,d,B,math_alg_i
+923,APMS,Self Reported,a,a,q,c,d,h,e,h,e,B,math_alg_i
+931,APMS,Self Reported,a,a,o,c,g,h,e,b,a,B,math_alg_i
+939,APMS,Self Reported,a,a,i,c,d,k,c,m,c,B,math_alg_i
+940,APMS,Self Reported,a,a,r,c,f,h,f,h,f,B,math_alg_i
+941,APMS,Self Reported,a,a,m,c,d,k,h,k,j,B,math_alg_i
+942,APMS,Self Reported,a,a,q,c,n,k,d,k,d,B,math_alg_i
+944,APMS,Self Reported,a,c,a,h,a,b,n,m,j,B,math_alg_i
+963,APMS,Self Reported,a,a,p,c,g,f,h,b,g,B,math_alg_i
+979,APMS,Self Reported,a,a,r,c,d,e,g,g,g,B,math_alg_i
+986,APMS,Self Reported,a,a,m,c,g,f,f,b,f,B,math_alg_i
+987,APMS,Self Reported,a,a,m,c,a,f,d,f,e,B,math_alg_i
+990,APMS,Self Reported,a,a,n,c,e,f,g,f,g,B,math_alg_i
+997,APMS,Self Reported,a,a,n,c,c,e,a,e,a,B,math_alg_i
+998,APMS,Self Reported,a,a,n,c,j,h,n,f,f,B,math_alg_i
+1006,APMS,Self Reported,a,a,m,c,d,j,d,j,d,B,math_alg_i
+1008,APMS,Self Reported,a,a,n,c,f,h,n,f,f,B,math_alg_i
+1024,APMS,Self Reported,a,a,n, , ,e,b,e,b,B,math_alg_i
+1027,APMS,Self Reported,a,b,q,c,g,f,g,f,g,B,math_alg_i
+1037,APMS,Self Reported,a,a,o,b,g,f,g,f,g,B,math_alg_i
+1042,APMS,Self Reported,a,b,n,c,a,h,f,h,f,B,math_alg_i
+1045,APMS,Self Reported,a,a,p, , ,b,g,b,f,B,math_alg_i
+1048,APMS,Self Reported,a,a,n,c,d,h,b,h,a,B,math_alg_i
+1050,APMS,Self Reported,a,a,r,c,g,h,k,f,g,B,math_alg_i
+1054,APMS,Self Reported,a,a,e,h,g,m,g,m,f,B,math_alg_i
+1061,APMS,Self Reported,a,a,m,c,g,h,d,h,d,B,math_alg_i
+1062,APMS,Self Reported,a,a,n,c,g,g,f,g,j,B,math_alg_i
+1064,APMS,Self Reported,a,b,q,b,f,f,f,f,f,B,math_alg_i
+1067,APMS,Self Reported,a,a,n,c,f,f,b,f,c,B,math_alg_i
+1069,APMS,Self Reported,a,a,o,c,d,h,k,f,g,B,math_alg_i
+1070,APMS,Self Reported,a,a,m,c,d,g,d,g,d,B,math_alg_i
+1072,APMS,Self Reported,a,a,o,c,e,j,j,e,e,B,math_alg_i
+1077,APMS,Self Reported,a,a,m,c,c,e,g,e,g,B,math_alg_i
+1085,APMS,Self Reported,a,a,n,b,c,h,f,h,g,B,math_alg_i
+1088,APMS,Self Reported,a,a,p,c,d,b,d,e,d,B,math_alg_i
+1089,APMS,Self Reported,a,a,q,c,f,f,j,f,b,B,math_alg_i
+1102,APMS,Self Reported,a,b,d,c,a,k,d,m,d,B,math_alg_i
+1103,APMS,Self Reported,a,a,o,b,g,i,h,i,h,B,math_alg_i
+1118,APMS,Self Reported,a,a,o,c,a,f,a,f,a,B,math_alg_i
+1121,APMS,Self Reported,a,a,h,c,n,a,n,m,j,B,math_alg_i
+1124,APMS,Self Reported,a,a,p,c,f,h,c,h,c,B,math_alg_i
+1131,APMS,Self Reported,a,a,l,c,h,b,g,m,f,B,math_alg_i
+1141,APMS,Self Reported,a,a,r,c,a,f,a,f,a,B,math_alg_i
+1142,APMS,Self Reported,a,a,r,c,g,m,g,f,e,B,math_alg_i
+1155,APMS,Self Reported,a,a,m,c,f,g,d,g,d,B,math_alg_i
+1158,APMS,Self Reported,a,a,n,c,n,f,b,f,c,B,math_alg_i
+1162,APMS,Self Reported,a,a,g,c,n,e,j,m,j,B,math_alg_i
+1163,APMS,Self Reported,a,a,m,c,f,b,b,b,b,B,math_alg_i
+1174,APMS,Self Reported,a,a,n,c,c,f,f,f,f,B,math_alg_i
+1175,APMS,Self Reported,a,a,p, , ,f,g,f,g,B,math_alg_i
+1179,APMS,Self Reported,a,a,p,c,g,f,g,f,g,B,math_alg_i
+1180,APMS,Self Reported,a,a,p,b,n,f,n,f,e,B,math_alg_i
+1189,APMS,Self Reported,a,a,m, , ,j,g,j,g,B,math_alg_i
+1204,APMS,Self Reported,a,a,o,c,d,f,d,f,d,B,math_alg_i
+1207,APMS,Self Reported,a,a,p,c,d,d,d,d,d,B,math_alg_i
+1208,APMS,Self Reported,a,a,i,c,a,h,f,m,b,B,math_alg_i
+1216,APMS,Self Reported,a,a,p, , ,f,g,f,g,B,math_alg_i
+1225,APMS,Self Reported,a,a,o,c,h,k,h,f,d,B,math_alg_i
+1242,APMS,Self Reported,a,a,m,c,n,h,g,f,g,B,math_alg_i
+1243,APMS,Self Reported,a,a,r,b,a,f,d,f,d,B,math_alg_i
+1252,APMS,Self Reported,a,a,j,c,d,h,g,m,j,B,math_alg_i
+1254,APMS,Self Reported,a,a,r,b,g,l,g,l,g,B,math_alg_i
+1259,APMS,Self Reported,a,a,a, , ,m,c,m,j,B,math_alg_i
+1262,APMS,Self Reported,a,a,o,c,c,h,g,h,g,B,math_alg_i
+1267,APMS,Self Reported,a,a,p, , ,f,g,f,f,B,math_alg_i
+1274,APMS,Self Reported,a,a,o,c,n,e,d,f,d,B,math_alg_i
+1277,APMS,Self Reported,a,a,r,c,f,h,d,h,g,B,math_alg_i
+1288,APMS,Self Reported,a,a,r,c,d,h,e,h,e,B,math_alg_i
+1289,APMS,Self Reported,a,a,p,b,a,f,f,f,f,B,math_alg_i
+1292,APMS,Self Reported,a,a,n,c,d,f,h,f,g,B,math_alg_i
+1295,APMS,Self Reported,a,a,n,c,d,f,n,f,j,B,math_alg_i
+1299,APMS,Self Reported,a,a,p, , ,h,g,b,d,B,math_alg_i
+1300,APMS,Self Reported,a,a,m,c,d,b,c,b,d,B,math_alg_i
+1314,APMS,Self Reported,a,a,p,c,j,f,k,b,j,B,math_alg_i
+1317,APMS,Self Reported,a,a,p,c,e,f,g,f,g,B,math_alg_i
+1321,APMS,Self Reported,a,a,o,c,g,h,j,f,g,B,math_alg_i
+1327,APMS,Self Reported,a,a,n,c,g,h,h,m,h,B,math_alg_i
+1328,APMS,Self Reported,a,a,m,a,a,h,k,f,j,B,math_alg_i
+1335,APMS,Self Reported,a,a,p, , ,e,f,e,f,B,math_alg_i
+1345,APMS,Self Reported,a,a,p,b,n,l,n,k,j,B,math_alg_i
+1348,APMS,Self Reported,a,a,n, , ,i,a,i,a,B,math_alg_i
+1359,APMS,Self Reported,a,a,p,c,n,f,n,f,j,B,math_alg_i
+1363,APMS,Self Reported,a,a,m,c,c,e,a,e,a,B,math_alg_i
+1366,APMS,Self Reported,a,a,m,c,a,b,g,b,g,B,math_alg_i
+1375,APMS,Self Reported,a,a,n,c,d,f,f,f,f,B,math_alg_i
+1377,APMS,Self Reported,a,a,r, , ,f,f,f,f,B,math_alg_i
+1380,APMS,Self Reported,a,a,p,c,d,b,g,b,g,B,math_alg_i
+1384,APMS,Self Reported,a,a,p,c,a,b,g,b,g,B,math_alg_i
+1387,APMS,Self Reported,a,a,l,c,n,f,n,m,j,B,math_alg_i
+1388,APMS,Self Reported,a,a,p,c,h,f,j,e,d,B,math_alg_i
+1395,APMS,Self Reported,a,a,r,c,j,k,g,k,g,B,math_alg_i
+1401,APMS,Self Reported,a,a,q,b,a,k,g,k,g,B,math_alg_i
+1403,APMS,Self Reported,a,a,f,c,a,k,d,m,d,B,math_alg_i
+1405,APMS,Self Reported,a,a,d,h,n,m,n,m,j,B,math_alg_i
+1410,APMS,Self Reported,a,b,p,c,f,f,h,f,h,B,math_alg_i
+1414,APMS,Self Reported,a,a,o,c,d,f,c,f,c,B,math_alg_i
+1418,APMS,Self Reported,a,a,o,c,a,f,b,e,d,B,math_alg_i
+1437,APMS,Self Reported,a,a,p,c,j,d,d,d,d,B,math_alg_i
+1439,APMS,Self Reported,a,a,c,c,a,b,d,a,b,B,math_alg_i
+1440,APMS,Self Reported,a,a,k,h,n,b,c,a,d,B,math_alg_i
+1442,APMS,Self Reported,a,a,p,c,g,f,e,f,b,B,math_alg_i
+1452,APMS,Self Reported,a,a,n,c,a,f,d,f,h,B,math_alg_i
+1453,APMS,Self Reported,a,a,p,c,d,f,a,f,a,B,math_alg_i
+1455,APMS,Self Reported,a,a,n,c,d,h,d,h,d,B,math_alg_i

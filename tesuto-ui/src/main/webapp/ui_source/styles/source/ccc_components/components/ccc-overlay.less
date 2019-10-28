@@ -1,0 +1,103 @@
+ccc-overlay-wrapper {
+
+    position: relative;
+    display: inline-block;
+
+    ccc-overlay {
+
+        z-index: 100;
+
+        display: block;
+        position: absolute;
+
+        .border-radius(5px);
+        background: #fff;
+        box-shadow: 0px 0px 6px rgba(0,0,0, 0.5);
+
+        .ccc-overlay-content {
+            overflow: hidden;
+        }
+
+        .ccc-overlay-arrow {
+            display: inline-block;
+            position: absolute;
+            background: #fff;
+        }
+        .ccc-overlay-arrow:after, .ccc-overlay-arrow:before {
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        &.ccc-overlay-position-bottom {
+
+            .ccc-overlay-arrow:after {
+                border-color: rgba(255, 255, 255, 0);
+                border-bottom-color: #fff;
+                border-width: 14px;
+                margin-left: -14px;
+            }
+            .ccc-overlay-arrow:before {
+                border-color: rgba(204, 204, 204, 0);
+                border-bottom-color: #fff;
+                border-width: 15px;
+                margin-left: -15px;
+            }
+        }
+        &.ccc-overlay-position-top {
+
+            .ccc-overlay-arrow:after {
+                border-color: rgba(255, 255, 255, 0);
+                border-top-color: #fff;
+                border-width: 14px;
+                margin-left: -14px;
+            }
+            .ccc-overlay-arrow:before {
+                border-color: rgba(204, 204, 204, 0);
+                border-top-color: #fff;
+                border-width: 15px;
+                margin-left: -15px;
+            }
+        }
+    }
+}
+
+
+/*============ DATE PICKER OVERLAY STYLES ============*/
+
+ccc-overlay {
+    .date-picker-container-triangle {
+        display: none;
+    }
+}
+
+ccc-overlay-calendar {
+
+    .date-picker-container {
+
+        height: 100%;
+
+        &.well {
+            background-color: #fff;
+            box-shadow: none;
+        }
+
+        table {
+            width: 100%;
+            height: 100%;
+            td, th {
+
+                padding-left: 0px;
+                padding-right: 0px;
+                padding-top: 0px;
+                padding-bottom: 0px;
+
+                button {}
+            }
+        }
+    }
+}
+

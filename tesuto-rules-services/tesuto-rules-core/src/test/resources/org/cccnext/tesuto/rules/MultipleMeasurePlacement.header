@@ -1,0 +1,23 @@
+package org.cccnext.tesuto.rules;
+
+import java.util.Map
+import java.lang.Double
+import java.lang.String
+import java.util.List
+import java.util.ArrayList
+import java.util.HashMap
+import java.util.stream.Collectors
+import org.cccnext.tesuto.rules.view.BasicStudentView
+import org.cccnext.tesuto.domain.multiplemeasures.VariableSet
+import org.cccnext.tesuto.domain.multiplemeasures.Fact
+import org.cccnext.tesuto.domain.multiplemeasures.PlacementComponentActionResult
+
+import org.ccctc.common.droolscommon.RulesAction
+import function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement
+import function org.apache.commons.lang3.StringUtils.isBlank
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToString
+
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseInteger

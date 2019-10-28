@@ -1,0 +1,9 @@
+[
+{
+	"id":"applySubmit",
+	"enabledFactsValidators":[],
+	"disabledFactsValidators":["NOOP"],
+	"enabledActionServices":[],
+	"disabledActionServices":["NOOP"]
+}
+]

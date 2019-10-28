@@ -1,0 +1,13 @@
+{
+    "preset": "crockford",
+    "requireLineFeedAtFileEnd": null,
+    "disallowDanglingUnderscores": null,
+    "disallowMultipleVarDecl": null,
+    "requireMultipleVarDecl": null,
+    "requireDotNotation": null,
+    "disallowLeftStickedOperators": null,
+    "disallowRightStickedOperators": null,
+    "requireSpaceBeforeBinaryOperators": null,
+    "requireSpaceAfterBinaryOperators": null,
+    "requireDotNotation": null
+}

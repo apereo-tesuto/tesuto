@@ -1,0 +1,263 @@
+{
+		"userAccountId": "01a2f55a-e5be-4d0d-863c-b8cf50536165",
+		"username": "aportaladmin@democollege.edu",
+		"emailAddress": "aportaladmin@democollege.edu",
+		"password": "$2a$10$zwFeqHLMaxAVActMqJAFW.Joja.L4Y4c6OuOpRS6Bw8RPQ3Rx15Sm",
+		"displayName": "Admin For A Protal",
+		"firstName": "Portal",
+		"middleInitial": "A",
+		"lastName": "Admin",
+		"phoneNumber": null,
+		"extension": null,
+		"enabled": true,
+		"securityGroupDtos": [
+			{
+				"securityGroupId": 9,
+				"groupName": "PAPER_PENCIL_SCORER",
+				"description": "Prccessor for paper and pencil scoring security group",
+				"securityPermissionDtos": []
+			},
+			{
+				"securityGroupId": 3,
+				"groupName": "PROCTOR",
+				"description": "Proctor security group",
+				"securityPermissionDtos": []
+			},
+			{
+				"securityGroupId": 2,
+				"groupName": "LOCAL_ADMIN",
+				"description": "Admin security group",
+				"securityPermissionDtos": []
+			},
+			{
+				"securityGroupId": 11,
+				"groupName": "COUNSELOR",
+				"description": "Counselor security group",
+				"securityPermissionDtos": []
+			},
+			{
+				"securityGroupId": 14,
+				"groupName": "PLACEMENT_MANAGER",
+				"description": "Placement Manager role",
+				"securityPermissionDtos": []
+			},
+			{
+				"securityGroupId": 15,
+				"groupName": "REMOTE_PROCTORING_MANAGER",
+				"description": "Remote Proctoring Manager",
+				"securityPermissionDtos": []
+			},
+			{
+				"securityGroupId": 8,
+				"groupName": "SUPER_ADMIN",
+				"description": "Developer security group",
+				"securityPermissionDtos": []
+			},
+			{
+				"securityGroupId": 5,
+				"groupName": "FACULTY",
+				"description": "Faculty security group",
+				"securityPermissionDtos": []
+			}
+		],
+		"namespace": "DEVELOPER",
+		"colleges": [
+			{
+				"cccId": "ZZ2",
+				"districtCCCId": "ZZ0",
+				"name": "Rainforest College",
+				"streetAddress1": "1760 East Pecos Road",
+				"streetAddress2": "Suite 432",
+				"city": "Gilbert",
+				"postalCode": "85295",
+				"url": "http://www.unicon.net",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+					{
+						"id": "1000002",
+						"name": "Rainforest College Test Center",
+						"streetAddress1": "1760 East Pecos Road",
+						"streetAddress2": "Suite 432",
+						"city": "Gilbert",
+						"postalCode": "85295",
+						"locationType": "ON_SITE",
+						"locationStatus": "ACTIVE",
+						"collegeId": "ZZ2",
+						"collegeName": "Rainforest College",
+						"capacity": 30,
+						"lastUpdatedDate": 1485793699278,
+						"enabled": true,
+						"createdOnDate": 1483769001566
+					}
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ2",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			},
+			{
+				"cccId": "ZZ1",
+				"districtCCCId": "ZZ0",
+				"name": "Unicollege",
+				"streetAddress1": "1760 East Pecos Road",
+				"streetAddress2": "Suite 432",
+				"city": "Gilbert",
+				"postalCode": "85295",
+				"url": "http://www.unicon.net",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+					{
+						"id": "b89566e2-0111-4144-ad83-4faf3416a78c",
+						"name": "Unicollege Test Location",
+						"streetAddress1": null,
+						"streetAddress2": null,
+						"city": null,
+						"postalCode": null,
+						"locationType": "ON_SITE",
+						"locationStatus": "ACTIVE",
+						"collegeId": "ZZ1",
+						"collegeName": "Unicollege",
+						"capacity": null,
+						"lastUpdatedDate": 1485793699212,
+						"enabled": true,
+						"createdOnDate": 1485553088701
+					},
+					{
+						"id": "d490c2ab-c266-4a03-8dc1-cdb5de68f28b",
+						"name": "Unicollege Test Center",
+						"streetAddress1": null,
+						"streetAddress2": null,
+						"city": null,
+						"postalCode": null,
+						"locationType": "ON_SITE",
+						"locationStatus": "ACTIVE",
+						"collegeId": "ZZ1",
+						"collegeName": "Unicollege",
+						"capacity": 30,
+						"lastUpdatedDate": 1485793699267,
+						"enabled": true,
+						"createdOnDate": 1484334821195
+					}
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ1",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			},
+			{
+				"cccId": "ZZ3",
+				"districtCCCId": "ZZ0",
+				"name": "CCCTC College A",
+				"streetAddress1": "1 Apereo Drive",
+				"streetAddress2": "",
+				"city": "Oroville",
+				"postalCode": "95965",
+				"url": "http://cccnext.net/",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+					{
+						"id": "1000003",
+						"name": "CCCTC College A Test Center",
+						"streetAddress1": "1 Apereo Drive",
+						"streetAddress2": "",
+						"city": "Oroville",
+						"postalCode": "95965",
+						"locationType": "ON_SITE",
+						"locationStatus": "ACTIVE",
+						"collegeId": "ZZ3",
+						"collegeName": "CCCTC College A",
+						"capacity": 30,
+						"lastUpdatedDate": 1485793699290,
+						"enabled": true,
+						"createdOnDate": 1483769001566
+					}
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ3",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			}
+		],
+		"collegeIds": [
+			"ZZ1",
+			"ZZ3",
+			"ZZ2"
+		],
+		"districts": null,
+		"primaryCollegeId": "ZZ1",
+		"testLocations": [
+			{
+				"id": "b89566e2-0111-4144-ad83-4faf3416a78c",
+				"name": "Unicollege Test Location",
+				"streetAddress1": null,
+				"streetAddress2": null,
+				"city": null,
+				"postalCode": null,
+				"locationType": "ON_SITE",
+				"locationStatus": "ACTIVE",
+				"collegeId": "ZZ1",
+				"collegeName": "Unicollege",
+				"capacity": null,
+				"lastUpdatedDate": 1485793699212,
+				"enabled": true,
+				"createdOnDate": 1485553088701
+			},
+			{
+				"id": "d490c2ab-c266-4a03-8dc1-cdb5de68f28b",
+				"name": "Unicollege Test Center",
+				"streetAddress1": null,
+				"streetAddress2": null,
+				"city": null,
+				"postalCode": null,
+				"locationType": "ON_SITE",
+				"locationStatus": "ACTIVE",
+				"collegeId": "ZZ1",
+				"collegeName": "Unicollege",
+				"capacity": 30,
+				"lastUpdatedDate": 1485793699267,
+				"enabled": true,
+				"createdOnDate": 1484334821195
+			},
+			{
+				"id": "1000002",
+				"name": "Rainforest College Test Center",
+				"streetAddress1": "1760 East Pecos Road",
+				"streetAddress2": "Suite 432",
+				"city": "Gilbert",
+				"postalCode": "85295",
+				"locationType": "ON_SITE",
+				"locationStatus": "ACTIVE",
+				"collegeId": "ZZ2",
+				"collegeName": "Rainforest College",
+				"capacity": 30,
+				"lastUpdatedDate": 1485793699278,
+				"enabled": true,
+				"createdOnDate": 1483769001566
+			},
+			{
+				"id": "1000003",
+				"name": "CCCTC College A Test Center",
+				"streetAddress1": "1 Apereo Drive",
+				"streetAddress2": "",
+				"city": "Oroville",
+				"postalCode": "95965",
+				"locationType": "ON_SITE",
+				"locationStatus": "ACTIVE",
+				"collegeId": "ZZ3",
+				"collegeName": "CCCTC College A",
+				"capacity": 30,
+				"lastUpdatedDate": 1485793699290,
+				"enabled": true,
+				"createdOnDate": 1483769001566
+			}
+		]
+	}

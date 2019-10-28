@@ -1,0 +1,148 @@
+{
+    "taskSetId": "AFDD-SDFD-SDFD-FE02",
+    "tasks": [{
+        "taskId": "AFGY-JEMD-SKJD-JKSB",
+        "stimulus": "<p>This is an example of choice interactions where the first one is configured to have an \"orientation\" or \"horizontal\". This forces the layout into a single column even though there is a top level stimulus. They are presented in an item bundle with a top level stimulus.</p>",
+        "itemSessions": [
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                "itemSessionIndex": 3,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "tools": {
+                        "allowCalculator": "Yes"
+                    },
+                    "responseVars": [{
+                        "identifier": "RESPONSE1",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c85\"/>",
+                    "interactions": [{
+                        "id": null,
+                        "type": "choiceInteraction",
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c85",
+                        "orientation": "horizontal",
+                        "maxChoices": 2,
+                        "minChoices": 2,
+                        "prompt": "Which of these is not a configuration for a QTI choice interaction? (select exactly two)",
+                        "responseIdentifier": "RESPONSE1",
+                        "choices": [
+                            {
+                                "content": "minChoices",
+                                "identifier": "ChoiceA"
+                            },
+                            {
+                                "content": "maxChoices",
+                                "identifier": "ChoiceB"
+                            },
+                            {
+                                "content": "orientation",
+                                "identifier": "ChoiceC"
+                            },
+                            {
+                                "content": "compatability",
+                                "identifier": "ChoiceD"
+                            }
+                        ]
+                    }]
+                }
+            },
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK02",
+                "itemSessionIndex": 4,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE2",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c82\"/>",
+                    "interactions": [{
+                        "id": null,
+                        "type": "choiceInteraction",
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c82",
+                        "maxChoices": 0,
+                        "minChoices": 0,
+                        "prompt": "Which of these are configurations for a QTI choice interaction? (choose all that apply)",
+                        "responseIdentifier": "RESPONSE2",
+                        "choices": [
+                            {
+                                "content": "minChoices",
+                                "identifier": "ChoiceA"
+                            },
+                            {
+                                "content": "maxChoices",
+                                "identifier": "ChoiceB"
+                            },
+                            {
+                                "content": "orientation",
+                                "identifier": "ChoiceC"
+                            },
+                            {
+                                "content": "compatability",
+                                "identifier": "ChoiceD"
+                            }
+                        ]
+                    }]
+                }
+            },
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK03",
+                "itemSessionIndex": 5,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE3",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c83\"/>",
+                    "interactions": [{
+                        "id": null,
+                        "type": "choiceInteraction",
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c83",
+                        "maxChoices": 1,
+                        "minChoices": 0,
+                        "prompt": "Which of these is not a configuration for a QTI choice interaction?",
+                        "responseIdentifier": "RESPONSE3",
+                        "choices": [
+                            {
+                                "content": "minChoices",
+                                "identifier": "ChoiceA"
+                            },
+                            {
+                                "content": "maxChoices",
+                                "identifier": "ChoiceB"
+                            },
+                            {
+                                "content": "orientation",
+                                "identifier": "ChoiceC"
+                            },
+                            {
+                                "content": "compatability",
+                                "identifier": "ChoiceD"
+                            }
+                        ]
+                    }]
+                }
+            }
+        ]
+    }]
+}

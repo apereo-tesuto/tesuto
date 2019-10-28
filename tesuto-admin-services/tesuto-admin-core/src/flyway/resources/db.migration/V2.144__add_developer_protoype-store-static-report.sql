@@ -1,0 +1,2 @@
+insert into "security_group_security_permission" (security_permission_id, security_group_id) select 'STORE_STATIC_REPORT', 8 
+    where not exists (select * from security_group_security_permission where security_group_id = 8 and security_permission_id='STORE_STATIC_REPORT');

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                               http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+                               http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+                               http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd
+                               http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
+                               ">
+
+    <bean id="taskExecutor"
+        class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+        <property name="corePoolSize" value="2" />
+        <property name="maxPoolSize" value="2" />
+        <property name="queueCapacity" value="2" />
+    </bean>
+<!-- 
+    <task:scheduled-tasks scheduler="assessmentCompleteListenerScheduler">
+        <task:scheduled ref="assessmentCompleteListener" method="processMessages"
+            fixed-delay="${listener.assessment.complete.fixed.delay}" />
+    </task:scheduled-tasks>
+
+    <task:scheduler id="assessmentCompleteListenerScheduler" />
+ -->
+        <!-- Embedded Elastic MQ service -->
+        <bean id="mqService" class="org.elasticmq.rest.sqs.SQSRestServerBuilder" factory-method="start" />
+        
+        <alias name="requestMultipleMeasurePlacementPublisher" alias="multipleMeasurePlacementRequestor"/>
+<!-- 
+        <bean id="assessmentCompleteListener" class=" org.cccnext.tesuto.message.service.ElasticMQListener">
+            <property name="endpoint" value="${embedded.messages.endpoint}" />
+            <property name="receiveClass" value="org.cccnext.tesuto.placement.dto.AssessmentCompletePlacementInputDto" />
+            <property name="regionName" value="${messages.region.name}" />
+            <property name="queueUrl" value="${embedded.assessment.complete.notification.queue.url}" />
+            <property name="queueName" value="${assessment.complete.notification.queue.name}" />
+            <property name="messageHandler" ref="placementEventHandler" />
+        </bean>
+ -->        
+        <bean id="requestMultipleMeasurePlacementPublisher" class=" org.cccnext.tesuto.message.service.ElasticMQPublisher">
+            <property name="endpoint" value="${embedded.messages.endpoint}" />
+            <property name="sendClass" value="org.cccnext.tesuto.placement.dto.PlacementEventInputDto" />
+            <property name="regionName" value="${messages.region.name}" />
+            <property name="queueUrl" value="${embedded.multiple.measure.request.queue.url}" />
+            <property name="queueName" value="${multiple.measure.request.queue.name}" />
+        </bean>
+</beans>

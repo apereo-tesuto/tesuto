@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+	<groupId>org.cccnext.tesuto</groupId>
+	<artifactId>tesuto</artifactId>
+	<version>2.2.0-SNAPSHOT</version>
+  </parent>
+
+	<artifactId>tesuto-drools-services</artifactId>
+	<packaging>pom</packaging>
+    <properties>
+        <tesuto-drools-common.version>2.2.0-SNAPSHOT</tesuto-drools-common.version>
+    </properties>
+
+    <modules>
+        <module>tesuto-drools-common</module>
+        <module>tesuto-drools-db</module>
+    	<module>tesuto-drools-engine</module>
+    	<module>tesuto-drools-editor</module>
+    </modules>
+
+	
+
+</project>

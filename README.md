@@ -243,8 +243,6 @@ mvn spring-boot:run
  * ``sudo npm install -g grunt-cli``
  * ``grunt build``
  
-### Additional Information
-https://cccnext.jira.com/wiki/spaces/CCCAS/pages/72745130/UI+Development+Build+Scripts 
 
 ## Email Development ##
  * ``sudo npm install -g gulp-cli``

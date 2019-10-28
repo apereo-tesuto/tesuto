@@ -21,7 +21,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.cccnext.tesuto.content.model.DeliveryType;
-//TODO Need to remove this from session and add to user JWT or add to assessment user session 
+//TODO  SECURITY ISSUE!!! Need to remove this from session and add to user JWT or add to assessment user session 
 public class TesutoUtil {
 
     private static final String TESUTO_DELIVERY_PERMISSIONS = "tesuto-delivery-permissions";

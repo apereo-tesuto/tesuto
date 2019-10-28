@@ -64,7 +64,7 @@ public class JWTUserIdentity extends UserIdentity implements Serializable {
             final List<String> roles = getRoles(claims);
             if (roles != null) {
                 this.setRoles(new HashSet<>(roles));
-            } else {
+            } else { //TODO SECURITY ISSUE!!! must remove only here because mitreid not setup properly
             	HashSet<String> hashRoles = new HashSet<>();
             	hashRoles.add("ROLE_API");
             	hashRoles.add("ROLE_ADMIN");

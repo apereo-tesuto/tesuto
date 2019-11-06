@@ -45,7 +45,7 @@ public class TestEvent {
     private String proctorLastName;
     private String proctorEmail;
     private String proctorPhone;
-    private Set<ScopedIdentifier> assessmentScopedIdentifiers;
+    private Set<ScopedIdentifier> assessmentIdentifiers;
     private Date createDate;
     private String createdBy;
     private Date updateDate;

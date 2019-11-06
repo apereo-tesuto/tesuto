@@ -38,7 +38,7 @@ public class JpaTestEventAssembler extends AbstractAssembler<TestEvent,JpaTestEv
     private void setAssessmentScopedIdentifiers(TestEvent event, JpaTestEvent jpaTestEvent) {
         Set<ScopedIdentifier> identifiers =
                 jpaTestEvent.getAssessmentScopedIdentifiers().stream().map(id -> mapper.map(id, ScopedIdentifier.class)).collect(Collectors.toSet());
-        event.setAssessmentScopedIdentifiers(identifiers);
+        event.setAssessmentIdentifiers(identifiers);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class JpaTestEventAssembler extends AbstractAssembler<TestEvent,JpaTestEv
     protected JpaTestEvent doDisassemble(TestEvent testEvent) {
         JpaTestEvent event = mapper.map(testEvent, JpaTestEvent.class);
         Set<JpaScopedIdentifier> identifiers =
-                testEvent.getAssessmentScopedIdentifiers().stream().map(id -> mapper.map(id, JpaScopedIdentifier.class)).collect(Collectors.toSet());
+                testEvent.getAssessmentIdentifiers().stream().map(id -> mapper.map(id, JpaScopedIdentifier.class)).collect(Collectors.toSet());
         event.setAssessmentScopedIdentifiers(identifiers);
         return event;
     }

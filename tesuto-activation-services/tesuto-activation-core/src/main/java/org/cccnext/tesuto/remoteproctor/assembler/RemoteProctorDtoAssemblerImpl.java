@@ -83,7 +83,7 @@ public class RemoteProctorDtoAssemblerImpl implements RemoteProctorDtoAssembler 
 
 		// Second get a list of the Assessments.
 		List<String> assessmentNameList = new LinkedList<>();
-		for (ScopedIdentifier scopedIdentifier : testEvent.getAssessmentScopedIdentifiers()) {
+		for (ScopedIdentifier scopedIdentifier : testEvent.getAssessmentIdentifiers()) {
 			// TODO: Refactor this with a better query to get all of them?  Or just the information we need?
 			AssessmentDto assessmentDto = assessmentService.readLatestPublishedVersion(scopedIdentifier);
 			assessmentNameList.add(assessmentDto.getTitle());

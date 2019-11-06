@@ -165,6 +165,8 @@ start mongod
 start instance of mongo
 in mongo client type following:
 ```
+mongod --dbpath ~/data/tesutodb
+
 use admin
 
 Create a separate root user:
@@ -186,7 +188,7 @@ exit
 stop mongod
 restart with following command:
 ```
-mongod --auth
+mongod --dbpath ~/data/tesutodb --auth
 ```
 to log into mongo client use:
 ```

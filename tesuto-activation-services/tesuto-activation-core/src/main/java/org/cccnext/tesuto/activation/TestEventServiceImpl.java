@@ -60,7 +60,7 @@ public class TestEventServiceImpl implements TestEventService {
     }
 
     public Set<String> assessmentTitles(TestEvent testEvent) {
-        return testEvent.getAssessmentScopedIdentifiers().stream()
+        return testEvent.getAssessmentIdentifiers().stream()
                 .map(id -> assessmentService.readLatestPublishedVersion(id).getTitle())
                 .collect(Collectors.toSet());
     }
@@ -193,7 +193,7 @@ public class TestEventServiceImpl implements TestEventService {
                 messages.add(testEvent.getProctorEmail() + " is not a valid email address");
             }
         }
-        if (CollectionUtils.isEmpty(testEvent.getAssessmentScopedIdentifiers())) {
+        if (CollectionUtils.isEmpty(testEvent.getAssessmentIdentifiers())) {
             messages.add("Assessment Identifiers are required.");
         }
         if (testEvent.getProctorPhone()!= null && !testEvent.getProctorPhone().matches("^[0-9()-_]+$")) {
@@ -230,7 +230,7 @@ public class TestEventServiceImpl implements TestEventService {
         ).collect(Collectors.toSet());
         Set<Activation> statusChanges = toCancel;
         statusChanges.addAll(toReactivate);
-        Set<ProtoActivation> protos = testEvent.getAssessmentScopedIdentifiers().stream().
+        Set<ProtoActivation> protos = testEvent.getAssessmentIdentifiers().stream().
                 flatMap(assessmentIdentifier -> {
                     return newUsers.stream().map(studentId -> {
                         ProtoActivation proto = new ProtoActivation();

@@ -116,9 +116,9 @@ public class AssessmentSessionUIController extends BaseController {
     } */
 
     @PreAuthorize("hasAuthority('PRINT_ASSESSMENT')")
-    @RequestMapping(value = "assessment/print/{namespace}/{identifier}", method = RequestMethod.GET)
-    public String printableAssessmentViewer(Model model, @PathVariable("namespace") String namespace,
-                                            @PathVariable("identifier") String identifier,
+    @RequestMapping(value = "assessment-print", method = RequestMethod.GET)
+    public String printableAssessmentViewer(Model model, @RequestParam("namespace") String namespace,
+    										@RequestParam("identifier") String identifier,
                                             @RequestParam(value = "miscode", required = true) String misCode,
                                             @RequestParam(value = "cccid", required = false) String cccid) throws JsonProcessingException {
 
@@ -127,6 +127,7 @@ public class AssessmentSessionUIController extends BaseController {
         String jsonAssessmentSession = objectMapper.writeValueAsString(assessmentSession);
         model.addAttribute("assessmentSession", jsonAssessmentSession);
         model.addAttribute("misCode", misCode);
+        model.addAttribute("uiIdleTimeoutDuration", uiIdleTimeoutDuration);
         if (StringUtils.isNotBlank(cccid)) {
         	try {
         		model.addAttribute("studentProfile", objectMapper.writeValueAsString(studentService.getStudentById(cccid)));

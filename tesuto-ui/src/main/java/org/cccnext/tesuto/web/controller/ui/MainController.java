@@ -44,6 +44,9 @@ public class MainController extends BaseController {
     @Value("${disable.assessments}")
     private boolean disableAssessments;
     
+    @Value("${disable.placements}")
+    private boolean disablePlacements;
+    
     @Autowired
     private UrlService urlService;
     
@@ -68,6 +71,7 @@ public class MainController extends BaseController {
         model.addAttribute("user", jsonUser);
 
         model.addAttribute("disableAssessments", disableAssessments);
+        model.addAttribute("disableAssessments", disablePlacements);
         model.addAttribute("uiIdleTimeoutDuration", uiIdleTimeoutDuration);
         urlService.addBaseUrls(model);
         

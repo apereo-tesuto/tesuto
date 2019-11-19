@@ -52,6 +52,7 @@ var sessionConfigs = sessionConfigs || {};
     /*======================== LOAD VALUES/CONSTANTS ========================*/
 
     angular.module('CCC.View.Student').constant('ASSESSMENTS_DISABLED', sessionConfigs.disableAssessments);
+    angular.module('CCC.View.Student').constant('PLACEMENTS_DISABLED', sessionConfigs.disablePlacements);
 
 
     /*======================== LOAD CONFIGURATIONS ========================*/

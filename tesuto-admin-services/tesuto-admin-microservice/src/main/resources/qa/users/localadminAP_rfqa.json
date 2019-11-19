@@ -187,7 +187,7 @@
 					},
 					{
 						"id": "b89566e2-0111-4144-ad83-4faf3416a555",
-						"name": "Remote Unicollege",
+						"name": "Remote Unicollege Test Location",
 						"streetAddress1": null,
 						"streetAddress2": null,
 						"city": null,
@@ -282,7 +282,7 @@
 			},
 			{
 				"id": "b89566e2-0111-4144-ad83-4faf3416a555",
-				"name": "Remote Unicollege",
+				"name": "Remote Unicollege Test Location",
 				"streetAddress1": null,
 				"streetAddress2": null,
 				"city": null,

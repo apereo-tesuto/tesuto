@@ -234,7 +234,7 @@
 			</modules>
 		</profile>
 		<profile>
-			<id>assessment_min</id>
+			<id>min_assessment</id>
 			<modules>
 				<module>tesuto-router</module>
 				<module>tesuto-sqs-listener</module>

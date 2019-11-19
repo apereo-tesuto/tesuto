@@ -97,7 +97,7 @@
                 }
 
                 // TODO: not sure why this isn't versioned and is different than "assessment"
-                return 'assessment/print/' + assessment.namespace + '/' + assessment.identifier + queryParams;
+                return 'assessment-print' + queryParams + '&namespace=' + assessment.namespace + '&identifier=' +  assessment.identifier;
             };
 
             AssessmentsAPIService.printAssessment = function (assessmentId, misCode, userId) {

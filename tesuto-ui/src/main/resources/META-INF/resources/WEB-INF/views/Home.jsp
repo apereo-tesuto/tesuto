@@ -50,7 +50,8 @@
             var sessionConfigs = {
                 uiIdleTimeoutDuration: ${uiIdleTimeoutDuration},
                 user: ${user},
-                disableAssessments: ${disableAssessments}
+                disableAssessments: ${disableAssessments},
+                disablePlacements: ${disablePlacements}
             };
         </script>
 

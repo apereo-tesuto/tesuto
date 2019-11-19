@@ -58,7 +58,8 @@
                 uiIdleTimeoutDuration: ${uiIdleTimeoutDuration},
                 student: ${user},
                 studentCollegesInfo: ${studentCollegesInfo},
-                disableAssessments: ${disableAssessments}
+                disableAssessments: ${disableAssessments},
+                disablePlacements: ${disablePlacements}
             };
         </script>
 

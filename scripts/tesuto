@@ -271,7 +271,6 @@ start_assessment_min()
 	rm -fr $TESUTO_HOME/logs
 	run_if_allowed router $1 $2
 	run_if_allowed ui $1 $2
-	run_if_allowed ui $1 $2
 	run_if_allowed activation $1 $2
 	run_if_allowed admin $1 $2
 	run_if_allowed content $1 $2
@@ -634,6 +633,9 @@ start_micro() {
 		services) start_3d_party_services
 		 exit
 		 ;;
+		min_services) start_min_3d_party_services
+		 exit
+		 ;;
    	esac
     mkdir $TESUTO_HOME/logs/previous_run -p;
     mv $TESUTO_HOME/logs/tesuto-$1.log $TESUTO_HOME/logs/previous_run
@@ -693,12 +695,31 @@ start_3d_party_services(){
 	    REDIS_PID=$!
 	    mongod --dbpath ~/data/tesutodb --auth >> $TESUTO_HOME/servicelogs/mongod.log &
 	    MONGO_PID=$!
-		docker run  --net=host -p 8093:8080 tesuto/mitreid-connect:latest >> $TESUTO_HOME/servicelogs/mitreid.log>&1 &
+		docker run  --net=host -p 8080:8080 tesuto/mitreid-connect:latest >> $TESUTO_HOME/servicelogs/mitreid.log>&1 &
 		MITREID_PID=$!
 		cd $TESUTO_HOME
 		echo "kill $ELASTIC_PID $DYNAMO_PID $REDIS_PID $MONGO_PID $MITREID_PID"
 		echo "ELASTIC_PID,DYNAMO_PID,REDIS_PID,MONGO_PID,MITREID_PID"
 		SERVICE_PIDS=[$ELASTIC_PID,$DYNAMO_PID,$REDIS_PID,$MONGO_PID,$MITREID_PID]
+		exit
+    }
+    
+ start_min_3d_party_services(){
+        
+        mkdir $TESUTO_HOME/servicelogs -p
+	  	cd $HOME_ELASTICMQ
+		java -Dconfig.file=custom.config -jar elasticmq-server.jar >> $TESUTO_HOME/servicelogs/elasticMQ.log &
+		ELASTIC_PID=$!
+	    redis-server >> $TESUTO_HOME/servicelogs/redis.log &
+	    REDIS_PID=$!
+	    mongod --dbpath ~/data/tesutodb --auth >> $TESUTO_HOME/servicelogs/mongod.log &
+	    MONGO_PID=$!
+		docker run  --net=host -p 8080:8080 tesuto/mitreid-connect:latest >> $TESUTO_HOME/servicelogs/mitreid.log>&1 &
+		MITREID_PID=$!
+		cd $TESUTO_HOME
+		echo "kill $ELASTIC_PID $REDIS_PID $MONGO_PID $MITREID_PID"
+		echo "ELASTIC_PID,REDIS_PID,MONGO_PID,MITREID_PID"
+		SERVICE_PIDS=[$ELASTIC_PID,$REDIS_PID,$MONGO_PID,$MITREID_PID]
 		exit
     }
 
@@ -869,7 +890,7 @@ help() {
 	echo "activation   port:8001"
 	echo "admin        port:8002"
 	echo "content      port:8004"
-	echo "delivery     port:8005"
+	echo "delivery     port:8225"
 	echo "placement    port:8006"
 	echo "preview      port:8007"
 	echo "qti-importer port:8008"

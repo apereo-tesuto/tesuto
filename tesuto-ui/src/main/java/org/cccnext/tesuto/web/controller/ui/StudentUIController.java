@@ -60,6 +60,9 @@ public class StudentUIController extends BaseController {
 
     @Value("${disable.assessments}")
     private boolean disableAssessments;
+    
+    @Value("${disable.placements}")
+    private boolean disablePlacements;
 
     @PreAuthorize("hasAuthority('VIEW_STUDENT_DASHBOARD')")
     @RequestMapping(value = {"/student", "/student/**", "/student/*"  }, method = RequestMethod.GET)
@@ -102,6 +105,7 @@ public class StudentUIController extends BaseController {
             model.addAttribute("google.analytics.environment", googleAnalyticsEnvironment);
 
             model.addAttribute("disableAssessments", disableAssessments);
+            model.addAttribute("disablePlacements", disablePlacements);
             urlService.addBaseUrls(model);
         }
     }

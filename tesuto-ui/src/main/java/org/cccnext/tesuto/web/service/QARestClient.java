@@ -54,6 +54,9 @@ public class QARestClient extends BaseRestClient<Void> {
 	@Value("${disable.assessments}")
 	Boolean assesmentsDisabled;
 	
+	@Value("${disable.placements}")
+	Boolean placementsDisabled;
+	
 	Integer httpPort;
 
 	Integer serverPort;
@@ -86,8 +89,9 @@ public class QARestClient extends BaseRestClient<Void> {
 		if(!assesmentsDisabled) {
 			this.insertSeedDataServer(qtiImporterServerPort, qtiImporterHttpPort, qtiImporterServerContext);
 		}
-	
-		insertSeedDataServer(placementServerPort, placementHttpPort, placementServerContext);
+		if(!placementsDisabled) {
+			insertSeedDataServer(placementServerPort, placementHttpPort, placementServerContext);
+		}
 		
 		if(!assesmentsDisabled) {
 			insertSeedDataServer(deliveryServerPort, deliveryHttpPort, deliveryServerContext);

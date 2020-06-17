@@ -71,7 +71,7 @@ public class MainController extends BaseController {
         model.addAttribute("user", jsonUser);
 
         model.addAttribute("disableAssessments", disableAssessments);
-        model.addAttribute("disableAssessments", disablePlacements);
+        model.addAttribute("disablePlacements", disablePlacements);
         model.addAttribute("uiIdleTimeoutDuration", uiIdleTimeoutDuration);
         urlService.addBaseUrls(model);
         
@@ -94,6 +94,7 @@ public class MainController extends BaseController {
         model.addAttribute("user", jsonUser);
 
         model.addAttribute("disableAssessments", disableAssessments);
+        model.addAttribute("disablePlacements", disablePlacements);
         model.addAttribute("uiIdleTimeoutDuration", uiIdleTimeoutDuration);
         urlService.addBaseUrls(model);
         

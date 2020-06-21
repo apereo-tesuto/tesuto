@@ -1,0 +1,184 @@
+
+.ccc-asmt-player-toolbar {
+
+    z-index: 1100;
+
+    * {
+        vertical-align: middle;
+    }
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(220, 220, 220, 0.95);
+
+    label {
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+
+    .ccc-user-options-menu {
+        max-width: 30%;
+    }
+
+    .app-nav-button {
+        max-width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: visible;
+        position: relative;
+
+        padding-right: 30px;
+
+        .caret {
+            position: absolute;
+            right: 10px;
+            top: 15px;
+        }
+    }
+
+    .ccc-asmt-player-asmt-title-container {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        display: block;
+        opacity: 0.9;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: visible;
+        max-width: 70%;
+    }
+
+    .ccc-asmt-player-asmt-title {
+        line-height: 35px;
+        font-size: 20px;
+        margin-left: 5px;
+        font-family: 'Roboto Slab', serif;
+    }
+}
+
+.ccc-invert {
+    .ccc-asmt-player-toolbar {
+        background: rgba(50, 50, 50, 0.95);
+    }
+}
+
+ccc-asmt-player-toolbar-top {
+    display: block;
+    z-index: 1;
+    .ccc-asmt-player-toolbar {
+        position: relative;
+    }
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+ccc-asmt-player-toolbar-bottom {
+    .progress {
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+    .ccc-asmt-btn-group {
+        display: inline-block;
+    }
+    .btn.ccc-asmt-next-button {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        //.border-radiuses (30px, 30px, 10px, 10px);
+        .transition-properties(all 300ms linear);
+
+        i:last-child {
+            margin-left: 15px;
+        }
+    }
+    .ccc-asmt-previous-button {
+        margin: 0 5px;
+
+        &.btn-primary{
+            .transition-properties(all 300ms linear);
+        }
+    }
+    .ccc-asmt-score-button {
+        position: absolute;
+        left: 10px;
+    }
+    .ccc-asmt-item-details {
+        position: absolute;
+        right: 10px;
+        margin-top: 11px;
+    }
+
+}
+
+.ccc-asmt-player-tools {
+    position: absolute;
+    z-index: 0;
+    opacity: 1.0;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+    padding-top: 5px;
+    padding-bottom: 6px;
+    background: rgba(240, 240, 240, 0.85);
+    .transition-properties(all 600ms cubic-bezier(0.595, 0.61, 0, 1));
+}
+
+.ccc-asmt-player-tools.ng-hide {
+    opacity: 0;
+    top: 0%;
+}
+
+.ccc-invert {
+    .ccc-asmt-player-tools {
+        background: rgba(30, 30, 30, 0.85);
+        border-bottom: 1px solid #555;
+    }
+}
+
+/*============= INTERACTION STATUS BUTTONS ===============*/
+
+.interaction-status-button {
+    &.valid {}
+}
+
+/*============= TOOLBAR TOOLS ==============*/
+
+.ccc-asmt-player-tool.btn-default {
+    span {
+        margin-right: 10px;
+    }
+    i {
+        color: @brand-primary;
+    }
+
+    &.active {
+        color: #fff;
+        background: @brand-primary;
+        i {
+            color: #fff;
+        }
+    }
+}
+
+
+
+
+/*=============== RESPONSIVE STYLES =============*/
+
+@media (max-width: @screen-xs-max) {
+
+    ccc-asmt-player-toolbar-top {
+        .ccc-asmt-player-toolbar {
+
+            .btn i:last-child {
+                margin-left: 0;
+            }
+
+            .ccc-asmt-player-asmt-title-container {
+                font-size: 90%;
+            }
+        }
+    }
+}

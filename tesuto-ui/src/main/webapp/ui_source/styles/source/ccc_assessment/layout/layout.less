@@ -1,0 +1,44 @@
+
+@max-text-width: 40em;
+
+.layout-container-stimulus {
+
+    display: inline-block;
+
+    font-size: 105%;
+    line-height: 157%;
+    margin-bottom: 45px;
+
+    img {
+        max-width: 100%;
+    }
+
+    p {
+        max-width: @max-text-width; // calculated with base of 1em should be max 80em, but base font size for p is 115%
+    }
+
+}
+
+.layout-container-items {
+    margin-top: 0em;
+    prompt {
+        display: inline-block;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+    label {
+        &.ccc-interaction-prompt {
+            margin-bottom: 10px;
+            font-weight: 300;
+            display: block;
+            line-height: 150%;
+        }
+    }
+    p {
+        max-width: @max-text-width;
+    }
+    textarea {
+        max-width: @max-text-width;
+        width: 100%;
+    }
+}

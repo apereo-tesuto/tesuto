@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<assessmentItem xmlns="http://www.imsglobal.org/xsd/imsqti_v2p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:m="http://www.w3.org/1998/Math/MathML"
+                xsi:schemaLocation="http://www.imsglobal.org/xsd/imsqti_v2p2  http://www.imsglobal.org/xsd/qti/qtiv2p2/imsqti_v2p2.xsd"
+                identifier="i004" title="Multiple TextEntry, Map Scoring" timeDependent="false">
+    <responseDeclaration baseType="string" cardinality="single" identifier="RESPONSE0">
+        <correctResponse>
+            <value>typesetting</value>
+            <value>printing</value>            
+        </correctResponse>
+        <mapping defaultValue="0">
+        <mapEntry mapKey="10" mappedValue="1"/>
+        <mapEntry mapKey="Ten" mappedValue="1"/>
+        <mapEntry mapKey="ten" mappedValue="1"/>        
+        </mapping>
+    </responseDeclaration>
+    <responseDeclaration baseType="identifier" cardinality="single" identifier="RESPONSE1">
+        <correctResponse>
+            <value>choice_4</value>
+        </correctResponse>
+        <mapping defaultValue="0">
+        <mapEntry mapKey="choice_1" mappedValue="0"/>
+        <mapEntry mapKey="choice_2" mappedValue="0"/>
+        <mapEntry mapKey="choice_3" mappedValue="1"/>
+        <mapEntry mapKey="choice_4" mappedValue="2"/>                        
+        </mapping>
+    </responseDeclaration>
+    <outcomeDeclaration cardinality="single" baseType="float" identifier="SCORE"/>
+    <itemBody>
+        
+            <div><p>In what industry did Lorem Ipsum originate?<textEntryInteraction placeholderText="" responseIdentifier="RESPONSE0"/></p>
+          <choiceInteraction shuffle="false" maxChoices="1" minChoices="1" orientation="vertical" responseIdentifier="RESPONSE1"><prompt>Why do we use Lorem Ipsum?</prompt><simpleChoice fixed="false" identifier="choice_1">To confuse people</simpleChoice><simpleChoice fixed="false" identifier="choice_2">To anger people</simpleChoice><simpleChoice fixed="false" identifier="choice_3">To make people happy</simpleChoice><simpleChoice fixed="false" identifier="choice_4">To not distact people</simpleChoice><simpleChoice fixed="false" identifier="choice_5">I don't know</simpleChoice><simpleChoice fixed="false" identifier="choice_6">It is unanswerable</simpleChoice><simpleChoice fixed="false" identifier="choice_7">All of the above</simpleChoice></choiceInteraction>           
+            </div>
+        
+    </itemBody>
+   <responseProcessing
+		template="http://www.imsglobal.org/question/qti_v2p2/rptemplates/map_response"/>
+</assessmentItem>

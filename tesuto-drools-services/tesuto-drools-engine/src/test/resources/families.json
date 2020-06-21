@@ -1,0 +1,16 @@
+[
+{
+	"familyCode":"ZZ1",
+	"description":"Unicon Test College",
+	"status":"enabled",
+	"engines":{
+		"applySubmit": {
+			"name":"applySubmit",
+			"dataSource":"maven",
+			"groupId":"org.cccmypath.rules",
+			"artifactId":"drools-rules-listener-rules",
+			"version":"unit-test"
+		}
+	}
+}
+]

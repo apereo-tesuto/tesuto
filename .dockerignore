@@ -1,0 +1,16 @@
+.git/*
+.idea/*
+.DS_Store/*
+maketools/*
+.dockerignore
+.editorconfig
+.gitignore
+*.md
+docker-compose.yml
+Makefile
+VERSION
+assembly/*
+src/*
+target/*
+extras/*
+pom.xml

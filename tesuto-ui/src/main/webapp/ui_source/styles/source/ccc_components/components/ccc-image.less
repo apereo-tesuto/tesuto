@@ -1,0 +1,13 @@
+ccc-image {
+
+    img {
+        opacity: 0;
+    }
+
+    &.ccc-image-loaded {
+        img {
+            .transition-properties(opacity 600ms ease-in-out);
+            opacity: 1.0;
+        }
+    }
+}

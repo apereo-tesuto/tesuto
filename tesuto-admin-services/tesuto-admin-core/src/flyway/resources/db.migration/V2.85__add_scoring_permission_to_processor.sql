@@ -1,0 +1,1 @@
+insert into "security_group_security_permission" (security_permission_id, security_group_id) select 'VIEW_PROCESSOR_DELIVERY_ASSESSMENT_SESSION', g.security_group_id from security_group g where g.group_name = 'PROCESSOR';

@@ -1,0 +1,23 @@
+
+.ccc-validation-messages,
+.ccc-validation-badge,
+.ccc-validation-badge-block {
+    display: none;
+}
+
+.ccc-show-errors {
+
+    .ccc-validation-messages,
+    .ccc-validation-badge-block {
+        display: block;
+    }
+    .ccc-validation-badge {
+        display: inline-block;
+    }
+
+    textarea.ng-invalid,
+    input.ng-invalid,
+    select.ng-invalid {
+        border: 1px solid @brand-warning;
+    }
+}

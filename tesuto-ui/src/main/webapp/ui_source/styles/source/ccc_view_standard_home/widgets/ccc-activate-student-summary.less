@@ -1,0 +1,40 @@
+ccc-activate-student-summary {
+
+    .ccc-user {
+        margin-bottom: 1em;
+    }
+
+    .ccc-activate-student-summary-activations {
+        display: flex;
+        display: -ms-flexbox;
+
+        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        margin-right: -2em;
+
+        @media (max-width: @screen-lg) {
+            margin-right: -2em;
+        }
+
+        @media (max-width: @screen-md) {
+            margin-right: -1em;
+        }
+
+        @media (max-width: @screen-sm) {
+            margin-right: 0;
+        }
+
+        ccc-activation-card {
+            &.no-controls {
+                padding-bottom: 1em;
+            }
+        }
+    }
+}
+
+.ccc-success-box {
+    h2 {
+        margin-bottom: 0;
+        font-size: 215%;
+    }
+}

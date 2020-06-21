@@ -1,0 +1,5 @@
+Hi ${remoteProctorViewDto.displayName}!
+
+Your display name is: ${remoteProctorViewDto.displayName}
+
+<a href="${remoteProctorViewDto.linkForProctorPasscode}">Please log in here</a>

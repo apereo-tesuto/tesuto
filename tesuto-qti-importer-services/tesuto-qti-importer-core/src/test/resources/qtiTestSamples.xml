@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+                           http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+    <!-- Service Class for Unit testing only -->
+    <!-- Each bean will be loaded upon initialization -->
+    <!-- Although we won't need each bean for every test case this seems the 
+        most elegant approach and a worthy trade off to reduce the size of our larger 
+        test cases -->
+    <bean id="updatedMetadata_10_01_2016_ParseTestFileService"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+         <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="updatedMetadata10_01_2016.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="updatedMetadata_8_10_2016_ParseTestFileService"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="updatedMetadata8_10_2016.zip" name="fileName"/>
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="updatedMetadata_3_17_2016_ParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+        init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="updatedMetadata3_17_2016.zip" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="updatedMetadata_1_29_2016_ParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+        init-method="parseTestFile">
+        <constructor-arg value="updatedMetadata1_29_2016.zip"  name="fileName"/>
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="metadataParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+        init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="Metadata.zip"  name="fileName"/>
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="malformedMetadataContainsOnlyRootNodeParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="malformedMetadataContainsOnlyRootNode.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="malformedMetadataParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="malformedMetadata.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="nestedParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="Nested3DeepSimple.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="linearParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="Simple3QuestionLinear.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="choiceParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="choice.xml" name="fileName" />
+        <constructor-arg value="true" />
+    </bean>
+    <bean id="choiceWithManifestParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="choicewmanifest.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="lsiParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="multiitemswithassessment.zip" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="multiItemsParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="multiitems.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="mappingResponseParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="match-interaction.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="branchRuleParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="branchrule.zip" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="unsupportedNestedBranchRuleParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="unsupportedNestedBranchrule.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="unsupportedBranchRuleParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="unsupportedBranchrule.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="invalidSchemaTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="invalid-schema-item.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="branchRuleCycleTargetParseTestFileService"
+        class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="branchruleCycle.zip" name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+    <bean id="allOutcomesPossible"
+            class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService" >
+            <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="allOutcomesPossible.zip" name="fileName"/>
+        <constructor-arg value="false"/>
+    </bean>
+    <bean id="schemaValidationErrors"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService" >
+          <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="schemaValidationErrors.zip" name="fileName"/>
+        <constructor-arg value="false"/>
+    </bean>
+    <bean id="xmlParsingValidationErrors"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService" >
+          <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="xmlParsingValidationErrors.zip" name="fileName"/>
+        <constructor-arg value="false"/>
+    </bean>
+    <bean id="missingResource"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService" >
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="missingResource.zip" name="fileName"/>
+        <constructor-arg value="false"/>
+    </bean>
+    <bean id="invalidAssessmentTestXml"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService" >
+          <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="invalidAssessmentTestXml.zip" name="fileName"/>
+        <constructor-arg value="false"/>
+    </bean>
+    <bean id="imsmanifestNotInRoot"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService" >
+          <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="imsmanifestNotInRoot.zip" name="fileName"/>
+        <constructor-arg value="false"/>
+    </bean>
+
+    <bean id="selectionTestFileService"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService" >
+          <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="selection.zip" name="fileName"/>
+        <constructor-arg value="false"/>
+    </bean>
+    
+    <bean id="mathSampleFull"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="mathSampleFull.zip"  name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+
+    <bean id="ariaTagsTest"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="aria-tags-test.zip"  name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+
+    <bean id="perfValid"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="perf-valid.zip"  name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+
+    <bean id="perf4CategoryRanges"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="perf-4-cat-ranges.zip"  name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+
+    <bean id="perf6Ranges"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="perf-6-ranges.zip"  name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+
+    <bean id="perfGapInRanges"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="perf-gap-in-ranges.zip"  name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+
+    <bean id="perfMinGreaterThanMax"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="perf-min-gt-max.zip"  name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+
+    <bean id="perfNotSequential"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="perf-not-sequential.zip"  name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+
+    <bean id="perfPosition2"
+          class="org.cccnext.tesuto.importer.qti.service.ParseTestFileService"
+          init-method="parseTestFile">
+        <constructor-arg value="qti-test-samples" name="parentFolder" />
+        <constructor-arg value="perf-position-2.zip"  name="fileName" />
+        <constructor-arg value="false" />
+    </bean>
+</beans>

@@ -1,0 +1,117 @@
+/* Styles to handle the content that can live behind the main view */
+ccc-background {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.ccc-background-content {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+.ccc-background-content-close {
+    padding: 10px;
+}
+.ccc-background-content-inner {
+    padding: 0px 10px 10px 10px;
+}
+
+.ccc-background-content {
+
+    .ccc-form-title {
+        position: relative;
+        overflow: hidden;
+        margin-top: 0px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 3px;
+        min-height: 40px;
+    }
+
+    .ccc-form-section-content {
+        .btn-group-vertical {
+            .btn {
+                text-align: left;
+            }
+        }
+    }
+
+
+}
+
+.ccc-background-content.ccc-background-content-left {
+    left: 0;
+    box-shadow: inset -3px 0px 8px rgba(0,0,0, 0.2);
+    .ccc-form-title {
+        .ccc-background-content-title {
+            padding-right: 35px;
+        }
+        button {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+        }
+    }
+}
+.ccc-background-content.ccc-background-content-right {
+    right: 0;
+    box-shadow: inset 3px 0px 8px rgba(0,0,0, 0.2);
+    .ccc-form-title {
+        .ccc-background-content-title {
+            padding-left: 35px;
+        }
+        button {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+        }
+    }
+}
+
+.ccc-invert {
+    .ccc-background-content.ccc-background-content-left {
+        box-shadow: inset -3px 0px 8px rgba(255,255,255, 0.2);
+    }
+    .ccc-background-content.ccc-background-content-right {
+        box-shadow: inset 3px 0px 8px rgba(255,255,255, 0.2);
+    }
+}
+
+
+/* This class is to be placed on the foreground container */
+.ccc-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .transition-properties(all 400ms cubic-bezier(0.595, 0.61, 0, 1));
+    z-index: 2;
+}
+
+.ccc-foreground-blocker {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    background-color: rgba(255, 255, 255, 0.0);
+}
+
+
+/*============ RESPONSIVE STYLES ============*/
+
+@media (max-width: @screen-xs-max) {
+    .ccc-background-content-title {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}

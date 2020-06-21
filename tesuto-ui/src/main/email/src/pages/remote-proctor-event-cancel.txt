@@ -1,0 +1,15 @@
+---
+layout: plaintext
+subject: Remote Proctor Event - CANCELED
+---
+
+<p>Hello ${remoteProctorViewDto.remoteProctorDisplayName}</p>
+
+<p>The test event for ${collegeName} you were scheduled to proctor on ${remoteProctorViewDto.startDate} has been canceled.</p>
+
+<p>If the test event is rescheduled, you will be notified via email.</p>
+
+<p>If you have any questions, please contact the Assessment Center at ${collegeName}.</p>
+
+<p>Regards,<br>
+${collegeName} Assessment Center</p>

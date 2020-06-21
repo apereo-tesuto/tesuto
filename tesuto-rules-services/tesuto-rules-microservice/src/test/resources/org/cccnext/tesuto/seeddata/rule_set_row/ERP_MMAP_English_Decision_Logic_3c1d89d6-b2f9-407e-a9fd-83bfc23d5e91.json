@@ -1,0 +1,153 @@
+{
+	"id": "3c1d89d6-b2f9-407e-a9fd-83bfc23d5e91",
+	"family": "SYS",
+	"engine": "tesuto",
+	"version": "1",
+	"title": "ERP MMAP English Decision Logic",
+	"status": "published",
+	"event": "MULTIPLE_MEASURE_PLACEMENT",
+	"category": "mmComponentPlacementLogic",
+	"competencyMapDiscipline": "ENGLISH",
+	"description": "<p>Process ERP endpoint results to give an English Placement </p>",
+	"ruleId": "11d1f9f1-40d9-46a2-8635-9a9bce6e8cb5",
+	"variableRows": [
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "englishY",
+					"value": "true"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "transfer_level",
+					"value": "A"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "1"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "englishA",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "englishB",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "transfer_level",
+					"value": "C"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "3"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "englishC",
+					"value": "true"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "englishY",
+					"value": "false"
+				},
+				{
+					"name": "transfer_level",
+					"value": "D"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "4"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "englishA",
+					"value": "false"
+				},
+				{
+					"name": "englishB",
+					"value": "false"
+				},
+				{
+					"name": "englishC",
+					"value": "false"
+				}
+			]
+		}
+	],
+	"validationCsv": "fact,fact,fact,fact,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result\nenglishY,englishA,englishB,englishC,transfer_level,levels_below_transfer,insufficient_data,cccid,miscode,competencymapdiscipline,subjectArea,program,rowNumber,ruleSetId,ruleSetRowId,ruleId,trackingId,dataSource,dataSourceType,dataSourceDate,standAlonePlacement,insufficientData\ntrue,,,,Y,0,false,A123456,test_college_id,ENGLISH,test_subject_area,english,1,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,true,,,A,1,false,A123456,test_college_id,ENGLISH,test_subject_area,english,2,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,,true,,B,2,false,A123456,test_college_id,ENGLISH,test_subject_area,english,3,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,,,true,C,3,false,A123456,test_college_id,ENGLISH,test_subject_area,english,4,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\nfalse,false,false,false,D,4,false,A123456,test_college_id,ENGLISH,test_subject_area,english,5,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false"
+}

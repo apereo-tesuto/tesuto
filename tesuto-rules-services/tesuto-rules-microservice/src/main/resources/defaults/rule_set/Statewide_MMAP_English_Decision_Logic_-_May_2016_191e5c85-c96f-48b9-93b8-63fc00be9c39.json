@@ -1,0 +1,17 @@
+{
+	"id": "191e5c85-c96f-48b9-93b8-63fc00be9c39",
+	"family": "SYS",
+	"engine": "tesuto",
+	"version": "1",
+	"title": "Statewide MMAP English Decision Logic - May 2016",
+	"status": "published",
+	"event": "MULTIPLE_MEASURE_PLACEMENT",
+	"category": "mmComponentPlacementLogic",
+	"competencyMapDiscipline": "ENGLISH",
+	"description": "Execute the statewide MMAP English decision logic to generate the Multiple Measures, High School Transcript based placement component",
+	"ruleSetRowIds": [
+		"3b737ac2-9979-45d7-a2d6-e71517452eb6"
+	],
+	"ruleSetDrl": null,
+	"ruleSetDrlValidationCsv": null
+}

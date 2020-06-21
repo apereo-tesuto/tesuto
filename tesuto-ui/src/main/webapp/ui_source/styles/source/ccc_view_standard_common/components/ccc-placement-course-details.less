@@ -1,0 +1,190 @@
+
+ccc-placement-course-details {
+
+    font-size: 16px;
+
+    .placement-date {
+        color: #666;
+        font-size: 0.85em;
+        margin-bottom: 1em;
+    }
+
+    .subject-area {
+        margin-bottom: 30px;
+    }
+
+    .subject-area-title {
+        color: @blueDark;
+    }
+
+    .placement-card {
+        background: @warm1;
+        border: 1px solid @warm3;
+        margin-bottom: 1em;
+        padding: 1em;
+        position: relative;
+        border-radius: 5px;
+
+        .course {
+
+            font-family: @reading-font-family;
+
+            .common-name {
+                margin: 0 0 0.25em 0;
+            }
+
+            .course-name {
+                color: @brand-success;
+                margin: 0 0 0.25em 0;
+
+                .label {
+                    display: inline-block;
+                    font-size: 0.5em;
+                    margin-left: 1em;
+                    vertical-align: middle;
+                }
+            }
+
+            .description {
+                color: fade(black, 50%);
+                font-size: 1em;
+                overflow: hidden;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .placement-explanation {
+        padding: 1em;
+
+        h3 {
+            margin-top: 0;
+        }
+    }
+
+    .placement-recommendation {
+        position: relative;
+        text-align: center;
+
+        h3  {
+            font-size: 300%;
+            font-weight: 300;
+            margin: 0.6em 0;
+        }
+
+        .label {
+            font-size: 100%;
+            padding: 0.5em 1em;
+            position: absolute;
+            top: -3px;
+            right: 2rem;
+        }
+    }
+
+    &.student-report {
+
+        .placement-card {
+            padding-left: 35px;
+
+            > .icon {
+                background: transparent url("../../../resources/images/icons/checkmark.png") 0 0 no-repeat;
+                background-size: 25px;
+                height: 25px;
+                width: 25px;
+                position: absolute;
+                top: 1em;
+                left: 0.5em;
+            }
+        }
+    }
+
+    &.counselor-report {
+
+        .placement-card {
+            margin-bottom: 0.75rem;
+        }
+
+        .competency-results {
+            margin-top: 5rem;
+        }
+    }
+}
+
+
+/*==================== RESPONSIVE STYLES ===============================*/
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {}
+
+// Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+
+    ccc-placement-course-details {
+
+        &.student-report {
+
+            .placement-card {
+                padding-left: 80px;
+
+                > .icon {
+                    background-size: 50px;
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+        }
+    }
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) {
+
+    ccc-placement-course-details {
+
+        &.student-report {
+
+            .placement-card {
+                padding: 1.75em;
+                padding-left: 80px;
+
+                > .icon {
+                    top: 1.5em;
+                    left: 1.25em;
+                }
+            }
+        }
+
+        &.counselorReport {
+
+            .col:first-child {
+                padding: 0 3em 0 15px;
+            }
+
+            .col:last-child {
+                padding: 0 15px 0 3em;
+            }
+        }
+    }
+}
+
+// Large screen (wide desktop, 1200px and up)
+@media (min-width: @screen-lg-min) {
+
+    ccc-placement-course-details {
+
+        &.student-report {
+
+            .placement-card {
+                padding: 2em;
+                padding-left: 80px;
+            }
+
+            .explanation-only {
+
+                .placement-explanation {
+                    min-height: 5.5em;
+                }
+            }
+        }
+    }
+}

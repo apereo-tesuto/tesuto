@@ -1,0 +1,33 @@
+.ccc-user-list {
+
+    display: block;
+    overflow-y: visible;
+
+    ul {
+
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+
+        > li {
+            list-style: none;
+
+            .ccc-user {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {
+    .ccc-user-list {
+        ul {
+            > li {
+                .ccc-user {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}

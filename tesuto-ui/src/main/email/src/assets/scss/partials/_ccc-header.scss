@@ -1,0 +1,28 @@
+.ccc-header {
+    color: #fff;
+    background-color: $blue;
+
+    .container {
+        background-color: $blue;
+        padding-top: 15px;
+    }
+
+    .logo-mark {
+        height: 30px;
+        margin-right: 5px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .logo-text {
+        color: #fff;
+        vertical-align: middle;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .logo-wrap {
+        padding-top: 15px;
+    }
+}

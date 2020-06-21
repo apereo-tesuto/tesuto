@@ -1,0 +1,1008 @@
+#!/bin/bash
+
+
+build() { 
+    case $1 in
+	complete) build_all complete $2
+    ;;
+    complete_app) build_all complete $2
+	;;
+    assess) build_all assessment $2
+    ;;
+    assess_app) build_all assessment $2
+    ;;
+    min_assess_app) build_all min_assessment $2
+    ;;
+	min_assess) build_all min_assessment $2
+    ;;
+    place_app) build_all placement $2
+    ;;
+    place) build_all placement $2
+    ;;
+	core) build_all core $2
+    ;;
+    database) build_database
+    ;;
+    js) build_ui
+    ;;
+    help) build_help
+    ;;
+ 	*) build_micro $1 $2
+	;;
+  	esac
+}
+
+
+start() { 
+    case $1 in
+	complete) start_all $2
+    ;;
+    complete_app) start_all $2
+    ;;
+	assess) start_assessment $2
+    ;;
+    assess_app) start_assessment $2
+    ;;
+	min_assess) start_assessment_min $2
+    ;;
+    min_assess_app) start_assessment_min $2
+    ;;
+	place)  start_placement $2
+	;;
+    place_app) start_placement $2
+	;;
+ 	*) start_micro $1 $2
+	;;
+  	esac
+}
+
+package() { 
+    case $1 in
+    all) package_all
+    ;;
+    complete) package_all
+    ;;
+    assess) package_all
+    ;;
+    min) package_all
+    ;;
+    place) package_all
+    ;;
+ 	*) package_micro $1
+	;;
+  	esac
+}
+
+package_all() 
+{
+	package_micro ui $1 $2
+	package_micro rules $1 $2
+	package_micro placement $1 $2
+	package_micro activation $1 $2
+	package_micro admin $1 $2
+	package_micro content $1 $2
+	package_micro delivery $1 $2
+	package_micro "qti-importer" $1 $2
+	package_micro preview $1 $2
+	package_micro reports $1 $2
+}
+
+sources_all() 
+{
+	sources_micro ui $1 $2
+	sources_micro rules $1 $2
+	sources_micro placement $1 $2
+	sources_micro activation $1 $2
+	sources_micro admin $1 $2
+	sources_micro content $1 $2
+	sources_micro delivery $1 $2
+	sources_micro "qti-importer" $1 $2
+	sources_micro preview $1 $2
+	sources_micro reports $1 $2
+}
+
+package_place() 
+{
+	package_micro ui $1
+	package_micro rules $1
+	package_micro placement $1
+	package_micro admin $1
+}
+
+
+build_help() { 
+   echo "build command is short hand for a number of build commands"
+   echo "basic structure is build arg1 arg2 arg3"
+   echo "'build complete' builds all projects"
+   echo "'build compete test' builds and test projects"
+   echo " similar commands:ones are js (builds the javascript ui), assess (builds assessment onlye),"
+   echo "   'build js' builds javascript for ui"
+   echo "   'build database' builds database"
+   echo "   'build assess (test)' builds assessment related microservices"
+   echo "   'build min (test)' builds minimal assessment related microservices"
+   echo "   'build placement (test)' builds placement related microservices"
+   echo "   'build XX (test)' builds and or tests micro service of that name.		"
+}
+
+build_all() { 
+    skip_tests $2
+	echo "building $BUILD_TYPE set of microservices adn database js grunt scripts, skip testing set to $SKIP_TEST "
+	echo "   "
+	echo "   "
+	echo "mvn clean install -Pdatabase,npm,$1 -Dmaven.test.skip=$SKIP_TEST &&"
+ 	echo "   "
+	cd $TESUTO_HOME
+	mvn clean install -Pdatabase,npm,$1 -Dmaven.test.skip=$SKIP_TEST &&
+	if [ $? -ne 0 ]; then echo "ERROR"; exit 1; fi
+}
+
+skip_tests() { 
+   echo "Skip Test value is $1"
+   if [ "$1" = "test" ]
+   then
+     SKIP_TEST="false"
+   else
+     SKIP_TEST="true"
+   fi
+ }
+
+build_micro()
+{
+    skip_tests $2
+	echo "building microservice tesuto-$1-services skip testing set to $SKIP_TEST"
+	echo "   "
+	echo "   "
+
+    #build_infrastructures()
+    
+    set_build_directory $1
+
+	if [[ !  -z  $3 ]] 
+	then
+	   echo "mvn clean install -P$3 -Dmaven.test.skip=$SKIP_TEST"
+	   echo "   "
+       mvn clean install -P$3 -Dmaven.test.skip=$SKIP_TEST
+	else
+       echo "mvn clean install -Dmaven.test.skip=$SKIP_TEST"
+	   echo "   "
+       mvn clean install -Dmaven.test.skip=$SKIP_TEST
+    fi
+	
+	if [ $? -ne 0 ]; then echo "ERROR"; exit 1; fi
+}
+
+
+package_micro() {
+	go $1 
+	echo "mvn clean install spring-boot:repackage -Dmaven.test.skip=true"
+	mvn clean install spring-boot:repackage -Dmaven.test.skip=true
+}
+
+sources_micro() {
+	go $1 
+	echo "mvn dependency:sources"
+	mvn dependency:sources
+	echo "mvn dependency:resolve -Dclassifier=javadoc"
+	mvn dependency:resolve -Dclassifier=javadoc
+}
+
+build_test_micro() {
+	echo "building microservice tesuto-$1-services no testing"
+	echo "   "
+	echo "   "
+	echo "cd $TESUTO_HOME/tesuto-$1-services"
+	cd $TESUTO_HOME/tesuto-$1-services 
+	if [[ !  -z  $2  ]] 
+	then
+	   echo "mvn clean install -P$2 -Dmaven.test.skip=true"
+	   echo "   "
+       mvn clean install -P$2 -Dmaven.test.skip=true
+	else
+       echo "mvn clean install -Dmaven.test.skip=true"
+	   echo "   "
+       mvn clean install -Dmaven.test.skip=true
+    fi
+}
+
+build_database() {
+	echo "building all databases"
+	echo "   "
+	echo "   "
+	echo "cd $TESUTO_HOME"
+	echo "mvn process-resources -Dmaven.test.skip=true -Pdatabase &&"
+	cd $TESUTO_HOME
+	mvn process-resources -Dmaven.test.skip=true -Pdatabase &&
+	if [ $? -ne 0 ]; then echo "ERROR"; exit 1; fi
+}
+
+build_ui() {
+	echo "building ui - grunt scripts"
+	echo "   "
+	echo "   "
+	echo "cd $TESUTO_HOME/tesuto-ui"
+	echo "mvn process-resources -Dmaven.test.skip=true -Pnpm &&"
+	cd $TESUTO_HOME/tesuto-ui
+	mvn process-resources -Dmaven.test.skip=true -Pnpm &&
+	if [ $? -ne 0 ]; then echo "ERROR"; exit 1; fi
+}
+
+start_all() 
+{
+    run_if_allowed router $1 $2
+	run_if_allowed ui $1 $2
+	run_if_allowed rules $1 $2
+	run_if_allowed placement $1 $2
+	run_if_allowed activation $1 $2
+	run_if_allowed admin $1 $2
+	run_if_allowed content $1 $2
+	run_if_allowed delivery $1 $2
+	run_if_allowed "qti-importer" $1 $2
+	run_if_allowed preview $1 $2
+	run_if_allowed reports $1 $2
+}
+
+start_placement() 
+{
+    rm -r $TESUTO_HOME/logs
+    run_if_allowed router $1 $2
+	run_if_allowed ui $1 $2
+	run_if_allowed rules $1 $2
+	run_if_allowed placement $1 $2
+	run_if_allowed admin $1 $2
+}
+
+
+start_assessment() 
+{
+	rm -fr $TESUTO_HOME/logs
+	run_if_allowed router $1 $2
+	run_if_allowed ui $1 $2
+	run_if_allowed activation $1 $2
+	run_if_allowed admin $1 $2
+	run_if_allowed content $1 $2
+	run_if_allowed delivery $1 $2
+	run_if_allowed "qti-importer" $1 $2
+	run_if_allowed preview $1 $2
+	run_if_allowed reports $1 $2
+}
+
+start_assessment_min() 
+{
+	rm -fr $TESUTO_HOME/logs
+	run_if_allowed router $1 $2
+	run_if_allowed ui $1 $2
+	run_if_allowed activation $1 $2
+	run_if_allowed admin $1 $2
+	run_if_allowed content $1 $2
+	run_if_allowed delivery $1 $2
+}
+
+run_if_allowed() { 
+   	if [[ ! "$2" =~ "$1" &&  ! "$3" =~ "$1" ]]
+	then
+   		start_micro $1
+   	else if [[ "$3" =~ "$1" ]]
+   	  then
+   		debug_micro $1
+	fi
+	fi
+}
+
+watch_default()
+{ 
+  	TAIL_N="20"
+    if [[ !  -z  $2  ]]
+    then 
+       TAIL_N=$2 
+    else
+       echo "Default tail is set to $TAIL_N. To change n: tesuto watch $1 N where n is number of lines"
+    fi
+	echo "tail -f -n $TAIL_N $TESUTO_HOME/logs/tesuto-$1.log"
+	tail -f -n $TAIL_N $TESUTO_HOME/logs/tesuto-$1.log
+}
+
+watch_all()
+{ 
+  	TAIL_N="20"
+    if [[ !  -z  $1  ]]
+    then 
+       TAIL_N=$1 
+    else
+       echo "Default tail is set to $TAIL_N. To change n: tesuto watch $1 N where n is number of lines"
+    fi
+    
+    i=1
+	while [ "$i" -ne 0 ]
+	do
+	watch activation $TAIL_N
+	watch admin $TAIL_N
+	watch content $TAIL_N
+	watch delivery $TAIL_N
+	watch placement $TAIL_N
+	watch preview $TAIL_N
+	watch "qti-importer" $TAIL_N
+	watch reports $TAIL_N
+	watch router $TAIL_N
+	watch rules $TAIL_N
+	watch ui $TAIL_N
+	sleep 10
+	done
+}
+
+view_default()
+{ 
+  	TAIL_N="20"
+    if [[ !  -z  $2  ]]
+    then 
+       TAIL_N=$2 
+    else
+       echo "Default tail is set to $TAIL_N. To change n: tesuto watch $1 N where n is number of lines"
+    fi
+	echo "tail -f -n $TAIL_N $TESUTO_HOME/logs/previous_run/tesuto-$1.log"
+	tail -f -n $TAIL_N $TESUTO_HOME/logs/previous_run/tesuto-$1.log
+}
+
+view_all()
+{ 
+  	TAIL_N="20"
+    if [[ !  -z  $1  ]]
+    then 
+       TAIL_N=$1 
+    else
+       echo "Default tail is set to $TAIL_N. To change n: tesuto watch $1 N where n is number of lines"
+    fi
+    
+    i=1
+	while [ "$i" -ne 0 ]
+	do
+	watch activation $TAIL_N
+	watch admin $TAIL_N
+	watch content $TAIL_N
+	watch delivery $TAIL_N
+	watch placement $TAIL_N
+	watch preview $TAIL_N
+	watch "qti-importer" $TAIL_N
+	watch reports $TAIL_N
+	watch router $TAIL_N
+	watch rules $TAIL_N
+	watch ui $TAIL_N
+	sleep 10
+	done
+}
+
+status()
+{ 
+  i=1
+  while [ "$i" -ne 0 ]
+  do
+  echo "***************************************************"
+  echo "                    Micro Services Status"
+  echo "***************************************************"
+  status_micro activation "activation   status:"
+  status_micro admin "admin        status:"
+  status_micro content "content      status:"
+  status_micro delivery "delivery     status:"
+  status_micro placement "placement    status:"
+  status_micro preview "preview      status:"
+  status_micro qti-importer "qti-importer status:"
+  status_micro reports "reports      status:"
+  status_micro rules "rules        status:"
+  status_micro ui "ui           status:"
+  sleep 5
+  done
+}
+
+status_micro() { 
+  FILE="$TESUTO_HOME/logs/tesuto-$1.log"
+  if [ -f "$FILE" ]
+  then
+  	FAILED="$(grep ".*BUILD FAILURE.*" -c $TESUTO_HOME/logs/tesuto-$1.log)"
+    if [ 1 -eq $FAILED ]
+    then
+       CURRENT_STATE="$(tail -n 1 $TESUTO_HOME/logs/tesuto-$1.log)"
+       echo "$2FAILED TO START:  $CURRENT_STATE"
+    return
+    fi
+  STARTED="$(grep ".*Started Application.*" -c $TESUTO_HOME/logs/tesuto-$1.log)"
+  if [ 1 -ne "$STARTED" ] 
+  then
+    LISTENING="$(grep ".*Listening for transport dt_socket at address.*" -c $TESUTO_HOME/logs/tesuto-$1.log)"
+    if  [ 1 -eq $LISTENING ]
+    then
+       	
+       STARTING="$(grep ".*Starting Application.*" -c $TESUTO_HOME/logs/tesuto-$1.log)"
+       if [  1 -eq $STARTING ]
+       then
+           echo "$2 NOT STARTED but debugger has been launched"
+           return
+       fi
+       echo "$2 waiting for debugger to launch."
+    fi
+  fi
+  if [ 1 -eq $STARTED ]
+  then
+    echo "$2STARTED"
+  else
+    CURRENT_STATE="$(tail -n 1 $TESUTO_HOME/logs/tesuto-$1.log)"
+    echo "$2NOT STARTED $CURRENT_STATE"
+  fi
+  else
+  	echo "$2NOT CURRENTLY STARTED, LOG FILE DELETED"
+  fi
+}
+
+is_ready()
+{ 
+  SYSTEM_STATE="NOT_READY"
+  i=1
+  while [ "$SYSTEM_STATE" = "NOT_READY" ] || [ "$SYSTEM_STATE" = "DEBUGGER_LAUNCHING" ]
+  do
+  SYSTEM_STATE="READY"
+  STATUS=""
+  MICRO_STATE=""
+  micro_state activation
+  micro_state admin
+  micro_state content
+  micro_state delivery
+  micro_state placement
+  micro_state preview
+  micro_state qti-importer
+  micro_state reports
+  micro_state rules
+  micro_state ui
+  sleep 2
+  done
+  echo "SYSTEM IS IN THE FOLLOWING STATE $SYSTEM_STATE "
+  printf "$STATUS"
+}
+
+set_system_state() {
+  if [ "$MICRO_STATE" = "NOT_STARTED" ]
+  then
+    SYSTEM_STATE="NOT_READY"
+  fi
+  if [ "$MICRO_STATE" = "DEBUGGER_NOT_LAUNCHED" ]
+  then
+    echo "Please launch debugger for microservice $1"
+    status_micro $1
+    SYSTEM_STATE="NOT_READY"
+  fi
+  if [ "$MICRO_STATE" = "DEBUGGER_NOT_LAUNCHED" ]
+  then
+    status_micro $1
+    SYSTEM_STATE="DEBUGGER_LAUNCHING"
+  fi
+  
+}
+
+micro_state() { 
+  MICRO_STATE=""
+  FILE="$TESUTO_HOME/logs/tesuto-$1.log"
+  if [ -f "$FILE" ]
+  then
+  	FAILED="$(grep ".*BUILD FAILURE.*" -c $TESUTO_HOME/logs/tesuto-$1.log)"
+    if [ 1 -eq $FAILED ]
+    then
+       CURRENT_STATE="$(tail -n 1 $TESUTO_HOME/logs/tesuto-$1.log)"
+       STATE=FAILED_TO_START
+       STATUS="$STATUS $1 has FAILED_TO_START\n"
+       set_system_state $1
+    return
+    fi
+  STARTED="$(grep ".*Started Application.*" -c $TESUTO_HOME/logs/tesuto-$1.log)"
+  if [ 1 -ne "$STARTED" ] 
+  then
+    LISTENING="$(grep ".*Listening for transport dt_socket at address.*" -c $TESUTO_HOME/logs/tesuto-$1.log)"
+    if  [ 1 -eq $LISTENING ]
+    then
+       	
+       STARTING="$(grep ".*Starting Application.*" -c $TESUTO_HOME/logs/tesuto-$1.log)"
+       if [  1 -eq $STARTING ]
+       then
+           MICRO_STATE="DEBUGGER_LAUNCHING"
+           STATUS="$STATUS $1 is Launching debugger.\n"
+           set_system_state $1
+           return
+       fi
+       MICROSTATE="DEBUGGER_NOT_LAUNCHED"
+       STATUS="$STATUS $1 needs to be launched debugger.\n"
+       set_system_state  "DEBUGGER_NOT_LAUNCHED"
+       return
+    fi
+  fi
+  if [ 1 -eq $STARTED ]
+  then
+    MICRO_STATE="STARTED"
+    STATUS="$STATUS $1 has STARTED\n"
+  else
+    STATUS="$STATUS $1 has NOT_STARTED, $MICRO_STATE\n"
+    MICRO_STATE="NOT_STARTED"
+  fi
+  else
+    MICRO_STATE="DELETED"
+  	STATUS="$STATUS $1 has STOPPED, Log file moved to previous_run\n"
+  fi
+  
+  set_system_state $1
+}
+    
+
+watch() { 
+   echo "***************************************************"
+   echo ""
+   echo "                    $1 log"
+   echo ""
+   echo "***************************************************"
+   tail -n $TAIL_N $TESUTO_HOME/logs/tesuto-$1.log
+}
+
+
+shortcut_help() { 
+	echo "  Short cuts  "
+	echo "run $1  where 1 is name of microservice starts the micro"
+	echo "run assess starts services needed to have assessmetns"
+	echo "run place starts services needed to place students"
+	echo "run min starts services needed to have minimal assessment (no reports, preview or importing)"
+	echo "run  starts all services need for placement"
+	echo "stop $1 kills the microservice"
+	echo "stop assess kills only assessment related (not placement, rules, admin or ui)"
+	echo "stop place kills only placement related (not assessment related or admin or ui)"
+	echo "stop min kills only minimal assessment related microservices (not placement or admin or ui)"
+}
+
+clear_logs() { 
+    mkdir $TESUTO_HOME/logs/previous_run -p;
+	mv $TESUTO_HOME/logs/*.log $TESUTO_HOME/logs/previous_run
+	rm -fr $TESUTO_HOME/logs/*.log
+}
+
+stop() {
+	case $1 in
+	all) kill_all
+	;;
+    complete) kill_all
+	;;
+	assess) kill_all
+	;;
+	min_assess) kill_all
+	;;
+	assess_app) kill_all
+	;;
+	min_assess_app) kill_all
+	;;
+	place) kill_all
+	;;
+	place_app) kill_all
+	;;
+	*) kill_micro $1
+    esac
+}
+
+kill_all() {
+    mkdir $TESUTO_HOME/logs/previous_run -p;
+    mv $TESUTO_HOME/logs/*.log $TESUTO_HOME/logs/previous_run
+	ps aux | grep .*run_.* | sed -e 's/.*run_\(.*\).*/killed \1/'
+	ps aux | grep .*/boot/.* | awk '{print $2}' | xargs kill
+	echo "Logs have been moved to $TESUTO_HOME/logs/previous_run/tesuto-*.log"
+	echo "they can be viewed using tesuto view micro"
+}
+
+kill_micro() { 
+    mkdir $TESUTO_HOME/logs/previous_run -p;
+    mv $TESUTO_HOME/logs/tesuto-$1.log $TESUTO_HOME/logs/previous_run
+	ps aux | grep tesuto-$1 | sed -e 's/.*run_\(.*\).*/killed \1/'
+	ps aux | grep tesuto-$1  | awk '{print $2}' | xargs kill
+	echo "Log has been moved to $TESUTO_HOME/logs/previous_run/tesuto-$1.log"
+	echo "they can be viewed using tesuto view $1"
+}	
+
+start_micro() { 
+	case $1 in
+	  elasticmq) 
+	  	cd $HOME_ELASTICMQ
+		java -Dconfig.file=custom.config -jar elasticmq-server.jar
+		cd $TESUTO_HOME
+		exit
+	  ;;
+	  dynamo)
+	    cd $HOME_DYNAMODB
+	    java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+		cd $TESUTO_HOME
+		exit;
+		;;
+	  redis)
+	     redis-server
+		 cd $TESUTO_HOME
+		 exit
+		;;
+	  mongod)
+	     mkdir ~/data/tesutodb -p
+	     mongod --dbpath ~/data/tesutodb --auth
+		 cd $TESUTO_HOME
+		 exit
+	   ;;
+	   mongod)
+		 cd $TESUTO_HOME
+	     mongo -u tesuto -p tesuto --authenticationDatabase admin
+		 exit
+		 ;;
+		mitreid)
+		 docker run  --net=host -p 8093:8080 tesuto/mitreid-connect:latest
+		 exit
+		 ;;
+		services) start_3d_party_services
+		 exit
+		 ;;
+		min_services) start_min_3d_party_services
+		 exit
+		 ;;
+   	esac
+    mkdir $TESUTO_HOME/logs/previous_run -p;
+    mv $TESUTO_HOME/logs/tesuto-$1.log $TESUTO_HOME/logs/previous_run
+    mkdir $TESUTO_HOME/logs -p; touch $TESUTO_HOME/logs/tesuto-$1.log
+    PORT=8443
+    go $1 
+    case $1 in
+   	  activation) PORT=8441
+   	  ;;
+   	  admin) PORT=8442
+   	  ;;
+   	  router) PORT=8443
+   	  ;;
+   	  content) PORT=8444
+   	  ;;
+   	  delivery) PORT=8445
+   	  ;;
+   	  placement) PORT=8446
+   	  ;;
+   	  preview) PORT=8447
+   	  ;;
+   	  "qti-importer") PORT=8448
+   	  ;;
+   	  reports) PORT=8449
+   	  ;;
+   	  rules) PORT=8450
+   	  ;;
+   	  ui) PORT=8451
+   	  ;;
+   	esac
+	echo "Starting microservice $1  on port $PORT"
+	if [[ -z  $2  ]] 
+	then
+       echo "mvn spring-boot:run >> $TESUTO_HOME/logs/tesuto-$1.log 2>&1 &"
+	   echo "shortcut to tail microservice log: tesuto watch $1 10"
+	   echo "$2"
+       mvn spring-boot:run >> $TESUTO_HOME/logs/tesuto-$1.log 2>&1 &	   
+	else
+       echo "mvn spring-boot:run >> $TESUTO_HOME/logs/tesuto-$1.log 2>&1 &"
+	   echo "$2"
+       mvn spring-boot:run >> $TESUTO_HOME/logs/tesuto-$1.log 2>&1 &
+	   watch_default $1 $2
+    fi
+	
+}
+
+start_3d_party_services(){
+        
+        mkdir $TESUTO_HOME/servicelogs -p
+	  	cd $HOME_ELASTICMQ
+		java -Dconfig.file=custom.config -jar elasticmq-server.jar >> $TESUTO_HOME/servicelogs/elasticMQ.log &
+		ELASTIC_PID=$!
+	    cd $HOME_DYNAMODB
+	    java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb >> $TESUTO_HOME/servicelogs/dynamo.log &
+	    DYNAMO_PID=$!
+	    redis-server >> $TESUTO_HOME/servicelogs/redis.log &
+	    REDIS_PID=$!
+	    mongod --dbpath ~/data/tesutodb --auth >> $TESUTO_HOME/servicelogs/mongod.log &
+	    MONGO_PID=$!
+		docker run  --net=host -p 8080:8080 tesuto/mitreid-connect:latest >> $TESUTO_HOME/servicelogs/mitreid.log>&1 &
+		MITREID_PID=$!
+		cd $TESUTO_HOME
+		echo "kill $ELASTIC_PID $DYNAMO_PID $REDIS_PID $MONGO_PID $MITREID_PID"
+		echo "ELASTIC_PID,DYNAMO_PID,REDIS_PID,MONGO_PID,MITREID_PID"
+		SERVICE_PIDS=[$ELASTIC_PID,$DYNAMO_PID,$REDIS_PID,$MONGO_PID,$MITREID_PID]
+		exit
+    }
+    
+ start_min_3d_party_services(){
+        
+        mkdir $TESUTO_HOME/servicelogs -p
+	  	cd $HOME_ELASTICMQ
+		java -Dconfig.file=custom.config -jar elasticmq-server.jar >> $TESUTO_HOME/servicelogs/elasticMQ.log &
+		ELASTIC_PID=$!
+	    redis-server >> $TESUTO_HOME/servicelogs/redis.log &
+	    REDIS_PID=$!
+	    mongod --dbpath ~/data/tesutodb --auth >> $TESUTO_HOME/servicelogs/mongod.log &
+	    MONGO_PID=$!
+		docker run  --net=host -p 8080:8080 tesuto/mitreid-connect:latest >> $TESUTO_HOME/servicelogs/mitreid.log>&1 &
+		MITREID_PID=$!
+		cd $TESUTO_HOME
+		echo "kill $ELASTIC_PID $REDIS_PID $MONGO_PID $MITREID_PID"
+		echo "ELASTIC_PID,REDIS_PID,MONGO_PID,MITREID_PID"
+		SERVICE_PIDS=[$ELASTIC_PID,$REDIS_PID,$MONGO_PID,$MITREID_PID]
+		exit
+    }
+
+go() {
+	case $1 in
+   	  activation)  	  
+   	      echo "cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice"
+   	      cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice
+   	  ;;
+   	  admin) 
+   	  echo "cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice"
+   	  cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice;
+   	  ;;
+   	  router)  	  
+   	      echo "cd $TESUTO_HOME/tesuto-router;"
+   	      cd $TESUTO_HOME/tesuto-router;
+   	  ;;
+   	  content)
+	  echo "cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice"
+   	      cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice;
+   	  ;;
+   	  delivery) 
+   	  	  echo "cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice"
+   	      cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice;
+   	  ;;
+   	  placement) 
+   	 	  echo "cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice"
+   	      cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice;
+   	  ;;
+   	  preview) 
+   	  echo "cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice"
+   	      cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice;
+   	  ;;
+   	  "qti-importer") 
+   	  	  echo "cd $TESUTO_HOME/tesuto-qti-importer-services/tesuto-qti-importer-microservice"
+   	      cd $TESUTO_HOME/tesuto-qti-importer-services/tesuto-qti-importer-microservice;
+   	  ;;
+   	  reports) 
+   	  echo "cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice"
+   	      cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice;
+   	  ;;
+   	  rules) 
+   	      echo "cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice"
+   	      cd $TESUTO_HOME/tesuto-$1-services/tesuto-$1-microservice;
+   	  ;;
+   	  ui) 
+   	  	  echo "cd $TESUTO_HOME/tesuto-ui;"
+   	      cd $TESUTO_HOME/tesuto-ui;
+   	  ;;
+	  *) 
+   	  	  echo "cd $TESUTO_HOME;"
+   	      cd $TESUTO_HOME;
+	  ;;
+   	esac
+}
+
+set_build_directory() {
+	case $1 in
+   	  activation)  	  
+   	      echo "cd $TESUTO_HOME/tesuto-$1-services"
+   	      cd $TESUTO_HOME/tesuto-$1-services
+   	  ;;
+   	  admin) 
+   	  echo "cd $TESUTO_HOME/tesuto-$1-services"
+   	  cd $TESUTO_HOME/tesuto-$1-services;
+   	  ;;
+   	  router)  	  
+   	      echo "cd $TESUTO_HOME/tesuto-router;"
+   	      cd $TESUTO_HOME/tesuto-router;
+   	  ;;
+   	  content)
+	  echo "cd $TESUTO_HOME/tesuto-$1-services"
+   	      cd $TESUTO_HOME/tesuto-$1-services;
+   	  ;;
+   	  delivery) 
+   	  	  echo "cd $TESUTO_HOME/tesuto-$1-services"
+   	      cd $TESUTO_HOME/tesuto-$1-services;
+   	  ;;
+   	  placement) 
+   	 	  echo "cd $TESUTO_HOME/tesuto-$1-services"
+   	      cd $TESUTO_HOME/tesuto-$1-services;
+   	  ;;
+   	  preview) 
+   	  echo "cd $TESUTO_HOME/tesuto-$1-services"
+   	      cd $TESUTO_HOME/tesuto-$1-services;
+   	  ;;
+   	  "qti-importer") 
+   	  	  echo "cd $TESUTO_HOME/tesuto-qti-importer-services"
+   	      cd $TESUTO_HOME/tesuto-qti-importer-services;
+   	  ;;
+   	  reports) 
+   	  echo "cd $TESUTO_HOME/tesuto-$1-services"
+   	      cd $TESUTO_HOME/tesuto-$1-services;
+   	  ;;
+   	  rules) 
+   	      echo "cd $TESUTO_HOME/tesuto-$1-services"
+   	      cd $TESUTO_HOME/tesuto-$1-services;
+   	  ;;
+   	   ui) 
+   	  	  echo "cd $TESUTO_HOME/tesuto-ui;"
+   	      cd $TESUTO_HOME/tesuto-ui;
+   	  ;;
+
+   	esac
+}
+
+debug_micro() { 
+    mkdir $TESUTO_HOME/logs/previous_run -p;
+    mv $TESUTO_HOME/logs/tesuto-$1.log $TESUTO_HOME/logs/previous_run
+    mkdir $TESUTO_HOME/logs -p; touch $TESUTO_HOME/logs/tesuto-$1.log
+   	PORT=8001
+   	go $1
+   	case $1 in
+   	  activation) PORT=8001	  	  
+   	  ;;
+   	  admin) PORT=8002
+   	  ;;
+   	  router) PORT=8003 	  	  
+   	  ;;
+   	  content) PORT=8004
+   	  ;;
+   	  delivery) PORT=8005
+   	  ;;
+   	  placement) PORT=8006
+   	  ;;
+   	  preview) PORT=8007
+   	  ;;
+   	  "qti-importer") PORT=8008
+   	  ;;
+   	  reports) PORT=8009
+   	  ;;
+   	  rules) PORT=8010
+   	  ;;
+   	  ui) PORT=8011
+   	  ;;
+
+   	esac
+	echo "Debugging microservice $1  on port $PORT"
+	echo "shortcut to tail microservice log: tesuto watch $1 10"
+	echo 
+	if [[ !  -z  $2  ]] 
+	then
+       echo "mvn spring-boot:run -Dspring-boot.run.jvmArguments=\"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=$PORT\""
+       #echo "mvn spring-boot:run -Dagentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=$PORT"
+	   echo "   "
+       mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=$PORT"
+       #mvn spring-boot:run -Dagentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=$PORT
+	else
+       echo "mvn spring-boot:run -Dspring-boot.run.jvmArguments=\"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=$PORT\" >> $TESUTO_HOME/logs/tesuto-$1.log 2>&1 &"
+       #echo "mvn spring-boot:run -Dagentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=$PORT >> $TESUTO_HOME/logs/tesuto-$1.log 2>&1 &"
+	   echo "shortcut to tail microservice log: tesuto watch $1 10"
+	   echo "   "
+       mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=$PORT" >> $TESUTO_HOME/logs/tesuto-$1.log 2>&1 &
+       #mvn spring-boot:run -Dagentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=$PORT >> $TESUTO_HOME/logs/tesuto-$1.log 2>&1 &
+    fi  
+}
+
+help() {
+	echo "   List of commands:"
+	echo "verbs      go, build, package, start, stop, watch, view, source"
+    echo "service collections   core, services, complete, complete_app, place_app, assess_app, assess, min_assess_app, min_assess"
+	echo "services    home, activation, admin, control, delivery, placement, preview, qti-importer, reports, rules, ui"
+	echo "external  dynamodb, redis, elasticmq, mongod, mongo, meterid"
+	echo "clear_logs           clears all logs"
+	echo "   "
+	echo " Short name and debug port For All microservices"
+
+	echo "activation   port:8001"
+	echo "admin        port:8002"
+	echo "content      port:8004"
+	echo "delivery     port:8225"
+	echo "placement    port:8006"
+	echo "preview      port:8007"
+	echo "qti-importer port:8008"
+	echo "reports      port:8009"
+	echo "rules        port:8010"
+    echo "ui           port:8011"
+    echo "router       port:8003"
+    echo ""
+    echo ""
+    echo " BASIC INSTRUCTIONS FOR GETTING UP AND RUNNING"
+    
+    echo "TO BUILD AND RUN Placement and Assessments microservices including reports:"
+    echo "    INSTALL and start postgres and mongo"
+    echo "    CREATE postgres databases:"
+    echo "              database                 username          password"
+    echo "       1) tesuto_activation     tesuto_admin     tesuto_activation"
+    echo "       2) tesuto_admin          tesuto_admin     tesuto_admin"
+    echo "       3) tesuto_content        tesuto_content   tesuto_content"  
+    echo "       4) tesuto_delivery       tesuto_delivery  tesuto_delivery"  
+    echo "       5) tesuto_placement      tesuto_placement tesuto_placement"  
+    echo "       6) tesuto_reports        tesuto_reports   tesuto_reports"              
+    echo "    INSTALL and start redis, elasticmq-server, local dynamodb"
+    echo "    SET ENV variable \$TESUTO_HOME to your tesuto repos folder"
+    echo ""    
+	echo "    tesuto build complete"
+    echo "    FROM script folder, make sure tesuto has permission execute"
+	echo "    tesuto start complete"
+	echo "    tesuto watch ? 20 to view logs where ? is microservice short name example: tesuto watch ui 10 to tail ui logs"
+	echo "   "
+	echo "    go to localhost:8443/login to start application: login is superuser:password"
+	echo "    tesuto stop complete  to stop all services"
+	echo "   "
+	echo "TO BUILD AND RUN Placement services only "
+    echo "    INSTALL and start postgres and mongo"
+    echo "    CREATE postgres databases:"
+    echo "       1) tesuto_admin          tesuto_admin     tesuto_admin"
+    echo "       2) tesuto_placement      tesuto_placement tesuto_placement"  
+    echo "    INSTALL and start redis, elasticmq-server, local dynamodb"
+    echo "    SET ENV variable \$TESUTO_HOME to your tesuto repos folder"
+    echo ""
+	echo "    tesuto build place_app"
+	echo "    tesuto start place_app"
+	echo "    tesuto watch ? 20 to view logs where ? is microservice short name example: tesuto watch ui 10 to tail ui logs"
+	echo "   "
+	echo "    go to localhost:8443/login to start application: login is superuser:password"
+	echo "    tesuto stop complete"
+	echo "   "	
+	echo "TO BUILD AND RUN Assessments microservices without reports,preview,import:"
+    echo "    INSTALL and start postgres and mongo"
+    echo "    CREATE postgres databases:"
+    echo "              database                 username          password"
+    echo "       1) tesuto_activation     tesuto_admin     tesuto_activation"
+    echo "       2) tesuto_admin          tesuto_admin     tesuto_admin"
+    echo "       3) tesuto_content        tesuto_content   tesuto_content"  
+    echo "       4) tesuto_delivery       tesuto_delivery  tesuto_delivery"   
+    echo "    INSTALL and start redis, elasticmq-server"
+    echo "    SET ENV variable \$TESUTO_HOME to your tesuto repos folder"
+    echo ""
+	echo "    tesuto build min_assess"
+	echo "    tesuto start min_assess"
+	echo "    tesuto watch ? 20 to view logs where ? is microservice short name example: tesuto watch ui 10 to tail ui logs"
+	echo "    go to localhost:8443/login to start application: login is superuser:password"
+	echo "    tesuto stop complete"
+	echo "   "	
+	echo "TO BUILD AND RUN Assessments microservices with reports:"
+    echo "    INSTALL and start postgres and mongo"
+    echo "    CREATE postgres databases:"
+    echo "              database                 username          password"
+    echo "       1) tesuto_activation     tesuto_admin     tesuto_activation"
+    echo "       2) tesuto_admin          tesuto_admin     tesuto_admin"
+    echo "       3) tesuto_content        tesuto_content   tesuto_content"  
+    echo "       4) tesuto_delivery       tesuto_delivery  tesuto_delivery"   
+    echo "       5) tesuto_reports        tesuto_reports   tesuto_reports"         
+    echo "    INSTALL and start redis, elasticmq-server"
+    echo "    SET ENV variable \$TESUTO_HOME to your tesuto repos folder"
+	echo "    tesuto build assess"
+    echo "    FROM script folder, make sure tesuto has permission execute"
+	echo "    tesuto start assess"
+	echo "    tesuto watch ? 20 to view logs where ? is microservice short name example: tesuto watch ui 10 to tail ui logs"
+	echo "   "
+	echo "    go to localhost:8443/login to start application: login is superuser:password"
+	echo "    tesuto stop complete"
+	echo "   "	
+}
+
+case $1 in
+	go) go $2
+	;;
+    build) build $2 $3
+	;;
+	start) start $2 $3
+	;;
+	stop) stop $2
+	;;
+	debug) debug_micro $2 $3
+	;;
+	watch) watch_default $2 $3
+	;;
+	view) view_default $2 $3
+	;;
+	status) status $2
+	;;
+	is_ready) is_ready
+	;;
+	clear_logs) clear_logs $2
+	;;
+	package) package $2
+	;;
+	sources) sources_all
+	;;
+	help) help
+	;;
+	*) help
+	;;
+esac

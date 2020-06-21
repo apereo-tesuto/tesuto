@@ -1,0 +1,1345 @@
+/*============ BOOTSTRAP AND BOOTSTRAP OVERRIDES =============*/
+
+@import '../variables/variables.less';
+@import '../mixins/mixins.less';
+
+
+/*============ GLOBAL VARIABLES AND MIXINS ============*/
+
+@import '../variables/variables.less';
+@import '../mixins/mixins.less';
+
+
+/*============ VARIABLES AND MIXINS ============*/
+
+@import './mixins/mixins.less';
+@import './variables/variables.less';
+
+
+/*============ BASE STYLES FOR ALL CCC_ASSESS VIEWS AND COMPONENTS ============*/
+
+// global styles from body tag down
+
+body, html {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #eee;
+
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+    font-size: 16px;
+}
+
+// focus outline improvements for some browsers
+body.ie, body.ff {
+    a, button, .btn, .btn:active, .active.btn, .btn, .btn:active, .active.btn, [role=button] {
+        &:focus, &.focus {
+            outline-width: 2px;
+            outline-style: solid;
+            outline-color: @brand-primary;
+        }
+    }
+}
+
+// no selection
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+// accessibility helpers
+.hidden {
+    display: none;
+    visibility: none;
+}
+
+
+// outline
+.no-outline {
+    &.focus, &.active, &:focus, &:active {
+        outline: none !important;
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    &[ccc-focusable] {
+        .no-outline();
+    }
+}
+
+// zooming classes
+
+.ccc-zoom-1 {
+    font-size: 16px;
+}
+.ccc-zoom-2 {
+    font-size: 18px;
+}
+.ccc-zoom-3 {
+    font-size: 20px;
+}
+.ccc-zoom-4 {
+    font-size: 24px;
+}
+
+// from: https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+.dont-break-out {
+
+    white-space: pre-line;
+
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+// links
+.ccc-link-em {
+    color: darken(@brand-warning, 27%);
+    font-weight: bold;
+    text-decoration: underline;
+    &:hover, &:focus {
+        color: darken(@brand-warning, 35%);
+    }
+    &:active {
+        color: #000;
+    }
+}
+
+// headers
+
+h1 {
+    font-size: 180%;
+}
+h2 {
+    font-size: 130%;
+}
+h3 {
+    font-size: 120%;
+    margin-bottom: 10px;
+}
+h4, h5, h6 {
+    font-size: 100%;
+}
+
+// margin helpers
+
+.margin-top-xs {
+    margin-top: 5px;
+}
+.margin-top-sm {
+    margin-top: 15px;
+}
+.margin-top-md {
+    margin-top: 30px;
+}
+.margin-top-lg {
+    margin-top: 45px;
+}
+.margin-bottom-xs {
+    margin-bottom: 5px;
+}
+.margin-bottom-sm {
+    margin-bottom: 15px;
+}
+.margin-bottom-md {
+    margin-bottom: 30px;
+}
+.margin-bottom-lg {
+    margin-bottom: 45px;
+}
+
+
+.info-spacer {
+    display: inline-block;
+    opacity: 0.5;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+// block quote
+
+blockquote, .blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 95%;
+    border-left: 5px solid #eeeeee;
+}
+
+// captions
+
+caption {
+    color: #666;
+}
+
+// links
+
+.link-controls {
+    a {
+        margin-left: 15px;
+    }
+}
+
+// alerts
+
+.alert {
+    &.alert-thin {
+        padding: 10px;
+    }
+}
+
+// Alert box with large icon
+.alert-with-icon {
+    position: relative;
+
+    > .icon {
+        font-size: 1.75em;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+
+    .alert-icon {
+        font-size: 1.75em;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+
+    .alert-body {
+        margin-left: 2.5em;
+
+        .title {
+            margin: 0 0 0.25em 0;
+        }
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.alert-with-icon.large {
+
+    > .icon {
+        font-size: 3.75em;
+        top: 22px;
+    }
+
+    .alert-body {
+        margin-left: 5em;
+    }
+}
+
+.alert-with-icon.alert-danger {
+    > .icon {
+        color: fade(@brand-danger, 50%);
+    }
+}
+
+.alert-with-icon.alert-info {
+    > .icon {
+        color: fade(@brand-info, 50%);
+    }
+}
+
+.alert-with-icon.alert-primary {
+    > .icon {
+        color: fade(@brand-primary, 50%);
+    }
+}
+
+.alert-with-icon.alert-success {
+    > .icon {
+        color: fade(@brand-success, 50%);
+    }
+}
+
+.alert-with-icon.alert-warning {
+    > .icon {
+        color: fade(@brand-warning, 50%);
+    }
+}
+
+// lists
+
+li.ccc-list-item-inactive {
+    a.btn:hover, a.btn:focus {
+        cursor: default;
+        background-color: #fff;
+        color: #337ab7;
+        border-color: #cccccc;
+    }
+}
+
+li.ccc-list-item-big a {
+    padding: 15px;
+    font-size: 18px;
+}
+li.ccc-list-item-bigger a {
+    padding: 25px;
+    font-size: 22px;
+}
+
+li.ccc-list-item-big,
+li.ccc-list-item-bigger {
+    position: relative;
+    a {
+        color: @brand-primary;
+    }
+    .actions {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        .btn {
+            margin-left: 5px;
+        }
+    }
+}
+
+// spacing helpers
+.margin-bottom {
+    margin-bottom: 15px;
+}
+.margin-bottom-double {
+    margin-bottom: 30px;
+}
+
+
+// form input sizes
+input[type='text'],
+input[type='number'],
+textarea {
+    font-size: 16px;
+    color: @grayscale10;
+    &.form-control {
+        font-size: 16px;
+        font-weight: normal;
+        font-family: Helvetica, Verdana, Arial, sans-serif;
+    }
+    &.resize-vertical {
+        resize: vertical;
+    }
+
+    // Adjusting placeholder contrast ratio to meet WCAG 2.0 guidelines
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color: @grayscale8;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+       color: @grayscale8;
+       opacity: 1;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+       color: @grayscale8;
+       opacity: 1;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+       color: @grayscale8;
+    }
+    &::-ms-input-placeholder { /* Microsoft Edge */
+       color: @grayscale8;
+    }
+}
+
+
+// font colors
+
+.icon-warning {
+    color: @brand-warning;
+}
+.text-warning {
+    color: @state-warning-text;
+}
+.well {
+    .text-warning {
+        color: darken(@state-warning-text, 5%);
+    }
+}
+.ccc-invert .text-warning {
+    color: @brand-warning;
+}
+.text-symbol-warning {
+    color: @brand-warning;
+}
+.text-success {
+    color: @brand-success;
+}
+.text-success-dark {
+    color: darken(@brand-success, 5%);
+}
+
+
+.emphasize {
+    color: @blue;
+    font-weight: bold;
+}
+
+// reading width related styles
+
+.reading-width {
+    .reading-width();
+}
+
+.panel.reading-width {
+    margin: 0 auto;
+}
+
+// labels
+.label {
+    &.label-complete {
+        background: @brand-success;
+    }
+    &.label-in-progress {
+        background: @brand-warning;
+    }
+    &.label-ready {
+        background: @brand-primary;
+    }
+    &.label-info {
+        background: #2E606F;
+    }
+    &.label-default {
+        background: @grayscale8;
+    }
+}
+
+// status
+.status {
+    &.status-complete {
+        background: @brand-success;
+    }
+    &.status-in-progress {
+        background: @brand-warning;
+    }
+    &.status-paused {
+        background: @brand-warning;
+    }
+    &.status-ready {
+        background: @brand-primary;
+    }
+    &.status-inactive {
+        background: @grayscale5;
+    }
+}
+
+
+// alignment and margins
+
+.text-align-group {
+    display: inline-block;
+}
+
+.text-right {
+    &.btn {
+        text-align: right;
+    }
+    .btn-group, button.btn, .text-align-group {
+        margin-right: 0px;
+        margin-left: 10px;
+    }
+    button.btn.btn-sm {
+        margin-left: 5px;
+    }
+}
+
+.text-left {
+
+    &.btn {
+        text-align: left;
+    }
+    .btn-group, button.btn, .text-align-group {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+    button.btn.btn-sm {
+        margin-right: 5px;
+    }
+}
+
+// thin rows
+
+.row.row-thin {
+
+    margin-left: -5px;
+    margin-right: -5px;
+
+    .col-thin {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+
+// buttons
+
+.btn-inverted {
+  .button-variant(#fff; #666; #444);
+}
+
+.ccc-button-wrapper {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    background: none;
+    &:hover, &:focus, &:active {
+        border: none;
+        background: none;
+    }
+}
+
+.btn .caret {
+    margin-left: 9px;
+}
+
+.btn-link {
+    text-decoration: underline;
+    padding-bottom: 6px;
+
+    &.btn-link-no-initial-underline {
+        text-decoration: none;
+        &:hover, &:active, &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    &[disabled="disabled"] {
+        cursor: default;
+        color: @grayscale6;
+        &:hover {
+            color: @grayscale6;
+        }
+    }
+}
+
+.btn-full-width-when-small {
+    display: inline-block;
+    white-space: nowrap;
+} // doesn't do much until you hit a small device
+.btn-min-width {
+    min-width: 150px;
+}
+.btn {
+    i:first-child {
+        margin-right: 10px;
+    }
+    i:last-child {
+        margin-left: 10px;
+    }
+}
+.btn.btn-sm {
+    i:first-child {
+        margin-right: 5px;
+    }
+    i:last-child {
+        margin-left: 5px;
+    }
+}
+
+
+.btn, .btn-sm, .btn-lg {
+
+    &.btn-icon-only {
+        i:first-child {
+            margin-right: 0px;
+        }
+        i:last-child {
+            margin-left: 0px;
+        }
+    }
+}
+.btn-icon-left {
+    i:first-child {
+        margin-right: 10px;
+        margin-left: 0px;
+    }
+}
+.btn-icon-right {
+    i:last-child {
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+}
+
+.btn-full-width, .btn-group-full-width {
+    width: 100%;
+}
+
+.btn-submit-button {
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+    i.fa-spinner {
+        position: absolute;
+        top: 8px;
+        right: 13px;
+        margin: 0px;
+    }
+}
+
+// we normally auto margin the icon, but for buttons where the label disappears on some screen widths
+// we want the label to have the margin so the button spacing looks correct with the label is hidden (pause button)
+.btn-has-responsive-label {
+    i.fa {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .btn-responsive-label {
+        display: inline-block;
+        margin-right: 8px;
+    }
+}
+
+// badge
+
+.badge {
+    &.badge-lg {
+        font-size: 115%;
+        line-height: 1.15;
+    }
+    &.badge-primary {
+        background: @brand-primary;
+        color: #fff;
+    }
+}
+
+
+// invertable color scheme
+
+// let's animate the background colors only
+.ccc-bg, .ccc-bg-dark {
+    .transition-properties (background-color 150ms cubic-bezier(0, 0, .58, 1);)
+}
+
+*, .ccc-invert .ccc-invert {
+
+    .ccc-bg {
+        background-color: @ccc-bg;
+    }
+    .ccc-bg-dark {
+        background-color: @ccc-bg-dark;
+    }
+
+    .ccc-bg-make-darker {
+        background: rgba(0,0,0, 0.1);
+    }
+
+    .ccc-fg {
+        color: @ccc-fg;
+    }
+    .ccc-fg-light {
+        color: @ccc-fg-light;
+    }
+    .ccc-fg-lightest {
+        color: @ccc-fg-lightest;
+    }
+    .ccc-fg-dark {
+        color: @ccc-fg-dark;
+    }
+    .ccc-fg-highlight {
+        color: @ccc-fg-highlight;
+    }
+    .ccc-fg-highlight-light {
+        color: @ccc-fg-highlight-light;
+    }
+    .ccc-fg-highlight-dark {
+        color: @ccc-fg-highlight-dark;
+    }
+
+    .ccc-hover:hover {
+        .ccc-fg {
+            color: @ccc-fg-dark;
+        }
+        .ccc-fg-light, .ccc-fg-lightest {
+            color: @ccc-fg-darkest;
+        }
+    }
+}
+
+.ccc-invert {
+
+    .ccc-bg {
+        background-color: @ccc-bg-inverted;
+    }
+    .ccc-bg-dark {
+        background-color: @ccc-bg-dark-inverted;
+    }
+
+    .ccc-bg-make-darker {
+        background: rgba(255,255,255, 0.1);
+    }
+
+    .ccc-fg {
+        color: @ccc-fg-inverted;
+    }
+    .ccc-fg-light {
+        color: @ccc-fg-light-inverted;
+    }
+    .ccc-fg-dark {
+        color: @ccc-fg-dark-inverted;
+    }
+    .ccc-fg-highlight {
+        color: @ccc-fg-highlight-inverted;
+    }
+    .ccc-fg-highlight-light {
+        color: @ccc-fg-highlight-light-inverted;
+    }
+    .ccc-fg-highlight-dark {
+        color: @ccc-fg-highlight-dark-inverted;
+    }
+
+    &.ccc-hover:hover, .ccc-hover:hover {
+        .ccc-fg {
+            color: @ccc-fg-dark-inverted;
+        }
+        .ccc-fg-light, .ccc-fg-lightest {
+            color: @ccc-fg-darkest-inverted;
+        }
+    }
+}
+
+
+/*============ FORMS =============*/
+
+.form-container {
+
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+
+    .form-body {
+        padding: 2em;
+        min-height: 55vh;
+    }
+
+    .form-body, .form-actions .actions {
+        margin: 0 auto;
+
+        button {
+            margin-left: 5px;
+        }
+    }
+
+    .form-actions {
+        padding: 2em;
+        background: rgba(0, 0, 0, 0.025);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: right;
+    }
+}
+
+.form-row {
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+.row-form-buttons {
+    margin-top: 15px;
+}
+.well {
+    .form-group:last-child {
+        margin-bottom: 0px;
+    }
+    &.well-thin {
+        padding: 8px;
+    }
+    &.well-invisible {
+        border: 1px solid rgba(255,255,255, 0);
+        background: none;
+        padding-left: 0;
+        padding-right: 0;
+        box-shadow: none;
+    }
+
+    &.well-inactive {
+        background: none;
+        border: 1px dashed rgba(0,0,0, 0.3);
+    }
+
+    .btn, .btn-group {
+        margin-right: 5px;
+    }
+
+    .pull-right {
+        .btn, .btn-group {
+            margin-left: 5px;
+        }
+    }
+
+    .btn-group .btn {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .btn-link {
+        color: darken(@brand-primary, 10%);
+    }
+}
+.help-block {
+    color: #6A6A6A;
+    &.help-block-sub-title {
+        margin-top: -10px;
+        margin-bottom: 15px;
+    }
+}
+
+.help-tip-box {
+
+    background-color: #fcf8e3;
+
+    padding: 1em;
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .close-help-text {
+        float: right;
+        margin: 0 0 1em 2em;
+    }
+
+    .title-bar {
+        border-bottom: 1px solid #d8d1af;
+        padding-bottom: .5em;
+        margin-bottom: 1em;
+    }
+
+    .title {
+        display: inline;
+        font-weight: 600;
+    }
+}
+
+.form-radio-label {
+    margin-right: 15px;
+    cursor: pointer;
+}
+.form-spacer {
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.form-inline-first-label {}
+.form-inline-first-label-offset {}
+
+i.ccc-form-required {
+    color: @brand-primary;
+    margin-right: 5px;
+}
+
+.ccc-form-submit-controls {
+    .btn {
+        margin-right: 10px;
+        &.pull-right {
+            margin-right: 0px;
+            margin-left: 10px;
+        }
+    }
+}
+.ccc-form-submit-controls-top {
+    margin-bottom: 15px;
+}
+
+.ccc-form-title {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.ccc-form-section {
+
+    margin-bottom: 15px;
+
+    .ccc-form-section-title {
+        padding: 10px;
+        background: rgba(0,0,0, 0.1);
+        .border-radiuses(5px, 0px, 0px, 5px);
+        margin-top: 0px;
+        margin-bottom: 0px;
+        i {
+            margin-right: 10px;
+        }
+    }
+
+    .ccc-form-section-content {
+        padding: 10px;
+        background: rgba(0,0,0, 0.05);
+    }
+
+    label {
+        font-weight: normal;
+        margin-right: 10px;
+    }
+}
+
+.ccc-section-header {
+    background: #f8f8f8;
+    padding: 10px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+}
+
+.input-length-1 {
+    width: 5em;
+}
+.input-length-2 {
+    width: 6em;
+}
+.input-length-3 {
+    width: 8em;
+}
+.input-length-4 {
+    width: 10em;
+}
+.input-length-6 {
+    width: 14em;
+}
+
+.input-group-addon {
+    &.input-group-addon-active {
+        background-color: @brand-primary;
+        border-color: @brand-primary;
+        color: #fff;
+    }
+}
+
+// hide the number spinners
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+// hide ie-s clear button because we have our own cross browser button
+input::-ms-clear {
+    display: none;
+}
+
+.ccc-validation-messages {
+
+    -webkit-transition: none !important;
+    transition: none !important;
+
+    font-size: 90%;
+    i {
+        color: darken(@brand-warning, 30%);
+    }
+    p {
+        -webkit-transition: none !important;
+        transition: none !important;
+        color: @state-warning-text;
+        margin-bottom: 0;
+    }
+
+    &.ccc-validation-messages-standalone {
+
+        margin-top: 5px;
+        font-size: 100%;
+
+        i {
+            font-size: 125%;
+            vertical-align: middle;
+        }
+
+        p {
+            padding: 6px 12px;
+            background: #fff;
+            max-width: none;
+            border: 1px solid @brand-warning;
+            .border-radius(5px);
+        }
+    }
+}
+
+.well .ccc-validation-messages {
+    p {
+        color: darken(@state-warning-text, 5%);
+    }
+}
+
+.ccc-invert {
+    .ccc-form-section-title {
+        background: rgba(0, 0, 0, 0.65);
+    }
+    .ccc-form-section-content {
+        background: rgba(255,255,255, 0.05);
+    }
+}
+
+/*============ MATH JAX MATH ML RENDERING ============*/
+
+body {
+    #MathJax_Message {
+        position: fixed;
+        left: auto;
+        bottom: auto;
+        right: 15px;
+        top: 15px;
+        background-color: #E6E6E6;
+        border: 1px solid #959595;
+        margin: 0px;
+        padding: 2px 8px;
+        z-index: 102;
+        color: black;
+        font-size: 80%;
+        width: auto;
+        white-space: nowrap;
+        width: 500px;
+        text-align: center;
+        border-radius: 5px;
+    }
+}
+
+*, .hide-math, .show-math .hide-math {
+    math,
+    .MathJax_Display,
+    .MathJax_Preview,
+    .MathJax,
+    .MathJax_MathML,
+    .MathJax_ref,
+    .MathJax_SVG,
+    .MathJax_Processing,
+    .MathJax_Processed,
+    .MathJax_HitBox,
+    .MathJax_Font_Test,
+    .MathJax_ExBox,
+    .MathJax_EmBox,
+    .mathbox {
+        opacity: 0.0;
+        visibility: hidden;
+    }
+}
+
+body.show-math {
+
+    math,
+    .MathJax_Display,
+    .MathJax_Preview,
+    .MathJax,
+    .MathJax_MathML,
+    .MathJax_ref,
+    .MathJax_SVG,
+    .MathJax_Processing,
+    .MathJax_Processed,
+    .MathJax_HitBox,
+    .MathJax_Font_Test,
+    .MathJax_ExBox,
+    .MathJax_EmBox,
+    .mathbox {
+        .transition-properties (opacity 120ms cubic-bezier(0, 0, .58, 1););
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+/*============ ANGULAR ANIMATIONS =============*/
+
+.ccc-anim-fade-in {
+    .transition-properties (opacity 500ms @ccc-cubic);
+}
+.ccc-anim-fade-in.ng-enter {
+    opacity: 0;
+}
+.ccc-anim-fade-in.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+.ccc-anim-fade-in.ng-leave {
+    .transition-properties (all 0ms @ccc-cubic);
+}
+
+
+
+
+/*============ BOOTSTRAP OVERRIDES ============*/
+
+.popover {
+    max-width: 80em;
+}
+
+
+/*============ TEXT FADE ============*/
+
+.text-fade {
+
+    display: inline-block;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    height: 16px;
+    width: 40px;
+
+    z-index: 1;
+    overflow: hidden;
+
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 56%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(56%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 56%,rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 56%,rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 56%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 56%,rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+}
+
+.panel-body {
+    &.panel-body-form {
+        padding: 80px 0 120px 0;
+    }
+}
+
+
+
+/*============ RESPONSIVE DESIGN ============*/
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {
+
+    .button-bar {
+        .btn, .btn-link, button{
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    .btn-full-width-when-small {
+        margin-bottom: 15px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        display: block;
+        padding: 6px 12px;
+        line-height: 1.42857143;
+        .border-radius(4px);
+        width: 100%;
+        text-align: center !important;
+
+        &.btn-link {
+            border: 1px solid @grayscale3;
+            background: rgba(255, 255, 255, 0.9);
+            &:hover, &:active, &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .form-inline {
+        input {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-sm-max) {
+
+    // conditional margins on small screen size
+    .sm-margin-top-xs {
+        margin-top: 5px;
+    }
+    .sm-margin-top-sm {
+        margin-top: 15px;
+    }
+    .sm-margin-top-md {
+        margin-top: 30px;
+    }
+    .sm-margin-top-lg {
+        margin-top: 45px;
+    }
+    .sm-margin-bottom-xs {
+        margin-bottom: 5px;
+    }
+    .sm-margin-bottom-sm {
+        margin-bottom: 15px;
+    }
+    .sm-margin-bottom-md {
+        margin-bottom: 30px;
+    }
+    .sm-margin-bottom-lg {
+        margin-bottom: 45px;
+    }
+
+}
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {
+    .form-inline {
+
+        .number-input-2 {
+            width: 100%;
+        }
+        .number-input-4 {
+            width: 100%;
+        }
+    }
+
+    .sr-only-when-small {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+    }
+
+    .panel-body {
+        &.panel-body-form {
+            padding: 10px;
+        }
+    }
+
+    li.ccc-list-item-bigger {
+        a {
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        .actions {
+            top: 18px;
+            right: 18px;
+        }
+    }
+
+    .xs-text-center {
+        text-align: center;
+        .btn-group, button.btn, .text-align-group {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+    .xs-text-right {
+        text-align: right;
+        .btn-group, button.btn, .text-align-group {
+            margin-right: 0px;
+            margin-left: 10px;
+        }
+    }
+    .xs-text-left {
+        text-align: left;
+        .btn-group, button.btn, .text-align-group {
+            margin-right: 10px;
+            margin-left: 0px;
+        }
+    }
+}
+
+// Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+    .sm-text-center {
+        text-align: center;
+        .btn-group, button.btn, .text-align-group {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+    .sm-text-right {
+        text-align: right;
+        .btn-group, button.btn, .text-align-group {
+            margin-right: 0px;
+            margin-left: 10px;
+        }
+    }
+    .sm-text-left {
+        text-align: left;
+        .btn-group, button.btn, .text-align-group {
+            margin-right: 10px;
+            margin-left: 0px;
+        }
+    }
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) {
+
+    .form-inline-first-label {
+        min-width: 125px;
+        text-align: right;
+    }
+    .form-inline-first-label-offset {
+        margin-left: 150px;
+    }
+
+    .form-inline input.form-control-margin {
+        margin-right: 5px;
+    }
+
+    .view {
+
+        .view-section {
+            padding: 2em;
+        }
+
+        .content {
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+    }
+
+    .app-footer {
+        padding: 4rem;
+    }
+
+    .md-text-center {
+        text-align: center;
+        .btn-group, button.btn, .text-align-group {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+    .md-text-right {
+        text-align: right;
+        .btn-group, button.btn, .text-align-group {
+            margin-right: 0px;
+            margin-left: 10px;
+        }
+    }
+    .md-text-left {
+        text-align: left;
+        .btn-group, button.btn, .text-align-group {
+            margin-right: 10px;
+            margin-left: 0px;
+        }
+    }
+}
+
+// Large screen (wide desktop, 1200px and up)
+@media (min-width: @screen-lg-min) {
+
+    .view {
+
+        .view-section {
+            padding: 4em;
+        }
+
+        .content {
+            padding-left: 4em;
+            padding-right: 4em;
+        }
+    }
+}

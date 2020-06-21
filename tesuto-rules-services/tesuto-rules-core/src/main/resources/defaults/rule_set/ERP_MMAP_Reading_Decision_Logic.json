@@ -1,0 +1,17 @@
+{
+	"id": "b7e942ec-eb73-4c4a-aa60-f6a2fb076f34",
+	"family": "SYS",
+	"engine": "tesuto",
+	"version": "1",
+	"title": "ERP MMAP Reading Decision Logic - May 2016",
+	"status": "published",
+	"event": "MULTIPLE_MEASURE_PLACEMENT",
+	"category": "mmComponentPlacementLogic",
+	"competencyMapDiscipline": "ENGLISH",
+	"description": "Execute ERP Reading decision logic to generate the Multiple Measures, High School Transcript based placement component",
+	"ruleSetRowIds": [
+		"84324c9a-cbdc-45ee-a6b5-c993762adf4e"
+	],
+	"ruleSetDrl": null,
+	"ruleSetDrlValidationCsv": null
+}

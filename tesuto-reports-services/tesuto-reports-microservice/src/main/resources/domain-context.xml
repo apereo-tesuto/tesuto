@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	                           http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+                           	   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+                               	   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+
+    <bean id="childExpressionEvaluationServiceDomain" class="org.cccnext.tesuto.importer.qti.service.validate.ChildExpressionEvaluationServiceImport" />
+
+    <bean id="expressionEvaluationServiceDomain" class="org.cccnext.tesuto.content.service.scoring.ExpressionEvaluationService">
+        <property name="childExpressionEvaluationService" ref="childExpressionEvaluationServiceDomain" />
+    </bean>
+
+    <bean id="validationUtil" class="org.cccnext.tesuto.util.ValidationUtil">
+        <property name="useFullBranchRuleEvaluation" value="${full.branch.rule.evaluation:false}" />
+    </bean>
+
+    <bean id="validateAssessmentService" class="org.cccnext.tesuto.importer.qti.service.validate.ValidateAssessmentServiceImpl" >
+        <property name="expressionEvaluationService" ref="expressionEvaluationServiceDomain" />
+    </bean>
+
+    <bean id="validateAssessmentItemService" class="org.cccnext.tesuto.importer.qti.service.validate.ValidateAssessmentItemServiceImpl" >
+    </bean>
+
+    <bean id="placementRequestRestClient" class="org.cccnext.tesuto.service.rules.PlacementRequestRestClient"/>
+    
+</beans>

@@ -1,0 +1,75 @@
+
+.ccc-validation-badge-wrap {
+
+    display: inline-block;
+    position: relative;
+
+    &.ccc-validation-badge-wrap-full-width, &.ccc-validation-badge-wrap-full-width-select {
+        width: 100%;
+        display: block;
+    }
+
+    input {
+        padding-right: 35px;
+    }
+
+    // selects can't be reliably styled with padding so we put the validation badge outside for selects that do not expand out with full width
+    select ~ .ccc-validation-badge {
+        right: -28px;
+    }
+
+    textarea {
+        padding-right: 55px;
+
+        & ~ .ccc-validation-badge {
+            right: 7px;
+        }
+    }
+
+    .ccc-validation-badge {
+        position: absolute;
+        top: 2px;
+        right: 6px;
+        padding: 0px 0px 6px 0px;
+        padding-top: 1px;
+        text-align: center;
+        min-width: 22px;
+        height: 22px;
+        font-size: 20px;
+        color: darken(@brand-warning, 30%);
+        z-index: 2;
+        font-size: 20px;
+        .border-radius(11px);
+    }
+
+    &.ccc-validation-badge-lg {
+
+        input, textarea {
+            padding-right: 45px;
+        }
+
+        .ccc-validation-badge {
+            top: 11px;
+            right: 11px;
+        }
+    }
+
+    &.ccc-validation-badge-wrap-dropdown {
+        button {
+            padding-right: 30px;
+        }
+    }
+
+    &.ccc-validation-badge-wrap-full-width-select {
+        .ccc-validation-badge {
+            right: 20px;
+        }
+    }
+
+}
+
+// if your validation isn't ontop of an input, you can take up a whole block space
+.ccc-validation-badge-block {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}

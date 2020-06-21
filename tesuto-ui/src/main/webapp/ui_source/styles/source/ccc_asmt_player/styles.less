@@ -1,0 +1,176 @@
+/*============ COMMON STYLES FOR ALL VIEWS ROLL UP ===========*/
+
+@import '../ccc_view_common/styles.less';
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+
+/*============ VIEW SPECIFIC FILES ============*/
+
+@import 'components/toolbar.less';
+
+
+/*============ MAIN LAYOUT ===========*/
+
+html, body {
+    overflow: hidden;
+}
+
+ccc-asmt-player-view {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.ccc-asmt-player-components {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    overflow-x: hidden;
+}
+
+ccc-asmt-player-toolbar-top {
+    position: absolute;
+    z-index: 1061;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+ccc-asmt-player-toolbar-bottom {
+    position: absolute;
+    z-index: 1061;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+ccc-asmt-player {
+    display: block;
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+ccc-asmt-player-content{
+    z-index: 0;
+    display: block;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 76px;
+    padding-top: 64px;
+
+    font-size: 105%;
+    line-height: 157%;
+}
+
+.ccc-asmt-player-item-title {
+    font-size: 1.5em;
+}
+
+
+/*============ CONTENT AREA ============*/
+
+ccc-asmt-player-content {
+
+    display: block;
+
+    .ccc-asmt-player-content-container {
+        padding-top: 15px;
+        padding-bottom: 160px;
+        display: block;
+    }
+
+    .ccc-asmt-player-content-area  {
+
+        padding: 75px 60px 45px 60px;
+
+        background: #fff;
+        .border-radius(5px);
+        min-height: 75%;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
+
+        font-family: 'Roboto Slab', serif;
+        font-weight: 300;
+    }
+}
+
+/* by default we hide error messages until a high level class is added */
+.assessment-item-invalid .ccc-assessment-item-number .ccc-assessment-item-number-warning {
+    display: none;
+}
+.ccc-show-validation-errors {
+
+    .assessment-item-invalid .ccc-assessment-item-number .ccc-assessment-item-number-warning {
+        display: inline-block;
+    }
+    .ccc-interaction-error-list {
+
+        display: block;
+        font-family: Helvetica, Verdana, Arial, sans-serif;
+        font-weight: normal;
+
+        li {
+            display: block;
+        }
+    }
+}
+
+
+/*============ RESPONSIVE ==============*/
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {
+
+    .ccc-asmt-player-components {
+        background: #fff;
+    }
+
+    ccc-asmt-player-content {
+
+        .ccc-asmt-player-content-container {
+
+            .container {
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .ccc-asmt-player-content-area {
+                padding: 15px 0px 15px 0px;
+                box-shadow: none;
+                .border-radius(0px);
+
+                &> .row {
+                    margin-left: 0;
+                    margin-right: 0;
+
+                    &> .col-xs-12 {
+                        padding: 0px;
+                    }
+                }
+
+                .ccc-assessment-item-number {
+                    border-bottom: 0px;
+                }
+
+                .ccc-question-label-background {
+                    -webkit-border-bottom-right-radius: 5px;
+                    -webkit-border-bottom-left-radius: 5px;
+                    -moz-border-radius-bottomright: 5px;
+                    -moz-border-radius-bottomleft: 5px;
+                    border-bottom-right-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+
+                .ccc-assessment-item-body {
+                    padding-left: 0px;
+                }
+
+            }
+        }
+    }
+}

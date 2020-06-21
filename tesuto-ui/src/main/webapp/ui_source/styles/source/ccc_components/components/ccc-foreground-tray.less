@@ -1,0 +1,35 @@
+ccc-foreground-tray {
+
+    .ccc-foreground-tray-content-container {
+        padding-top: 20px;
+    }
+
+    display: block;
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    padding: 60px 15px;
+
+    overflow-y: auto;
+
+    &.ccc-foreground-tray-item-being-dragged {
+        overflow-y: visible;
+    }
+
+    background: rgba(238, 238, 238, 0.7);
+
+    .transition-properties(all 400ms 50ms cubic-bezier(0.595, 0.61, 0, 1));
+
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+    .ccc-form-title {
+        text-align: right;
+        background: none;
+        margin-top: 18px;
+        color: #eee;
+        button {}
+    }
+}

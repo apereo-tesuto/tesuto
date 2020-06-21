@@ -1,0 +1,51 @@
+ccc-assessment-scoring-setup {
+
+    .version-help {
+        img {
+            max-width: 100%;
+            border: 1px solid #d8d1af;
+        }
+    }
+
+    .separator {
+        padding-left: 3px;
+        padding-right: 3px;
+        vertical-align: sub;
+    }
+
+    .hours,
+    .minutes,
+    .meridiem {
+
+        display: inline-block;
+        max-width: 6em;
+        vertical-align: top;
+
+        input {
+            min-width: 5em;
+        }
+
+        .ccc-validation-badge-wrap.ccc-validation-badge-wrap-full-width,
+        .ccc-validation-badge-wrap.ccc-validation-badge-wrap-full-width-select {
+            width: inherit;
+        }
+        @media (max-width: @screen-sm-min) {
+            display: inline-block;
+        }
+    }
+
+    .meridiem {
+        margin-left: 3px;
+        max-width: 7.5em;
+    }
+
+    .grouped-errors {
+        clear: both;
+    }
+
+    @media (max-width: @screen-sm-min) {
+        ccc-date-picker {
+            width: 100%;
+        }
+    }
+}

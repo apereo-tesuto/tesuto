@@ -1,0 +1,25 @@
+---
+layout: default
+subject: Remote Proctor Event - CANCELED
+---
+
+<!-- CCC logo header -->
+{{> ccc-header}}
+
+<container>
+    <spacer size="16"></spacer>
+    <row>
+        <columns small="12">
+            <h1>Hello ${remoteProctorViewDto.remoteProctorDisplayName}</h1>
+
+            <h4>The test event for ${collegeName} you were scheduled to proctor on ${remoteProctorViewDto.startDate} has been canceled.</h4>
+
+            <p>If the test event is rescheduled, you will be notified via email.</p>
+
+            <p>If you have any questions, please contact the Assessment Center at ${collegeName}.</p>
+
+            <p>Regards,<br>
+            ${collegeName} Assessment Center</p>
+        </columns>
+    </row>
+</container>

@@ -1,0 +1,94 @@
+{
+    "taskSetId": "AFDD-SDFD-SDFD-FE04",
+    "tasks": [{
+        "taskId": "AFGY-JEMD-SKJD-JKSC",
+        "stimulus": "<p>These are variations of the extended text interaction. The expected lines configuration can help the user see that perhaps one text area deserves a longer answer as compared to others.</p><p>Consider this excerpt from the classic War and Peace</p><blockquote>We can know only that we know nothing. And that is the highest degree of human wisdom.</blockquote>",
+        "itemSessions": [
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                "itemSessionIndex": 9,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [
+                    {
+                        "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                        "responseIdentifier": "RESPONSE1",
+                        "values": ["This is an extended text answer coming from the server."]
+                    }
+                ],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE1",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c85\"/>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c85",
+                        "responseIdentifier": "RESPONSE1",
+                        "type": "extendedTextInteraction",
+                        "minStrings": "5",
+                        "prompt": "This is pretty deep stuff. Explain just how deep this stuff is:"
+                    }]
+                }
+            },
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK02",
+                "itemSessionIndex": 10,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE2",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheets": ".lsi-interaction {color:red; } .lsi-prompt {color: red;}",
+                    "itemBody": "<div class='lsi-interaction' style='color: green; font-weight:bold; text-align: right; font-family: arial; text-transform: uppercase;'><interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c86\"/></div>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c86",
+                        "responseIdentifier": "RESPONSE2",
+                        "type": "extendedTextInteraction",
+                        "minStrings": "1",
+                        "maxStrings": "5",
+                        "prompt": "<span class='lsi-prompt'>In 5 words or less, summarize War and Peace:</span>"
+                    }]
+                }
+            },
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK03",
+                "itemSessionIndex": 11,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE3",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c87\"/>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c87",
+                        "responseIdentifier": "RESPONSE3",
+                        "type": "extendedTextInteraction",
+                        "expectedLines": "15",
+                        "prompt": "For extra points, write an additional chapter to War and Peace (optional):"
+                    }]
+                }
+            }
+        ]
+    }]
+}

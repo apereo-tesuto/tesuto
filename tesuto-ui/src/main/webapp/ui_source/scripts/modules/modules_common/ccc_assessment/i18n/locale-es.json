@@ -1,0 +1,13 @@
+{
+    "CCC_ASSESSMENT": {
+
+        "INTERACTION": {
+            "TEXT_ENTRY": {
+                "VALIDATION": {
+                    "MASK_INVALID": "Your response does not match the expected format"
+                }
+            }
+        }
+
+    }
+}

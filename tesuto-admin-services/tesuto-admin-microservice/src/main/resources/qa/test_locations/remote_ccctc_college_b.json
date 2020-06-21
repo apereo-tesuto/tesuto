@@ -1,0 +1,16 @@
+ {
+    "id": "1000004",
+    "name": "Remote CCCTC College A",
+    "streetAddress1": "1 Apereo Drive",
+    "streetAddress2": "",
+    "city": "Oroville",
+    "postalCode": "95965",
+    "locationType": "REMOTE",
+    "locationStatus": "ACTIVE",
+    "collegeId": "ZZ3",
+    "collegeName": "CCCTC College A",
+    "capacity": 30,
+    "lastUpdatedDate": 1485793699290,
+    "enabled": true,
+    "createdOnDate": 1483769001566
+  }

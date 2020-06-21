@@ -1,0 +1,16 @@
+{
+		"id": "1000002",
+		"name": "Rainforest College Test Center",
+		"streetAddress1": "1760 East Pecos Road",
+		"streetAddress2": "Suite 432",
+		"city": "Gilbert",
+		"postalCode": "85295",
+		"locationType": "ON_SITE",
+		"locationStatus": "ACTIVE",
+		"collegeId": "ZZ2",
+		"collegeName": "Rainforest College",
+		"capacity": 30,
+		"lastUpdatedDate": 1485793699278,
+		"enabled": true,
+		"createdOnDate": 1483769001566
+	}

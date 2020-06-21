@@ -1,0 +1,813 @@
+ccc-assessment-item {
+
+    table {
+
+        td {
+            border: 1px solid @ccc-fg-light;
+        }
+
+        &.ccc-table {
+            td {
+                padding: 2px 5px;
+            }
+        }
+    }
+
+    display: block;
+    margin-left: 0px;
+    margin-bottom: 90px;
+
+    blockquote, .blockquote {
+        font-size: 100%;
+        margin-left: 2em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .ccc-assessment-item-inner {
+        position: relative;
+    }
+
+    .ccc-assessment-item-number {
+
+        display: block;
+        border-bottom: 3px solid darken(@brand-primary, 10%);
+        margin-bottom: 30px;
+
+        -webkit-border-bottom-left-radius: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        border-bottom-left-radius: 4px;
+
+        .ccc-assessment-item-number-warning {
+            display: none;
+            position: absolute;
+            left: -1.3em;
+            top: 0.55em;
+            font-size: 150%;
+            color: @brand-warning;
+        }
+    }
+
+    .ccc-assessment-item-body {
+        padding-top: 0.5em;
+        padding-left: 15px;
+    }
+}
+
+/*============ ASSESSMENT ITEM SESSION FEEDBACK ============*/
+
+ccc-assessment-item-session-feedback {
+    display: block;
+    margin-bottom: 10px;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+    font-size: 90%;
+}
+
+ccc-assessment-item-session-feedback-score,
+ccc-assessment-item-session-feedback-outcome {
+
+    display: block;
+    color: @brand-primary;
+
+    margin-bottom: 5px;
+
+    .ccc-assessment-item-session-feedback-score-value {
+        margin-right: 25px;
+        display: inline-block;
+    }
+
+    i.fa {
+        font-size: 150%;
+        line-height: 16px;
+        position: relative;
+        top: -2px;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+}
+
+ccc-assessment-item-session-feedback-score {
+
+    padding-left: 38px;
+    i.fa {
+        font-size: 60%;
+        line-height: 16px;
+        position: relative;
+        top: -1px;
+        vertical-align: middle;
+        margin-right: 3px;
+    }
+}
+
+ccc-interaction {
+    display: inline-block;
+    clear: both;
+    font-size: 100%; // this provides a font-size reset in case surrounding author styles changes
+    font-family: @interaction-font-family;
+    text-transform: none;
+    text-decoration: none;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 157%;
+    word-spacing: normal;
+}
+
+.ccc-interaction-error-list {
+
+    display: none;
+
+    &.ccc-interaction-error-list-visible {
+        display: block;
+    }
+
+    list-style: none;
+    padding-left: 0px;
+    padding: 5px 15px;
+    border: 2px solid @brand-warning;
+    .border-radius(3px);
+
+    li {
+        display: none;
+        text-align: left;
+        &.ccc-interaction-error-list-item-live {
+            display: block;
+        }
+    }
+}
+
+.ccc-interaction-prompt, prompt {
+    margin-bottom: 0.50em;
+    line-height: 157%;
+    font-size: 105%;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    text-align: left;
+    text-transform: none;
+    .reading-width();
+}
+
+.ccc-assessment-item-number .ccc-boxed-symbol {
+    font-size: 125%;
+}
+
+.interaction-invalid {
+    .ccc-assessment-item-number {
+        .ccc-assessment-item-number-warning {
+            display: inline-block;
+        }
+    }
+}
+
+.ccc-interaction-directive {
+    margin-top: 0.0em;
+}
+
+
+/*=========== EXTENDED TEXT INTERACTION ============*/
+
+ccc-interaction-extended-text-entry {
+    display: block;
+    width: 100%;
+    textarea {
+        font-size: 16px;
+        font-weight: normal;
+        font-family: Helvetica, Verdana, Arial, sans-serif;
+    }
+}
+
+.ccc-invert {
+    ccc-interaction {
+        textarea.ccc-bg {
+            background: @ccc-bg-dark-inverted;
+        }
+    }
+
+    ccc-assessment-item {
+        table {
+            td {
+                border: 1px solid @ccc-fg-light-inverted;
+            }
+        }
+    }
+}
+
+
+/*=========== MULTIPLE CHOICE ===========*/
+
+.ccc-interaction-choice-list {
+
+    margin-left: 30px;
+
+    padding-left: 0.0em;
+    padding-top: 0.4em;
+
+    .ccc-interaction-radio-content {
+        // added overflow hidden to make the outline look better when focussed, mathjax makes a crazy outline
+        overflow: hidden;
+        text-align: left;
+        display: block; // display block because items like mathjax need to know it's parent containers max width
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin-top: -3px;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    .ccc-interaction-choice-item-wrapper {
+
+        display: block;
+        width: 100%;
+
+        font-weight: normal;
+
+        // this padding helps form a symmetric outline when focussed
+        padding: 0.5em;
+
+        padding-left: 0px;
+
+        // we had padding to the left of the letter so the focused highlight looks symettric so we bring the whole thing back
+        margin-left: -0.3em;
+
+        position: relative;
+        margin-bottom: 0.75em;
+        cursor: pointer;
+    }
+
+    .ccc-interaction-choice-item-label {
+
+        display: block;
+        position: relative;
+        padding-left: 3em;
+        text-align: left;
+        font-weight: normal;
+
+        .ccc-interaction-choice-item-input-wrapper {
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .ccc-interaction-choice-item-content {
+            cursor: pointer;
+        }
+
+        .ccc-interaction-choice-item-label-letter {
+            position: relative;
+            display: inline-block;
+
+            vertical-align: middle;
+            font-family: Helvetica, Verdana, Arial, sans-serif;
+            z-index: 1;
+
+            top: -0.1em;
+            width: 1.6em;
+            height: 1.6em;
+            padding: 0.2em;
+            line-height: 1.2em;
+            font-size: 1.2em;
+            border-radius: 0.15em;
+            text-align: center;
+            background: #fff;
+            border: 1px solid rgba(0,0,0, 0.2);
+        }
+
+        .ccc-interaction-choice-item-input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        &.choice-item-input-radio .ccc-interaction-choice-item-label-letter {
+            border-radius: 50%;
+        }
+
+        /* Hover and focus states */
+        &:hover .ccc-interaction-choice-item-input ~ .ccc-interaction-choice-item-label-letter {
+            background: #ddd;
+        }
+        .ccc-interaction-choice-item-input:focus ~ .ccc-interaction-choice-item-label-letter {
+            box-shadow: 0px 0px 3px 3px @brand-primary;
+        }
+
+        &:hover .ccc-interaction-choice-item-input ~ .ccc-interaction-choice-item-label-letter:after,
+        .ccc-interaction-choice-item-input:focus ~ .ccc-interaction-choice-item-label-letter:after {
+            color: #000;
+        }
+
+        /* Checked state */
+        .ccc-interaction-choice-item-input:checked ~ .ccc-interaction-choice-item-label-letter {
+            background: #777;
+            color: #eee;
+        }
+
+        /* Hover state whilst checked */
+        &:hover .ccc-interaction-choice-item-input:not([disabled]):checked ~ .ccc-interaction-choice-item-label-letter,
+        .ccc-interaction-choice-item-input:checked:focus ~ .ccc-interaction-choice-item-label-letter {
+            background: @grayscale10;
+            color: #fff;
+        }
+
+        /* Disabled state */
+        .ccc-interaction-choice-item-input:disabled ~ .ccc-interaction-choice-item-label-letter {
+            pointer-events: none;
+            opacity: .6;
+            background: #e6e6e6;
+            position: relative;
+        }
+
+        /* Check mark */
+        &.choice-item-input-checkbox .ccc-interaction-choice-item-label-letter:after {
+            position: absolute;
+            top: 0.3em;
+            left: -1.4em;
+            display: none;
+        }
+
+        /* Show check mark */
+        &.choice-item-input-checkbox .ccc-interaction-choice-item-input:checked ~ .ccc-interaction-choice-item-label-letter:after {
+            display: block;
+        }
+
+        /* Checkbox tick */
+        &.choice-item-input-checkbox .ccc-interaction-choice-item-label-letter:after {
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: 20px;
+            content: '\f00c';
+            color: #777;
+        }
+
+        /* Disabled tick colour */
+        &.choice-item-input-checkbox .ccc-interaction-choice-item-input:disabled ~ .ccc-interaction-choice-item-label-letter:after {
+            border-color: #7b7b7b;
+        }
+
+        /* Disabled circle colour */
+        &.choice-item-input-radio .ccc-interaction-choice-item-input:disabled ~ .ccc-interaction-choice-item-label-letter:after {
+            background: #7b7b7b;
+        }
+
+    }
+
+    &.horizontal {
+
+        .ccc-interaction-choice-item-label {
+            display: inline-block;
+        }
+
+        .ccc-interaction-choice-item-wrapper {
+            float: left;
+            padding-right: 2em;
+            margin-right: 30px;
+            display: inline-block;
+            width: auto;
+        }
+    }
+}
+
+.ccc-invert {
+    ccc-choice-input {
+        .ccc-choice-input-text {
+            color: #fff;
+        }
+
+        .selected {
+            .ccc-choice-input-text {
+                color: #000;
+            }
+            .ccc-choice-input-checkbox-container {
+                color: rgba(255,255,255, 0.75);
+            }
+        }
+    }
+}
+
+
+/*============ INLINE CHOICE INTERACTION ============*/
+
+ccc-interaction-inline-choice {
+
+    position: relative;
+    top: -2px;
+
+    .ccc-interaction-inline-choice-button {
+        .caret {
+            margin-left: 5px;
+        }
+    }
+
+    .ccc-interaction-text-entry-container {
+        display: inline-block;
+        position: relative;
+    }
+
+    .ccc-interaction-validation-container {
+        top: 4px;
+        z-index: 1001;
+    }
+
+    .dropdown-menu > li > span,
+    .dropdown-menu > li > a {
+
+        font-weight: bold;
+
+        overflow: hidden;
+        cursor: pointer;
+        display: block;
+        padding: 3px 20px;
+        clear: both;
+        font-weight: normal;
+        line-height: 1.42857143;
+        color: @grayscale10;
+        white-space: nowrap;
+    }
+}
+
+.ccc-show-validation-errors {
+    ccc-interaction-inline-choice {
+        .ng-invalid {
+            .ccc-interaction-inline-choice-button {
+                padding-right: 30px;
+            }
+        }
+    }
+}
+
+
+/*============ TEXT ENTRY ============*/
+
+ccc-interaction-text-entry {
+
+    display: inline-block;
+
+    .ccc-interaction-text-entry-container {
+
+        display: inline-block;
+        position: relative;
+
+        .form-control {
+            font-size: 16px;
+            font-family: Helvetica, Verdana, Arial, sans-serif;
+            font-weight: normal;
+            display: inline-block;
+            width: auto;
+            padding-right: 25px;
+        }
+    }
+
+    .ccc-interaction-validation-container {
+        top: 4px;
+    }
+}
+
+.ccc-contains-text-entry-interaction {
+    line-height: 2.5;
+}
+
+// if the element that "contains-text-entry" is the item body element or is the first child in the item body then move it up 3px to offset the larger line height so it aligns properly with the very top of the item
+.ccc-assessment-item-body {
+    &.ccc-contains-text-entry-interaction {
+        padding-top: 0;
+        position: relative;
+        top: -3px;
+    }
+    > .ccc-contains-text-entry-interaction:first-child {
+        padding-top: 0;
+        position: relative;
+        top: -8px;
+    }
+}
+
+
+/*============ MATCH INTERACTION ============*/
+
+ccc-interaction-match {
+
+    display: block;
+    margin-bottom: 15px;
+
+    table.table-bordered {
+
+        margin-top: 30px;
+
+        border: 1px solid #fff;
+
+        td, th {
+            padding: 3px 20px;
+        }
+
+        thead > tr > th {
+            padding: 3px 30px 3px 10px;
+        }
+
+        .ccc-interaction-match-error-icon {
+            opacity: 0.0;
+            position: relative;
+            left: -5px;
+            color: @brand-warning;
+        }
+
+        .ccc-interaction-match-has-max-error {
+            .ccc-interaction-match-error-icon {
+                opacity: 1.0;
+            }
+        }
+
+        &> tbody tr > td.ccc-interaction-match-row-header {
+            padding: 3px 20px 3px 15px;
+            font-weight: bold;
+            border-right: 2px solid #ddd;
+            text-align: left;
+        }
+
+        &> thead > tr > th {
+            &:first-child {
+                border-top: 1px solid rgba(255,255,255, 0);
+                border-left: 1px solid rgba(255,255,255, 0);
+                border-right: 2px solid #ddd;
+            }
+        }
+    }
+
+    .ccc-interaction-match-input-cell {
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            ccc-toggle-input button {
+                border: 3px solid rgba(0,0,0, 0.6);
+            }
+        }
+    }
+
+    .ccc-interaction-error-list {
+
+        margin-top: 15px;
+        text-align: left;
+        text-decoration: none;
+
+        strong {
+            font-family: 'Roboto Slab', serif;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 4px;
+        }
+    }
+
+    .ccc-interaction-match-highlight {}
+}
+
+.ccc-show-validation-errors {
+    ccc-interaction-match {
+        .ccc-interaction-match-has-min-error {
+            .ccc-interaction-match-error-icon {
+                opacity: 1.0;
+            }
+        }
+    }
+}
+
+
+
+
+
+/*============ POPOVER ERRORS ============*/
+
+.ccc-interaction-validation-container {
+
+    display: none;
+    position: absolute;
+
+    right: 9px;
+    top: 1px;
+    color: @brand-warning;
+
+    i {
+        cursor: pointer;
+    }
+
+    .popover {
+
+        min-width: 300px;
+        .ccc-interaction-error-list {
+            border: 0px;
+            margin-bottom: 0px;
+        }
+
+        border-color: @brand-warning;
+        border-width: 2px;
+
+        .arrow {
+            border-top-color: @brand-warning;
+        }
+    }
+}
+
+.ccc-show-validation-errors .ccc-interaction-validation-container {
+    display: inline-block;
+}
+
+.ccc-invert {
+    .ccc-interaction-validation-container {
+        .popover {
+             .text-warning {
+                color: rgba(0,0,0,0.8);
+            }
+        }
+    }
+}
+
+/*============ QUESTION LABEL ===========*/
+
+ccc-question-label {
+
+    .ccc-question-label-background {
+        display: inline-block;
+        text-align: center;
+        min-width: 3em;
+        padding: 0px 10px;
+        height: 3em;
+
+        background: darken(@brand-primary, 10%);
+
+        color: #fff;
+        .border-radius(5px);
+        -webkit-border-bottom-right-radius: 0px;
+        -webkit-border-bottom-left-radius: 0px;
+        -moz-border-radius-bottomright: 0px;
+        -moz-border-radius-bottomleft: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .ccc-question-label-text {
+        display: inline-block;
+        padding-top: 0.58em;
+        font-size: 145%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: Helvetica, Verdana, Arial, sans-serif
+    }
+}
+
+.ccc-invert {
+    .ccc-question-label-background {
+        background: rgba(255,255,255, 0.2);
+    }
+}
+
+
+/*============ RESPONSIVE DESIGN ============*/
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {
+
+    .button-bar {
+        .btn, .btn-link, button{
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .btn-full-width-when-small {
+        margin-bottom: 15px;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        display: block;
+        padding: 6px 12px;
+        line-height: 1.42857143;
+        .border-radius(4px);
+        width: 100%;
+        text-align: center;
+
+        &.btn-link {
+            border: 1px solid @grayscale3;
+            background: rgba(255, 255, 255, 0.9);
+            &:hover, &:active, &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .form-inline {
+        input {
+            margin-bottom: 5px;
+        }
+    }
+    .ccc-interaction-validation-container {
+
+        .popover {
+            max-width: 400px;
+            min-width: 200px;
+        }
+    }
+}
+
+/*============ RESPONSIVE ============*/
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {}
+
+// Small devices (tablets, 768px and up)
+@media (max-width: @screen-sm-min) {
+    ccc-assessment-item {
+
+        margin-left: 0;
+
+        .ccc-assessment-item-inner {
+            padding-left: 0;
+        }
+        .ccc-assessment-item-number {
+            display: block;
+            position: relative;
+
+            .ccc-assessment-item-number-warning {
+                position: relative;
+                left: 15px;
+                top: 41px;
+                border-radius: 16px;
+                color: #fff;
+                text-shadow: none;
+            }
+
+            ccc-question-label {
+                display: block;
+
+                .ccc-question-label-background {
+                    display: block;
+                    width: auto;
+                    .sr-only {
+                        position: relative;
+                        height: auto;
+                        width: auto;
+                        margin: 0;
+                        padding: 0;
+                        clip: none;
+                        text-transform: capitalize;
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+
+    ccc-interaction-match {
+        table.table-bordered {
+            td, th {
+                padding: 3px;
+                &.ccc-interaction-match-input-cell {
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+
+    .ccc-interaction-match-error-icon {
+        display: none;
+    }
+    .ccc-interaction-match-has-max-error {
+        .ccc-interaction-match-error-icon {
+            display: inline-block;
+        }
+    }
+
+    ccc-interaction-match table.table-bordered {
+        width: 100%;
+    }
+    ccc-interaction-match table.table-bordered thead > tr > th,
+    ccc-interaction-match table.table-bordered > tbody tr > td.ccc-interaction-match-row-header {
+        padding: 3px;
+        text-align: center;
+        font-size: 66%;
+        .ccc-cell-header {
+            display: block;
+        }
+        .ccc-interaction-match-error-icon {
+            left: 0;
+            font-size: 16px;
+        }
+    }
+
+    .ccc-show-validation-errors {
+        ccc-interaction-match {
+            .ccc-interaction-match-has-min-error {
+                .ccc-interaction-match-error-icon {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: @screen-md-min) {}
+
+// Large screen (wide desktop, 1200px and up)
+@media (min-width: @screen-lg-min) {}

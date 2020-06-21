@@ -1,0 +1,10 @@
+{
+	"id": "dummy-uuid",
+	"family": "ZZ1",
+	"application": "sns-listener",
+	"version": "1",
+	"status": "draft",
+	"ruleSetRows": [
+		"be76d32d-669e-4931-90f3-9ef4074f6702"
+	]
+}

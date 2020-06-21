@@ -1,0 +1,51 @@
+ccc-user-permissions-selector {
+
+    ul {
+
+        list-style: none;
+
+         &.ccc-user-permissions-selector-role-list {
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .ccc-user-permissions-selector-item {
+
+            position: relative;
+            padding-left: 26px;
+
+            input {
+                position: absolute;
+                top: 0px;
+                left: 6px;
+            }
+
+            label {
+                cursor: pointer;
+            }
+
+            &.ccc-user-permissions-selector-item-role {
+
+                padding: 6px 12px 6px 34px;
+                margin-bottom: 3px;
+                background: rgba(255, 255, 255, 0.85);
+                display: block;
+
+                input {
+                    top: 6px;
+                    left: 12px;
+                }
+
+                label {
+                    display: inline-block;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+    }
+
+    ul > li > ul > li label {
+        font-weight: normal;
+    }
+}

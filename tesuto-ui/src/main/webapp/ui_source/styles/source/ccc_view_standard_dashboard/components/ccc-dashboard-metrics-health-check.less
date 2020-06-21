@@ -1,0 +1,31 @@
+ccc-dashboard-metrics-health-check {
+    .ccc-dashboard-metrics-health-check-title {
+
+        i {
+            margin-top: -2px;
+            font-size: 22px;
+            line-height: 22px;
+            margin-right: 10px;
+            vertical-align: middle;
+            color: @brand-primary;
+        }
+
+        &:hover, &:focus {
+
+            text-decoration: underline;
+            color: darken(@brand-primary, 15%);
+
+            i {
+                text-decoration: none;
+                color: darken(@brand-primary, 15%);
+            }
+        }
+        &:active {
+            color: darken(@brand-primary, 25%);
+
+            i {
+                color: darken(@brand-primary, 25%);
+            }
+        }
+    }
+}

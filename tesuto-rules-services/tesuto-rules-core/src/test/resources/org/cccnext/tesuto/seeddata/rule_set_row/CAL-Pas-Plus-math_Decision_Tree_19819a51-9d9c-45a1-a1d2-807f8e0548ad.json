@@ -1,0 +1,1431 @@
+{
+	"id": "19819a51-9d9c-45a1-a1d2-807f8e0548ad",
+	"family": "SYS",
+	"engine": "tesuto",
+	"version": "1",
+	"title": "Statewide MMAP Mathematics Decision Logic",
+	"status": "published",
+	"event": "MULTIPLE_MEASURE_PLACEMENT",
+	"category": "mmComponentPlacementLogic",
+	"competencyMapDiscipline": "MATH",
+	"description": "<p>Execute the statewide MMAP Mathematics decision logic to generate the Multiple Measures, High School Transcript based placement component.</p>",
+	"ruleId": "8f8a9541-05bb-4589-8cee-813ab5500587",
+	"variableRows": [
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_calc_i"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.6"
+				},
+				{
+					"name": "math_ranking",
+					"value": "4.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_calc_i"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.2"
+				},
+				{
+					"name": "math_ranking",
+					"value": "5.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_pre_calc"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.4"
+				},
+				{
+					"name": "math_ranking",
+					"value": "2.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_pre_calc"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.6"
+				},
+				{
+					"name": "math_ranking",
+					"value": "6"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_trig"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.4"
+				},
+				{
+					"name": "math_ranking",
+					"value": "2.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_trig"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "5.25"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_trig"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "2.3"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_col_alg"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.2"
+				},
+				{
+					"name": "math_ranking",
+					"value": "2.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_col_alg"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.9"
+				},
+				{
+					"name": "math_ranking",
+					"value": "5.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_ge"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "1.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_stat"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "1.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_stat"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "5.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_alg_ii"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.8"
+				},
+				{
+					"name": "math_ranking",
+					"value": "1.1"
+				},
+				{
+					"name": "transfer_level",
+					"value": "A"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "1"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_alg_i"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.4"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "pre_algebra"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "C"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "3"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "arithmetic"
+				},
+				{
+					"name": "grade_level",
+					"value": "11"
+				},
+				{
+					"name": "transfer_level",
+					"value": "D"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "4"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_calc_i"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.1"
+				},
+				{
+					"name": "math_ranking",
+					"value": "6"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_calc_i"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.5"
+				},
+				{
+					"name": "math_ranking",
+					"value": "4.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_pre_calc"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "2.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_pre_calc"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "algebra_II_cst",
+					"value": "340"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_pre_calc"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "6.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_trig"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "2.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_trig"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.8"
+				},
+				{
+					"name": "math_ranking",
+					"value": "5.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_col_alg"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.2"
+				},
+				{
+					"name": "math_ranking",
+					"value": "2.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_col_alg"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "5"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_col_alg"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "stat",
+					"value": "2"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_ge"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3.2"
+				},
+				{
+					"name": "math_ranking",
+					"value": "1.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_ge"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.9"
+				},
+				{
+					"name": "math_ranking",
+					"value": "1.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "stat",
+					"value": "2"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_stat"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "1.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_stat"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.6"
+				},
+				{
+					"name": "math_ranking",
+					"value": "5.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "Y"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "0"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_alg_ii"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.9"
+				},
+				{
+					"name": "math_ranking",
+					"value": "1.1"
+				},
+				{
+					"name": "transfer_level",
+					"value": "A"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "1"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_alg_ii"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.5"
+				},
+				{
+					"name": "transfer_level",
+					"value": "A"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "1"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "algebra_II_cst",
+					"value": "302"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_alg_ii"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.5"
+				},
+				{
+					"name": "math_ranking",
+					"value": "5.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "A"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "1"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_alg_i"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.5"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_alg_i"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "algebra_II_cst",
+					"value": "302"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "math_alg_i"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.3"
+				},
+				{
+					"name": "math_ranking",
+					"value": "2.2"
+				},
+				{
+					"name": "transfer_level",
+					"value": "B"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "2"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "pre_algebra"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "2.1"
+				},
+				{
+					"name": "transfer_level",
+					"value": "C"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "3"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "pre_algebra"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "gpa_cum",
+					"value": "1.6"
+				},
+				{
+					"name": "transfer_level",
+					"value": "C"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "3"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				},
+				{
+					"name": "alg_i_clut_1",
+					"value": "8"
+				}
+			]
+		},
+		{
+			"name": null,
+			"variables": [
+				{
+					"name": "rule_set_id",
+					"value": "${rule_set_id}"
+				},
+				{
+					"name": "program",
+					"value": "arithmetic"
+				},
+				{
+					"name": "grade_level",
+					"value": "12"
+				},
+				{
+					"name": "transfer_level",
+					"value": "D"
+				},
+				{
+					"name": "levels_below_transfer",
+					"value": "4"
+				},
+				{
+					"name": "insufficient_data",
+					"value": "false"
+				}
+			]
+		}
+	],
+	"validationCsv": "fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result\ncst,grade_level,gpa_cum,ap_any,english,english_ap,pre_alg,pre_alg_ap,alg_i,alg_i_ap,alg_ii,geo,geo_ap,trig_ap,pre_calc,calc,calc_ap,stat,stat_ap,algebra_II_cst,alg_i_clut_1,cccid,miscode,competencymapdiscipline,subjectArea,program,transferLevel,levelsBelowTransfer,rowNumber,ruleSetId,ruleSetRowId,ruleId,trackingId,dataSource,dataSourceType,dataSourceDate,standAlonePlacement,insufficientData\n,11,3.6,,,,,,,,,,,2,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_ge:math_col_alg:math_pre_calc:math_stat:math_calc_i,Y,0,1,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,3.2,,,,,,,,,,,,2,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_col_alg:math_stat:math_calc_i,Y,0,2,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,3.4,,,,,,,,2,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_ge:math_col_alg:math_pre_calc:math_stat,Y,0,3,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,2.6,,,,,,,,,,,,,0,,,,,,A123456,test_college_id,MATH,test_subject_area,math_pre_calc:math_stat,Y,0,4,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,3.4,,,,,,,,2,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_ge:math_col_alg:math_pre_calc:math_stat,Y,0,3,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,3,,,,,,,,,,,,2.5,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_col_alg:math_stat,Y,0,6,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,3,,,,,,,,3,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_stat,Y,0,7,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,3.2,,,,,,,,2,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_col_alg:math_stat,Y,0,8,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,2.9,,,,,,,,,,,,2,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_col_alg:math_stat,Y,0,9,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,3.3,,,,,,2,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_ge:math_stat,Y,0,10,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,3,,,,,,2,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_stat,Y,0,11,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,2.3,,,,,,2,,,,,,2,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_stat,Y,0,12,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,2.8,,,,,,2,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_alg_ii,A,1,13,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,2.4,,,,,,,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_alg_i,B,2,14,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,2,,,,,,,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,pre_algebra,C,3,15,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,11,0,,,,,,,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,arithmetic,D,4,16,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3.1,,,,,,,,,,,,,0,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_col_alg:math_stat:math_calc_i,Y,0,17,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3.5,,,,,,,,,,,2,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_ge:math_col_alg:math_pre_calc:math_stat:math_calc_i,Y,0,18,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3.3,,,,,,,,2,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_ge:math_col_alg:math_pre_calc:math_stat,Y,0,19,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3,,,,,,,,2,,,,,,,,,340,,A123456,test_college_id,MATH,test_subject_area,math_pre_calc:math_stat,Y,0,20,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3,,,,,,,,2,,,,,2,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_col_alg:math_pre_calc:math_stat,Y,0,21,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3.3,,,,,,,,2,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_ge:math_col_alg:math_pre_calc:math_stat,Y,0,19,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,2.8,,,,,,,,2,,,,2,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_stat,Y,0,23,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3.2,,,,,,,,2,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_ge:math_col_alg:math_stat,Y,0,24,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3,,,,,,,,2,,,,2,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_col_alg:math_stat,Y,0,23,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3,,,,,,,,2,,,,,,,2,,,,A123456,test_college_id,MATH,test_subject_area,math_ge:math_col_alg:math_stat,Y,0,26,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3.2,,,,,,2,,,,,,2,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_trig:math_ge:math_col_alg:math_stat,Y,0,23,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,2.9,,,,,,2,,,,,,,,,2,,,,A123456,test_college_id,MATH,test_subject_area,math_ge,Y,0,28,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,3,,,,,,2,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_stat,Y,0,29,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,2.6,,,,,,2,,,,,,2,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_stat,Y,0,30,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,2.9,,,,,,2,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_alg_ii,A,1,31,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,2.5,,,,,,2,,,,,,,,,,,302,,A123456,test_college_id,MATH,test_subject_area,math_alg_ii,A,1,32,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,2.5,,,,,,2,,,,,,2,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_alg_ii,A,1,33,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,2.5,,,,,,,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_alg_i,B,2,34,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,2,,,,,,,,,,,,,,,,,302,,A123456,test_college_id,MATH,test_subject_area,math_alg_i,B,2,35,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,2.3,,,,,,,2,2,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,math_alg_i,B,2,36,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,2.1,,,,,,,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,pre_algebra,C,3,37,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,1.6,,,,,,,,,,,,,,,,,,8,A123456,test_college_id,MATH,test_subject_area,pre_algebra,C,3,38,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false\n,12,0,,,,,,,,,,,,,,,,,,,A123456,test_college_id,MATH,test_subject_area,arithmetic,D,4,39,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,true,false"
+}

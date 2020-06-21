@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                               http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd
+                               http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+
+
+	<!-- configuration properties that will be interpolated via Spring's PropertyPlaceholderConfigurer -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="propertiesArray">
+			<list>
+				<bean
+					class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+					<property name="locations">
+						<util:list>
+							<value>classpath:/properties/mongodb.properties</value>
+						</util:list>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="false" />
+	</bean>
+
+	<!-- MongoDb Data Source -->
+	<mongo:mongo host="${MONGO_HOST_1}" port="${MONGO_PORT_1}" />
+	<mongo:db-factory dbname="${MONGO_DBNAME}" mongo-ref="mongo"
+					  username="${MONGO_USER}" password="${MONGO_PASSWORD}"
+					  authentication-dbname="${MONGO_AUTHENTICATION_DBNAME}" />
+
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+	</bean>
+
+	<bean id="mongoIndexManager"
+		class="org.cccnext.tesuto.activation.MongoActivationIndexManager"
+		init-method="init">
+		<!-- this property is autowired, but autowiring doesn't work during the 
+			test so .. -->
+		<property name="template" ref="mongoTemplate" />
+	</bean>
+
+</beans>
+

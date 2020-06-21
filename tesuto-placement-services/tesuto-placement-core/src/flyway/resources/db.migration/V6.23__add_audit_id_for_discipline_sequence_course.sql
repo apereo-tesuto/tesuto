@@ -1,0 +1,13 @@
+create sequence audit_dsc_seq;
+alter TABLE college_discipline_sequence_course add column audit_id integer not null default nextval('audit_dsc_seq');
+alter sequence audit_dsc_seq owned by college_discipline_sequence_course.audit_id;
+
+alter TABLE history_college_discipline_sequence_course add column audit_id int4;
+
+update history_college_discipline_sequence_course set audit_id=(select audit_id from college_discipline_sequence_course 
+where college_discipline_sequence_course.course_id=history_college_discipline_sequence_course.course_id 
+and college_discipline_sequence_course.college_discipline_id=history_college_discipline_sequence_course.college_discipline_id
+and college_discipline_sequence_course.cb21_code=history_college_discipline_sequence_course.cb21_code);
+
+alter TABLE history_college_discipline_sequence_course add column auditId_MOD boolean;
+update history_college_discipline_sequence_course set auditId_MOD=false where 1=1;

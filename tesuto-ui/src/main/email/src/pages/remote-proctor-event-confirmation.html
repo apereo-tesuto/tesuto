@@ -1,0 +1,70 @@
+---
+layout: default
+subject: Remote Proctor Event Confirmation
+---
+
+<!-- CCC logo header -->
+{{> ccc-header}}
+
+<container>
+    <spacer size="16"></spacer>
+    <row>
+        <columns small="12">
+            <h1>Hello ${remoteProctorViewDto.remoteProctorDisplayName}</h1>
+            <h4>You have been activated to proctor the following assessments:</h4>
+            <callout class="well">
+                <ul>
+                    #foreach( $assessmentName in $remoteProctorViewDto.assessmentNameList )
+                    <li>$assessmentName</li>
+                    #end
+                </ul>
+            </callout>
+
+            <h4>These assessments will be active from:</h4>
+            <callout class="well">
+                <ul>
+                    <li>Start: ${remoteProctorViewDto.startDate}</li>
+                    <li>End: ${remoteProctorViewDto.endDate}</li>
+                </ul>
+            </callout>
+
+            <h4>During that time, you may proctor these students:</h4>
+            <callout class="well">
+                <ul>
+                    #foreach( $studentName in $remoteProctorViewDto.studentNameList )
+                    <li>$studentName</li>
+                    #end
+                </ul>
+            </callout>
+
+            <h4>To get your proctor passcode for this event:</h4>
+            <callout class="well">
+                <a href="${remoteProctorViewDto.linkForProctorPasscode}">Retrieve your proctor passcode</a>
+            </callout>
+
+            <h5>Remote Proctor Agreement</h5>
+            <ul>
+                <li>You agree to be present at the site throughout the testing session.</li>
+                <li>You agree to verify the student’s identity by reviewing a valid, government issued photo identification card.</li>
+                <li>You agree to prevent acts of academic dishonesty including, but not limited to: cheating, plagiarism, stealing or copying an exam, and/or engaging in collusion.</li>
+                <li>You agree to take all necessary precautions regarding suspected academic dishonesty, including access to websites other than CCCAssess.</li>
+                <li>You acknowledge that all materials displayed are copyrighted, and you agree to not reproduce these items in any way.</li>
+                <li>You acknowledge that no student is directly related, a friend, or an acquaintance of yours.</li>
+            </ul>
+            <p>&nbsp;</p>
+
+            <h5>Proctor Instructions</h5>
+            <ul>
+                <li>As a proctor, you are ensuring the integrity of the proctor passcode. The passcode cannot be given to the student under any circumstance.</li>
+                <li>If you feel that the security of your passcode has been compromised, immediately end the test event and contact your assessment administration to have the passcode reset.</li>
+                <li>The test must be administered in your presence.</li>
+                <li>Students are permitted to use scratch paper you provide. Please collect and destroy scratch paper at the conclusion of the test.</li>
+                <li>Calculators, dictionaries, or other materials brought by the student are not permitted.</li>
+            </ul>
+            <p>&nbsp;</p>
+
+            <h5>Questions?</h5>
+            <p>If you have any questions, or feel you have received this email in error, please contact: <a href="mailto:$remoteProctorViewDto.eventCreatorEmail">$remoteProctorViewDto.eventCreatorEmail</a></p>
+        </columns>
+    </row>
+</container>

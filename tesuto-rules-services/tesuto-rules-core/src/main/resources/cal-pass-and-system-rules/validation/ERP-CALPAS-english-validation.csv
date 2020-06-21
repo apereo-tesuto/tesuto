@@ -1,0 +1,7 @@
+fact,fact,fact,fact,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result,result
+englishY,englishA,englishB,englishC,transfer_level,levels_below_transfer,insufficient_data,cccid,miscode,competencymapdiscipline,subjectArea,program,rowNumber,ruleSetId,ruleSetRowId,ruleId,trackingId,dataSource,dataSourceType,dataSourceDate,standAlonePlacement,insufficientData
+true,,,,Y,0,false,A123456,test_college_id,ENGLISH,test_subject_area,English,1,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false
+,true,,,A,1,false,A123456,test_college_id,ENGLISH,test_subject_area,English,2,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false
+,,true,,B,2,false,A123456,test_college_id,ENGLISH,test_subject_area,English,3,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false
+,,,true,C,3,false,A123456,test_college_id,ENGLISH,test_subject_area,English,4,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false
+false,false,false,false,D,4,false,A123456,test_college_id,ENGLISH,test_subject_area,English,5,${rule_set_id},${rule_set_row_id},${rule_id},test_tracking_id,validation_source,validation_type,2000-01-01,false,false

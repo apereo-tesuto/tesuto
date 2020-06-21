@@ -1,0 +1,37 @@
+ccc-grouped-items {
+
+    .ccc-grouped-items-group {
+        margin-bottom: 15px;
+
+        .ccc-grouped-items-group-row {
+
+            > li {
+
+                list-style: none;
+
+                ccc-grouped-item {
+
+                    margin-bottom: 10px;
+                    display: block;
+                }
+            }
+        }
+
+        &.ccc-grouped-items-group-no-grouping {
+            .ccc-grouped-items-group-row {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-md-min) {
+    ccc-grouped-items {
+        .ccc-grouped-items-group {
+            .ccc-grouped-items-group-row {
+                padding-left: 0px;
+            }
+        }
+    }
+}

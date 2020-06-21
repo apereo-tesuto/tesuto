@@ -1,0 +1,64 @@
+package org.cccnext.tesuto.rules;
+
+import java.util.Map
+import java.util.List
+import java.util.ArrayList
+import java.util.Date
+import java.lang.Double
+import java.lang.String
+import java.util.stream.Collectors
+import org.ccctc.common.droolscommon.RulesAction
+import function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement
+import org.cccnext.tesuto.placement.view.MmapDataSourceType
+import org.cccnext.tesuto.rules.view.BasicStudentView
+import org.cccnext.tesuto.domain.multiplemeasures.VariableSet
+import org.cccnext.tesuto.domain.multiplemeasures.Fact
+import org.cccnext.tesuto.domain.multiplemeasures.PlacementComponentActionResult
+import org.cccnext.tesuto.placement.view.MmapDataSourceType
+import function org.apache.commons.lang3.StringUtils.isBlank
+import function org.cccnext.tesuto.rules.function.DrlFunctions.STUDENT_VIEW_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.MULTIPLE_MEASURE_VARIABLE_SET_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.SUBJECT_AREA_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.TRACKING_ID_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.MISCODE_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.RULE_SET_ID_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.HIGHEST_READING_LEVEL_COURSE
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToString
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement
+
+rule "Math_Placement_${miscode}_${subject_area}_${transfer_level}_${rule_id}_${row_number}" when
+    map : Map()
+    student : BasicStudentView() from map.get("STUDENT_VIEW")
+    variableSet : VariableSet() from map.get("MULTIPLE_MEASURE_VARIABLE_SET")
+    facts : Map() from variableSet.facts
+    multipleMeasureVariableSetId: String() from variableSet.id
+    collegeAssociations : Map( this.containsKey("${miscode}") from student.collegeStatuses
+    Boolean(this == ${preAlgebra} )from parseFactToBoolean((Fact)facts.get("preAlgebra"))
+    Boolean(this >= ${algebraI} )from parseFactToBoolean((Fact)facts.get("algebraI"))
+    Boolean(this >= ${algebraII} )from parseFactToBoolean((Fact)facts.get("algebraII"))
+    Boolean(this >= ${mathGE} )from parseFactToBoolean((Fact)facts.get("mathGE"))
+    Boolean(this >= ${collegeAlgebra} )from parseFactToBoolean((Fact)facts.get("collegeAlgebra"))
+    Boolean(this >= ${trigonometry} )from parseFactToBoolean((Fact)facts.get("trigonometry"))
+    Boolean(this >= ${preCalculus} )from parseFactToBoolean((Fact)facts.get("preCalculus"))
+    Boolean(this >= ${calculusI} )from parseFactToBoolean((Fact)facts.get("calculusI"))    
+    then
+     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+        placement.setCccid(student.getCccid());
+        placement.setTransferLevel("${transfer_level}");
+        placement.setLevelsBelowTransfer(${transfer_level_index});
+        placement.setSubjectArea("${subject_area}");
+        placement.setCollegeId("${miscode}");
+        placement.setRuleSetId("${rule_set_id}");
+        placement.setRuleId("${rule_id}");
+         placement.setRowNumber("${row_number}");
+        placement.setRuleSetRowId("${rule_set_row_id}");
+        placement.setCompetencyMapDiscipline("MATH");
+        placement.addProgram("${program}");
+        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+        filterByCollegeSubjectPlacement(actions, placement);
+end

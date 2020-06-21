@@ -1,0 +1,16 @@
+{
+		"id": "b89566e2-0111-4144-ad83-4faf3416a78c",
+		"name": "Unicollege Test Location",
+		"streetAddress1": null,
+		"streetAddress2": null,
+		"city": null,
+		"postalCode": null,
+		"locationType": "ON_SITE",
+		"locationStatus": "ACTIVE",
+		"collegeId": "ZZ1",
+		"collegeName": "Unicollege",
+		"capacity": null,
+		"lastUpdatedDate": 1485793699212,
+		"enabled": true,
+		"createdOnDate": 1485553088701
+	}

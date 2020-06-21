@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping>
+        <class-a>org.cccnext.tesuto.placement.view.DisciplineViewDto</class-a>
+        <class-b>org.cccnext.tesuto.placement.model.Discipline</class-b>
+        <field-exclude>
+            <a>competencyAttributes</a>
+            <b>competencyAttributes</b>
+        </field-exclude>
+    </mapping>
+    <mapping>
+        <class-a>org.cccnext.tesuto.placement.view.PlacementViewDto</class-a>
+        <class-b>org.cccnext.tesuto.placement.model.Placement</class-b>
+        <field-exclude>
+            <a>placementComponents</a>
+            <b>placementComponents</b>
+        </field-exclude>
+    </mapping>
+    <mapping>
+        <class-a>org.cccnext.tesuto.placement.model.CB21</class-a>
+        <class-b>org.cccnext.tesuto.placement.view.CB21ViewDto</class-b>
+        <field>
+        	<a>levelsBelowTransfer</a>
+        	<b>level</b>
+        </field>
+    </mapping>
+</mappings>

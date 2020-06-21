@@ -1,0 +1,110 @@
+ccc-class-report {
+
+    p {
+        max-width: none;
+        margin-bottom: 10px;
+    }
+
+    .discipline-header {
+        border-bottom: 1px dotted #ccc;
+        padding: 0 1em 1em 1em;
+        position: relative;
+
+        .title {
+            font-family: 'PT Sans', sans-serif;
+            font-size: 2.25em;
+            margin: 0 0 0.25em 0;
+        }
+
+        .header-details {
+            color: #777;
+        }
+    }
+
+    .discipline-body {
+        padding: 1.5em;
+
+        .highlight-blocks {
+            margin-bottom: 1em;
+
+            .block-container {
+                float: left;
+                width: 33.33%;
+
+                @media (max-width: @screen-sm-max) {
+                    clear: both;
+                    width: 100%;
+                }
+
+                &:nth-child(2) {
+                    .block {
+                        background-color: #3174ad;
+                    }
+                }
+
+                &:nth-child(3) {
+                    .block {
+                        background-color: #2e6da4;
+                    }
+                }
+            }
+
+            .block {
+                background-color: #337ab7;
+                color: #ffffff;
+                padding: 1em;
+                text-align: center;
+
+                .title {
+                    font-weight: 600;
+                    margin: 0 0 .3em 0;
+                }
+
+                .subtitle {
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: .9em;
+                    margin: 0;
+                    text-transform: none;
+                    font-family: inherit;
+                }
+            }
+        }
+
+        .overall-measure {
+
+            > .title {
+                color: @blue;
+                margin: 0 0 .35em 0;
+            }
+        }
+    }
+
+    .measure-details {
+        border: 1px solid #ccc;
+        border-radius: 0.25em;
+
+        .measure-details-header {
+            padding: 2em 4em;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 1.5em;
+        }
+
+        .highest-percentage-performance {
+            color: @blue;
+            margin: 0;
+
+            .performance {
+                color: #0065fa;
+            }
+        }
+
+        .measure-details-body {
+            padding: 1em 4em 4em 4em;
+
+            .title {
+                font-size: 22px;
+                margin-bottom: 1em;
+            }
+        }
+    }
+}

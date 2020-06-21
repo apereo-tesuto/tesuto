@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	                    http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+                        http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+                        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+
+
+	<import resource="test-properties-context.xml" />
+	<!-- <import resource="content-assemblers.xml" /> -->
+	<import resource="dozerContext.xml" />
+
+
+	<context:annotation-config />
+
+	<context:component-scan
+		base-package="org.cccnext.tesuto.content.assembler">
+	</context:component-scan>
+
+	<bean id="validateStudentService"
+		class="org.cccnext.tesuto.preview.test.ValidateStudentServiceStub" />
+	
+
+
+
+
+	<bean id="competencyService"
+		class="org.cccnext.tesuto.preview.test.CompetencyServiceStub">
+	</bean>
+
+	<bean id="competencyMapService"
+		class="org.cccnext.tesuto.preview.test.CompetencyMapServiceStub">
+	</bean>
+
+	<bean id="assessmentItemMapCache"
+		class="org.springframework.cache.concurrent.ConcurrentMapCache">
+		<constructor-arg value="assessmentItemCache" />
+	</bean>
+
+
+	<bean id="assessmentItemCacheRepository"
+		class="org.cccnext.tesuto.preview.repository.AssessmentItemRepositoryCache">
+		<constructor-arg ref="assessmentItemMapCache" />
+	</bean>
+
+	<bean id="assessmentItemCacheService"
+		class="org.cccnext.tesuto.content.service.AssessmentItemServiceImpl">
+		<property name="assessmentItemRepository"
+			ref="assessmentItemCacheRepository" />
+	</bean>
+
+	<bean id="assessmentMapCache"
+		class="org.springframework.cache.concurrent.ConcurrentMapCache">
+		<constructor-arg value="assessmentCache" />
+	</bean>
+
+
+
+
+	<bean id="assessmentCacheRepository"
+		class="org.cccnext.tesuto.preview.repository.AssessmentRepositoryCache">
+		<constructor-arg ref="assessmentMapCache" />
+	</bean>
+
+	<bean id="assessmentAccessService"
+		class="org.cccnext.tesuto.preview.test.AssessmentAccessServiceStub">
+	</bean>
+
+	<bean id="assessmentCacheService"
+		class="org.cccnext.tesuto.content.service.AssessmentServiceImpl">
+		<property name="assessmentRepository"
+			ref="assessmentCacheRepository" />
+		<property name="assessmentItemService"
+			ref="assessmentItemCacheService" />
+		<property name="assessmentAccessService"
+			ref="assessmentAccessService" />
+	</bean>
+
+</beans>

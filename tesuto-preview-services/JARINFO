@@ -1,0 +1,3 @@
+JAR_BASE=tesuto-user-microservice
+JAR_NAME=/tesuto-user.jar
+JAR_OUTPUT_PATH=/opt/ccc/

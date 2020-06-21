@@ -1,0 +1,226 @@
+<!DOCTYPE Configurations SYSTEM "testutil-config.dtd">
+<!-- 
+ * [Licensed per the Open Source "MIT License".]
+ * 
+ * Copyright (c) 1999 - 2008 by
+ * Global Technology Consulting Group, Inc. at
+ * http://gtcGroup.com
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+ * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+--> 
+<!-- 
+  ***********************************************
+  *  TestUtil - Automated Method Testing        *
+  *  (Since v. 2.4 requires J2SE 5.0 or above.) *
+  *  Home Page: http://gtcGroup.com/util/       *
+  ***********************************************
+  --> 
+<!-- 
+  ************************************************************************
+  *  TestUtil is a Java open source low-effort automated method testing  *
+  *  strategy and tool for verifying all matching accessor methods on    *
+  *  mutable objects with a single line of unit test code.               *
+  *  It is compatible with both in-container and outside-the-container   *
+  *  strategies extending JUnit.                                         *
+  ************************************************************************
+
+  ***********************************************************
+  *  TestUtil may be declaratively configured by including  *
+  *  a custom version of this document on the classpath     *
+  *  for method pairs requiring special handling.           *
+  *                                                         *
+  *  Note: Modifications to this document are cached        *
+  *        dynamically - so, a server reboot is not         *
+  *        required when in-container testing.              *
+  *                                                         *
+  *  All elements may be declared as active ('true') or     *
+  *  inactive ('false') via the element value.              *
+  ***********************************************************
+  
+  *************************************************
+  *  The testutil.jar contains a default version  *
+  *  of this descriptor document used (only) when *
+  *  a custom version is NOT on the classpath.    *
+  *************************************************
+
+  ***********************************************************************************************
+  *  Consistent with the "ebXML Technical Architecture Specification v. 1.0.4" lines 219 - 247  *
+  *  available at http://www.ebxml.org/specs/ebTA.pdf , the "testutil-config.xml" descriptor    *
+  *  document uses "Upper Camel Case" (UCC) and "Lower Camel Case" capitalization styles as:    *
+  *       - Element names SHALL be in UCC convention (example: <UpperCamelCaseElement />).      *
+  *       - Attribute names SHALL be in LCC convention (example: lowerCamelCaseAttribute="").   *
+  ***********************************************************************************************
+--> 
+
+<Configurations>
+    <!--
+    ***********************************  
+    * exclude.class.from.verification *
+    ***********************************
+    For verifyDirectory(), a class may be excluded from verification.
+    
+    <Element
+        aClassName="com.gtcgroup.testutil.bo.ExcludeClassBO" 
+        cautionOrSkip="caution">
+            true
+    </Element>
+    
+    One may prefer to use a Javadoc tag to accomplish the same objective.
+    
+        @excludeClass
+        @excludeClassFromTestUtilVerification
+        @excludeClass caution
+        @excludeClass skip
+        @excludeClassFromTestUtilVerification caution
+        @excludeClassFromTestUtilVerification skip
+           
+    The only difference in the variants is whether the "Summary Results"
+    report a "caution" (the default) or a "skip". 
+    
+    /**
+     * @author MarvinToll@gtcGroup.com 
+     * @since v. 2.0
+     * @excludeClass
+     */
+    
+    public class ExcludeClassUsingJavadocTagBO extends BaseTestBO {
+    
+        // code here ...
+    
+    }
+        
+    /**
+     * @author MarvinToll@gtcGroup.com 
+     * @since v. 2.0
+     * @excludeClassFromTestUtilVerification skip
+     */
+    
+    public class ExcludeClassWithMethodsBO extends BaseTestBO {
+    
+        // code here ...
+    
+    }
+    -->
+    <!--
+    *********************************
+    * exclude.method.pair.by.setter *
+    *********************************
+    A specified method pair may be excluded from verification.
+    The setter method name (without parenthesis) is used for the exclusion.
+    
+    <Element 
+        aMutableClassName="com.gtcgroup.testutil.bo.ExcludeMethodBySetterBO" 
+        theSetterMethodName="setStrTest">
+            true
+    </Element>
+    
+    One may prefer to use a Javadoc tag to accomplish the same objective.
+    Both @excludeSetter and the more descriptive @excludeSetterFromTestUtilVerification
+    are supported.
+    
+    /**
+    * @param strTest
+    *            The strTest to set.
+    * @excludeSetter
+    */
+    public void setStrTest(String strTest) {
+        this.strTest = strTest;
+    }
+    
+    /**
+    * @param strTest
+    *            The strTest to set.
+    * @excludeSetterFromTestUtilVerification
+    */
+    public void setStrTest(String strTest) {
+        this.strTest = strTest;
+    }  
+    -->
+    <Configuration name="exclude.method.pair.by.setter">
+        <Element aMutableClassName="org.ccctc.services.studentprofile.service.dto.BasicProfileDTO" theSetterMethodName="setPortalMessageAuth">true</Element>
+        <Element aMutableClassName="org.ccctc.services.studentprofile.service.dto.BasicProfileDTO" theSetterMethodName="setEmailAuth">true</Element>
+    </Configuration>
+    <!--
+    ********************************  
+    * exclude.method.pairs.by.type *
+    ********************************
+    Any method pair with a specified parameter or return type
+    may be excluded from verification.  The accessor attribute
+    indicates whether the 'getter' or 'setter' is interogated for
+    the exclusion.
+        
+    <Element
+        aTypeClassName="com.gtcgroup.testutil.bo.ConstructorExceptionBO"
+        theAccessor="getter">
+            true
+    </Element>
+    <Element
+        aTypeClassName="com.gtcgroup.testutil.bo.ConstructorExceptionBO"
+        theAccessor="setter">
+            true
+    </Element>
+    -->
+    <!--
+    **************************  
+    * substitute.setter.type *
+    **************************
+    A setter parameter (data) type may be substituted - enabling instantiation 
+    (via reflection).  The substitution is a valid instance of the original type.
+    A mock object may be used if desired.  Interfaces do not require substitution -
+    TestUtil instantiates a dynamic proxy.
+    
+    <Element aClassName="com.gtcgroup.testutil.bo.BaseAbstractBO" 
+        theSubstituteClassName="com.gtcgroup.testutil.bo.ConcreteBO"> 
+            true
+    </Element>
+    -->
+    <Configuration name="substitute.setter.type">
+        <!--
+        ***********************************************  
+        * Begin: Do not delete - not merely examples. *
+        ***********************************************
+        -->
+        <Element aClassName="boolean" theSubstituteClassName="java.lang.Boolean">
+            true</Element>
+        <Element aClassName="byte" theSubstituteClassName="java.lang.Byte">
+            true</Element>
+        <Element aClassName="char" theSubstituteClassName="java.lang.Character">
+            true</Element>
+        <Element aClassName="double" theSubstituteClassName="java.lang.Double">
+            true</Element>
+        <Element aClassName="float" theSubstituteClassName="java.lang.Float">
+            true</Element>
+        <Element aClassName="int" theSubstituteClassName="java.lang.Integer">
+            true</Element>
+        <Element aClassName="long" theSubstituteClassName="java.lang.Long">
+            true</Element>
+        <Element aClassName="short" theSubstituteClassName="java.lang.Short">
+            true</Element>
+        
+        <Element aClassName="java.sql.Timestamp"
+            theSubstituteClassName="com.gtcgroup.testutil.mock.TimestampMock">
+            true</Element>
+        <!--
+        *********************************************  
+        * End: Do not delete - not merely examples. *
+        *********************************************
+        -->
+    </Configuration>
+</Configurations>
+

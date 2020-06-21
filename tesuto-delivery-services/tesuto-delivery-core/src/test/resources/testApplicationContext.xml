@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+    xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                               http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd
+                               http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd
+                               http://www.springframework.org/schema/context
+                               http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+    <!-- This bean is necessary to define property values of the form ${..}
+        with environment variables -->
+    <import resource="test-properties-context.xml"/>
+    <import resource="email-context.xml" />
+    <import resource="dozerContext.xml"/>
+     <import resource="test-mongo-context.xml"/>
+    <context:annotation-config />
+
+
+    <bean id="dao"
+        class="org.cccnext.tesuto.delivery.service.AssessmentSessionMongoDao" />
+
+    <bean id="assessmentItemReader"
+        class="org.cccnext.tesuto.delivery.service.AssessmentItemServiceStub" />
+
+    <bean id="assessmentReader"
+        class="org.cccnext.tesuto.delivery.service.AssessmentServiceStub" />
+
+
+    <bean id="categoryService"
+          class="org.cccnext.tesuto.delivery.service.CategoryServiceStub" />
+
+    <bean id="psychometricsCalculationService"
+          class="org.cccnext.tesuto.delivery.service.PsychometricsCalculationServiceImpl" />
+
+    <bean id="outcomeProcessingService"
+          class="org.cccnext.tesuto.delivery.service.scoring.OutcomeProcessingServiceImpl" >
+        <property name="assessmentItemReader" ref="assessmentItemReader" />
+        <property name="categoryReader" ref="categoryService" />
+        <property name="psychometricsCalculationService" ref="psychometricsCalculationService" />
+        <property name="dao" ref="assessmentSessionDao" />
+    </bean>
+
+    <bean id="scoringService"
+        class="org.cccnext.tesuto.delivery.service.scoring.AssessmentItemScoringServiceImpl" />
+
+    <bean id="childExpressionEvaluationService" class="org.cccnext.tesuto.delivery.service.ChildExpressionEvaluationServiceDelivery" />
+
+    <bean id="expressionEvaluationService" class="org.cccnext.tesuto.content.service.scoring.ExpressionEvaluationService">
+        <property name="childExpressionEvaluationService" ref="childExpressionEvaluationService" />
+    </bean>
+
+    <bean id="selectionService"
+          class="org.cccnext.tesuto.delivery.service.SelectionServiceImpl" />
+
+    <bean id="taskSetService" class="org.cccnext.tesuto.delivery.service.TaskSetService">
+        <property name="scoringService" ref="scoringService" />
+        <property name="assessmentItemReader" ref="assessmentItemReader" />
+        <property name="expressionEvaluationService" ref="expressionEvaluationService" />
+        <property name="categoryReader" ref="categoryService" />
+        <property name="selectionService" ref="selectionService" />
+        <property name="taskSetDao" ref="taskSetDao"/>
+    </bean>
+
+    <bean id="competencyMapOrderReader" class="org.cccnext.tesuto.delivery.stub.CompetencyMapOrderServiceStub" />
+
+    <bean id="deliveryService" class="org.cccnext.tesuto.delivery.service.DeliveryService">
+      <property name="dao" ref="dao" />
+      <property name="taskSetDao" ref="taskSetDao" />
+      <property name="assessmentReader" ref="assessmentReader" />
+      <property name="taskSetService" ref="taskSetService" />
+      <property name="expressionEvaluationService" ref="expressionEvaluationService" />
+      <property name="outcomeProcessingService" ref="outcomeProcessingService" />
+    </bean>
+
+    <bean id="assessmentSessionAssemblyService" class="org.cccnext.tesuto.delivery.service.AssemblyService">
+      <property name="assessmentItemReader" ref="assessmentItemReader" />
+      <property name="taskSetService" ref="taskSetService" />
+    </bean>
+
+    <bean id="deliveryServiceAdapter"
+        class="org.cccnext.tesuto.delivery.service.DeliveryServiceAdapter">
+        <property name="assemblyService" ref="assessmentSessionAssemblyService" />
+        <property name="deliveryService" ref="deliveryService" />
+        <property name="assessmentItemReader" ref="assessmentItemReader" />
+        <property name="taskSetService" ref="taskSetService" />
+    </bean>
+
+    <bean id="competencyMasteryService"
+        class="org.cccnext.tesuto.delivery.service.CompetencyMapMasteryRestrictedViewService">
+        <property name="psychometricsCalculationService" ref="psychometricsCalculationService" />
+        <property name="assessmentReader" ref="assessmentReader" />
+        <property name="competencyMapOrderReader" ref="competencyMapOrderReader" />
+        <property name="competencyParentSortLevel" value="${placement.competency.select.parent.sort.level}" />
+        <property name="competencySelectRange" value="${placement.competency.select.range}" />
+
+    </bean>
+ 
+    <bean id="assessmentSessionRepositoryStub"
+          class="org.cccnext.tesuto.delivery.repository.mongo.AssessmentSessionRepositoryStub" />
+    
+    <bean id="classRosterMasteryReportService"
+          class="org.cccnext.tesuto.delivery.service.ClassRosterMasteryReportService">
+    </bean>
+
+    <bean id="assessmentItemScoringServiceImpl"
+        class="org.cccnext.tesuto.delivery.service.scoring.AssessmentItemScoringServiceImpl">
+    </bean>
+
+    <bean id="assessmentSessionDao"
+          class="org.cccnext.tesuto.delivery.service.AssessmentSessionMongoDao">
+    </bean>
+
+    <bean id="taskSetDao"
+          class="org.cccnext.tesuto.delivery.service.TaskSetMongoDao">
+    </bean>
+
+    <bean id="postDeliveryAssessmentCompletionService"
+          class="org.cccnext.tesuto.delivery.service.PostDeliveryAssessmentCompletionServiceImpl">
+        <property name="assessmentReader" ref="assessmentReader" />
+        <property name="dao" ref="assessmentSessionDao" />
+        <property name="competencyMapOrderReader" ref="competencyMapOrderReader" />
+    </bean>
+    
+    <mongo:repositories base-package="org.cccnext.tesuto.delivery.repository.mongo"
+        query-lookup-strategy="create-if-not-found" />
+        
+
+</beans>

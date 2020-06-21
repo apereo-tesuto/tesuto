@@ -1,0 +1,7 @@
+fact,fact,fact,fact,result,result,result,result,result,result,result,result,result
+englishY,englishA,englishB,englishC,cccid,miscode,competencymapdiscipline,subjectArea,program,transferLevel,transferLevelIndex,rowNumber,insufficeintData
+true,,,,A123456,${miscode},ENGLISH,test_subject_area,english,Y,0,1,false
+,true,,,A123456,${miscode},ENGLISH,test_subject_area,english,A,1,2,false
+,,true,,A123456,${miscode},ENGLISH,test_subject_area,english,B,2,3,false
+,,,true,A123456,${miscode},ENGLISH,test_subject_area,english,C,3,4,false
+false,false,false,false,A123456,${miscode},ENGLISH,test_subject_area,english,D,4,5,false

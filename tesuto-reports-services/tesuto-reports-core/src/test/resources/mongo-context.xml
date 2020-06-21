@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/data/mongo
+        http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
+
+
+    <!-- MongoDb Data Source 
+    TODO: Add this to the various environment variables (jenkins, localhost.sh, 
+        etc.), add the properties to each environment: dev, test, qa, and uncomment 
+        this code. Figure out how to run with only one instance as well. Test failure 
+        of a node. Make sure the app still works when the primary goes down 
+    <mongo:mongo id="rs1" replica-set="${MONGO_HOST_1}:${MONGO_PORT_1},${MONGO_HOST_2}:${MONGO_PORT_2},${MONGO_HOST_3}:${MONGO_PORT_3}" write-concern="${mongo.write-concern}" >
+        <mongo:options connections-per-host="${mongo.connectionsPerHost}"
+            threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
+            connect-timeout="${mongo.connectTimeout}" max-wait-time="${mongo.maxWaitTime}"
+            auto-connect-retry="${mongo.autoConnectRetry}" socket-keep-alive="${mongo.socketKeepAlive}"
+            socket-timeout="${mongo.socketTimeout}" slave-ok="${mongo.slaveOk}"
+            write-number="${mongo.writeNumber}" write-timeout="${mongo.writeTimeout}"
+            write-fsync="${mongo.writeFsync}" /> \
+    </mongo:mongo>
+    <mongo:db-factory dbname="${MONGO_DBNAME}" mongo-ref="rs1"
+        username="${MONGO_USER}" password="${MONGO_PASSWORD}"
+        authentication-dbname="${MONGO_AUTHENTICATION_DBNAME}" />-->
+
+    <bean id="mongoSeedListID" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="mongoSeedlID" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="mongoSeedlID" class="com.mongodb.ServerAddress">
+        <constructor-arg type="java.lang.String" name="host"
+            value="${MONGO_HOST_1}" />
+        <constructor-arg type="int" name="port" value="${MONGO_PORT_1}" />
+    </bean>
+
+    <bean id="mongoCredentialListID" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="mongoCredentialID" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="mongoCredentialID" class="com.mongodb.MongoCredential">
+        <constructor-arg name="mechanism"
+            value="#{T(com.mongodb.AuthenticationMechanism).SCRAM_SHA_1}" />
+        <constructor-arg type="java.lang.String" name="userName"
+            value="${MONGO_USER}" />
+        <constructor-arg type="java.lang.String" name="source"
+            value="${MONGO_AUTHENTICATION_DBNAME}" />
+        <constructor-arg type="char[]" name="password" value="${MONGO_PASSWORD}" />
+    </bean>
+
+    <bean id="mongoClientID" class="com.mongodb.MongoClient">
+        <constructor-arg ref="mongoSeedListID" />
+        <constructor-arg ref="mongoCredentialID" />
+    </bean>
+
+    <bean id="mongoDbFactory"
+        class="org.springframework.data.mongodb.core.SimpleMongoDbFactory">
+        <constructor-arg ref="mongoClientID" />
+        <constructor-arg name="databaseName" value="${MONGO_DBNAME}" />
+    </bean>
+
+    <bean class="org.springframework.data.mongodb.core.MongoFactoryBean"
+        id="mongo">
+        <property name="host" value="${MONGO_HOST_1}" />
+        <property name="port" value="${MONGO_PORT_1}" />
+    </bean>
+
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg ref="mongoDbFactory" />
+    </bean>
+
+	<mongo:repositories base-package="org.cccnext.tesuto.delivery.repository.mongo"
+		query-lookup-strategy="create-if-not-found" />
+</beans>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.cccnext.tesuto</groupId>
+		<artifactId>tesuto-admin-services</artifactId>
+		<version>2.2.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>tesuto-admin-core</artifactId>
+	<packaging>jar</packaging>
+
+	<name>tesuto-admin-core</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<flyway.table>schema_version_user_2</flyway.table>
+		<flyway.baseline>0.0</flyway.baseline>
+		<jar.name>tesuto-admin-core</jar.name>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-common-domain</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-placement-api</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-common-api</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-admin-api</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+
+
+		<dependency>
+            <groupId>org.cccnext.tesuto</groupId>
+            <artifactId>tesuto-test-dependencies</artifactId>
+            <version>${tesuto.version}</version>
+            <scope>test</scope>
+        </dependency>
+        		<dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <scope>test</scope>
+      </dependency>
+	</dependencies>
+	
+	<profiles>
+		<profile>
+			<id>database</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.flywaydb</groupId>
+						<artifactId>flyway-maven-plugin</artifactId>
+						<version>${flyway-version}</version>
+						<configuration>
+							<url>${env.JDBC_URL_ADMIN}</url>
+							<user>${env.JDBC_USER_ADMIN}</user>
+							<password>${env.JDBC_PASSWORD_ADMIN}</password>
+							<outOfOrder>true</outOfOrder>
+							<locations>
+								<location>${flyway.migration.location.profile}</location>
+								<location>${flyway.migration.location}</location>
+							</locations>
+							<baselineOnMigrate>${env.baseline.on.migrate}</baselineOnMigrate>
+							<baselineVersion>${flyway.baseline}</baselineVersion>
+							<ignoreMissingMigrations>true</ignoreMissingMigrations>
+							<table>${flyway.table}</table>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>process-resources</phase>
+								<goals>
+									<goal>migrate</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

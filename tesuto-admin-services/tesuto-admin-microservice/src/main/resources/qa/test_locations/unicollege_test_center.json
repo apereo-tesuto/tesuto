@@ -1,0 +1,16 @@
+{
+		"id": "d490c2ab-c266-4a03-8dc1-cdb5de68f28b",
+		"name": "Unicollege Test Center",
+		"streetAddress1": null,
+		"streetAddress2": null,
+		"city": null,
+		"postalCode": null,
+		"locationType": "ON_SITE",
+		"locationStatus": "ACTIVE",
+		"collegeId": "ZZ1",
+		"collegeName": "Unicollege",
+		"capacity": 30,
+		"lastUpdatedDate": 1485793699267,
+		"enabled": true,
+		"createdOnDate": 1484334821195
+	}

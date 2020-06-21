@@ -1,0 +1,91 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result
+cccid,DATA_SOURCE,DATA_SOURCE_TYPE,EP01,EP02,EP03,EP04,EP05,EP06,EP07,EP08,EP09,transferLevel,program
+1,APMS,Self Reported,a,a,a,f,n,k,n,f,j,Y,math_pre_calc
+14,APMS,Self Reported,a,a,h,c,d,f,a,f,a,Y,math_pre_calc
+36,APMS,Self Reported,a,a,k, , ,l,a,l,a,Y,math_pre_calc
+61,APMS,Self Reported,a,a,h,c,f,f,c,f,c,Y,math_pre_calc
+90,APMS,Self Reported,a,a,d,b,c,i,c,i,c,Y,math_pre_calc
+93,APMS,Self Reported,a,a,g,b,e,k,f,k,f,Y,math_pre_calc
+119,APMS,Self Reported,a,a,e,b,a,f,d,f,d,Y,math_pre_calc
+133,APMS,Self Reported,a,a,d,c,a,i,a,i,a,Y,math_pre_calc
+140,APMS,Self Reported,a,a,h,d,g,k,d,k,d,Y,math_pre_calc
+147,APMS,Self Reported,a,a,c,a,d,f,c,f,c,Y,math_pre_calc
+153,APMS,Self Reported,a,a,d,b,c,f,f,f,f,Y,math_pre_calc
+155,APMS,Self Reported,a,a,g,c,f,h,a,h,a,Y,math_pre_calc
+160,APMS,Self Reported,a,a,h,c,c,h,j,f,d,Y,math_pre_calc
+162,APMS,Self Reported,a,a,f, , ,f,d,f,d,Y,math_pre_calc
+187,APMS,Self Reported,a,b,g,c,a,f,g,f,g,Y,math_pre_calc
+210,APMS,Self Reported,a,a,e,a,d,k,j,f,j,Y,math_pre_calc
+256,APMS,Self Reported,a,a,h,c,a,i,d,i,d,Y,math_pre_calc
+287,APMS,Self Reported,a,a,f,c,c,h,a,h,a,Y,math_pre_calc
+291,APMS,Self Reported,a,a,f,b,a,f,d,f,d,Y,math_pre_calc
+305,APMS,Self Reported,a,a,e,c,a,m,d,f,b,Y,math_pre_calc
+306,APMS,Self Reported,a,a,c, , ,f,a,f,a,Y,math_pre_calc
+319,APMS,Self Reported,a,a,c, , ,k,j,f,a,Y,math_pre_calc
+327,APMS,Self Reported,a,b,c,c,b,f,g,f,g,Y,math_pre_calc
+335,APMS,Self Reported,a,a,d,a,a,h,b,h,b,Y,math_pre_calc
+363,APMS,Self Reported,a,a,h,c,c,f,c,f,c,Y,math_pre_calc
+398,APMS,Self Reported,a,c,b, , ,i,a,i,a,Y,math_pre_calc
+444,APMS,Self Reported,a,a,g,b,a,h,c,h,c,Y,math_pre_calc
+474,APMS,Self Reported,a,a,e,b,a,f,a,f,a,Y,math_pre_calc
+497,APMS,Self Reported,a,a,f,a,g,i,a,i,a,Y,math_pre_calc
+591,APMS,Self Reported,a,a,g,e,a,f,g,f,g,Y,math_pre_calc
+593,APMS,Self Reported,a,a,h,a,g,i,d,i,d,Y,math_pre_calc
+598,APMS,Self Reported,a,a,g,b,a,i,c,i,c,Y,math_pre_calc
+629,APMS,Self Reported,a,a,h,b,d,k,d,k,d,Y,math_pre_calc
+653,APMS,Self Reported,a,a,c,c,f,h,f,h,f,Y,math_pre_calc
+659,APMS,Self Reported,a,a,g,a,f,k,d,g,g,Y,math_pre_calc
+668,APMS,Self Reported,a,a,g,c,b,k,d,j,d,Y,math_pre_calc
+672,APMS,Self Reported,a,a,h,b,a,k,a,i,a,Y,math_pre_calc
+678,APMS,Self Reported,a,b,d,a,d,i,d,i,d,Y,math_pre_calc
+702,APMS,Self Reported,a,a,f, , ,h,d,h,d,Y,math_pre_calc
+706,APMS,Self Reported,a,a,g,c,d,f,d,f,d,Y,math_pre_calc
+710,APMS,Self Reported,a,a,c, , ,h,a,f,a,Y,math_pre_calc
+735,APMS,Self Reported,a,a,g, , ,h,k,k,f,Y,math_pre_calc
+743,APMS,Self Reported,a,a,c, , ,i,a,i,a,Y,math_pre_calc
+744,APMS,Self Reported,a,a,c, , ,f,a,f,a,Y,math_pre_calc
+764,APMS,Self Reported,a,a,g,b,d,f,g,f,g,Y,math_pre_calc
+775,APMS,Self Reported,a,a,f,b,e,k,f,f,f,Y,math_pre_calc
+776,APMS,Self Reported,a,a,f,c,d,f,f,f,a,Y,math_pre_calc
+787,APMS,Self Reported,a,a,h,h,d,i,g,i,g,Y,math_pre_calc
+842,APMS,Self Reported,a,a,g,b,a,k,c,k,c,Y,math_pre_calc
+848,APMS,Self Reported,a,a,d, , ,f,d,f,d,Y,math_pre_calc
+864,APMS,Self Reported,a,a,h,b,c,k,c,k,c,Y,math_pre_calc
+865,APMS,Self Reported,a,a,a,c,a,m,a,f,a,Y,math_pre_calc
+868,APMS,Self Reported,a,a,h,b,g,k,g,k,g,Y,math_pre_calc
+872,APMS,Self Reported,a,a,c,a,a,h,c,h,c,Y,math_pre_calc
+890,APMS,Self Reported,a,a,f,c,a,f,d,f,d,Y,math_pre_calc
+903,APMS,Self Reported,a,a,g,c,e,k,d,k,d,Y,math_pre_calc
+910,APMS,Self Reported,a,a,f,c,g,f,g,f,g,Y,math_pre_calc
+912,APMS,Self Reported,a,a,h,c,f,k,k,f,a,Y,math_pre_calc
+953,APMS,Self Reported,a,a,g, , ,k,g,k,a,Y,math_pre_calc
+958,APMS,Self Reported,a,a,h,c,a,f,b,f,c,Y,math_pre_calc
+973,APMS,Self Reported,a,a,e,b,a,e,c,f,a,Y,math_pre_calc
+981,APMS,Self Reported,a,a,a,a,b,h,f,h,f,Y,math_pre_calc
+984,APMS,Self Reported,a,a,f,b,j,l,d,i,d,Y,math_pre_calc
+1004,APMS,Self Reported,a,c,b,e,a,i,a,i,a,Y,math_pre_calc
+1026,APMS,Self Reported,a,a,k,c,d,l,f,l,f,Y,math_pre_calc
+1053,APMS,Self Reported,a,a,h,a,e,f,a,f,a,Y,math_pre_calc
+1060,APMS,Self Reported,a,a,e,c,b,f,b,f,b,Y,math_pre_calc
+1073,APMS,Self Reported,a,a,g,b,d,h,e,h,e,Y,math_pre_calc
+1083,APMS,Self Reported,a,a,f,c,a,i,d,i,d,Y,math_pre_calc
+1093,APMS,Self Reported,a,a,h,b,f,k,d,k,b,Y,math_pre_calc
+1153,APMS,Self Reported,a,a,h,c,c,b,a,f,a,Y,math_pre_calc
+1170,APMS,Self Reported,a,b,g,c,a,k,j,f,g,Y,math_pre_calc
+1183,APMS,Self Reported,a,a,f,c,a,f,d,f,d,Y,math_pre_calc
+1253,APMS,Self Reported,a,a,e, , ,f,d,f,d,Y,math_pre_calc
+1271,APMS,Self Reported,a,a,d,a,b,i,b,i,b,Y,math_pre_calc
+1286,APMS,Self Reported,a,a,j,b,j,k,a,l,f,Y,math_pre_calc
+1294,APMS,Self Reported,a,a,g,a,c,k,j,f,c,Y,math_pre_calc
+1296,APMS,Self Reported,a,b,a,c,a,f,g,f,b,Y,math_pre_calc
+1313,APMS,Self Reported,a,a,b,c,a,h,f,h,f,Y,math_pre_calc
+1323,APMS,Self Reported,a,a,k,c,a,l,g,l,a,Y,math_pre_calc
+1339,APMS,Self Reported,a,a,d,c,d,f,e,f,e,Y,math_pre_calc
+1341,APMS,Self Reported,a,a,h,c,d,h,g,h,g,Y,math_pre_calc
+1373,APMS,Self Reported,a,a,h, , ,h,g,h,g,Y,math_pre_calc
+1374,APMS,Self Reported,a,a,d, , ,f,g,f,g,Y,math_pre_calc
+1417,APMS,Self Reported,a,b,e,a,j,f,a,f,a,Y,math_pre_calc
+1431,APMS,Self Reported,a,a,g,c,d,k,d,k,d,Y,math_pre_calc
+1434,APMS,Self Reported,a,a,g,c,b,k,a,k,a,Y,math_pre_calc
+1438,APMS,Self Reported,a,a,d,c,a,f,g,f,g,Y,math_pre_calc
+1464,APMS,Self Reported,a,a,h,c,e,f,c,f,c,Y,math_pre_calc

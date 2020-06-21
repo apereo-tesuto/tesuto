@@ -1,0 +1,3 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result,result,result,result,result,result,result
+cst,grade_level,gpa_cum,ap_any,english,english_ap,pre_alg,pre_alg_ap,alg_i,alg_i_ap,alg_ii,geo,geo_ap,trig_ap,pre_calc,calc,calc_ap,stat,stat_ap,cccid,miscode,competencymapdiscipline,subjectArea,program,transferLevel,transferLevelIndex,rowNumber
+,11,2.6,,,,,,,,,,,,,0,,,,A123456,${miscode},MATH,${subject_area},math_pre_calc:math_stat,Y,0,4

@@ -1,0 +1,18 @@
+Proctor 
+username:proctorEPPN
+password:test1234
+eppn:AAA4274@ci.openccc.net
+email:jstanley@unicon.net
+FN: Patty
+LN: Proctor
+
+Student
+username:studentEPPN
+password:test1234
+eppn:AAA4275@ci.openccc.net
+email:jstanley@unicon.net
+FN: Stanley
+LN: Student
+
+TestIDP
+https://ci.openccc.net/idp/profile/SAML2/Unsolicited/SSO?providerId=assess.localhost

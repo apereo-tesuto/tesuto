@@ -1,0 +1,265 @@
+ccc-instructions-player {
+
+    display: block;
+    position: relative;
+    padding-bottom: 2em;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.2em;
+    line-height: 1.4em;
+
+    .ccc-instructions-player-instruction-card-container {
+
+        position: relative;
+        width: 100%;
+
+        .transition-properties (all 500ms @ccc-cubic);
+        .transform(translate(0px, 0px) rotate(0deg));
+        .opacity(1.0);
+
+        &:active, &:focus {
+            outline: none;
+        }
+
+        &.ng-hide-remove {
+
+            .opacity(0.0);
+
+            &.ng-hide-remove-active {
+                .opacity(1.0);
+            }
+        }
+
+        &.ng-hide-add {
+
+            position: absolute;
+            .opacity(1.0);
+            .transform(translate(0px, 0px) rotate(0deg));
+
+            &.ng-hide-add-active {
+                .transform(translate(25px, -400px) rotate(5deg));
+                .opacity(0.0);
+            }
+        }
+
+        &.ccc-instructions-player-title {
+
+            .transition-properties (all 700ms @ccc-cubic);
+
+            &.ng-hide-add {
+
+                position: absolute;
+                .opacity(1.0);
+                .transform(translate(0px, 0px) rotate(0deg));
+
+                &.ng-hide-add-active {
+                    .transform(translate(25px, -400px) rotate(5deg));
+                    .opacity(0.0);
+                }
+            }
+
+        }
+
+        .ccc-instructions-player-disclaimer-target {
+            margin: 0 0 2em;
+
+            .icon {
+                float: left;
+                margin-top: 3px;
+            }
+            p {
+                text-align: left;
+                margin: 0 1.5em 1em;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .ccc-instructions-player-direction-back {
+
+        .ccc-instructions-player-instruction-card-container {
+
+            .transition-properties (all 400ms @ccc-cubic);
+
+            &.ng-hide-remove {
+                position: relative;
+                .opacity(0.0);
+                .transform(translate(12px, -100px) rotate(2deg));
+
+                &.ng-hide-remove-active {
+                    .opacity(1.0);
+                    .transform(translate(0px, 0px) rotate(0deg));
+                }
+            }
+            &.ng-hide-add {
+                position: absolute !important;
+                top: 0;
+                .opacity(1.0);
+                .transform(translate(0px, 0px) rotate(0deg));
+
+                &.ng-hide-add-active {
+                    .transform(translate(0px, 0px) rotate(0deg));
+                    .opacity(0.0);
+                }
+            }
+        }
+    }
+
+
+    .ccc-instructions-player-instruction-card {
+
+        position: relative;
+
+        padding: 45px 90px 45px 90px;
+        border: 1px solid rgba(0,0,0, 0.2);
+        box-shadow: 0px 2px 4px rgba(0,0,0, 0.5);
+
+        min-height: 250px;
+
+        background: #fff;
+
+        .important {
+            label {
+
+                cursor: pointer;
+
+                input {
+                    margin-right: 5px;
+                }
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    .ccc-instructions-player-title {
+
+        .ccc-instructions-player-instruction-card {
+            padding: 90px;
+        }
+
+        z-index: 1;
+        font-size: 125%;
+
+        h2, .ccc-instructions-player-sub-title {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 47rem;
+        }
+
+        .ccc-instructions-player-sub-title {
+            padding-top: 15px;
+        }
+
+        .ccc-instructions-player-title-controls {
+            margin-top: 30px;
+        }
+    }
+
+    .ccc-instructions-player-instructions {
+
+        text-align: left;
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        label {
+            font-weight: normal;
+            font-size: 1rem;
+            margin-bottom: 1em;
+
+            input {
+                vertical-align: text-top;
+            }
+        }
+
+        .important {
+
+            background: #d9edf7;
+            border: 1px solid #bce8f1;
+            color: #31708f;
+            margin: 2em 0;
+            padding: 1em 2em;
+            border-radius: 0.5em;
+
+            .icon {
+                float: left;
+                font-size: 2rem;
+            }
+
+            .body {
+                margin-left: 3em;
+
+                p:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .ccc-instructions-player-actions {
+
+        font-family: 'Open Sans', sans-serif;
+        margin-top: 2em;
+        border-top: none;
+        padding-top: 0;
+        text-align: center;
+
+        button {
+            margin: 0 5px;
+        }
+    }
+}
+
+.ccc-instructions-player-outer-actions {
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding-top: 2em;
+
+    button {
+        margin: 0 5px;
+    }
+}
+
+.ccc-instruction-list {
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+        padding: 15px 0 0 40px;
+        position: relative;
+        margin: 0;
+
+        .ccc-instruction-bullet {
+            position: absolute;
+            top: 19px;
+            left: 15px;
+            font-size: 16px;
+            color: @grayscale6;
+        }
+    }
+}
+
+/*============ RESPONSIVE STYLES ============*/
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {
+    ccc-instructions-player {
+        h2 {
+            font-size: 130%;
+        }
+        .ccc-instructions-player-title {
+            font-size: 100%;
+        }
+
+        .ccc-instructions-player-instruction-card, .ccc-instructions-player-title .ccc-instructions-player-instruction-card {
+            padding: 30px 30px;
+            min-height: 200px;
+        }
+    }
+}

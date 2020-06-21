@@ -1,0 +1,72 @@
+ccc-location-card {
+
+    display: block;
+
+    .ccc-location-card-location {
+        background: white;
+        border: 1px solid @blue4;
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+        margin-bottom: 2em;
+        position: relative;
+        .border-radius(5px);
+        transition: all .2s ease-in-out;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 12px #428bca;
+            cursor: pointer;
+            transform: scale(1.025);
+        }
+
+        .ccc-location-card-name {
+            background-color: @blue4;
+            color: #fff;
+            padding: .4em 1em;
+            margin: 0;
+            font-size: 1.7em;
+            .border-radius(4px 4px 0 0);
+        }
+
+        .ccc-location-card-label {
+            font-size: 1rem;
+            padding: 0.5em 1em;
+            position: absolute;
+            top: -3px;
+            right: 1rem;
+            font-size: .75em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .ccc-location-card-today {
+            padding: .75em 1.5em;
+
+            .ccc-location-card-metric {
+                text-align: center;
+            }
+
+            h4 {
+                font-size: .75em;
+                margin: 0 0 0 0;
+                text-transform: uppercase;
+            }
+
+            .ccc-location-card-number,
+            .ccc-location-card-text {
+                display: block;
+            }
+
+            .ccc-location-card-number {
+                font-size: 1.5em;
+            }
+
+            .ccc-location-card-text {
+                font-size: .75em;
+                white-space: nowrap;
+
+                .fa {
+                    display: none;
+                }
+            }
+        }
+    }
+}

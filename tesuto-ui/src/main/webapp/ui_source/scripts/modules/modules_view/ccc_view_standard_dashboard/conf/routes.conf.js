@@ -1,0 +1,98 @@
+/*-------------------------------------------------------------------------------
+# Copyright © 2019 by California Community Colleges Chancellor's Office
+# 
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License.  You may obtain a copy
+# of the License at
+# 
+#   http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+# License for the specific language governing permissions and limitations under
+# the License.
+#------------------------------------------------------------------------------*/
+(function () {
+
+    /*========== LAYOUT DEFINITIONS FOR DIFFERENT TEST ITEMS ============*/
+
+    angular.module('CCC.View.Dashboard').config([
+
+        '$stateProvider',
+        '$urlRouterProvider',
+
+        function ($stateProvider, $urlRouterProvider) {
+
+            /*============ CATCH ALLS AND FALL BACKS ============*/
+
+            // our fallback is just to go to home
+            $urlRouterProvider.otherwise("/dashboard");
+
+
+            /*============ LOGIN / LOGOUT ROUTES ============*/
+
+            // handle login passthrough to the server
+            $stateProvider.state('login', {
+                url: "/login",
+                resolve: {
+                    redirect: ['$window', '$timeout', function ($window, $timeout) {
+                        // this is an actual backend endpoint so lets go there
+                        $timeout(function () { // wrap it in a timeout because of a safari bug
+                            $window.location.reload(true);
+                        }, 1);
+                    }]
+                }
+            });
+
+            // handle logout passthrough to the server
+            $stateProvider.state('logout', {
+                url: "/logout",
+                resolve: {
+                    redirect: ['$window', '$timeout', function ($window, $timeout) {
+                        // this is an actual backend endpoint so lets go there
+                        $timeout(function () { // wrap it in a timeout because of a safari bug
+                            $window.location.reload(true);
+                        }, 1);
+                    }]
+                }
+            });
+
+
+            /*============ MAIN ROUTES ============*/
+
+            // main
+            $stateProvider.state('home', {
+                url: '/dashboard',
+                defaultView: true,
+                pageTitle: 'Healthcheck Dashboard',
+                template: '<ccc-route-dashboard-home></ccc-route-dashboard-home>'
+            });
+
+            /*============ FOOTER LINKS ============*/
+
+            // terms of use
+            $stateProvider.state('termsOfUse', {
+                url: "/dashboard/termsofuse",
+                pageTitle: 'Terms of Use',
+                template: '<ccc-terms-of-use></ccc-terms-of-use>'
+            });
+
+            // privacy statement
+            $stateProvider.state('privacyStatement', {
+                url: "/dashboard/privacystatement",
+                pageTitle: 'Privacy Statement',
+                template: '<ccc-privacy-statement></ccc-privacy-statement>'
+            });
+
+            // accessibility
+            $stateProvider.state('accessibility', {
+                url: "/dashboard/accessibility",
+                pageTitle: 'Accessibility',
+                template: '<ccc-accessibility></ccc-accessibility>'
+            });
+
+        }
+    ]);
+
+})();

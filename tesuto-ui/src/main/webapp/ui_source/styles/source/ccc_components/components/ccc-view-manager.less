@@ -1,0 +1,259 @@
+// WARNING: THE SETUP FOR ANIMATIONS IS VERY PRECISE, MODIFYING ANIMATION TIMINGS WILL REQUIRE JS CONFIG CHANGS IN SOME CASES
+// ANY CHANGES HERE SHOULD BE TESTED ON FIREFOX, SAFARI, CHROME, MOBILE SAFARI
+
+ccc-view-manager {
+
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+
+    .ccc-view-manager-views {
+
+        position: relative;
+        overflow-x: hidden !important;
+
+        .ccc-view-manager-views-loader {
+
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+
+            .transition-properties (opacity 400ms @ccc-cubic);
+
+            opacity: 1;
+
+            background: rgba(255,255,255, 0.4);
+
+            i {
+                position: absolute;
+                left: 50%;
+                top: 60px;
+                font-size: 80px;
+                margin-left: -40px;
+                color: rgba(0, 0, 0, 0.3);
+            }
+
+            &.ng-hide-remove {
+                opacity: 0;
+                &.ng-hide-remove-active {
+                    opacity: 1;
+                }
+            }
+            &.ng-hide-add {
+                opacity: 1;
+                &.ng-hide-add-active {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    ccc-view-manager-view {
+
+        display: block;
+        position: absolute;
+        top: 0px;
+        width: 100%;
+
+        background: #fff;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        opacity: 0.0;
+
+        .transform(translateX(300px) translateZ(0));
+
+        &.ccc-view-focused {
+            opacity: 1.0;
+            .transform(translateX(0px) translateZ(0));
+        }
+
+        &.ccc-view-not-focused {
+            .transform(translateX(-300px) translateZ(0));
+        }
+
+        &.ccc-view-skipped {
+            display: none !important;
+        }
+
+        // this class is put on when it is hidden, it stays on the whole time it is hidden
+        &.ccc-view-manager-view-hidden-start {
+            .transform(translateX(-300px) translateZ(0));
+        }
+        // this class is put on after the animation is complete, adding visibility hidden then prevents users from tabbing to it and screen readers from acknowledging it
+        &.ccc-view-manager-view-hidden {
+            visibility: hidden;
+        }
+
+        .ccc-view-manager-view-back {
+            // margin-bottom: 15px;
+            overflow: hidden;
+
+            button {
+                float: left;
+            }
+
+            .ccc-view-manager-view-title {
+                font-size: 30px;
+                margin-top: -3px;
+                margin-left: 15px;
+                float: left;
+                color: @brand-primary;
+                font-family: @ccc-font-title;
+                text-transform: uppercase;
+            }
+        }
+
+        .ccc-view-manager-view-target {
+            padding-top: 30px;
+            padding-bottom: 120px;
+            &.ccc-view-manager-view-target-nested {
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
+        }
+
+        &.ccc-view-manager-view-nested {
+            overflow-y: hidden;
+        }
+    }
+
+    ccc-view-manager-view.ng-enter {
+        opacity: 0;
+        .transform(translateX(300px) translateZ(0));
+    }
+    ccc-view-manager-view.ng-enter.ng-enter-active {
+        opacity: 1;
+        .transform(translateX(0px) translateZ(0));
+    }
+
+    ccc-view-manager-view.ng-leave {
+        opacity: 1.0;
+        .transform(translateX(0px) translateZ(0));
+    }
+    ccc-view-manager-view.ng-leave.ng-leave-active {
+        opacity: 0.0;
+        .transform(translateX(300px) translateZ(0));
+    }
+
+}
+
+ccc-view-manager-breadcrumbs {
+
+    display: block;
+    font-size: 150%;
+
+    ul {
+
+        margin: 0;
+        padding: 0;
+
+        > li {
+
+            display: inline-block;
+
+            a {
+                color: @brand-primary;
+                text-decoration: none;
+                &:hover, &:active, &:focus {
+                    text-decoration: none;
+                }
+
+                &[disabled="disabled"] {
+                    color: @ccc-fg;
+                    opacity: 0.75;
+                    cursor: default;
+                }
+            }
+
+            .ccc-view-manager-breadcrumb-separator {
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+            &:last-child {
+
+                cursor: default;
+
+                a {
+                    color: @ccc-fg;
+                    cursor: default;
+                }
+
+                .ccc-view-manager-breadcrumb-separator {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// NOTE: the animation time plus the delay time must equal VIEW_MANAGER_TRANSITION_ANIMATION_TIME
+
+// NOTE: adding the 100ms delay vastly improves mobile UX, allowing the angularJS digest to settle before starting the animation
+.ccc-view-manager-view-animate {
+    .transition-properties (opacity 400ms 50ms @ccc-cubic, -webkit-transform 400ms 50ms @ccc-cubic, -moz-transform 400ms 50ms @ccc-cubic;);
+}
+// crazy bug requires safari specific styling due to not allowing us to sepecify tranform or -moz-transform
+body.safari {
+    .ccc-view-manager-view-animate {
+        .transition-properties (opacity 400ms 50ms @ccc-cubic, -webkit-transform 400ms 50ms @ccc-cubic;);
+    }
+}
+// ie animation performance is bad for this type of animation so we disable it until we know we can support higher versions that perform better
+body.ie {
+    .ccc-view-manager-view-animate {
+        transition: none !important;
+        transform: none !important;
+        &.ccc-view-not-focused {
+            .opacity(0) !important;
+            display: none !important;
+        }
+    }
+}
+
+
+/*======================== RESPONSIVE ========================*/
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {
+
+    ccc-view-manager-breadcrumbs {
+        ul > li {
+            font-size: 14px;
+        }
+    }
+
+    ccc-view-manager {
+
+        ccc-view-manager-view {
+
+            h1 {
+                font-size: 135%;
+            }
+            h2 {
+                font-size: 130%;
+            }
+            h3 {
+                font-size: 120%;
+            }
+            h4, h5, h6 {
+                font-size: 110%;
+            }
+
+            .ccc-view-manager-view-back {
+
+                .ccc-view-manager-view-title {
+                    font-size: 20px;
+                    margin-top: 3px;
+                }
+
+            }
+        }
+    }
+}

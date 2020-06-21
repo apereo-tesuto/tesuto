@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+
+	<!-- Bring in other test context configuration for selenium testing -->
+
+	<context:component-scan base-package="selenium"/>
+
+	<!-- Configuration properties that will be interpolated via Spring's PropertySourcesPlaceholderConfigurer -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+		<property name="propertiesArray">
+			<list>
+				<bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+					<property name="locations">
+						<util:list>
+							<value>classpath:/selenium/selenium.properties</value>
+						</util:list>
+					</property>
+				</bean>
+			</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="false"/>
+		<property name="searchSystemEnvironment" value="true" />
+	</bean>
+
+	<!-- Properties Loading -->
+	<!-- Creates a java.util.Properties instance with values loaded from the supplied location -->
+	<util:properties id="selenium" location="classpath:selenium/selenium.properties"/>
+
+	<!-- Selenium Beans -->
+	<bean id="webDriverWait" class="org.openqa.selenium.support.ui.WebDriverWait">
+		<constructor-arg ref="webDriver"/>
+		<!-- We want things to time out eventually, 10 seconds is probably too long -->
+		<constructor-arg value="10"/>
+	</bean>
+
+	<!-- Nested Bean Profile Groups must be last in the Spring Configuration file -->
+	<!-- Grid testing configuration, comment out for local testing -->
+	<!--ref="#{ systemProperties['ac.testing']=='yes' or systemProperties['ac.development']=='yes' ? 'dataSourceDBCP' : 'dataSourceJNDI'}"-->
+	<!--<beans profile="#{systemProperties.environment} != 'WORKSTATION' ? 'grid' : 'local'" >-->
+	<beans profile="grid" >
+		<bean id="webDriver" class="org.openqa.selenium.remote.RemoteWebDriver" destroy-method="quit" >
+			<constructor-arg name="remoteAddress" ref="gridUrl" />
+			<constructor-arg name="desiredCapabilities" ref="desiredCapabilities" />
+		</bean>
+		<bean id="gridUrl" class="java.net.URL">
+			<constructor-arg index="0" value="http://jenkins.dev.ccctechcenter.org:4444/wd/hub" />
+		</bean>
+		<bean id="desiredCapabilities" class="org.openqa.selenium.remote.DesiredCapabilities" factory-method="firefox" />
+	</beans>
+
+	<!-- Local testing configuration, comment out for jenkins testing -->
+	<!--<beans profile="#{systemProperties.environment} == 'WORKSTATION' ? 'grid' : 'local'" >-->
+	<beans profile="local" >
+		<bean id="webDriver" class="org.openqa.selenium.firefox.FirefoxDriver" destroy-method="quit"/>
+	</beans>
+
+	<!-- Enabled @Component, @Service, @Repository for Pages so these are commented out now.
+	<bean id="loginPage" class="selenium.page.LoginPage" >
+		<property name="webDriver" ref="webDriver" />
+		<property name="webDriverWait" ref="webDriverWait" />
+	</bean>
+	-->
+
+</beans>

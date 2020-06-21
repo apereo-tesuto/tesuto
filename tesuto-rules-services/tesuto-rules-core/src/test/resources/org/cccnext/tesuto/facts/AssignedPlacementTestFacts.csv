@@ -1,0 +1,6 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result,result
+ruleSetId,placement,placement,placement,placement,placement,placement,placement,placement,placement,placement,id,cb21Code,cb21Level,createdOn,isAssigned,assignedRuleSetId
+${rule_set_id},1:E:5:2017-05-01,,,,,,,,,,1,E,5,2017-05-01,true,${rule_set_id}
+${rule_set_id},1:E:5:2017-05-01,2:D:4:2017-03-01,3:C:3:2017-02-01,4:C:3:2017-06-01,5:E:5:2017-01-01,,,,,,4,C,3,2017-06-01,true,${rule_set_id}
+${rule_set_id},1:E:5:2017-05-01,2:D:4:2017-03-01,3:C:3:2017-02-01,4:C:3:2017-06-01,5:E:5:2017-01-01,6:B:2:2017-08-01,7:Y:0:2017-07-07,8:A:1:2017-03-03,9:C:3:2017-08-08,10:Y:0:2017-02-21,7,Y,0,2017-07-07,true,${rule_set_id}
+${rule_set_id},,,,,,,,,,,

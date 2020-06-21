@@ -1,0 +1,3 @@
+JAR_BASE=tesuto-qti-import-microservice
+JAR_NAME=/tesuto-qti-import.jar
+JAR_OUTPUT_PATH=/opt/ccc/

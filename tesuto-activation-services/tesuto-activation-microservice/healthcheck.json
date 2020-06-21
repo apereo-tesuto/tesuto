@@ -1,0 +1,5 @@
+{
+	"version":"@version@",
+	"git sha":"@buildNumber@",
+	"git branch":"@scmBranch@"
+}

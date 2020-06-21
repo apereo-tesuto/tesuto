@@ -1,0 +1,93 @@
+{
+    "taskSetId": "AFDD-SDFD-SDFD-FE05",
+    "tasks": [{
+        "taskId": "AFGY-JEMD-SKJD-JKSD",
+        "stimulus": "",
+        "itemSessions": [
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                "itemSessionIndex": 12,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [
+                    {
+                        "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                        "responseIdentifier": "RESPONSE1",
+                        "values": ["G"]
+                    }
+                ],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE1",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheets": ".lsi-interaction {color:red; } .lsi-prompt {color: red;}",
+                    "itemBody": "<div class='lsi-interaction' style='color: green; font-weight:bold; font-family: arial; text-transform: uppercase;'><p>Identify the missing word in this famous quote from Shakespeare's Richard III.</p><blockquote><p>Now is the winter of our discontent<br/>Made glorious summer by this sun of <interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c85\" aria-label='enter the missing word'/>;<br/>And all the clouds that lour'd upon our house<br/>In the deep bosom of the ocean buried.</p></blockquote></div>",
+                    "interactions": [{
+                        "id": null,
+                        "type": "inlineChoiceInteraction",
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c85",
+                        "responseIdentifier": "RESPONSE1",
+                        "required": "true",
+                        "inlineChoices": [
+                            {
+                                "content": "<span style='color:red;'>Gloucester</span>",
+                                "identifier": "G"
+                            },
+                            {
+                                "content": "Lancaster",
+                                "identifier": "L"
+                            },
+                            {
+                                "content": "York",
+                                "identifier": "Y"
+                            }
+                        ]
+                    }]
+                }
+            },
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK02",
+                "itemSessionIndex": 13,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE2",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<p>Complete the qudratic expression \\(x^2 \\) <interaction uuid=\"864f765b-10da-401a-94e6-4dbd87f40c86\" aria-label='enter the missing part of this math expression' /> \\(- 15\\) so that it can be factored into \\((x-3)(x+5)\\)",
+                    "interactions": [{
+                        "id": null,
+                        "type": "inlineChoiceInteraction",
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c86",
+                        "responseIdentifier": "RESPONSE2",
+                        "required": "true",
+                        "inlineChoices": [
+                            {
+                                "content": "\\(- 3x\\)",
+                                "identifier": "A"
+                            },
+                            {
+                                "content": "\\(- 2x\\)",
+                                "identifier": "B"
+                            },
+                            {
+                                "content": "\\(+ 2x\\)",
+                                "identifier": "C"
+                            }
+                        ]
+                    }]
+                }
+            }
+        ]
+    }]
+}

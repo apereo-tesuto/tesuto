@@ -1,0 +1,26 @@
+package org.cccnext.tesuto.rules;
+
+import java.util.Date
+import java.util.Map
+import java.lang.Double
+import java.lang.String
+import java.util.List
+import java.util.ArrayList
+import java.util.HashMap
+import java.util.Set
+import java.util.HashSet
+import java.util.stream.Collectors
+import org.cccnext.tesuto.rules.view.BasicStudentView
+import org.cccnext.tesuto.placement.view.PlacementComponentViewDto
+import org.cccnext.tesuto.placement.view.PlacementRulesSourceDto
+import org.cccnext.tesuto.placement.view.CompetencyAttributesViewDto
+import org.cccnext.tesuto.domain.multiplemeasures.VariableSet
+import org.cccnext.tesuto.domain.multiplemeasures.Fact
+import org.cccnext.tesuto.domain.multiplemeasures.PlacementActionResult
+import org.cccnext.tesuto.domain.multiplemeasures.PlacementComponentActionResult
+
+import org.ccctc.common.droolscommon.RulesAction
+import function org.cccnext.tesuto.rules.function.DrlFunctions.getHighestAndBestPlacementComponent
+import function org.cccnext.tesuto.rules.function.DrlFunctions.getHighestAndBestPlacementComponentFromList
+import function org.cccnext.tesuto.rules.function.DrlFunctions.COMPETENCY_ATTRIBUTES_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.PLACEMENT_COMPONENTS_KEY

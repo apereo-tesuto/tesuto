@@ -1,0 +1,51 @@
+{
+		"userAccountId": "012132a9-c03e-43da-b094-98456a628775",
+		"username": "A123458",
+		"emailAddress": "nlocal@democollge.edu",
+		"password": "$2a$10$r8RKTv5GzCB9KtBVkJ/r.O8cUlcxFwxWHKkYCGglUwnyB6C3xgeeK",
+		"displayName": "Nancy",
+		"firstName": "Nancy",
+		"middleInitial": null,
+		"lastName": "Local",
+		"phoneNumber": null,
+		"extension": null,
+		"enabled": true,
+		"securityGroupDtos": [
+			{
+				"securityGroupId": 1,
+				"groupName": "STUDENT",
+				"description": "Student security group",
+				"securityPermissionDtos": []
+			}
+		],
+		"namespace": null,
+		"colleges": [
+			{
+				"cccId": "ZZ1",
+				"districtCCCId": "ZZ0",
+				"name": "Unicollege",
+				"streetAddress1": "1760 East Pecos Road",
+				"streetAddress2": "Suite 432",
+				"city": "Gilbert",
+				"postalCode": "85295",
+				"url": "http://www.unicon.net",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ1",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			}
+		],
+		"collegeIds": [
+			"ZZ1"
+		],
+		"districts": null,
+		"primaryCollegeId": "ZZ1",
+		"testLocations": [
+		]
+	}

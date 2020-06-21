@@ -1,0 +1,401 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.cccnext.tesuto</groupId>
+		<artifactId>tesuto</artifactId>
+		<version>2.2.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>tesuto-ui</artifactId>
+	<packaging>jar</packaging>
+
+	<name>tesuto-ui</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<tiles-version>3.0.4</tiles-version>
+		<selenium-version>2.53.0</selenium-version>
+		<jar.name>tesuto-ui</jar.name>
+		<application.suffix>web.ApplicationUI</application.suffix>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-delivery-api</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-common-domain</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-common-api</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-spring-boot</artifactId>
+			<version>2.2.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-placement-api</artifactId>
+			<version>${tesuto.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.cccnext.tesuto</groupId>
+					<artifactId>
+						tesuto-operational-data-store
+					</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-activation-api</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-content-api</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-admin-api</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-dependencies</artifactId>
+			<version>${tesuto.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.el</groupId>
+					<artifactId>el-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>logback-classic</artifactId>
+					<groupId>ch.qos.logback</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>logback-core</artifactId>
+					<groupId>ch.qos.logback</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-test-dependencies</artifactId>
+			<version>${tesuto.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Selenium Dependencies -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>${selenium-version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-csv</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-drools-common</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+
+	</dependencies>
+
+
+
+	<profiles>
+		<profile>
+			<id>libs</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>copy-dependencies</id>
+								<phase>prepare-package</phase>
+								<goals>
+									<goal>copy-dependencies</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>target/lib</outputDirectory>
+									<overWriteReleases>false</overWriteReleases>
+									<overWriteSnapshots>false</overWriteSnapshots>
+									<overWriteIfNewer>true</overWriteIfNewer>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>npm</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-clean-plugin</artifactId>
+						<version>2.6.1</version>
+						<executions>
+							<execution>
+								<id>auto-clean</id>
+								<phase>initialize</phase>
+								<goals>
+									<goal>clean</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<!-- TODO: Diagnose why these are not deleting properly as it's generated 
+								code. -->
+							<filesets>
+								<!-- Front end Javascript artifacts which are generated -->
+								<!-- <fileset> <directory>src/main/webapp/ui</directory> </fileset> -->
+								<fileset>
+									<directory>src/main/webapp/node</directory>
+								</fileset>
+								<fileset>
+									<directory>src/main/webapp/node_modules</directory>
+								</fileset>
+								<!-- <fileset> <directory>src/main/resources/static</directory> </fileset> -->
+								<!-- Email Javascript artifacts which are generated -->
+								<!-- TODO: Determine if we need to include this in the build. -->
+								<!-- <fileset> <directory>src/main/email/node</directory> </fileset> 
+									<fileset> <directory>src/main/email/node_modules</directory> </fileset> <fileset> 
+									<directory>src/main/email/etc</directory> </fileset> <fileset> <directory>src/main/email/dist</directory> 
+									</fileset> -->
+							</filesets>
+						</configuration>
+					</plugin>
+					<!-- Build all the front end artifacts with node and grunt. -->
+					<plugin>
+						<groupId>com.github.eirslett</groupId>
+						<artifactId>frontend-maven-plugin</artifactId>
+						<version>0.0.23</version>
+
+						<!-- optional -->
+						<configuration>
+							<workingDirectory>src/main/webapp</workingDirectory>
+						</configuration>
+
+						<executions>
+							<execution>
+								<!-- optional: you don't really need execution ids, but it looks 
+									nice in your build log. -->
+								<id>install node and npm</id>
+								<goals>
+									<goal>install-node-and-npm</goal>
+								</goals>
+								<!-- optional: default phase is "generate-resources" -->
+								<phase>generate-resources</phase>
+								<configuration>
+									<nodeVersion>v0.12.2</nodeVersion>
+									<npmVersion>2.14.6</npmVersion>
+									<!-- optional: where to download node and npm from. Defaults to 
+										http://nodejs.org/dist/ -->
+									<!-- <nodeDownloadRoot>http://nodejs.org/nodejs/dist/</nodeDownloadRoot> 
+										<npmDownloadRoot>http://npm.org/npm/-/</npmDownloadRoot> -->
+								</configuration>
+							</execution>
+							<execution>
+								<id>npm install</id>
+								<goals>
+									<goal>npm</goal>
+								</goals>
+
+								<!-- optional: default phase is "generate-resources" -->
+								<phase>generate-resources</phase>
+
+								<configuration>
+									<!-- optional: The default argument is actually "install", so unless 
+										you need to run some other npm command, you can remove this whole <configuration> 
+										section. -->
+									<arguments>install</arguments>
+								</configuration>
+							</execution>
+							<execution>
+								<id>grunt build</id>
+								<goals>
+									<goal>grunt</goal>
+								</goals>
+
+								<!-- optional: the default phase is "generate-resources" -->
+								<phase>generate-resources</phase>
+
+								<configuration>
+									<!-- optional: if not specified, it will run Grunt's default task 
+										(and you can remove this whole <configuration> section.) -->
+									<workingDirectory>src/main/webapp</workingDirectory>
+									<arguments>build</arguments>
+								</configuration>
+							</execution>
+							<!-- Build all the email artifacts with node, gulp and foundation. -->
+							<!-- TODO: Determine if we need to include this in the build. -->
+							<!--<execution> <id>foundation build</id> <goals> <goal>npm</goal> 
+								</goals> &lt;!&ndash; optional: the default phase is "generate-resources" 
+								&ndash;&gt; <phase>generate-resources</phase> <configuration> &lt;!&ndash; 
+								optional: if not specified, it will run Grunt's default task (and you can 
+								remove this whole <configuration> section.) &ndash;&gt; <workingDirectory>src/main/email</workingDirectory> 
+								<arguments>run build</arguments> </configuration> </execution> -->
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<!-- Run selenium tests. You can execute these from the command line with: 
+				mvn -Pselenium -Dspring.profiles.active=local test You can run one test with: 
+				mvn -Pselenium -Dspring.profiles.active=local -Dit.test=LoginTest#testLogin 
+				test -->
+			<id>selenium</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<version>${spring-boot-version}</version>
+						<configuration>
+							<mainClass>org.cccnext.tesuto.web.UIApplication</mainClass>
+						</configuration>
+						<executions>
+							<execution>
+								<goals>
+									<goal>repackage</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.19.1</version>
+						<dependencies>
+							<dependency>
+								<groupId>org.apache.maven.surefire</groupId>
+								<artifactId>surefire-junit4</artifactId>
+								<version>2.19.1</version>
+							</dependency>
+						</dependencies>
+						<executions>
+							<execution>
+								<id>test</id>
+								<phase>test</phase>
+								<goals>
+									<goal>integration-test</goal>
+								</goals>
+								<configuration>
+									<!-- Includes would go here but for now we are using the default 
+										patterns of class names. Listing them here for reference: "**/IT*.java" "**/*IT.java" 
+										"**/*ITCase.java" -->
+									<!-- These next 3 lines are needed to keep WebDriver from dying 
+										during testing. -scott smith -->
+									<argLine>-Xmx512m -XX:MaxPermSize=256m
+										-javaagent:"${settings.localRepository}/org/springframework/spring-instrument/${spring-version}/spring-instrument-${spring-version}.jar"</argLine>
+									<!--<forkMode>pertest</forkMode> -->
+									<reuseForks>true</reuseForks>
+									<useSystemClassLoader>true</useSystemClassLoader>
+									<systemPropertyVariables>
+										<!-- The other choice besides "grid" is "local". This makes the 
+											selection in the selenium configuration as to what type of bean to wire in 
+											for WebDriver selenium tests. -->
+										<spring.profiles.active>grid</spring.profiles.active>
+										<spring.profiles.default>grid</spring.profiles.default>
+									</systemPropertyVariables>
+									<includes>
+										<include>selenium/**/*.java</include>
+									</includes>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<!-- This doesn't do anything except suppress all other JUnit tests 
+							because the surefire configuration is inherited in this profile -->
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.19.1</version>
+						<configuration>
+							<excludes>
+								<exclude>**</exclude>
+							</excludes>
+							<systemPropertyVariables>
+								<environment>${environment}</environment>
+								<host>local</host>
+							</systemPropertyVariables>
+							<argLine>-XX:MaxPermSize=256m
+								-javaagent:"${settings.localRepository}/org/springframework/spring-instrument/${spring-version}/spring-instrument-${spring-version}.jar"
+							</argLine>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

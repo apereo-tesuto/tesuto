@@ -1,0 +1,52 @@
+ccc-item-dropdown {
+
+    display: inline-block;
+
+    button.btn {
+
+        position: relative;
+        padding-right: 35px;
+
+        text-align: left;
+
+        .caret {
+            position: absolute;
+            right: 10px;
+            top: 15px;
+        }
+    }
+
+    .ng-invalid {
+
+        .ccc-validation-badge {
+            right: 25px;
+        }
+    }
+
+    &.btn-full-width {
+
+        width: 100%;
+
+        .btn-group {
+            width: 100%;
+        }
+
+        button.btn {
+            width: 100%;
+        }
+    }
+
+    .ccc-validation-messages {
+        margin-top: 3px;
+    }
+}
+
+.ccc-show-errors {
+    ccc-item-dropdown {
+        .ng-invalid {
+            button {
+                border: 1px solid #f0ad4e;
+            }
+        }
+    }
+}

@@ -1,0 +1,319 @@
+
+/*============ GENERAL APP HEADER ==============*/
+
+ccc-view-common-header {
+    .container-fluid {
+        display: block;
+    }
+
+
+    .navbar-collapse.in,
+    .navbar-collapse.collapsing  {
+        margin-top: 10px;
+    }
+
+    .app-header {
+
+        background: @blue;
+        padding: 0.5em 0;
+        opacity: 1.0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translate3d(0,0,0); //fixes ios flicker
+
+        .ccc-user-navigation {
+            button {}
+        }
+
+        .navbar-toggle {
+            padding: 20px 13px;
+            font-size: 12.5px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            color: #ccc;
+            &:hover {
+                color: @blue1;
+            }
+        }
+
+    }
+
+    .app-nav {
+
+        background: transparent;
+
+        .nav.navbar-nav {
+            margin-top: 30px;
+        }
+
+        .navbar-right {
+            .btn, .btn-group {
+                margin-left: 5px;
+            }
+            .btn-group .btn {
+                margin-left: 0px;
+            }
+        }
+
+        .navbar {
+
+            min-height: 0;
+
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            margin-bottom: 0;
+
+            .nav.ccc-navbar-tabs {
+
+                position: relative;
+                top: 19px;
+                height: 41px;
+                overflow: hidden;
+
+                li.active a {
+                    &:hover, &:focus {
+                        background: rgba(255, 255, 255, 1.0);
+                    }
+                }
+            }
+        }
+
+        .navbar-brand {
+            float: left;
+
+            height: auto;
+
+            margin-left: 0px;
+
+            padding: 10px 40px 10px 0;
+
+            line-height: 20px;
+
+            color: white;
+            font-family: @ccc-font-header;
+            font-size: 200%;
+
+            .navbar-brand-content {
+                display: block;
+            }
+
+            img.logo-mark {
+                height: 80px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 15px;
+                .transition-properties(transform 100ms linear);
+            }
+            .logo-text {
+                color: rgba(255, 255, 255, 0.75);
+                vertical-align: middle;
+                text-transform: uppercase;
+                font-size: 18px;
+            }
+
+
+            &:hover, &:focus {
+
+                color: white;
+
+                img.logo-mark {
+                    transform: scale(1.04);
+                }
+            }
+        }
+
+        .nav {
+            > li {
+                margin-right: 0.25em;
+            }
+
+            > li:last-child {
+                margin-right: 0.0em;
+            }
+
+            > li > a {
+
+                .border-radius(4px);
+
+                color: white;
+                text-shadow: -1px -1px 1px fade(black, 25%);
+                text-transform: uppercase;
+
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+                &:hover, &:focus {
+                    background: rgba(255, 255, 255, 0.1);
+                    color: white;
+                }
+            }
+
+            > .active > a {
+                background: rgba(255, 255, 255, 0.1);
+                text-decoration: underline;
+                color: #fff;
+
+                &:hover, &:focus {
+                    background: rgba(255, 255, 255, 0.1);
+                    color: #fff;
+                }
+            }
+        }
+
+        .navbar-toggle {
+            margin-right: 0px;
+        }
+
+        .app-nav-button {
+
+            font-size: 12.5px;
+
+            background: none;
+            .border-radius(4px);
+            border: none;
+            color: white;
+            text-shadow: -1px -1px 1px fade(black, 25%);
+            text-transform: uppercase;
+
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            &:hover, &:focus {
+                background: fade(white, 15%);
+                color: white;
+            }
+
+            .caret {
+                margin-left: 5px;
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: @screen-xs-max) {
+
+    ccc-view-common-header .app-nav {
+        .navbar-right {
+            .btn-group, .btn {
+                margin-left: 0px;
+            }
+        }
+        .nav.navbar-nav {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .app-nav-button {
+            display: block;
+            margin-top: 5px;
+        }
+        .btn-default.dropdown-toggle {
+            display: none;
+        }
+        .dropdown-menu {
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+    }
+
+    .app-header {
+        opacity: 0.97;
+    }
+    .app-nav {
+
+        .dropdown-toggle {
+            display: none;
+        }
+        .dropdown-menu {
+
+            display: block !important;
+            position: relative !important;
+            float: none !important;
+            display: block;
+            top: 0;
+
+            li a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        .btn-group {
+            display: block;
+            float: none;
+        }
+
+        .navbar {
+
+            .navbar-brand.logo {
+                padding-left: 0px;
+                padding-top: 2px;
+            }
+
+            .nav {
+                > li > a {
+                    color: white;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.25);
+                    text-transform: uppercase;
+                }
+                > li {
+                    margin-right: 0em;
+                }
+            }
+
+            .nav.ccc-navbar-tabs {
+
+                overflow: visible;
+                height: auto;
+                position: relative;
+                top: 0px;
+
+                > li > a {
+                    margin-bottom: 0px;
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                    .border-radius(0px);
+                    padding-bottom: 15px;
+                    padding-top: 15px;
+                }
+
+                > .active > a {
+                    border-bottom-left-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-sm-max) {
+    .app-nav {
+
+        .navbar {
+
+            .nav.ccc-navbar-tabs {
+
+                > li > a {
+
+                }
+
+                > .active > a {
+
+                }
+            }
+        }
+    }
+}
+
+/*============= HOME PAGE HEADER SPECIFIC STYLES ============*/
+
+ccc-view-common-header {
+    display: block;
+}

@@ -1,0 +1,3 @@
+JAR_BASE=tesuto-placement-microservice
+JAR_NAME=/tesuto-placement.jar
+JAR_OUTPUT_PATH=/opt/ccc/

@@ -1,0 +1,85 @@
+{
+    "CCC_VIEW_STANDARD_COMMON": {
+        "CCC-HELP": {
+            "ASK": {
+                "TITLE": "Ask a Question",
+                "DESC": "You can ask a question or share an idea on topics like...",
+                "ADMIN": "<ul><li>Student ID</li><li>Student Lookup</li><li>Activations</li><li>Bulk Activations</li><li>Activation Statuses</li><li>Activation Logs</li><li>Passcodes</li><li>Managing Users</li><li>Managing Locations</li><li>Managing Placements</li></ul>",
+                "STUDENT": "<ul><li>Assessments</li><li>CCCID</li><li>Placements</li><li>College Application</li><li>Student Services</li><li>Financial Aid</li><li>Admission</li><li>Online Courses</li><li>Transferring</li><li>Early Assessments</li></ul>"
+            }
+        },
+        "CCC_USER": {
+            "CCCID": "CCCID:",
+            "AGE": "Age:",
+            "PHONE": "Phone:",
+            "EMAIL": "Email:",
+            "ROLES": "Roles:",
+            "COLLEGES": "Colleges:"
+        },
+        "CCC-PLACEMENT-REPORT-STUDENT": {
+            "COMPETENCY_RESULTS_TITLE": "Competency Results",
+            "COMPETENCY_RESULTS_DESCRIPTION": "Competency results are statewide, and not specific to an individual college. You will have the same competency results for any college to which you have applied."
+        },
+        "CCC-PLACEMENT-COURSE-DETAILS": {
+            "DEFAULT_SEQUENCE_PLACEMENT_EXPLANATION": "Please see a counselor for your placement.",
+            "PLACEMENT_REASON_TITLE_SHOW_COURSES": "Why did I get this placement?",
+            "PLACEMENT_REASON_TITLE_HIDE_COURSES": "Course Placement Information"
+        },
+        "CCC-REMOTE-EVENT-SUMMARY": {
+            "DATE": "Date",
+            "START_DATE": "Start",
+            "END_DATE": "End",
+            "LOCATION": "Location",
+            "PROCTOR": "Proctor",
+            "ASSESSMENTS": "Assessments",
+            "STUDENTS": "Students",
+            "EDIT_STUDENTS": "Edit Students",
+            "NO_STUDENTS_YET": "You have not added any students yet.",
+            "NO_STUDENTS_YET_ADD_NOW": "Add students now.",
+            "STUDENTS_ERROR": "There was an error trying to load students for this test event. Contact your district administrator for help.",
+            "DONE": "Done",
+            "EDIT_TEST_EVENT": "Edit Details",
+            "TEST_EVENT_EMAIL": "Resend Email",
+            "TEST_EVENT_PASSCODE": "Get Passcode",
+            "TEST_EVENT_PASSCODE_RESET": "Reset Passcode",
+            "CANCEL_EVENT": "Cancel Event",
+            "CANCEL_MODAL": {
+                "BUTTON_CONFIRM": "Cancel Event",
+                "BUTTON_CANCEL": "Do Not Cancel Event",
+                "TITLE": "Cancel Event",
+                "MESSAGE": "<p>An email will be sent to the remote proctor communicating the event has been canceled.</p><p>If student assessments have already been activated, they will be immediately deactivated when the event is canceled.</p>"
+            },
+            "EMAIL_MODAL": {
+                "BUTTON_CONFIRM": "Send Email",
+                "BUTTON_CANCEL": "Cancel",
+                "TITLE": "Resend Remote Proctor Email",
+                "MESSAGE": "Would you like to resend an email to the remote proctor?"
+            },
+            "RESET_PASSCODE_MODAL": {
+                "BUTTON_CONFIRM": "Reset Passcode",
+                "BUTTON_CANCEL": "Cancel",
+                "TITLE": "Reset Event Passcode",
+                "MESSAGE": "Would you like to reset the passcode for this event?"
+            },
+            "INSTRUCTIONS": {
+                "TITLE": "Instructions",
+                "BODY": "<p>As a proctor, you are ensuring the integrity of the proctor passcode. The passcode cannot be given to the student under any circumstance.</p><p>If you feel that the security of your passcode has been compromised, immediately end the test event and contact your assessment administration to have the passcode reset.</p><p>The test must be administered in your presence.</p><p>Students are permitted to use scratch paper you provide. Please collect and destroy scratch paper at the conclusion of the test.</p><p>Calculators, dictionaries, or other materials brought by the student are not permitted.</p>"
+            }
+        },
+        "CCC-MODAL-REMOTE-PROCTOR-PASSCODE": {
+            "WARNING": "To help keep your passcode secure, this window will close after 2 minutes.",
+            "DONE": "Done"
+        },
+        "CCC-STUDENT-CARD": {
+            "ADD": "Add",
+            "REMOVE": "Remove",
+            "CCCID": "CCCID:",
+            "AGE": "Age:",
+            "PHONE": "Phone:",
+            "EMAIL": "Email:"
+        },
+        "CCC-STUDENT-CARD-LIST": {
+            "REMOVE": "Remove"
+        }
+    }
+}

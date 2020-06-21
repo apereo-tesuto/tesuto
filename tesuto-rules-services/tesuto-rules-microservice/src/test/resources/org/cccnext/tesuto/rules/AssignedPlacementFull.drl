@@ -1,0 +1,30 @@
+package org.cccnext.tesuto.rules;
+
+import java.util.Date
+import java.util.Map
+import java.lang.String
+import java.util.List
+import java.util.ArrayList
+import org.cccnext.tesuto.placement.view.PlacementViewDto
+import org.cccnext.tesuto.placement.view.AssignedPlacementRulesSourceDto
+
+import org.ccctc.common.droolscommon.RulesAction
+import function org.cccnext.tesuto.rules.function.DrlFunctions.getHighestAndBestPlacementFromList
+import function org.cccnext.tesuto.rules.function.DrlFunctions.PLACEMENTS_KEY
+
+// Assigned Placement
+rule "da181d3c-e1f5-494f-bd9c-165adc71d3bd" when
+    map : Map()
+    ruleSetId : String(this == "${rule_set_id}") from map.get("RULE_SET_ID")
+    placementsView : AssignedPlacementRulesSourceDto(placements : placements) from map.get(PLACEMENTS_KEY())
+    eval(placements.size() > 0)
+    bestPlacement : PlacementViewDto() from getHighestAndBestPlacementFromList(placementsView.placements)
+    then
+        List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+        bestPlacement.setAssigned(true);
+        bestPlacement.setAssignedDate(new Date());
+        bestPlacement.setAssignedRuleSetId(ruleSetId);
+        RulesAction action = new RulesAction("ASSIGNED_PLACEMENT_ACTION");
+        action.addActionParameter("assignedPlacement", bestPlacement);
+        actions.add(action);
+end

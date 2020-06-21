@@ -1,0 +1,7 @@
+[
+	{
+		"path":"abc/def",
+		"httpMethod":"POST",
+		"responseStatus":201
+	}
+]

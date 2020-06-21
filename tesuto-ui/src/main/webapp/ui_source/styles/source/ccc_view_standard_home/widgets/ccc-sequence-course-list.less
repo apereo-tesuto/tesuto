@@ -1,0 +1,41 @@
+ccc-sequence-course-list {
+
+    ul {
+
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-width: 350px;
+
+        li {
+            margin-bottom: 5px;
+            padding: 0px;
+
+            position: relative;
+
+            button.btn {
+                padding-right: 30px;
+            }
+
+            .ccc-sequence-course-list-delete {
+
+                cursor: pointer;
+                position: absolute;
+                top: 3px;
+                right: 9px;
+
+                color: rgba(255, 255, 255, 0.8);
+
+                font-size: 20px;
+
+                &:hover {
+                    color: rgba(255, 255, 255, 1.0);
+                }
+                &:active {
+                    color: @brand-warning;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="persistenceUnitActivation"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>org.cccnext.tesuto.activation.jpa.JpaActivation</class>
+		<class>org.cccnext.tesuto.activation.jpa.JpaActivationView</class>
+		<class>org.cccnext.tesuto.activation.jpa.JpaIndividualActivation</class>
+		<class>org.cccnext.tesuto.activation.jpa.JpaTestEventActivation</class>
+		<class>org.cccnext.tesuto.activation.jpa.JpaActivationStatusChange</class>
+		<class>org.cccnext.tesuto.activation.jpa.JpaPasscode</class>
+		<class>org.cccnext.tesuto.activation.jpa.JpaPasscodeRecord</class>
+		<class>org.cccnext.tesuto.activation.jpa.JpaPasscodeValidationAttempt</class>
+        <class>org.cccnext.tesuto.activation.jpa.JpaTestEvent</class>
+		<class>org.cccnext.tesuto.activation.jpa.JpaTestEventWithUuid</class>
+		<class>org.cccnext.tesuto.activation.jpa.JpaTestEventAcknowledgement</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect" />
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+			<property name="hibernate.cache.use_second_level_cache"
+				value="false" />
+			<property name="hibernate.cache.use_query_cache" value="false" />
+			<property name="hibernate.generate_statistics" value="false" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.use_sql_comments" value="false" />
+		</properties>
+	</persistence-unit>
+</persistence>

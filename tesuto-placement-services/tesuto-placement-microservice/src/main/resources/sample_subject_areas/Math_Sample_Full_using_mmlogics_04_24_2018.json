@@ -1,0 +1,511 @@
+{
+	"lastUpdatedDate": 1523651775342,
+	"createdOnDate": 1523651750188,
+	"disciplineId": 25,
+	"collegeId": "SYS",
+	"title": "Math Sample Full using mmlogics",
+	"description": "Unicollege Math Subject Area for the Math Sample Full assessment.<br>using mmlogics<br>COMPONENT LOGIC:  ID:39c1f47a-72d2-4896-b91a-61d2a7022313 TITLE : Statewide MMAP Mathematics Decision Logic - Variant<br>PLACEMENT LOGIC:  ID:52267b7d-6aa3-43bc-b1da-27b928abb9b8 TITLE : Statewide Decision Logic<br>ASSIGNED LOGIC:  ID:da0f3467-6170-4cdb-a84e-de1c3423c0df TITLE : Default Assigned Placement Logic",
+	"competencyMapDiscipline": "MATH",
+	"competencyMapVersion": 1,
+	"sisCode": "Math",
+	"noPlacementMessage": null,
+	"usePrereqPlacementMethod": true,
+	"competencyAttributes": {
+		"@type": "Math",
+		"competencyAttributeId": 24,
+		"optInMultiMeasure": true,
+		"placementComponentMmap": true,
+		"placementComponentAssess": true,
+		"useSelfReportedDataForMM": true,
+		"mmDecisionLogic": "39c1f47a-72d2-4896-b91a-61d2a7022313",
+		"mmPlacementLogic": "52267b7d-6aa3-43bc-b1da-27b928abb9b8",
+		"mmAssignedPlacementLogic": "da0f3467-6170-4cdb-a84e-de1c3423c0df",
+		"prerequisiteGeneralEducation": "Elementary Algebra",
+		"prerequisiteStatistics": "Elementary Algebra",
+		"competencyCode": "MATH"
+	},
+	"disciplineSequences": [
+		{
+			"disciplineId": 25,
+			"cb21Code": "Y",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 25,
+					"courseId": 70,
+					"cb21Code": "Y",
+					"courseGroup": 1,
+					"auditId": 71,
+					"course": {
+						"courseId": 70,
+						"name": "Math 500",
+						"cid": "CIDMATH500",
+						"subject": "Math",
+						"number": "500",
+						"description": "This course is the least difficult course. Congratulations for qualifying for this course.",
+						"mmapEquivalentCode": "math_stat",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[72,\"AND\",75]",
+						"competencyGroups": []
+					}
+				},
+				{
+					"disciplineId": 25,
+					"courseId": 51,
+					"cb21Code": "Y",
+					"courseGroup": 1,
+					"auditId": 52,
+					"course": {
+						"courseId": 51,
+						"name": "Math 505",
+						"cid": "CIDMATH505",
+						"subject": "Math",
+						"number": "505",
+						"description": "This course is also a choice when qualifying for Math 500.",
+						"mmapEquivalentCode": "math_col_alg",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[]",
+						"competencyGroups": []
+					}
+				},
+				{
+					"disciplineId": 25,
+					"courseId": 26,
+					"cb21Code": "Y",
+					"courseGroup": 1,
+					"auditId": 27,
+					"course": {
+						"courseId": 26,
+						"name": "Math 510",
+						"cid": "CIDMATH510",
+						"subject": "Math",
+						"number": "510",
+						"description": "This course is also a choice when qualifying for Math 500.",
+						"mmapEquivalentCode": "math_ge",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[]",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 25,
+			"cb21Code": "C",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "C",
+				"levelsBelowTransfer": 3,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 25,
+					"courseId": 42,
+					"cb21Code": "C",
+					"courseGroup": 1,
+					"auditId": 43,
+					"course": {
+						"courseId": 42,
+						"name": "Math 100",
+						"cid": "CIDMATH100",
+						"subject": "Math",
+						"number": "100",
+						"description": "This course is three levels below.",
+						"mmapEquivalentCode": "",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[44]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 44,
+								"probabilitySuccess": 50,
+								"title": "Math CG12",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 44,
+										"competencyId": "cmath16-10019",
+										"auditId": 45
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 25,
+			"cb21Code": "Y",
+			"courseGroup": 4,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 25,
+					"courseId": 28,
+					"cb21Code": "Y",
+					"courseGroup": 4,
+					"auditId": 29,
+					"course": {
+						"courseId": 28,
+						"name": "Math 800",
+						"cid": "CIDMATH800",
+						"subject": "Math",
+						"number": "800",
+						"description": "This course is the most difficult one offered. Congratulations for qualifying for this course.",
+						"mmapEquivalentCode": "math_calc_i",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[30]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 30,
+								"probabilitySuccess": 50,
+								"title": "Math CG1",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 30,
+										"competencyId": "cmath16-60001",
+										"auditId": 31
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 25,
+			"cb21Code": "A",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "A",
+				"levelsBelowTransfer": 1,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 25,
+					"courseId": 60,
+					"cb21Code": "A",
+					"courseGroup": 1,
+					"auditId": 61,
+					"course": {
+						"courseId": 60,
+						"name": "Math 300",
+						"cid": "CIDMATH300",
+						"subject": "Math",
+						"number": "300",
+						"description": "A math course below intermediate algebra.",
+						"mmapEquivalentCode": "",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[62,\"AND\",64,\"AND\",67]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 64,
+								"probabilitySuccess": 50,
+								"title": "Math CG9",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 64,
+										"competencyId": "cmath16-10050",
+										"auditId": 65
+									},
+									{
+										"competencyGroupId": 64,
+										"competencyId": "cmath16-20004",
+										"auditId": 66
+									}
+								]
+							},
+							{
+								"competencyGroupId": 67,
+								"probabilitySuccess": 50,
+								"title": "Math CG10",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 67,
+										"competencyId": "cmath16-20001",
+										"auditId": 68
+									},
+									{
+										"competencyGroupId": 67,
+										"competencyId": "cmath16-10050",
+										"auditId": 69
+									}
+								]
+							},
+							{
+								"competencyGroupId": 62,
+								"probabilitySuccess": 50,
+								"title": "Math CG8",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 62,
+										"competencyId": "cmath16-10057",
+										"auditId": 63
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 25,
+			"cb21Code": "A",
+			"courseGroup": 2,
+			"cb21": {
+				"cb21Code": "A",
+				"levelsBelowTransfer": 1,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 25,
+					"courseId": 78,
+					"cb21Code": "A",
+					"courseGroup": 2,
+					"auditId": 79,
+					"course": {
+						"courseId": 78,
+						"name": "Math 400",
+						"cid": "CIDMATH400",
+						"subject": "Math",
+						"number": "400",
+						"description": "This course is the highest non transfer level course.",
+						"mmapEquivalentCode": "math_alg",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[80]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 80,
+								"probabilitySuccess": 50,
+								"title": "Math CG7",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 80,
+										"competencyId": "cmath16-20019",
+										"auditId": 82
+									},
+									{
+										"competencyGroupId": 80,
+										"competencyId": "cmath16-10060",
+										"auditId": 81
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 25,
+			"cb21Code": "Y",
+			"courseGroup": 3,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 25,
+					"courseId": 32,
+					"cb21Code": "Y",
+					"courseGroup": 3,
+					"auditId": 33,
+					"course": {
+						"courseId": 32,
+						"name": "Math 700",
+						"cid": "CIDMATH700",
+						"subject": "Math",
+						"number": "700",
+						"description": "This course is 2nd most difficult course. Congratulations for qualifying for this course.",
+						"mmapEquivalentCode": "math_pre_calc",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[34]",
+						"competencyGroups": []
+					}
+				},
+				{
+					"disciplineId": 25,
+					"courseId": 36,
+					"cb21Code": "Y",
+					"courseGroup": 3,
+					"auditId": 37,
+					"course": {
+						"courseId": 36,
+						"name": "Math 705",
+						"cid": "CIDMATH705",
+						"subject": "Math",
+						"number": "705",
+						"description": "This course is the accompanying course for Course 700.",
+						"mmapEquivalentCode": "",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[]",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 25,
+			"cb21Code": "B",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "B",
+				"levelsBelowTransfer": 2,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 25,
+					"courseId": 46,
+					"cb21Code": "B",
+					"courseGroup": 1,
+					"auditId": 47,
+					"course": {
+						"courseId": 46,
+						"name": "Math 200",
+						"cid": "CIDMATH200",
+						"subject": "Math",
+						"number": "200",
+						"description": "This course is two levels below.",
+						"mmapEquivalentCode": "",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[48]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 48,
+								"probabilitySuccess": 50,
+								"title": "Math CG11",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 48,
+										"competencyId": "cmath16-10034",
+										"auditId": 50
+									},
+									{
+										"competencyGroupId": 48,
+										"competencyId": "cmath16-10050",
+										"auditId": 49
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 25,
+			"cb21Code": "Y",
+			"courseGroup": 2,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 25,
+					"courseId": 53,
+					"cb21Code": "Y",
+					"courseGroup": 2,
+					"auditId": 54,
+					"course": {
+						"courseId": 53,
+						"name": "Math 600",
+						"cid": "CIDMATH600",
+						"subject": "Math",
+						"number": "600",
+						"description": "This course is 3rd most difficult course. Congratulations for qualifying for this course.",
+						"mmapEquivalentCode": "math_trig",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[55,\"AND\",58]",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 25,
+			"cb21Code": "D",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "D",
+				"levelsBelowTransfer": 4,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 25,
+					"courseId": 38,
+					"cb21Code": "D",
+					"courseGroup": 1,
+					"auditId": 39,
+					"course": {
+						"courseId": 38,
+						"name": "Math 000",
+						"cid": "CIDMATH000",
+						"subject": "Math",
+						"number": "000",
+						"description": "This is the lowest level course available in Math.",
+						"mmapEquivalentCode": "",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[40]",
+						"competencyGroups": []
+					}
+				}
+			]
+		}
+	],
+	"dirty": false
+}

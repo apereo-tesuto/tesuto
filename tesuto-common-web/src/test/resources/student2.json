@@ -1,0 +1,21 @@
+[{
+    "age": "0",
+    "cccid": "AAA5364",
+    "email": "dsonaty@unicon.net",
+    "firstName": "Rose",
+    "lastName": "Reves",
+    "middleName": "notNull",
+    "phone": "480-560-1428",
+    "collegeStatuses": {
+      "ZZ1": "1",
+      "111": "1",
+      "ZZ2": "1",
+      "611": "1",
+      "941": "1",
+      "831": "1",
+      "292": "1",
+      "271": "1",
+      "371": "1",
+      "582": "1"
+    }
+  }]

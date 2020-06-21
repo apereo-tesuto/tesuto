@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+	<groupId>org.cccnext.tesuto</groupId>
+	<artifactId>tesuto</artifactId>
+	<version>2.2.0-SNAPSHOT</version>
+  </parent>
+
+	<artifactId>tesuto-delivery-services</artifactId>
+	<packaging>pom</packaging>
+
+    <modules>
+        <module>tesuto-delivery-api</module>
+        <module>tesuto-delivery-core</module>
+        <module>tesuto-delivery-microservice</module>
+        <!--<module>tesuto-delivery-dao-mongo</module>
+        <module>tesuto-delivery-dao-postgres</module>-->
+    </modules>
+
+	<profiles>
+		<profile>
+			<id>Set the JDBC_URL</id>
+			<activation>
+				<property>
+					<name>!env.JDBC_URL_DELIVERY</name>
+				</property>
+			</activation>
+			<properties>
+				<env.JDBC_URL_DELIVERY>jdbc:postgresql://localhost:5432/tesuto_delivery</env.JDBC_URL_DELIVERY>
+			</properties>
+		</profile>
+		<profile>
+			<id>Set the JDBC_USER</id>
+			<activation>
+				<property>
+					<name>!env.JDBC_USER_DELIVERY</name>
+				</property>
+			</activation>
+			<properties>
+				<env.JDBC_USER_DELIVERY>tesuto_delivery</env.JDBC_USER_DELIVERY>
+			</properties>
+		</profile>
+		<profile>
+			<id>Set the JDBC_PASSWORD</id>
+			<activation>
+				<property>
+					<name>!env.JDBC_PASSWORD_DELIVERY</name>
+				</property>
+			</activation>
+			<properties>
+				<env.JDBC_PASSWORD_DELIVERY>tesuto_delivery</env.JDBC_PASSWORD_DELIVERY>
+			</properties>
+		</profile>
+	</profiles>
+</project>

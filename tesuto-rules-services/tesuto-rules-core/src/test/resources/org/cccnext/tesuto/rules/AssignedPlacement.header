@@ -1,0 +1,13 @@
+package org.cccnext.tesuto.rules;
+
+import java.util.Date
+import java.util.Map
+import java.lang.String
+import java.util.List
+import java.util.ArrayList
+import org.cccnext.tesuto.placement.view.PlacementViewDto
+import org.cccnext.tesuto.placement.view.AssignedPlacementRulesSourceDto
+
+import org.ccctc.common.droolscommon.RulesAction
+import function org.cccnext.tesuto.rules.function.DrlFunctions.getHighestAndBestPlacementFromList
+import function org.cccnext.tesuto.rules.function.DrlFunctions.PLACEMENTS_KEY

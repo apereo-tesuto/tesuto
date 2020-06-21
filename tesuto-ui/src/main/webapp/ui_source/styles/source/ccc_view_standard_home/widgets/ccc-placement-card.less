@@ -1,0 +1,205 @@
+ccc-placement-card {
+    flex-basis: 0;
+
+    .placement-card {
+        display: flex;
+        display: -ms-flexbox;
+        flex-grow: 1;
+        -ms-flex-positive: 1;
+        padding: 0;
+        margin: 0 .5em;
+
+        .placement {
+            display: flex;
+            display: -ms-flexbox;
+            flex-direction: column;
+            -ms-flex-direction: column;
+            width: 100%;
+            background-color: @ccc-bg-dark;
+            padding: 1em;
+            border-radius: .5em;
+
+            .subject-area {
+                color: #666;
+                font-size: 1.4em;
+                margin: 0 0 0.25em 0;
+            }
+
+            .date {
+                color: #888;
+                font-size: 0.85em;
+                margin-bottom: 0.5em;
+            }
+
+            .placement-body {
+                flex-grow: 1;
+                -ms-flex-positive: 1;
+                background-color: #f5f5f5;
+                padding: 1em;
+            }
+
+            .course-list {
+
+                padding-left: 0;
+                list-style: none;
+                margin: 1em 0;
+
+                .course-button {
+
+                    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+                    background-color: #fff;
+                    color: #0046ad;
+                    display: block;
+                    padding: .5em;
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 0.5em;
+                    margin: .5em 0;
+
+                    .number {
+                        font-weight: bold;
+                    }
+
+                    .subject, .number {
+                        font-size: 18px;
+                    }
+
+                    &:hover, &:focus {
+
+                        .subject, .number {
+                            color: #fff;
+                        }
+
+                        background-color: @blue;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .details-toggle button {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .preliminary-list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                .placement {
+                    border: 1px solid #ddd;
+                    margin-bottom: 1em;
+                    border-radius: 2px;
+                    padding: 0;
+                    background: none;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .type {
+                        background-color: fade(white, 60%);
+                        border-bottom: 1px solid #ddd;
+                        color: darken(@blue, 10%);
+                        font-size: 1em;
+                        margin: 0;
+                        padding: 5px 10px;
+                        position: relative;
+                    }
+
+                    .body {
+                        background-color: fade(white, 80%);
+                        color: darken(@blue, 10%);
+                        padding: 10px 10px;
+
+                        .date {
+                            display: inline-block;
+                            font-size: 75%;
+                            font-weight: 600;
+                            margin-left: 1em;
+                            color: @blueDark;
+                        }
+
+                        p {
+                            margin: 8px 0 0 0;
+                            font-size: 85%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.active {
+
+        .placement-card {
+
+            .placement {
+                background-color: @blue;
+
+                .subject-area {
+                    color: #fff;
+                }
+
+                .date {
+                    color: rgba(255, 255, 255, 0.7);
+                }
+
+                .placement-body {
+                    background-color: rgba(255, 255, 255, 0.15);
+
+                    &> .label-primary {
+                        background-color: #5bc0de;
+                    }
+                }
+
+                .details-toggle button {
+                    color: #fff;
+                }
+
+                .course-list {
+
+                    .course-button {
+
+                        &:hover, &:focus {
+                            background-color: @gold2;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .preliminary-list {
+
+                    .placement {
+                        border-color: @blue;
+
+                        .type {
+                            border-color: @blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ccc-placement-card-course {
+
+        .well {
+            background-color: #eee;
+            padding: .5em 1em;
+            margin-bottom: 0px;
+            margin-top: 3px;
+            text-align: left;
+            color: #0046ad;
+        }
+
+        p {
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

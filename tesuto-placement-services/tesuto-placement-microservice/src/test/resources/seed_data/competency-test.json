@@ -1,0 +1,103 @@
+[
+	{
+		"id": "76853be5-10a9-4863-9a37-5c4c0555749d",
+		"title": "Common Assessment Initiative Competencies for English",
+		"version": 1,
+		"identifier": "ceng_16-10000",
+		"discipline": "ENGLISH",
+		"competencyRefs": [
+			{
+				"competencyIdentifier": "1.0.0.ceng_16-10000",
+				"discipline": "ENGLISH",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "2.0.0.ceng_16-20000",
+				"discipline": "ENGLISH",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "3.0.0.ceng_16-30000",
+				"discipline": "ENGLISH",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "4.0.0.ceng_16-40000",
+				"discipline": "ENGLISH",
+				"version": 1
+			}
+		],
+		"published": true
+	},
+	{
+		"id": "3f420fff-c6d2-4142-aeee-6f07759b436f",
+		"title": "Common Assessment Initiative Competencies for English",
+		"version": 1,
+		"identifier": "cesl_16-10000",
+		"discipline": "ESL",
+		"competencyRefs": [
+			{
+				"competencyIdentifier": "1.0.0.cesl_16-10000",
+				"discipline": "ESL",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "2.0.0.cesl_16-20000",
+				"discipline": "ESL",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "3.0.0.cesl_16-30000",
+				"discipline": "ESL",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "4.0.0.cesl_16-40000",
+				"discipline": "ESL",
+				"version": 1
+			}
+		],
+		"published": true
+	},
+	{
+		"id": "eb4e7c08-9261-47eb-a5de-ed57805802b1",
+		"title": "Common Assessment Initiative Competencies for Math",
+		"version": 1,
+		"identifier": "cmath16-10000",
+		"discipline": "MATH",
+		"competencyRefs": [
+			{
+				"competencyIdentifier": "1.0.0.cmath16-10000",
+				"discipline": "MATH",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "2.0.0.cmath16-10000",
+				"discipline": "MATH",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "3.0.0.cmath16-10000",
+				"discipline": "MATH",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "4.0.0.cmath16-10000",
+				"discipline": "MATH",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "5.0.0.cmath16-10000",
+				"discipline": "MATH",
+				"version": 1
+			},
+			{
+				"competencyIdentifier": "6.0.0.cmath16-10000",
+				"discipline": "MATH",
+				"version": 1
+			}
+		],
+		"published": true
+	}
+
+]

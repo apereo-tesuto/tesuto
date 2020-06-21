@@ -1,0 +1,47 @@
+ccc-class-report-setup {
+
+    .file-upload {
+        margin: 2em 0;
+
+        .drop-target {
+            border: 2px dashed #ccc;
+            padding: 2em;
+            text-align: center;
+            position: relative;
+        }
+
+        .ccc-show-errors {
+
+            .invalid.drop-target {
+                border-color: #f0ad4e;
+            }
+
+            .ccc-validation-messages p {
+                margin-top: 5px;
+                color: #785f33;
+            }
+        }
+
+        input[type=file] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            font-size: 1000px; // fixes custom btn double-click issue in IE
+        }
+
+        .icon {
+            display: block;
+            font-size: 3em;
+            color: lighten(@blue, 20%);
+        }
+
+        p {
+            color: #888;
+            margin: 1em 0;
+            // .small();
+        }
+    }
+}

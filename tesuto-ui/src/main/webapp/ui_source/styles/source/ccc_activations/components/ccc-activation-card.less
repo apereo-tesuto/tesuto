@@ -1,0 +1,411 @@
+// variables for colors:
+@status-green: #3d8b3d;
+@status-gray: #666;
+@status-orange: #f0ad4e;
+
+ccc-activation-card {
+
+    display: flex;
+    display: -ms-flexbox;
+    width: 49.3%;
+
+    &.ccc-activation-card-full-width {
+        width: 100%;
+    }
+
+    @media (max-width: @screen-md-min) {
+        width: 100%;
+    }
+
+    .event(@color-event: @blue;) {
+
+        background-color: lighten(desaturate(@color-event, 30%), 15%);
+
+        .event-prefix {
+            color: rgba(0,0,0, 0.4);
+        }
+
+        .event-body {
+            color: lighten(@color-event, 65%);
+        }
+    }
+
+    .wrapper {
+        width: 100%;
+        position: relative;
+        margin: .5em 1em .5em 0;
+        padding: 1em;
+        border: 3px solid;
+        background-color: #fff;
+
+        @media (max-width: @screen-md-min) {
+            margin-right: 0;
+        }
+
+        @media (max-width: @screen-md-max) {
+            margin-right: 1em;
+        }
+
+        @media (max-width: @screen-sm-min) {
+            margin-right: 0;
+        }
+
+        &.not-clickable {
+            &:hover, &:focus {
+                cursor: default;
+                outline-color: @grayscale6;
+            }
+        }
+
+        .header {
+            position: relative;
+            margin: -1em -1em 0;
+            padding: 1em;
+            color: #fff;
+
+            .actions {
+                position: absolute;
+                bottom: .5em;
+                right: .5em;
+
+                button {
+                    margin-left: .25em;
+                }
+            }
+        }
+
+        .ccc-activation-card-actions-bottom {
+            border-top: 1px solid #ccc;
+            margin: 1em -1em 0 -1em;
+            padding: 1em 1em 0 1em;
+
+            button {
+                margin-right: .5em;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &.status-ready,
+        &.status-in-progress,
+        &.status-paused {
+            border-color: @blue;
+
+            .event {
+                .event(@blue);
+            }
+
+            .header {
+                background-color: @blue;
+
+                .label.paper {
+                    color: #00f8fb;
+                    border: 1px solid #00f8fb;
+                    background-color: @blue;
+                }
+            }
+        }
+
+        &.status-complete {
+            border-color: @status-green;
+
+            .event {
+
+                background-color: #d6eed9;
+
+                .event-prefix {
+                    color: @status-green;
+                }
+
+                .event-body {
+                    color: #555;
+                }
+                .event-title {
+                    color: #333;
+                }
+            }
+
+            .header {
+                background-color: #e7efe7;
+
+                .title {
+                    color: darken(@status-green, 20%);
+                }
+
+                .label {
+                    color: darken(@status-green, 10%);
+                    border: 1px solid @status-green;
+                    background-color: #e7efe7;
+                }
+            }
+        }
+
+        &.status-deactivated,
+        &.status-incomplete,
+        &.status-expired {
+            border-color: #ccc;
+
+            .event {
+                background-color: lighten(@status-gray, 53.5%);
+
+                .event-prefix {
+                    color: rgba(0,0,0, 0.4);
+                }
+
+                .event-body {
+                    color: darken(@status-gray, 7%);
+                }
+                .event-title {
+                    color: darken(@status-gray, 20%);
+                }
+            }
+
+            .header {
+                background-color: lighten(@status-gray, 47%);
+
+                .title {
+                    color: darken(@status-gray, 20%);
+                }
+
+                .label.paper {
+                    color: lighten(@status-gray, 51%);
+                    border: 1px solid lighten(@status-gray, 51%);
+                    background-color: @status-gray;
+                }
+            }
+        }
+
+        .border-radius(5px);
+
+        .title {
+            font-size: 150%;
+            margin: 0 0 0.5em 0;
+            word-break: break-word;
+        }
+
+        .label {
+            margin-right: .5em;
+            font-size: 75%;
+            text-transform: capitalize;
+
+            &.status-ready,
+            &.status-in-progress {
+                color: #baf73c;
+                border: 1px solid #baf73c;
+                background-color: @blue;
+            }
+
+            &.status-paused {
+                color: #fde3a7;
+                border: 1px solid #fde3a7;
+                background-color: @blue;
+            }
+
+            &.status-deactivated,
+            &.status-incomplete,
+            &.status-expired {
+                color: darken(@status-gray, 20%);
+                border: 1px solid darken(@status-gray, 20%);
+                background-color: #dedede;
+            }
+        }
+
+        .event {
+            border: 1px solid fade(white, 25%);
+            margin: 0 -1em;
+            padding: 0.5em 1em;
+            position: relative;
+
+            .event-header,
+            .event-body {
+                margin-left: 3.25em;
+            }
+
+            .event-header {
+                margin-bottom: 0.15em;
+            }
+
+            .event-prefix {
+                position: absolute;
+                top: 0.1em;
+                left: 0.5em;
+                font-size: 2em;
+            }
+
+            .event-title {
+                color: #fff;
+                font-size: 1.1em;
+                font-weight: 300;
+                margin: 0;
+            }
+
+            .event-dates,
+            .event-location,
+            .event-proctor {
+                display: inline-block;
+                font-size: 0.85em;
+                margin-right: 1em;
+            }
+
+            .event-actions {
+                position: absolute;
+                top: 0.65em;
+                right: 1em;
+            }
+        }
+
+        .details {
+            margin-top: 1em;
+            position: relative;
+
+            .detail {
+                font-weight: 600;
+            }
+
+            .expiration-warning {
+                color: #d9534f;
+            }
+
+            &.status-ready,
+            &.status-in-progress,
+            &.status-paused {
+
+                .detail {
+                    color: tint(@blue, 20%);
+
+                    &.expiration-warning {
+                        color: #d9534f;
+                    }
+                }
+            }
+
+            &.status-complete {
+
+                .detail {
+                    color: tint(@blue, 20%);
+                }
+            }
+
+            &.status-deactivated,
+            &.status-incomplete,
+            &.status-expired {
+
+                .detail {
+                    color: tint(@blue, 20%);
+                }
+            }
+
+            .divider {
+                color: rgba(0, 0, 0, 0.55);
+            }
+        }
+
+        .accommodations,
+        ul.accommodations {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 0;
+            margin-top: .5em;
+
+            li:first-letter {
+                font-weight: bold;
+            }
+
+            .other {
+                font-style: italic;
+                margin-top: .5em;
+                word-wrap: break-word;
+
+                .other-label {
+                    font-weight: bold;
+                    font-style: normal;
+                }
+            }
+        }
+    }
+
+    &.clickable {
+        cursor: pointer;
+
+        &:hover {
+            cursor: pointer;
+            .wrapper {
+                box-shadow: 0px 0px 8px rgba(0,0,0, 0.4);
+                &.status-in-progress {
+                    border-color: darken(@blue, 10%);
+                }
+                &.status-complete {
+                    border-color: darken(@status-green, 10%);
+                }
+            }
+        }
+        &:active {
+            .wrapper {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .ccc-competency-results {
+        margin-top: 1.5em;
+
+        .title {
+            color: #2b4e82;
+            font-size: 1.5em;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .college-placements {
+            margin: 1em 0;
+            text-align: center;
+
+            .title {
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    .activation-card-actions {
+        display: inline-block;
+        margin-right: .5em;
+
+        &.open {
+            .caret {
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+
+        .dropdown-menu {
+            li {
+                a {
+                    display: block;
+                    padding: 3px 20px;
+                    clear: both;
+                    font-weight: 400;
+                    line-height: 1.42857143;
+                    color: #333;
+                    white-space: nowrap;
+
+                    &:hover,
+                    &:focus {
+                        color: #fff;
+                        text-decoration: none;
+                        background-color: @brand-primary;
+                        cursor: pointer;
+                    }
+
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

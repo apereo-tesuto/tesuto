@@ -1,0 +1,15 @@
+{
+	"id":"efbb69b1-c2ac-4d1c-a562-c991426827bq",
+	"family":"ZZ1",
+	"application":"sns-listener",
+	"version":"",
+	"status":"draft",
+	"category":"category",
+	"event":"event",
+	"competencyMapDiscipline":"competencyMapDsicipline",
+	"description":"description",
+	"title":"title",
+	"ruleSetRowIds":[
+		"efbb69b1-c2ac-4d1c-a562-c991426827bq"
+	]
+}

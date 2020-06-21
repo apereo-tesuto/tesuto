@@ -1,0 +1,42 @@
+ccc-activate-student {
+
+    .section-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: inherit;
+    }
+
+    .actions hr {
+        margin-top: 10px;
+    }
+
+    ccc-locations-list {
+        margin: 0 0 15px 0;
+    }
+
+    ccc-assessments-list {
+
+        ccc-radio-box {
+
+            label {
+                background: none;
+
+                &.selected {
+                    background-color: @blue3;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    ccc-user {
+
+        &.clickable {
+            cursor: default;
+            &:hover {
+                cursor: default;
+            }
+        }
+    }
+}

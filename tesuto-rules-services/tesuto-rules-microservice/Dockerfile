@@ -1,0 +1,30 @@
+# Student Profile Microservice Image
+#
+# NAMESPACE: docker.dev.ccctechcenter.org
+# IMAGE NAME: ccc-assess
+# TAG: 1.3.0
+
+FROM docker.dev.ccctechcenter.org/base-newrelic:1.3.0
+MAINTAINER Richard Scott Smith <ssmith@unicon.net>
+
+COPY includes/ /
+
+EXPOSE 8080 \
+8443 \
+10000 \
+10001 \
+8000 \
+1099
+
+# Set the timezone to UTC inside the docker container
+ENV TZ=UTC
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN cd /tmp/ && \
+    wget --header='Cookie: oraclelicense=accept-securebackup-cookie'  http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip && \
+    unzip jce_policy-8.zip && \
+    rm jce_policy-8.zip && \
+    yes | cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /usr/lib/jvm/java-8-oracle/jre/lib/security/
+
+#CMD while true; do sleep 1000; done
+CMD ["/bin/bash", "/runService.sh"]

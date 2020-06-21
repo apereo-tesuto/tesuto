@@ -1,0 +1,75 @@
+package org.cccnext.tesuto.rules;
+
+import java.util.Map
+import java.util.List
+import java.util.ArrayList
+import java.util.Date
+import java.lang.Double
+import java.lang.String
+import java.util.stream.Collectors
+import org.ccctc.common.droolscommon.RulesAction
+import function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement
+import org.cccnext.tesuto.placement.view.MmapDataSourceType
+import org.cccnext.tesuto.rules.view.BasicStudentView
+import org.cccnext.tesuto.domain.multiplemeasures.VariableSet
+import org.cccnext.tesuto.domain.multiplemeasures.Fact
+import org.cccnext.tesuto.domain.multiplemeasures.PlacementComponentActionResult
+import org.cccnext.tesuto.placement.view.MmapDataSourceType
+import function org.apache.commons.lang3.StringUtils.isBlank
+import function org.cccnext.tesuto.rules.function.DrlFunctions.STUDENT_VIEW_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.MULTIPLE_MEASURE_VARIABLE_SET_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.SUBJECT_AREA_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.TRACKING_ID_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.MISCODE_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.RULE_SET_ID_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.HIGHEST_READING_LEVEL_COURSE
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToString
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement
+
+rule "CAL-Pass-ESL-rule-template" when
+    map : Map()
+    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+    trackingId : String() from map.get(TRACKING_ID_KEY())
+    facts : Map() from variableSet.facts
+    multipleMeasureVariableSetId: String() from variableSet.id
+    dataSourceType: String() from variableSet.sourceType
+    dataSource: String() from variableSet.source
+    dataSourceDate: Date() from variableSet.sourceDate
+    
+   ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+   cum_gpa : Double(this >= ${gpa_cum}) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+   cst : Integer(this >= ${cst}) from parseFactToInteger((Fact)facts.get("cst"))
+   cst_english : Integer(this >= ${cst_english}) from parseFactToInteger((Fact)facts.get("cst_english"))
+   grade : Integer(this == ${grade_level}) from parseFactToInteger((Fact)facts.get("grade_level"))
+   english : Double(this >= ${english}) from parseFactToDouble((Fact)facts.get("english"))
+    highestReadingLevel : String(this.equals("${highest_level_reading_course}")) from  map.get(HIGHEST_READING_LEVEL_COURSE())
+    then
+     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+        placement.setCccid(student.getCccid());
+        placement.setTransferLevel("${transfer_level}");
+        placement.setLevelsBelowTransfer(${levels_below_transfer});
+        placement.setSubjectArea(subjectArea);
+        placement.setCollegeId(cccMisCode);
+        placement.setTrackingId(trackingId);
+        placement.setRuleId("${rule_id}");
+        placement.setRuleSetId(ruleSetId);
+        placement.setRuleSetRowId("${rule_set_row_id}");
+        placement.setRowNumber("${row_number}");
+        placement.setCompetencyMapDiscipline("ESL");
+        placement.addProgram("esl");
+        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+        placement.setDataSource(dataSource);
+        placement.setDataSourceDate(dataSourceDate);
+        placement.setDataSourceType(dataSourceType);
+        placement.setStandalonePlacement(true);
+        placement.setInsufficientData(${insufficient_data});
+        filterByCollegeSubjectPlacement(actions, placement);
+end

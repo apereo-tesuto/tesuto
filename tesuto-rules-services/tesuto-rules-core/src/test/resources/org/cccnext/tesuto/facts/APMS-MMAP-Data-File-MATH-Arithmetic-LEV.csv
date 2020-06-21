@@ -1,0 +1,34 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result
+cccid,DATA_SOURCE,DATA_SOURCE_TYPE,EP01,EP02,EP03,EP04,EP05,EP06,EP07,EP08,EP09,transferLevel,program
+1071,APMS,Self Reported,a,a,D, , ,f,f,e,d,D,arithmetic
+1075,APMS,Self Reported,a,a,u, , ,f,e,f,e,D,arithmetic
+1101,APMS,Self Reported,a,b,z,b,a,m,g,f,g,D,arithmetic
+1104,APMS,Self Reported,a,a,u,c,f,f,h,f,h,D,arithmetic
+1110,APMS,Self Reported,a,a,u,c,f,e,g,e,g,D,arithmetic
+1113,APMS,Self Reported,a,a,u, , ,e,g,e,d,D,arithmetic
+1140,APMS,Self Reported,a,a,u,c,n,e,n,e,j,D,arithmetic
+1144,APMS,Self Reported,a,a,A,c,j,g,j,b,e,D,arithmetic
+1150,APMS,Self Reported,a,a,u,c,n,f,n,m,j,D,arithmetic
+1169,APMS,Self Reported,a,b,v, , ,h,a,h,a,D,arithmetic
+1181,APMS,Self Reported,a,a,u, , ,f,c,f,c,D,arithmetic
+1184,APMS,Self Reported,a,a,u, , ,f,g,f,g,D,arithmetic
+1205,APMS,Self Reported,a,a,x,c,n,h,e,h,e,D,arithmetic
+1238,APMS,Self Reported,a,a,u, , ,f,g,f,g,D,arithmetic
+1240,APMS,Self Reported,a,a,u,c,c,f,e,b,d,D,arithmetic
+1250,APMS,Self Reported,a,a,w,c,j,k,j,e,g,D,arithmetic
+1256,APMS,Self Reported,a,a,u,c,d,b,g,b,g,D,arithmetic
+1258,APMS,Self Reported,a,a,u, , ,f,g,f,g,D,arithmetic
+1260,APMS,Self Reported,a,a,C,c,a,f,h,f,h,D,arithmetic
+1266,APMS,Self Reported,a,a,x,c,f,f,f,f,g,D,arithmetic
+1304,APMS,Self Reported,a,a,E, , ,f,d,e,b,D,arithmetic
+1306,APMS,Self Reported,a,a,u, , ,f,g,e,c,D,arithmetic
+1330,APMS,Self Reported,a,a,z,b,f,k,f,k,f,D,arithmetic
+1333,APMS,Self Reported,a,a,u, , ,h,g,f,d,D,arithmetic
+1370,APMS,Self Reported,a,a,C,c,d,m,g,m,g,D,arithmetic
+1386,APMS,Self Reported,a,a,w,c,a,e,g,e,c,D,arithmetic
+1420,APMS,Self Reported,a,a,u, , ,k,f,k,f,D,arithmetic
+1435,APMS,Self Reported,a,a,u,c,e,f,e,f,h,D,arithmetic
+1446,APMS,Self Reported,a,a,v,c,g,e,j,a,g,D,arithmetic
+1459,APMS,Self Reported,a,a,u,c,g,e,g,e,g,D,arithmetic
+1465,APMS,Self Reported,a,b,A,c,n,f,j,e,d,D,arithmetic
+1466,APMS,Self Reported,a,a,u,c,g,f,j,m,j,D,arithmetic

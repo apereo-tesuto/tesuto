@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Document : ehcache.xml
+Created on : July 7, 2016, 8:53 PM
+Author : Richard Scott Smith <scott.smith@isostech.com>
+Description: Caching configuration for directly caching Java Objects, as opposed to database objects. -->
+
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+	updateCheck="false">
+	<!-- Please see http://ehcache.sourceforge.net/documentation/configuration.html for detailed information on how
+	to configure caches in this file + -->
+
+	<!-- Location of persistent caches on disk -->
+	<diskStore path="java.io.tmpdir/EhCacheSpringAnnotationsTesuto" />
+
+	<defaultCache eternal="false" maxElementsInMemory="1000"
+		overflowToDisk="false" diskPersistent="false" timeToIdleSeconds="0"
+		timeToLiveSeconds="600" memoryStoreEvictionPolicy="LRU" />
+
+	<!-- Hibernate second level caching -->
+	<cache name="userAccount" maxElementsInMemory="5000" eternal="true"
+		overflowToDisk="false" />
+
+	<!-- Make sure to modify the Redis caching expirations in the root-context.xml if you change these values! -->
+	<!-- Application level cache for invariant methods -->
+	<cache name="UserDtoAssembler" eternal="false"
+		maxElementsInMemory="1000" overflowToDisk="false" diskPersistent="false"
+		timeToIdleSeconds="0" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="StudentService" eternal="false"
+		maxElementsInMemory="1000" overflowToDisk="false" diskPersistent="false"
+		timeToIdleSeconds="0" timeToLiveSeconds="7200"
+		memoryStoreEvictionPolicy="LRU" />
+</ehcache>

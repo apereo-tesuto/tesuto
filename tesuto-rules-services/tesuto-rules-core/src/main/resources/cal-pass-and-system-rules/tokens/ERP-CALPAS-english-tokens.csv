@@ -1,0 +1,6 @@
+rule_set_id,englishY,englishA,englishB,englishC,transfer_level,levels_below_transfer,insufficient_data
+${rule_set_id},true,,,,Y,0,false
+${rule_set_id},,true,,,A,1,false
+${rule_set_id},,,true,,B,2,false
+${rule_set_id},,,,true,C,3,false
+${rule_set_id},false,false,false,false,D,4,false

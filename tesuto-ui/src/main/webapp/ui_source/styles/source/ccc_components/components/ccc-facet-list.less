@@ -1,0 +1,62 @@
+ccc-facet-list {
+
+    .ccc-facet-list-facets {
+        background: rgba(255,255,255, 0.9);
+        padding: 8px 4px;
+    }
+
+    .ccc-facet-list-header {
+        .ccc-facet-list-clear-all {}
+    }
+
+    .ccc-facet-list-facet {
+
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+
+        .ccc-facet-list-facet-title {
+            font-weight: bold;
+            font-size: 110%;
+            border-bottom: 1px solid rgba(0,0,0, 0.1);
+            margin-bottom: 3px;
+            margin-top: 0px;
+        }
+
+        .ccc-facet-list-facet-value {
+
+            position: relative;
+            cursor: pointer;
+
+            padding: 5px 0px 5px 0px;
+
+            &:hover {
+                background: rgba(0,0,0, 0.05);
+            }
+
+            input {
+                position: absolute;
+                top: 6px;
+                left: 3px;
+            }
+
+            .ccc-facet-list-facet-value-title {
+                padding-left: 22px;
+                padding-right: 50px;
+                font-size: 90%;
+                cursor: pointer;
+                text-transform: capitalize;
+                font-weight: normal;
+                margin-bottom: 0px;
+                word-wrap: break-word;
+            }
+            .ccc-facet-list-facet-value-count {
+                font-size: 90%;
+                position: absolute;
+                right: 5px;
+                color: @brand-primary;
+            }
+        }
+    }
+}

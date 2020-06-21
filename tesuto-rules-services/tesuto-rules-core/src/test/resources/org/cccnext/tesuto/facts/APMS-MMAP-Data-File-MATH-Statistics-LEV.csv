@@ -1,0 +1,37 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result
+cccid,DATA_SOURCE,DATA_SOURCE_TYPE,EP01,EP02,EP03,EP04,EP05,EP06,EP07,EP08,EP09,transferLevel,program
+6,APMS,Self Reported,a,a,d,c,a,e,h,e,h,Y,math_stat
+66,APMS,Self Reported,a,a,f,c,d,d,d,d,d,Y,math_stat
+92,APMS,Self Reported,a,a,f,h,c,f,c,e,c,Y,math_stat
+154,APMS,Self Reported,a,a,a,c,a,e,c,e,c,Y,math_stat
+172,APMS,Self Reported,a,c,g,h,n,f,n,c,j,Y,math_stat
+248,APMS,Self Reported,a,a,h,c,c,m,d,e,c,Y,math_stat
+300,APMS,Self Reported,a,c,f,b,a,e,g,e,g,Y,math_stat
+318,APMS,Self Reported,a,a,g,c,d,d,n,d,g,Y,math_stat
+341,APMS,Self Reported,a,a,i,c,d,f,j,e,c,Y,math_stat
+376,APMS,Self Reported,a,a,g,c,a,e,e,e,e,Y,math_stat
+381,APMS,Self Reported,a,a,i,c,d,f,e,b,c,Y,math_stat
+412,APMS,Self Reported,a,a,g,c,a,f,n,b,j,Y,math_stat
+500,APMS,Self Reported,a,a,f,c,a,k,j,e,a,Y,math_stat
+586,APMS,Self Reported,a,a,g,c,a,f,h,e,h,Y,math_stat
+604,APMS,Self Reported,a,a,e,c,c,e,g,e,g,Y,math_stat
+658,APMS,Self Reported,a,a,c, , ,f,d,e,f,Y,math_stat
+691,APMS,Self Reported,a,a,f,b,b,e,f,e,f,Y,math_stat
+723,APMS,Self Reported,a,a,b,a,a,d,a,e,a,Y,math_stat
+781,APMS,Self Reported,a,a,a,b,a,k,d,b,d,Y,math_stat
+899,APMS,Self Reported,a,a,c,c,a,e,a,e,a,Y,math_stat
+1002,APMS,Self Reported,a,a,g, , ,b,d,b,g,Y,math_stat
+1030,APMS,Self Reported,a,a,i, , ,e,b,e,d,Y,math_stat
+1059,APMS,Self Reported,a,a,d, , ,k,g,b,f,Y,math_stat
+1098,APMS,Self Reported,a,a,i,a,g,f,g,b,e,Y,math_stat
+1126,APMS,Self Reported,a,a,i,c,c,b,d,b,b,Y,math_stat
+1127,APMS,Self Reported,a,a,i,c,a,e,f,e,f,Y,math_stat
+1148,APMS,Self Reported,a,a,i, , ,e,h,e,a,Y,math_stat
+1190,APMS,Self Reported,a,a,f,c,a,e,d,e,d,Y,math_stat
+1200,APMS,Self Reported,a,a,f,e,f,c,g,c,g,Y,math_stat
+1201,APMS,Self Reported,a,a,f,b,b,f,g,b,c,Y,math_stat
+1261,APMS,Self Reported,a,a,g,h,n,e,j,b,d,Y,math_stat
+1275,APMS,Self Reported,a,a,c, , ,j,c,b,a,Y,math_stat
+1318,APMS,Self Reported,a,a,c,b,a,f,d,b,g,Y,math_stat
+1337,APMS,Self Reported,a,a,f,c,d,e,d,e,b,Y,math_stat
+1423,APMS,Self Reported,a,a,b,c,a,b,a,b,a,Y,math_stat

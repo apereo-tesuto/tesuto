@@ -1,0 +1,11 @@
+{
+    "CCC_VIEW_ASSESSMENT_PLAYER": {
+        "PAGE_TITLE": "Assessment Player Prototype",
+        "COMPLETION": {
+            "PAGE_TITLE": "Assessment Complete",
+            "TITLE": "You did it. Congratulations on completing your assessment.",
+            "BODY": "Your <strong>{{ASSESSMENT_NAME}}</strong> assessment is being processed, please close this window and go back to the student dashboard.",
+            "BUTTON": "Go to your Student Dashboard"
+        }
+    }
+}

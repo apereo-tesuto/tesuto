@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	                           http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+                           	   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+                               	   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+
+	<bean id="activationDao" class="org.cccnext.tesuto.activation.jpa.JpaActivationDao" />
+
+	<bean id="jpaActivationAssembler" class="org.cccnext.tesuto.activation.jpa.JpaActivationAssembler" />
+	<bean id="jpaIndividualActivationAssembler" class="org.cccnext.tesuto.activation.jpa.JpaIndividualActivationAssembler" />
+	<bean id="jpaTestEventActivationAssembler" class="org.cccnext.tesuto.activation.jpa.JpaTestEventActivationAssembler" /> 
+	<bean id="jpaTestEventAssembler" class="org.cccnext.tesuto.activation.jpa.JpaTestEventAssembler" />
+	<bean id="jpaActivationViewAssembler" class="org.cccnext.tesuto.activation.jpa.JpaActivationViewAssembler" />
+
+
+	<bean id="activationService" class="org.cccnext.tesuto.activation.ActivationService">
+		<property name="dao" ref="activationDao" />
+	</bean>
+
+	<bean id="publicPasscodeConfiguration"
+		class="org.cccnext.tesuto.activation.PasscodeServiceConfiguration">
+		<property name="minExpiration" value="${passcode.public.minExpiration}" />
+		<property name="minuteHand" value="${passcode.public.minuteHand}" />
+		<property name="hourHand" value="${passcode.public.hourHand}" />
+		<property name="prefix" value="${passcode.public.prefix}" />
+		<property name="passcodeLength" value="${passcode.public.length}" />
+	</bean>
+
+	<bean id="privatePasscodeConfiguration"
+		class="org.cccnext.tesuto.activation.PasscodeServiceConfiguration">
+		<property name="minExpiration" value="${passcode.private.minExpiration}" />
+		<property name="minuteHand" value="${passcode.private.minuteHand}" />
+		<property name="hourHand" value="${passcode.private.hourHand}" />
+		<property name="prefix" value="${passcode.private.prefix}" />
+		<property name="passcodeLength" value="${passcode.private.length}" />
+	</bean>
+
+	<bean id="remotePasscodeConfiguration"
+		class="org.cccnext.tesuto.activation.PasscodeServiceConfiguration">
+		<property name="prefix" value="${passcode.remote.prefix}" />
+		<property name="passcodeLength" value="${passcode.remote.length}" />
+	</bean>
+
+</beans>

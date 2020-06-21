@@ -1,0 +1,28 @@
+{
+	"id": "efbb69b1-c2ac-4d1c-a562-c991426827bq",
+	"family": "ZZ1",
+	"competencyMapDiscipline": "english",
+	"category": "mmap_placement_english",
+	"application": "sns-listener",
+	"version": "1",
+	"status": "published",
+	"event":"event",
+	"description":"description",
+	"ruleId": "efbb69b1-c2ac-4d1c-a562-c991426827bb",
+	"title": "Is Veteran",
+	"variableRows": [
+		{
+			"name": "variableRowName",
+			"variables": [
+				{
+					"name": "cccid",
+					"value": "AAA4444"
+				},
+				{
+					"name": "lower",
+					"value": "1.0"
+				}
+			]
+		}
+	]
+}

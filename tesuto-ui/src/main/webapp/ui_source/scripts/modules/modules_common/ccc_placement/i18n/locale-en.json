@@ -1,0 +1,36 @@
+{
+    "CCC_PLACEMENT": {
+        "CCC_PERFORMANCE_BY_CATEGORY": {
+            "LABEL": {
+                "CATEGORY": "Category",
+                "LOW": "Low",
+                "MEDIUM": "Medium",
+                "HIGH": "High"
+            }
+        },
+        "CCC_OVERALL_PERFORMANCE": {
+            "TITLE": "Overall Performance",
+            "LABEL": {
+                "NOVICE": "Novice",
+                "BELOW_INT": "Below Intermediate",
+                "INT": "Intermediate",
+                "ABOVE_INT": "Above Intermediate",
+                "ADVANCED": "Advanced"
+            }
+        },
+        "CCC_COMPETENCY_RESULTS": {
+            "SKILLS_HAVE": "Demonstrate these abilities:",
+            "SKILLS_WORK": "Work on these abilities next:",
+            "ERROR": "Unfortunately your competency results are not available at this time. Please see a counselor if you have any questions."
+        },
+        "CCC_STUDENT_TEST_RESULTS": {
+            "EXPLAIN": "Assessment results are determined by competency associated with the institution developing the examination.",
+            "RESULTS_ERROR": "Unfortunately your test results are not available at this time. Please see a counselor if you have any questions.",
+            "TITLE": {
+                "CATEGORY": "Performance by category",
+                "TYPICALLY": "Students with this performance typically:"
+            },
+            "COMPLETED": "Completed"
+        }
+    }
+}

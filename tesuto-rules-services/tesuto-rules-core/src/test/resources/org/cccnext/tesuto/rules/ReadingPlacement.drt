@@ -1,0 +1,30 @@
+rule "Reading_Placement_${miscode}_${subject_area}_${transfer_level}_${rule_id}_${row_number}" when
+    map : Map()
+    student : BasicStudentView() from map.get("STUDENT_VIEW")
+    variableSet : VariableSet() from map.get("MULTIPLE_MEASURE_VARIABLE_SET")
+    facts : Map() from variableSet.facts
+    multipleMeasureVariableSetId: String() from variableSet.id
+    cum_gpa : Double(isBlank("${gpa_cum}") || this >= parseDouble("${gpa_cum}")) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+    cst : Integer(isBlank("${cst}") || this >= parseInteger("${cst}")) from parseFactToInteger((Fact)facts.get("cst"))
+    cst_english : Integer(isBlank("${cst_english}") || this >= parseInteger("${cst_english}")) from parseFactToInteger((Fact)facts.get("cst_english"))
+    grade : Integer(isBlank("${grade_level}") || this == parseInteger("${grade_level}")) from parseFactToInteger((Fact)facts.get("grade_level"))
+    english : Double(isBlank("${english}") ||this >= parseDouble("${english}")) from parseFactToDouble((Fact)facts.get("english"))
+    program : String(isBlank("${program}") ||this.equals("${program}")) from parseFactToString((Fact)facts.get("program"))
+    collegeAssociations : Map(isBlank("${miscode}") || this.containsKey("${miscode}")) from student.collegeStatuses
+    then
+     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+        placement.setCccid(student.getCccid());
+        placement.setTransferLevel("${transfer_level}");
+        placement.setLevelsBelowTransfer(${transfer_level_index});
+        placement.setSubjectArea("${subject_area}");
+        placement.setCollegeId("${miscode}");
+         placement.setRuleId("${rule_id}");
+        placement.setRuleSetId("${rule_set_id}");
+        placement.setRuleSetRowId("${rule_set_row_id}");
+        placement.setRowNumber("${row_number}");
+        placement.setCompetencyMapDiscipline("ENGLISH");
+        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+        placement.addProgram("${program}");
+        filterByCollegeSubjectPlacement(actions, placement);
+end

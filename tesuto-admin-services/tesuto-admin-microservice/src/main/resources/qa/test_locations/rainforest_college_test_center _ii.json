@@ -1,0 +1,16 @@
+{
+		"id": "f59863ba-0fdd-4f04-a334-360b6f717c31",
+		"name": "Rainforest College Test Center II",
+		"streetAddress1": null,
+		"streetAddress2": null,
+		"city": null,
+		"postalCode": null,
+		"locationType": "ON_SITE",
+		"locationStatus": "ACTIVE",
+		"collegeId": "ZZ2",
+		"collegeName": "Rainforest College",
+		"capacity": 40,
+		"lastUpdatedDate": 1485793699243,
+		"enabled": true,
+		"createdOnDate": 1485555538501
+	}

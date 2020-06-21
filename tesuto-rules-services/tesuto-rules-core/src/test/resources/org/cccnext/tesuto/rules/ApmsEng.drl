@@ -1,0 +1,423 @@
+package net.ccctechcenter.drools
+
+import java.util.Map
+import java.util.List
+import java.util.ArrayList
+import org.ccctc.common.droolscommon.RulesAction
+
+import java.util.Date
+import java.lang.Double
+import java.lang.String
+import java.util.stream.Collectors
+import org.cccnext.tesuto.rules.view.BasicStudentView
+import org.cccnext.tesuto.domain.multiplemeasures.VariableSet
+import org.cccnext.tesuto.domain.multiplemeasures.Fact
+import org.cccnext.tesuto.domain.multiplemeasures.PlacementComponentActionResult
+import org.cccnext.tesuto.placement.view.MmapDataSourceType
+import function org.apache.commons.lang3.StringUtils.isBlank
+import function org.cccnext.tesuto.rules.function.DrlFunctions.STUDENT_VIEW_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.MULTIPLE_MEASURE_VARIABLE_SET_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.SUBJECT_AREA_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.TRACKING_ID_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.MISCODE_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.RULE_SET_ID_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToString
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement
+
+rule "Statewide MMAP English Decision Logic:8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3:rowname-:rulesetrowid-3b737ac2-9979-45d7-a2d6-e71517452eb6:rulesetid-null:1"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate
+	ruleSetId :  String(this == "${rule_set_id}") from map.get(RULE_SET_ID_KEY())
+	cum_gpa : Double(this >=  2.6) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this == 11) from parseFactToInteger((Fact)facts.get("grade_level"))
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("Y");
+	        placement.setLevelsBelowTransfer(0);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	        placement.setTrackingId(trackingId);
+	        placement.setRuleId("8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("3b737ac2-9979-45d7-a2d6-e71517452eb6");
+	        placement.setRowNumber("1");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("English");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Statewide MMAP English Decision Logic:8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3:rowname-:rulesetrowid-3b737ac2-9979-45d7-a2d6-e71517452eb6:rulesetid-null:2"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate
+	ruleSetId :  String(this == "${rule_set_id}") from map.get(RULE_SET_ID_KEY())
+	cum_gpa : Double(this >=  2.3) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this == 11) from parseFactToInteger((Fact)facts.get("grade_level"))
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("A");
+	        placement.setLevelsBelowTransfer(1);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	        placement.setTrackingId(trackingId);
+	        placement.setRuleId("8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("3b737ac2-9979-45d7-a2d6-e71517452eb6");
+	        placement.setRowNumber("2");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("English");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Statewide MMAP English Decision Logic:8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3:rowname-:rulesetrowid-3b737ac2-9979-45d7-a2d6-e71517452eb6:rulesetid-null:3"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate
+	ruleSetId :  String(this == "${rule_set_id}") from map.get(RULE_SET_ID_KEY())
+	cum_gpa : Double(this >=  2) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this == 11) from parseFactToInteger((Fact)facts.get("grade_level"))
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("B");
+	        placement.setLevelsBelowTransfer(2);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	        placement.setTrackingId(trackingId);
+	        placement.setRuleId("8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("3b737ac2-9979-45d7-a2d6-e71517452eb6");
+	        placement.setRowNumber("3");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("English");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Statewide MMAP English Decision Logic:8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3:rowname-:rulesetrowid-3b737ac2-9979-45d7-a2d6-e71517452eb6:rulesetid-null:4"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate
+	ruleSetId :  String(this == "${rule_set_id}") from map.get(RULE_SET_ID_KEY())
+	cum_gpa : Double(this >=  1.4) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this == 11) from parseFactToInteger((Fact)facts.get("grade_level"))
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("C");
+	        placement.setLevelsBelowTransfer(3);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	        placement.setTrackingId(trackingId);
+	        placement.setRuleId("8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("3b737ac2-9979-45d7-a2d6-e71517452eb6");
+	        placement.setRowNumber("4");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("English");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Statewide MMAP English Decision Logic:8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3:rowname-:rulesetrowid-3b737ac2-9979-45d7-a2d6-e71517452eb6:rulesetid-null:5"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate
+	ruleSetId :  String(this == "${rule_set_id}") from map.get(RULE_SET_ID_KEY())
+	cum_gpa : Double(this >=  2.6) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this == 12) from parseFactToInteger((Fact)facts.get("grade_level"))
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("Y");
+	        placement.setLevelsBelowTransfer(0);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	        placement.setTrackingId(trackingId);
+	        placement.setRuleId("8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("3b737ac2-9979-45d7-a2d6-e71517452eb6");
+	        placement.setRowNumber("5");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("English");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Statewide MMAP English Decision Logic:8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3:rowname-:rulesetrowid-3b737ac2-9979-45d7-a2d6-e71517452eb6:rulesetid-null:6"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate
+	ruleSetId :  String(this == "${rule_set_id}") from map.get(RULE_SET_ID_KEY())
+	cum_gpa : Double(this >=  2.2) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this == 12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	english : Double(this >= 2) from parseFactToDouble((Fact)facts.get("english"))
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("A");
+	        placement.setLevelsBelowTransfer(1);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	        placement.setTrackingId(trackingId);
+	        placement.setRuleId("8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("3b737ac2-9979-45d7-a2d6-e71517452eb6");
+	        placement.setRowNumber("6");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("English");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Statewide MMAP English Decision Logic:8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3:rowname-:rulesetrowid-3b737ac2-9979-45d7-a2d6-e71517452eb6:rulesetid-null:7"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate
+	ruleSetId :  String(this == "${rule_set_id}") from map.get(RULE_SET_ID_KEY())
+	cum_gpa : Double(this >=  1.8) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this == 12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	english : Double(this >= 1) from parseFactToDouble((Fact)facts.get("english"))
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("B");
+	        placement.setLevelsBelowTransfer(2);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	        placement.setTrackingId(trackingId);
+	        placement.setRuleId("8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("3b737ac2-9979-45d7-a2d6-e71517452eb6");
+	        placement.setRowNumber("7");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("English");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Statewide MMAP English Decision Logic:8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3:rowname-:rulesetrowid-3b737ac2-9979-45d7-a2d6-e71517452eb6:rulesetid-null:8"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate
+	ruleSetId :  String(this == "${rule_set_id}") from map.get(RULE_SET_ID_KEY())
+	cum_gpa : Double(this >=  1.8) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	cst : Integer(this >= 288) from parseFactToInteger((Fact)facts.get("cst"))
+	grade : Integer(this == 12) from parseFactToInteger((Fact)facts.get("grade_level"))
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("B");
+	        placement.setLevelsBelowTransfer(2);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	        placement.setTrackingId(trackingId);
+	        placement.setRuleId("8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("3b737ac2-9979-45d7-a2d6-e71517452eb6");
+	        placement.setRowNumber("8");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("English");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Statewide MMAP English Decision Logic:8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3:rowname-:rulesetrowid-3b737ac2-9979-45d7-a2d6-e71517452eb6:rulesetid-null:9"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate
+	ruleSetId :  String(this == "${rule_set_id}") from map.get(RULE_SET_ID_KEY())
+	cum_gpa : Double(this >=  1.7) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this == 12) from parseFactToInteger((Fact)facts.get("grade_level"))
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("C");
+	        placement.setLevelsBelowTransfer(3);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	        placement.setTrackingId(trackingId);
+	        placement.setRuleId("8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("3b737ac2-9979-45d7-a2d6-e71517452eb6");
+	        placement.setRowNumber("9");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("English");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Statewide MMAP English Decision Logic:8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3:rowname-:rulesetrowid-3b737ac2-9979-45d7-a2d6-e71517452eb6:rulesetid-null:10"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate
+	ruleSetId :  String(this == "${rule_set_id}") from map.get(RULE_SET_ID_KEY())
+	cum_gpa : Double(this >=  1.5) from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this == 12) from parseFactToInteger((Fact)facts.get("grade_level"))
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("C");
+	        placement.setLevelsBelowTransfer(3);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	        placement.setTrackingId(trackingId);
+	        placement.setRuleId("8b63376e-bfa3-4986-8e3e-79ff2ae9a5c3");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("3b737ac2-9979-45d7-a2d6-e71517452eb6");
+	        placement.setRowNumber("10");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("English");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end

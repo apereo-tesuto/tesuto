@@ -1,0 +1,254 @@
+    {
+    "disciplineId": 5297,
+    "collegeId": "ZZ1",
+    "title": "ESL Discipline",
+    "description": "",
+    "competencyMapDiscipline": "ESL",
+    "competencyMapVersion": 1,
+    "sisCode": "SIS Test Name",
+    "usePrereqPlacementMethod": false,
+    "noPlacementMessage": "Placements are not currently available, please contact your counselor.",
+    "disciplineSequences": [
+        {
+            "disciplineId": 5297,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "cb21": {
+                "cb21Code": "Y",
+                "levelsBelowTransfer": 0,
+                "createdOn": 1485548613875,
+                "updatedOn": 1485548613875
+            },
+            "explanation": null,
+            "showStudent": false,
+            "mappingLevel": null,
+            "disciplineSequenceCourses": [
+                {
+                    "disciplineId": 5297,
+                    "courseId": 5299,
+                    "cb21Code": "Y",
+                    "courseGroup": 1,
+                    "auditId": 53000,
+                    "course": {
+                        "courseId": 5299,
+                        "name": "ESL 100",
+                        "cid": "ESL 100",
+                        "subject": "ESL 100",
+                        "number": "ESL 100",
+                        "description": "ESL 100",
+                        "mmapEquivalentCode": "",
+                        "competencyGroupLogic": "[5302]",
+                        "competencyGroups": [
+                            {
+                                "competencyGroupId": 5302,
+                                "probabilitySuccess": 50,
+                                "title": "ESL 100 Competency Group",
+                                "competencyGroupMappings": [
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-10033",
+                                        "auditId": 53055
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-10001",
+                                        "auditId": 53056
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-10057",
+                                        "auditId": 53057
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-10009",
+                                        "auditId": 53051
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-10041",
+                                        "auditId": 53058
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-10049",
+                                        "auditId": 53053
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-10017",
+                                        "auditId": 53054
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-10025",
+                                        "auditId": 53052
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-20017",
+                                        "auditId": 53061
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-20001",
+                                        "auditId": 53050
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-40001",
+                                        "auditId": 53059
+                                    },
+                                    {
+                                        "competencyGroupId": 5302,
+                                        "competencyId": "cesl_16-20009",
+                                        "auditId": 53060
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "disciplineId": 5297,
+            "cb21Code": "B",
+            "courseGroup": 2,
+            "cb21": {
+                "cb21Code": "B",
+                "levelsBelowTransfer": 2,
+                "createdOn": 1485548613875,
+                "updatedOn": 1485548613875
+            },
+            "explanation": null,
+            "showStudent": false,
+            "mappingLevel": null,
+            "disciplineSequenceCourses": [
+                {
+                    "disciplineId": 5297,
+                    "courseId": 5314,
+                    "cb21Code": "B",
+                    "courseGroup": 2,
+                    "auditId": 53002,
+                    "course": {
+                        "courseId": 5314,
+                        "name": "ESL B -2",
+                        "cid": "ESL B -2",
+                        "subject": "ESL B -2",
+                        "number": "ESL B -2",
+                        "description": "ESL B -2",
+                        "mmapEquivalentCode": "",
+                        "competencyGroupLogic": "[5316]",
+                        "competencyGroups": [
+                            {
+                                "competencyGroupId": 5316,
+                                "probabilitySuccess": 50,
+                                "title": "ESL B -2 Competency Group",
+                                "competencyGroupMappings": [
+                                    {
+                                        "competencyGroupId": 5316,
+                                        "competencyId": "cesl_16-10003",
+                                        "auditId": 53192
+                                    },
+                                    {
+                                        "competencyGroupId": 5316,
+                                        "competencyId": "cesl_16-10054",
+                                        "auditId": 53067
+                                    },
+                                    {
+                                        "competencyGroupId": 5316,
+                                        "competencyId": "cesl_16-10011",
+                                        "auditId": 53068
+                                    },
+                                    {
+                                        "competencyGroupId": 5316,
+                                        "competencyId": "cesl_16-40027",
+                                        "auditId": 53069
+                                    },
+                                    {
+                                        "competencyGroupId": 5316,
+                                        "competencyId": "cesl_16-40043",
+                                        "auditId": 53191
+                                    },
+                                    {
+                                        "competencyGroupId": 5316,
+                                        "competencyId": "cesl_16-40022",
+                                        "auditId": 53190
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "disciplineId": 5297,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "cb21": {
+                "cb21Code": "A",
+                "levelsBelowTransfer": 1,
+                "createdOn": 1485548613875,
+                "updatedOn": 1485548613875
+            },
+            "explanation": null,
+            "showStudent": false,
+            "mappingLevel": null,
+            "disciplineSequenceCourses": [
+                {
+                    "disciplineId": 5297,
+                    "courseId": 5308,
+                    "cb21Code": "A",
+                    "courseGroup": 1,
+                    "auditId": 53001,
+                    "course": {
+                        "courseId": 5308,
+                        "name": "ESL A -1",
+                        "cid": "ESL A -1",
+                        "subject": "ESL A -1",
+                        "number": "ESL A -1",
+                        "description": "ESL A -1",
+                        "mmapEquivalentCode": "",
+                        "competencyGroupLogic": "[5310]",
+                        "competencyGroups": [
+                            {
+                                "competencyGroupId": 5310,
+                                "probabilitySuccess": 50,
+                                "title": "ESL A -1 Competency Group",
+                                "competencyGroupMappings": [
+                                    {
+                                        "competencyGroupId": 5310,
+                                        "competencyId": "cesl_16-10010",
+                                        "auditId": 53062
+                                    },
+                                    {
+                                        "competencyGroupId": 5310,
+                                        "competencyId": "cesl_16-10030",
+                                        "auditId": 53065
+                                    },
+                                    {
+                                        "competencyGroupId": 5310,
+                                        "competencyId": "cesl_16-40018",
+                                        "auditId": 53063
+                                    },
+                                    {
+                                        "competencyGroupId": 5310,
+                                        "competencyId": "cesl_16-40042",
+                                        "auditId": 53066
+                                    },
+                                    {
+                                        "competencyGroupId": 5310,
+                                        "competencyId": "cesl_16-10002",
+                                        "auditId": 53064
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,380 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Open+Sans+Condensed:300,700);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Sans+Caption:400,700|PT+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy);
+
+html {
+    background: @grayscale1;
+}
+
+body {
+    font-weight: 400;
+    font-family: @ccc-font-body;
+    font-size: 14px;
+    background: transparent;
+    -webkit-overflow-scrolling: touch;
+}
+
+h1 {
+    font-size: 36px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4 {
+    margin-top: 0px;
+    i.fa-spinner {
+        opacity: 0.4;
+    }
+}
+h4, h5, h6 {
+    font-size: 18px;
+}
+
+.ccc-form-title .ccc-form-section-title {
+    font-family: @ccc-font-body;
+}
+
+.section-title, .subtitle {
+    font-family: @ccc-font-title;
+    text-transform: uppercase;
+
+    &.section-title-large {
+        font-size: 200%;
+        margin-bottom: 15px;
+    }
+}
+
+.ccc-highlight {
+    color: @brand-primary;
+}
+
+.ccc-secondary-info {
+    color: @grayscale7;
+}
+
+.ccc-lowercase {
+    text-transform: lowercase;
+}
+
+/*============ CUSTOM FULL VIEW STYLES =============*/
+
+.ccc-full-view-container {
+
+    .ccc-full-view-content-container {
+        padding-top: 178px;
+        @media (max-width: @screen-xs-max) {
+            padding-top: 150px;
+        }
+    }
+}
+
+
+/*============ FORMS AND LABELS ============*/
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-submit-controls {
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.input-summary-box {
+    border: 1px solid rgba(0,0,0, 0.1);
+    background: rgba(0,0,0, 0.05);
+    padding: 3px 10px;
+    display: block;
+    .border-radius(3px);
+    margin-top: 3px;
+}
+
+.form-styled {
+
+    border: 1px solid fade(black, 10%);
+    max-width: 50em;
+    margin: 0 auto;
+
+    padding: 3em 4em;
+    background-color: #fff;
+    .border-radius(10px);
+
+    h2, h3, h4 {
+        margin-top: 0;
+    }
+
+    .radio,
+    .checkbox {
+        border: 2px solid fade(black, 10%);
+        margin: 0 0 0.75em 0;
+        padding: 0.75em 3em;
+        position: relative;
+        .border-radius(5px);
+
+        input {
+            margin-left: -30px;
+        }
+
+        &:hover, &:focus {
+            background: fade(black, 5%);
+        }
+    }
+}
+
+
+/*============ CONTENT STYLING ============*/
+
+p {
+    .reading-width();
+    margin: 0 0 1.5em 0;
+}
+
+
+/*============ NOTIFICATIONS ============*/
+
+.ccc-notification {
+
+    min-width: 40%;
+
+    .close {
+        padding-left: 15px;
+    }
+
+    &.alert-warning {
+        border-color: #f0ad4e;
+    }
+}
+
+
+/*============ WELL WITH TABS ============*/
+
+.well-with-tabs {
+
+    .nav-tabs {
+        border-bottom: 1px solid @grayscale3;
+    }
+
+    .nav-tabs.nav-justified {
+        border-bottom: none;
+    }
+
+    .nav-tabs > li > a,
+    .nav-tabs.nav-justified > li > a {
+        border-bottom: 1px solid @grayscale3;
+    }
+
+    .nav-tabs > li > a:hover,
+    .nav-tabs.nav-justified > li > a:hover  {
+        border-color: #eeeeee #eeeeee @grayscale3;
+    }
+
+    .nav-tabs > li > a,
+    .nav-tabs > li > a:hover,
+    .nav-tabs > li > a:focus,
+    .nav-tabs.nav-justified > li > a,
+    .nav-tabs.nav-justified > li > a:hover,
+    .nav-tabs.nav-justified > li > a:focus {
+        background: #fff;
+    }
+
+    .nav-tabs > li.active > a,
+    .nav-tabs > li.active > a:hover,
+    .nav-tabs > li.active > a:focus,
+    .nav-tabs.nav-justified > li.active > a,
+    .nav-tabs.nav-justified > li.active > a:hover,
+    .nav-tabs.nav-justified > li.active > a:focus {
+        background: @grayscale1;
+        border-bottom: 1px solid transparent;
+        border-left: 1px solid @grayscale3;
+        border-right: 1px solid @grayscale3;
+        border-top: 1px solid @grayscale3;
+    }
+    .well {
+        border-color: @grayscale3;
+        box-shadow: none;
+        border-top: none;
+        -webkit-border-top-right-radius: 0px;
+        -webkit-border-top-left-radius: 0px;
+        -moz-border-radius-topright: 0px;
+        -moz-border-radius-topleft: 0px;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+}
+
+.well {
+    box-shadow: 0px 0px 1px rgba(0,0,0, 0.1);
+}
+
+
+/*============ BACKGROUND CONTENT SLIDER STYLING ============*/
+
+.ccc-background-content {
+
+    .ccc-background-content-close {
+
+        padding: 0px;
+
+        .ccc-form-title {
+            padding: 16px 15px;
+            margin-left: -15px;
+            margin-right: -15px;
+
+            font-family: @ccc-font-body;
+
+            font-size: 140%;
+
+            button {
+                position: absolute;
+                top: 10px;
+                left: 25px;
+                padding: 5px 15px;
+            }
+        }
+    }
+
+    .ccc-form-section-title {
+        font-size: 120%;
+    }
+}
+
+
+
+/*============ UI VIEW TRANSITIONS ============*/
+
+ui-view {
+    display: block;
+    position: relative;
+    top: 0px;
+}
+
+ui-view.ng-enter {
+    opacity: 0;
+    top: -15px;
+    -webkit-transition: all 300ms 50ms @ccc-cubic;
+    transition: all 300ms 50ms @ccc-cubic;
+}
+
+ui-view.ng-enter.ng-enter-active {
+    opacity: 1;
+    top: 0px;
+}
+
+ui-view.ng-leave {
+    opacity: 1;
+    -webkit-transition:all 0s linear;
+    transition:all 0s linear;
+}
+
+ui-view.ng-leave-active {
+    opacity: 0;
+}
+
+
+/*============ RESPONSIVE ============*/
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-xs-max) {
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .ccc-view-common-content-container > .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0;
+        margin-right: 0;
+        overflow-x: hidden;
+    }
+
+    .ccc-view-common-content-inner {}
+
+    .ccc-notification {}
+
+    .form-styled {
+        padding: 1em 2em;
+    }
+}
+
+
+/*============= FOCUSED MODE ( triggered by a query param of focused=true in a standard view ) ===============*/
+
+.ccc-view-standard-focused {
+
+    .ccc-view-header-target {
+        display: none !important;
+    }
+
+    .ccc-view-footer-target {
+        display: none !important;
+    }
+
+    .ccc-view-common-content-container {
+
+        background: #fff;
+
+        &> .container {
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+            padding: 0px !important;
+            width: auto !important;
+        }
+    }
+    .ccc-view-common-content {
+
+        padding: 0px !important;
+        border-left: 0px;
+        border-right: 0px;
+        box-shadow: none;
+
+        .ccc-view-common-content-inner {
+            min-height: 0px !important;
+            padding: 15px !important;
+        }
+    }
+}
+
+/*========== PRINT MODE ============*/
+
+@media print {
+
+    html, body {
+        overflow: visible !important;
+    }
+
+    * {
+        overflow: visible !important;
+    }
+
+    ccc-view-manager .ccc-view-manager-views {
+        overflow-x: visible !important;
+    }
+
+    .ccc-full-view-container {
+        .ccc-full-view-content-container {
+            padding-top: 0px;
+        }
+    }
+
+    .ccc-view-header-target, .ccc-view-subnav-target {
+        display: none;
+    }
+
+    .ccc-view-manager-view-target {
+        padding-bottom: 0px;
+    }
+
+    .ccc-view-manager-footer-target {
+        display: none;
+    }
+}

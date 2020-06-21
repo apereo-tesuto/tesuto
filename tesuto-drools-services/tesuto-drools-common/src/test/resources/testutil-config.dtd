@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated from testutil-config.xml by XMLBuddy -->
+<!ELEMENT Configuration (Element+)>
+<!ATTLIST Configuration name NMTOKEN #REQUIRED>
+<!ELEMENT Configurations (Configuration+)>
+<!ELEMENT Element (#PCDATA)>
+<!ATTLIST Element
+	aMutableClassName NMTOKEN #IMPLIED
+	aTypeClassName NMTOKEN #IMPLIED
+	aClassName NMTOKEN #IMPLIED
+    cautionOrSkip NMTOKEN #IMPLIED
+   	theAccessor NMTOKEN #IMPLIED
+	theSetterMethodName NMTOKEN #IMPLIED
+	theSubstituteClassName NMTOKEN #IMPLIED
+>

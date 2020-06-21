@@ -1,0 +1,129 @@
+// Placement with MMAP component, no assessment component, isStandalonePlacement, isSelfReported
+rule "rule_set_id:${rule_set_id}::rule_id:a4f1f0d3-39b0-4b09-930c-1b6a41a580ce" when
+    map : Map()
+    ruleSetId : String(this == "12345") from map.get("RULE_SET_ID")
+    placementComponents : PlacementRulesSourceDto(mmapPlacementComponents : mmapPlacementComponents, assessmentPlacementComponents : assessmentPlacementComponents) from map.get(PLACEMENT_COMPONENTS_KEY())
+    eval(mmapPlacementComponents.size() > 0)
+    eval(assessmentPlacementComponents.size() == 0)
+    CompetencyAttributesViewDto(optInMultiMeasure == true, useSelfReportedDataForMM == true) from map.get(COMPETENCY_ATTRIBUTES_KEY())
+    bestComponent : PlacementComponentViewDto(standalonePlacement == true) from getHighestAndBestPlacementComponentFromList(placementComponents.mmapPlacementComponents, true, true)
+    then
+        List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+        PlacementActionResult placement = new PlacementActionResult();
+        placement.setCccid(bestComponent.getCccid());
+        placement.setCb21Code(bestComponent.getCb21().getCb21Code());
+        placement.setCourseGroup(bestComponent.getCourseGroup());
+        placement.setCollegeId(bestComponent.getCollegeId());
+        placement.setSubjectAreaId(bestComponent.getSubjectAreaId());
+        placement.setSubjectAreaVersion(bestComponent.getSubjectAreaVersion());
+        placement.setCreatedOn(new Date());
+        Set<String> placementComponentIds = new HashSet<>();
+        placementComponentIds.add(bestComponent.getId());
+        placement.setPlacementComponentIds(placementComponentIds);
+        placement.setElaIndicator("NA");
+        placement.setTrackingId(bestComponent.getTrackingId());
+        placement.setRuleSetId(ruleSetId);
+        placement.setRuleId("a4f1f0d3-39b0-4b09-930c-1b6a41a580ce");
+        RulesAction action = new RulesAction("PLACEMENT_ACTION");
+        action.addActionParameter("placement", placement);
+        actions.add(action);
+end
+
+// Placement with MMAP component, no assessment component, isStandalonePlacement, !isSelfReported
+rule "rule_set_id:${rule_set_id}::rule_id:41d205b9-1d48-43a7-af45-fd5527b2117c" when
+    map : Map()
+    ruleSetId : String(this == "12345") from map.get("RULE_SET_ID")
+    placementComponents : PlacementRulesSourceDto(mmapPlacementComponents : mmapPlacementComponents, assessmentPlacementComponents : assessmentPlacementComponents) from map.get(PLACEMENT_COMPONENTS_KEY())
+    eval(mmapPlacementComponents.size() > 0)
+    eval(assessmentPlacementComponents.size() == 0)
+    CompetencyAttributesViewDto(optInMultiMeasure == true, useSelfReportedDataForMM == false) from map.get(COMPETENCY_ATTRIBUTES_KEY())
+    bestComponent : PlacementComponentViewDto(standalonePlacement == true, selfReported == false) from getHighestAndBestPlacementComponentFromList(placementComponents.mmapPlacementComponents, true, false)
+    then
+        List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+        PlacementActionResult placement = new PlacementActionResult();
+        placement.setCccid(bestComponent.getCccid());
+        placement.setCb21Code(bestComponent.getCb21().getCb21Code());
+        placement.setCourseGroup(bestComponent.getCourseGroup());
+        placement.setCollegeId(bestComponent.getCollegeId());
+        placement.setSubjectAreaId(bestComponent.getSubjectAreaId());
+        placement.setSubjectAreaVersion(bestComponent.getSubjectAreaVersion());
+        placement.setCreatedOn(new Date());
+        Set<String> placementComponentIds = new HashSet<>();
+        placementComponentIds.add(bestComponent.getId());
+        placement.setPlacementComponentIds(placementComponentIds);
+        placement.setElaIndicator("NA");
+        placement.setTrackingId(bestComponent.getTrackingId());
+        placement.setRuleSetId(ruleSetId);
+        placement.setRuleId("41d205b9-1d48-43a7-af45-fd5527b2117c");
+        RulesAction action = new RulesAction("PLACEMENT_ACTION");
+        action.addActionParameter("placement", placement);
+        actions.add(action);
+end
+
+// Placement with MMAP component, assessment component, isSelfReported
+rule "rule_set_id:${rule_set_id}::rule_id:c6db8be1-fffa-4cf8-8fa7-fd9086ca07ff" when
+    map : Map()
+    ruleSetId : String(this == "12345") from map.get("RULE_SET_ID")
+    placementComponents : PlacementRulesSourceDto(mmapPlacementComponents : mmapPlacementComponents, assessmentPlacementComponents : assessmentPlacementComponents) from map.get(PLACEMENT_COMPONENTS_KEY())
+    eval(mmapPlacementComponents.size() > 0)
+    eval(assessmentPlacementComponents.size() > 0)
+    CompetencyAttributesViewDto(optInMultiMeasure == true, useSelfReportedDataForMM == true) from map.get(COMPETENCY_ATTRIBUTES_KEY())
+    bestAssessmentComponent : PlacementComponentViewDto() from getHighestAndBestPlacementComponentFromList(placementComponents.assessmentPlacementComponents)
+    bestMmapComponent : PlacementComponentViewDto() from getHighestAndBestPlacementComponentFromList(placementComponents.mmapPlacementComponents, false, true)
+    bestComponent : PlacementComponentViewDto() from getHighestAndBestPlacementComponent(bestAssessmentComponent, bestMmapComponent)
+    then
+        List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+        PlacementActionResult placement = new PlacementActionResult();
+        placement.setCccid(bestComponent.getCccid());
+        placement.setCb21Code(bestComponent.getCb21().getCb21Code());
+        placement.setCourseGroup(bestComponent.getCourseGroup());
+        placement.setCollegeId(bestComponent.getCollegeId());
+        placement.setSubjectAreaId(bestComponent.getSubjectAreaId());
+        placement.setSubjectAreaVersion(bestComponent.getSubjectAreaVersion());
+        placement.setCreatedOn(new Date());
+        Set<String> placementComponentIds = new HashSet<>();
+        placementComponentIds.add(bestAssessmentComponent.getId());
+        placementComponentIds.add(bestMmapComponent.getId());
+        placement.setPlacementComponentIds(placementComponentIds);
+        placement.setElaIndicator(bestAssessmentComponent == null ? "NA" : bestAssessmentComponent.getElaIndicator());
+        placement.setTrackingId(bestComponent.getTrackingId());
+        placement.setRuleSetId(ruleSetId);
+        placement.setRuleId("c6db8be1-fffa-4cf8-8fa7-fd9086ca07ff");
+        RulesAction action = new RulesAction("PLACEMENT_ACTION");
+        action.addActionParameter("placement", placement);
+        actions.add(action);
+end
+
+// Placement with MMAP component, assessment component, !isSelfReported
+rule "rule_set_id:${rule_set_id}::rule_id:078177d1-9636-4557-9178-12681e540637" when
+    map : Map()
+    ruleSetId : String(this == "12345") from map.get("RULE_SET_ID")
+    placementComponents : PlacementRulesSourceDto(mmapPlacementComponents : mmapPlacementComponents, assessmentPlacementComponents : assessmentPlacementComponents) from map.get(PLACEMENT_COMPONENTS_KEY())
+    eval(mmapPlacementComponents.size() > 0)
+    eval(assessmentPlacementComponents.size() > 0)
+    CompetencyAttributesViewDto(optInMultiMeasure == true, useSelfReportedDataForMM == false) from map.get(COMPETENCY_ATTRIBUTES_KEY())
+    bestAssessmentComponent : PlacementComponentViewDto() from getHighestAndBestPlacementComponentFromList(placementComponents.assessmentPlacementComponents)
+    bestMmapComponent : PlacementComponentViewDto(selfReported == false) from getHighestAndBestPlacementComponentFromList(placementComponents.mmapPlacementComponents, false, false)
+    bestComponent : PlacementComponentViewDto() from getHighestAndBestPlacementComponent(bestAssessmentComponent, bestMmapComponent)
+    then
+        List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+        PlacementActionResult placement = new PlacementActionResult();
+        placement.setCccid(bestComponent.getCccid());
+        placement.setCb21Code(bestComponent.getCb21().getCb21Code());
+        placement.setCourseGroup(bestComponent.getCourseGroup());
+        placement.setCollegeId(bestComponent.getCollegeId());
+        placement.setSubjectAreaId(bestComponent.getSubjectAreaId());
+        placement.setSubjectAreaVersion(bestComponent.getSubjectAreaVersion());
+        placement.setCreatedOn(new Date());
+        Set<String> placementComponentIds = new HashSet<>();
+        placementComponentIds.add(bestAssessmentComponent.getId());
+        placementComponentIds.add(bestMmapComponent.getId());
+        placement.setPlacementComponentIds(placementComponentIds);
+        placement.setElaIndicator(bestAssessmentComponent == null ? "NA" : bestAssessmentComponent.getElaIndicator());
+        placement.setTrackingId(bestComponent.getTrackingId());
+        placement.setRuleSetId(ruleSetId);
+        placement.setRuleId("078177d1-9636-4557-9178-12681e540637");
+        RulesAction action = new RulesAction("PLACEMENT_ACTION");
+        action.addActionParameter("placement", placement);
+        actions.add(action);
+end

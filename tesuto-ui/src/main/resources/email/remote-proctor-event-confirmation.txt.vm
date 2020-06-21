@@ -1,0 +1,58 @@
+---
+CCC Assess – Remote Proctor Event Confirmation
+---
+
+Hello ${remoteProctorViewDto.remoteProctorDisplayName}
+
+You have been activated to proctor the following assessments:
+
+#foreach( $assessmentName in $remoteProctorViewDto.assessmentNameList )
+* $assessmentName
+#end
+
+These assessments will be active from:
+
+ * Start: ${remoteProctorViewDto.startDate}
+ * End: ${remoteProctorViewDto.endDate}
+
+During that time, you may proctor these students:
+
+#foreach( $studentName in $remoteProctorViewDto.studentNameList )
+* $studentName
+#end
+
+To get your proctor passcode for this event, please visit:
+${remoteProctorViewDto.linkForProctorPasscode}
+
+Remote Proctor Agreement
+
+ * You agree to be present at the site throughout the testing session.
+ * You agree to verify the student’s identity by reviewing a valid, government
+   issued photo identification card.
+ * You agree to prevent acts of academic dishonesty including, but not limited
+   to: cheating, plagiarism, stealing or copying an exam, and/or engaging in
+   collusion.
+ * You agree to take all necessary precautions regarding suspected academic
+   dishonesty, including access to websites other than CCCAssess.
+ * You acknowledge that all materials displayed are copyrighted, and you agree
+   to not reproduce these items in any way.
+ * You acknowledge that no student is directly related, a friend, or an
+   acquaintance of yours.
+
+Proctor Instructions
+
+ * As a proctor, you are ensuring the integrity of the proctor passcode. The
+   passcode cannot be given to the student under any circumstance.
+ * If you feel that the security of your passcode has been compromised,
+   immediately end the test event and contact your assessment administration to
+   have the passcode reset.
+ * The test must be administered in your presence.
+ * Students are permitted to use scratch paper you provide. Please collect and
+   destroy scratch paper at the conclusion of the test.
+ * Calculators, dictionaries, or other materials brought by the student are not
+   permitted.
+
+Questions?
+
+If you have any questions, or feel you have received this email in error, please
+contact: $remoteProctorViewDto.eventCreatorEmail

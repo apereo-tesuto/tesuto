@@ -1,0 +1,34 @@
+ccc-content-loading-placeholder {
+
+    display: block;
+
+    .ccc-content-loading-placeholder-inner {
+
+        padding: 30px 15px;
+        border: 2px dashed @grayscale3;
+        color: @grayscale8;
+        text-align: center;
+        font-size: 115%;
+
+        &.no-results {
+            border: 2px dashed @brand-warning;
+            color: @state-warning-text;
+        }
+
+        &.no-results-info {
+            border: 2px dashed #81b3fe;
+            color: darken(@brand-primary, 10%);
+        }
+    }
+
+    &.ccc-content-loading-placeholder-small {
+        .ccc-content-loading-placeholder-inner {
+            padding: 15px 10px;
+        }
+        font-size: 90%;
+    }
+
+    .ccc-content-loading-placeholder-details {
+        margin-top: 15px;
+    }
+}

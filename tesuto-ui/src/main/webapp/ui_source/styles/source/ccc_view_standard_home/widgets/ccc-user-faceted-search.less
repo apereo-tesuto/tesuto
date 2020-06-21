@@ -1,0 +1,77 @@
+ccc-user-faceted-search {}
+
+
+.user-cards {
+
+    width: 100%;
+    overflow-x: hidden;
+
+    .user-card {
+        margin-left: 3em;
+    }
+
+    .number-wrapper {
+        position: relative;
+
+        .list-number {
+            position: absolute;
+            top: 0;
+            bottom: -2em;
+            left: -1em;
+            background: @warm1;
+            border: 1px solid @warm3;
+            font-size: 1.25em;
+            padding: 0.1em 0px;
+            text-align: center;
+            vertical-align: top;
+            width: 1.75em;
+            display: inline-block;
+        }
+    }
+
+    .user {
+
+        border: 1px solid rgba(0,0,0,0);
+        border-bottom: 1px dotted #ddd;
+        cursor: auto;
+        padding: 1em;
+        margin: 0;
+        width: 100% !important;
+        background: #fff;
+
+        &:hover, &:focus {
+            cursor: pointer;
+            border: 1px solid @brand-primary !important;
+            border-bottom: 1px solid @brand-primary !important;
+        }
+        &:active {
+            cursor: pointer;
+            border: 1px solid darken(@brand-primary, 15%) !important;
+            border-bottom: 1px solid darken(@brand-primary, 15%) !important;
+        }
+
+        .emphasize {
+            font-weight: normal;
+        }
+
+        &:first-child {
+            border-top: 1px dotted #ddd;
+        }
+
+        .data {
+            &.roles {
+                padding-left: 10px;
+                font-size: 12px;
+            }
+        }
+
+        .card-data {
+            position: relative;
+            margin-left: 1em;
+        }
+
+        .card-wrapper {
+            margin-left: 1.5em;
+        }
+    }
+}

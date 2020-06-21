@@ -1,0 +1,12 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result,result,result,result,result,result,result,result
+cst,grade_level,gpa_cum,ap_any,english,cst_english,english_ap,pre_alg,pre_alg_ap,alg_i,alg_i_ap,alg_ii,geo,geo_ap,trig_ap,pre_calc,calc,calc_ap,stat,stat_ap,cccid,miscode,competencymapdiscipline,subjectArea,program,transferLevel,transferLevelIndex,rowNumber,insufficeintData
+,11,2.6,,,,,,,,,,,,,,,,,,A123456,${miscode},ENGLISH,${subject_area},English,Y,0,1,false
+,11,2.3,,,,,,,,,,,,,,,,,,A123456,${miscode},ENGLISH,${subject_area},English,A,1,2,false
+,11,2,,,,,,,,,,,,,,,,,,A123456,${miscode},ENGLISH,${subject_area},English,B,2,3,false
+,11,1.4,,,,,,,,,,,,,,,,,,A123456,${miscode},ENGLISH,${subject_area},English,C,3,4,false
+,12,2.6,,,,,,,,,,,,,,,,,,A123456,${miscode},ENGLISH,${subject_area},English,Y,0,5,false
+,12,2.2,,2,,,,,,,,,,,,,,,,A123456,${miscode},ENGLISH,${subject_area},English,A,1,6,false
+,12,1.8,,1,,,,,,,,,,,,,,,,A123456,${miscode},ENGLISH,${subject_area},English,B,2,7,false
+288,12,1.8,,,,,,,,,,,,,,,,,,A123456,${miscode},ENGLISH,${subject_area},English,B,2,8,false
+,12,1.7,,,,,,,,,,,,,,,,,,A123456,${miscode},ENGLISH,${subject_area},English,C,3,9,false
+,12,1.5,,,,,,,,,,,,,,,,,,A123456,${miscode},ENGLISH,${subject_area},English,C,3,10,false

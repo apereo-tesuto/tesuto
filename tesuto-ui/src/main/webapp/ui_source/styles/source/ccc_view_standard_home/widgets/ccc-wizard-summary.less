@@ -1,0 +1,72 @@
+ccc-wizard-summary {}
+
+/*========= RESPONSIVE STYLES ===========*/
+
+// Extra small devices (phones, 768px and less)
+@media (max-width: @screen-sm-max) {
+
+    ccc-wizard-summary table {
+
+        thead {
+            display: none;
+        }
+
+        &.table > tbody > tr > td,
+        &.table > tbody > tr > th {
+            padding: 15px;
+        }
+
+        /* Force table to not be like tables anymore */
+        th, td {
+            display: block;
+        }
+
+        td {
+            width: 100%;
+        }
+
+        &.table > tbody > tr > td:nth-child(odd) {
+            border-top: 2px solid #cccccc;
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+
+        &.table > tbody > tr > td:nth-child(even) {
+            border-top: none;
+            padding-top: 0px;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@media print {
+
+    ccc-wizard-summary table {
+
+        thead {
+            display: table-header-group !important;
+        }
+
+        &.table > tbody > tr > td,
+        &.table > tbody > tr > th {
+            padding: 5px !important;
+        }
+
+        td, th {
+            display: table-cell !important;
+            width: auto !important;
+        }
+
+        &.table > tbody > tr > td:nth-child(odd) {
+            border-top: 1px solid #ccc !important;
+            padding-bottom: 5px !important;
+            font-weight: normal !important;
+        }
+
+        &.table > tbody > tr > td:nth-child(even) {
+            border-top: 1px solid #ccc !important;
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
+        }
+    }
+}

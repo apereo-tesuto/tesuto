@@ -1,0 +1,1268 @@
+package net.ccctechcenter.drools
+
+import java.util.Map
+import java.util.List
+import java.util.ArrayList
+import org.ccctc.common.droolscommon.RulesAction
+
+import java.lang.Double
+import java.lang.String
+import java.util.stream.Collectors
+import org.cccnext.tesuto.rules.view.BasicStudentView
+import org.cccnext.tesuto.domain.multiplemeasures.VariableSet
+import org.cccnext.tesuto.domain.multiplemeasures.Fact
+import org.cccnext.tesuto.domain.multiplemeasures.PlacementComponentActionResult
+import function org.apache.commons.lang3.StringUtils.isBlank
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToString
+import function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement
+
+import function org.cccnext.tesuto.rules.function.DrlFunctions.STUDENT_VIEW_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.MULTIPLE_MEASURE_VARIABLE_SET_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.SUBJECT_AREA_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.TRACKING_ID_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.MISCODE_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.RULE_SET_ID_KEY
+
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:1"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.6 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 4.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("1");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_calc_i");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:2"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.2 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 5.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("2");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_calc_i");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:3"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.4 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 2.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("3");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_pre_calc");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:4"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.6 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 6) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("4");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_pre_calc");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:5"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.4 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 2.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("5");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_trig");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:6"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 5.25) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("6");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_trig");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:7"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 2.3) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("7");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_trig");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:8"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.2 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 2.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("8");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_col_alg");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:9"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.9 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 5.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("9");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_col_alg");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:10"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 1.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("10");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_ge");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:11"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 1.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("11");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_stat");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:12"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 5.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("12");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_stat");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:13"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.8 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 1.1) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("A");
+	placement.setLevelsBelowTransfer(1);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("13");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_alg_ii");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:14"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.4 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("B");
+	placement.setLevelsBelowTransfer(2);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("14");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_alg_i");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:15"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("C");
+	placement.setLevelsBelowTransfer(3);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("15");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("pre_algebra");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:16"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	grade : Integer(this ==11) from parseFactToInteger((Fact)facts.get("grade_level"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("D");
+	placement.setLevelsBelowTransfer(4);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("16");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("arithmetic");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:17"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.1 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 6) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("17");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_calc_i");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:18"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.5 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 4.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("18");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_calc_i");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:19"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 2.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("19");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_pre_calc");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:20"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	algebra_II_cst : Double(this >= 340) from parseFactToDouble((Fact)facts.get("algebra_II_cst"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("20");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_pre_calc");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:21"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 6.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("21");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_pre_calc");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:22"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 2.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("22");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_trig");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:23"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.8 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 5.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("23");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_trig");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:24"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.2 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 2.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("24");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_col_alg");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:25"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 5) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("25");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_col_alg");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:26"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	stat : Double(this >= 2) from parseFactToDouble((Fact)facts.get("stat"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("26");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_col_alg");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:27"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3.2 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 1.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("27");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_ge");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:28"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.9 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 1.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	stat : Double(this >= 2) from parseFactToDouble((Fact)facts.get("stat"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("28");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_ge");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:29"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 1.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("29");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_stat");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:30"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.6 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 5.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("Y");
+	placement.setLevelsBelowTransfer(0);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("30");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_stat");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:31"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.9 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 1.1) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("A");
+	placement.setLevelsBelowTransfer(1);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("31");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_alg_ii");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:32"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.5 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	algebra_II_cst : Double(this >= 302) from parseFactToDouble((Fact)facts.get("algebra_II_cst"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("A");
+	placement.setLevelsBelowTransfer(1);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("32");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_alg_ii");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:33"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.5 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 5.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("A");
+	placement.setLevelsBelowTransfer(1);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("33");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_alg_ii");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:34"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.5 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("B");
+	placement.setLevelsBelowTransfer(2);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("34");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_alg_i");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:35"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	algebra_II_cst : Double(this >= 302) from parseFactToDouble((Fact)facts.get("algebra_II_cst"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("B");
+	placement.setLevelsBelowTransfer(2);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("35");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_alg_i");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:36"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.3 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	math_ranking : Double(this >= 2.2) from parseFactToDouble((Fact)facts.get("math_ranking"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("B");
+	placement.setLevelsBelowTransfer(2);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("36");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("math_alg_i");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:37"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+		variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 2.1 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("C");
+	placement.setLevelsBelowTransfer(3);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("37");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("pre_algebra");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:38"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	cum_gpa :  Double(this >= 1.6 )from parseFactToDouble((Fact)facts.get("gpa_cum"))
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	alg_i_clut_1 : Double(this >= 8) from parseFactToDouble((Fact)facts.get("alg_i_clut_1"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("C");
+	placement.setLevelsBelowTransfer(3);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("38");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("pre_algebra");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "Math Placement:c076920a-db3e-4c48-955e-4d18c7badedd::5defbdaa-1c04-43bd-b783-33332d944bbb:39"
+when
+	map : Map()
+	student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+    cccMisCode : String() from map.get(MISCODE_KEY())
+	facts : Map() from variableSet.facts
+	grade : Integer(this ==12) from parseFactToInteger((Fact)facts.get("grade_level"))
+	
+	ruleSetId :  String(this.equals("${rule_set_id}") ) from map.get(RULE_SET_ID_KEY())
+	multipleMeasureVariableSetId: String() from variableSet.id
+then
+	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	placement.setCccid(student.getCccid());
+	placement.setTransferLevel("D");
+	placement.setLevelsBelowTransfer(4);
+	placement.setSubjectArea(subjectArea);
+	placement.setCollegeId(cccMisCode);
+	placement.setTrackingId("test_tracking_id");
+	placement.setRuleSetId(ruleSetId);
+	placement.setRuleId("c076920a-db3e-4c48-955e-4d18c7badedd");
+	placement.setRowNumber("39");
+	placement.setRuleSetRowId("5defbdaa-1c04-43bd-b783-33332d944bbb");
+	placement.setCompetencyMapDiscipline("MATH");
+	placement.addProgram("arithmetic");
+	placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	filterByCollegeSubjectPlacement(actions, placement);
+end

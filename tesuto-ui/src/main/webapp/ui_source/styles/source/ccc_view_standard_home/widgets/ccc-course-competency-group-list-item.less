@@ -1,0 +1,175 @@
+ccc-course-competency-group-list-item {
+
+    position: relative;
+    display: block;
+
+    .group-wrapper {
+        margin-bottom: 0;
+    }
+
+    .group {
+
+        background: @blue;
+        border: 1px solid @blue;
+        color: white;
+        position: relative;
+        border-radius: 0.5rem;
+        position: relative;
+
+        padding-left: 70px;
+
+        &:hover {
+            background: darken(@blue, 5%);
+            color: #99ccff;
+            cursor: pointer;
+            .edit {
+                color: #99ccff;
+            }
+        }
+
+        .edit {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+
+            text-align: center;
+
+            -webkit-border-top-left-radius: 0.5rem;
+            -webkit-border-bottom-left-radius: 0.5rem;
+            -moz-border-radius-topleft: 0.5rem;
+            -moz-border-radius-bottomleft: 0.5rem;
+            border-top-left-radius: 0.4rem;
+            border-bottom-left-radius: 0.4rem;
+
+            background: rgba(51, 122, 183, 0.35);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.5em;
+            padding: 1rem 1.25rem;
+        }
+
+        .name {
+            display: inline-block;
+
+            .btn-link {
+                margin-left: 5px;
+                font-size: 16px;
+                font-weight: normal;
+                color: rgba(255,255,255, 0.75);
+                &:hover {
+                    color: rgba(255,255,255, 1.0);
+                }
+            }
+        }
+
+        .content {
+            display: inline-block;
+            font-size: 1.5em;
+            padding: 1rem 2.5rem 1rem 1rem;
+        }
+
+        .percent {
+            color: rgba(255, 255, 255, 0.75);
+            display: inline-block;
+            font-size: 0.8em;
+            margin-left: 0.25em;
+        }
+    }
+
+    .remove-action {
+        position: absolute;
+        top: -9px;
+        right: -8px;
+
+        .fa-stack-2x {
+                color: @brand-primary;
+            }
+
+        &:hover {
+            .fa-stack-2x {
+                color: darken(@brand-primary, 15%);
+            }
+        }
+
+        .fa-times {
+            top: -1px;
+        }
+    }
+
+    .ccc-course-competency-group-list-item-invalid {
+        display: none;
+    }
+
+    .competency-group-invalid {
+
+        .group {
+
+            border: 1px solid @brand-warning;
+
+            .edit {
+
+                background: @brand-warning;
+                border-right: 1px solid rgba(255, 255, 255, 0.2);
+                color: #fff;
+            }
+
+            .ccc-course-competency-group-list-item-invalid {
+
+                font-size: 14px;
+
+                i {
+                    color: lighten(@brand-warning, 15%);
+                }
+                display: block;
+            }
+        }
+    }
+
+    .ccc-course-competency-group-tree-summary-container {
+        border: 1px solid rgba(0,0,0, 0.1);
+        border-radius: 5px;
+        background: #fff;
+        padding: 15px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+
+    ccc-course-competency-group-list-item {
+
+        .group {
+
+            .edit {
+                display: none;
+            }
+
+            padding-left: 0px;
+
+            .content {
+                font-size: 1.25em;
+            }
+
+            .percent {
+                color: rgba(255, 255, 255, 0.75);
+                display: inline-block;
+                font-size: 0.8em;
+                margin-left: 0.25em;
+            }
+        }
+    }
+}
+
+@media print {
+
+    ccc-course-competency-group-list-item {
+        .remove-action {
+            display: none;
+        }
+    }
+
+}

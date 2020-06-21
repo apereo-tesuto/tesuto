@@ -1,0 +1,3 @@
+JAR_BASE=tesuto-reports-microservice
+JAR_NAME=/tesuto-reports.jar
+JAR_OUTPUT_PATH=/opt/ccc/

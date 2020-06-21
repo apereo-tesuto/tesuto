@@ -1,0 +1,17 @@
+{
+    "CCC_VIEW_ASSESSMENT_PREVIEW": {
+        "PAGE_TITLE": "Assessment Preview",
+        "COMPLETION_MODAL": {
+            "BODY": "You have reached the end of this preview. <br/>Click \"Okay\" to close this window.",
+            "TITLE": "No more tasks to preview",
+            "BUTTON": {
+                "CANCEL": "Cancel",
+                "CONFIRM": "Okay"
+            }
+        },
+        "CLOSE_WINDOW_MODAL": {
+            "TITLE": "No more tasks to preview",
+            "BODY": "You have reached the end of this preview. Please close this window."
+        }
+    }
+}

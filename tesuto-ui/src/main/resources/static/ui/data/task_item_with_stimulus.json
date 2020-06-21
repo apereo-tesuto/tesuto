@@ -1,0 +1,58 @@
+{
+    "taskSetId": "AFDD-SDFD-SDFD-FE06",
+    "tasks": [{
+        "taskId": "AFGY-JEMD-SKJD-JKSH",
+        "itemSessions": [
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                "itemSessionIndex": 14,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE1",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "stimulus": "<p>This is an example of an item bundle that does NOT have a top level stimulus but it does have exactly one item that has its own internal stimulus. The layout logic looks for this scenario and will choose a two column layout.</p><p style='text-align: center;'><object data='http://img1.wikia.nocookie.net/__cb20130531232910/disney/images/9/9d/Zeke_Midas_(Lobo_Feroz).png'></object></p>",
+                    "itemBody": "<interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c85\"/>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c85",
+                        "responseIdentifier": "RESPONSE1",
+                        "type": "choiceInteraction",
+                        "maxChoices": "1",
+                        "minChoices": "1",
+                        "prompt": "Which value/s of \\(x\\) satisfies your equation?",
+                        "choices": [
+                            {
+                                "content": "<math xmlns='http://www.w3.org/1998/Math/MathML'><mn>3</mn><mi>x</mi><mo>−</mo><mfrac><mrow><mi>x</mi></mrow><mrow><mn>3</mn></mrow></mfrac></math>",
+                                "identifier": "ChoiceA"
+                            },
+                            {
+                                "content": "\\(x=2\\)",
+                                "identifier": "ChoiceB"
+                            },
+                            {
+                                "content": "\\(x=1\\)",
+                                "identifier": "ChoiceC"
+                            },
+                            {
+                                "content": "Both B & C",
+                                "identifier": "ChoiceD"
+                            },
+                            {
+                                "content": "None of the above",
+                                "identifier": "ChoiceE"
+                            }
+                        ]
+                    }]
+                }
+            }
+        ]
+    }]
+}

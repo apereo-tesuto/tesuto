@@ -63,11 +63,7 @@
 			<artifactId>tesuto-sqs-listener</artifactId>
 			<version>${tesuto.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.ccctech</groupId>
-			<artifactId>college-adaptor-client</artifactId>
-			<version>2.1.10-SNAPSHOT</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-envers</artifactId>

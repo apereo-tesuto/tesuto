@@ -22,8 +22,6 @@ import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jayway.jsonpath.spi.mapper.MappingException;
-
 /**
  * Created by tbehlau on 4/19/17.
  */
@@ -47,7 +45,7 @@ public class CompetencyAttributesAssembler extends AbstractAssembler<CompetencyA
 	    	mapper.map(view, attr);
 	    	return attr;
     	} catch (ReflectiveOperationException e)  {
-    		throw new MappingException(e);
+			throw new RuntimeException(e);
     	}
     }
 }

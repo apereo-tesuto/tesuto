@@ -15,7 +15,7 @@
  ******************************************************************************/
 package org.cccnext.tesuto.activation;
 
-import org.ccc.util.rest.RestCallHandler;
+import org.ccctc.web.client.rest.CCCRestCallHandler;
 import org.cccnext.tesuto.springboot.PropertyFilePatternRegisteringListener;
 
 
@@ -64,8 +64,8 @@ public class ApplicationActivation {
     }
     
     @Bean
-    public RestCallHandler restCallHandler() {
-    	return new RestCallHandler();
+    public CCCRestCallHandler restCallHandler() {
+    	return new CCCRestCallHandler();
     }
     
 }

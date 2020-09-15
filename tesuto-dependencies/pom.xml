@@ -21,7 +21,7 @@
 
 
 	<dependencies>
-
+<!--
 		<dependency>
 			<groupId>org.ccc</groupId>
 			<artifactId>ccc-utils</artifactId>
@@ -48,7 +48,7 @@
 					<artifactId>javax.servlet-api</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>javax.el</groupId>
 			<artifactId>javax.el-api</artifactId>

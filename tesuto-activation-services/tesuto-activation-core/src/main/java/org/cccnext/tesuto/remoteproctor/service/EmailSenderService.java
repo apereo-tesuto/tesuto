@@ -20,8 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.velocity.app.VelocityEngine;
-import org.ccc.util.rest.RestCallHandler;
 import org.cccnext.tesuto.admin.dto.CollegeDto;
+import org.ccctc.web.client.rest.CCCRestCallHandler;
+
 import org.cccnext.tesuto.admin.viewdto.CollegeViewDto;
 import org.cccnext.tesuto.admin.viewdto.RemoteProctorDto;
 
@@ -41,7 +42,7 @@ public class EmailSenderService {
 
 	//@Autowired private VelocityEngine velocityEngine;
 
-	@Autowired private RestCallHandler restCallHandler;
+	@Autowired private CCCRestCallHandler restCallHandler;
 
 	public static final String remoteProctorTemplateNameText = "email/remote-proctor-event-confirmation.txt.vm";
 	public static final String remoteProctorTemplateNameHtml = "email/remote-proctor-event-confirmation.html.vm";
@@ -107,13 +108,13 @@ public class EmailSenderService {
 
 	@Async
 	private void sendEmailToAddress(HashMap<String, Object> params, HashMap<String, String> headerParams) {
-		restCallHandler.makeRestCall(
+		/*TODO Generalize restCallHandler.(
 				HttpMethod.POST,
 				emailServiceUrl,
 				params,
 				headerParams,
 				oauthUrl,
 				oauthUser,
-				oauthPassword);
+				oauthPassword);*/
 	}
 }

@@ -28,7 +28,7 @@ import org.apache.commons.io.FileUtils;
 import org.cccnext.tesuto.rules.service.RuleServiceWebServiceQueries;
 import org.cccnext.tesuto.rules.service.RuleSetReader;
 import org.ccctc.common.droolscommon.action.result.ActionResult;
-import org.ccctc.common.droolscommon.model.CollegeDTO;
+import org.ccctc.common.droolscommon.model.FamilyDTO;
 import org.ccctc.common.droolscommon.model.RuleSetDTO;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -106,7 +106,7 @@ public class RuleSetRestClientStub implements RuleSetReader, RuleServiceWebServi
 	}
 
 	@Override
-	public List<CollegeDTO> findColleges(String status) {
+	public List<FamilyDTO> findColleges(String status) {
 		//Auto-generated method stub
 		return null;
 	}

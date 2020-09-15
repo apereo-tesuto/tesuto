@@ -19,20 +19,6 @@
 	<properties>
 		<jar.name>tesuto-common-api</jar.name>
 	</properties>
-
-	<repositories>
-		<repository>
-			<id>nexus-snapshots</id>
-			<name>CCC Nexus Repo - Snapshot</name>
-			<url>https://nexus.dev.ccctechcenter.org/content/repositories/snapshots</url>
-		</repository>
-		<repository>
-			<id>nexus-release</id>
-			<name>CCC Nexus Repo - Release</name>
-			<url>https://nexus.dev.ccctechcenter.org/content/repositories/releases</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.cccnext.tesuto</groupId>

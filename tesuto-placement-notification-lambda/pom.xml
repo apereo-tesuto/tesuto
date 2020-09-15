@@ -83,7 +83,7 @@
 		</dependency>
 
 	</dependencies>
-
+ 
 	<repositories>
 		<!-- Project Glue repository -->
 		<repository>

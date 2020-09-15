@@ -68,13 +68,13 @@
 		<!-- TODO: We should likely not use snapshots for releases -scott smith -->
 		<!-- TODO: This info is repeated in the tesuto-web/pom.xml and shouldn't be but we were having trouble with it
 		being passed down from the parent pom.xml -scott smith -->
-		<repository>
+	  <repository>
 			<id>nexus.ccctechcenter.org</id>
 			<name>ccctech</name>
 			<url>http://nexus.ccctechcenter.org/content/groups/public</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-		</repository>
+		</repository> 
 	</repositories>
 </project>

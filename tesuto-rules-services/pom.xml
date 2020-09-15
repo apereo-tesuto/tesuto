@@ -54,31 +54,5 @@
 				<updatePolicy>never</updatePolicy>
 			</snapshots>
 		</repository>
-
-		<repository>
-			<id>rules</id>
-			<url>https://nexus.dev.ccctechcenter.org/content/repositories/snapshots/</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>never</updatePolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>never</updatePolicy>
-			</snapshots>
-		</repository>
-
-		<repository>
-			<id>rules-released</id>
-			<url>https://nexus.dev.ccctechcenter.org/content/repositories/releases/</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>never</updatePolicy>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-				<updatePolicy>never</updatePolicy>
-			</snapshots>
-		</repository>
 	</repositories>
 </project>

@@ -28,18 +28,6 @@
 			<id>ccc-aws-snapshot</id>
 			<url>http://ccc-maven.s3-website-us-west-2.amazonaws.com/snapshot</url>
 		</repository>
-		<!--  Project Glue repository -->
-		<!-- TODO: We should likely not use snapshots for releases -scott smith -->
-		<!-- TODO: This info is repeated in the tesuto-web/pom.xml and shouldn't be but we were having trouble with it
-		being passed down from the parent pom.xml -scott smith -->
-		<repository>
-			<id>nexus.ccctechcenter.org</id>
-			<name>ccctech</name>
-			<url>http://nexus.ccctechcenter.org/content/groups/public</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
 	</repositories>
 	<profiles>
 		<profile>

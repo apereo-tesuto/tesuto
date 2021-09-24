@@ -1,0 +1,31 @@
+ul.flex-list {
+
+    margin-right: -30px;
+
+    display: flex;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+
+    .flex-list-item {
+        padding-right: 30px;
+        display: flex;
+        display: -ms-flexbox;
+        width: 33.333333%;
+    }
+}
+
+@media (max-width: @screen-sm-max) {
+    ul.flex-list {
+        .flex-list-item {
+            width: 49.999%;
+        }
+    }
+}
+@media (max-width: @screen-xs-max) {
+    ul.flex-list {
+        .flex-list-item {
+            width: 100%;
+        }
+    }
+}

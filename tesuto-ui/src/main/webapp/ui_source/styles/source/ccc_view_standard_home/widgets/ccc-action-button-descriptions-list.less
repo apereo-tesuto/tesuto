@@ -1,0 +1,85 @@
+ccc-action-button-descriptions-list {
+
+    display: block;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ccc-action-button-descriptions-list-item {
+
+        cursor: pointer;
+
+        min-height: 20px;
+        padding: 19px;
+        margin-bottom: 20px;
+        background-color: @grayscale1;
+        border: 1px solid darken(@grayscale1, 10%);
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        padding: 9px 15px 9px 9px;
+        border-radius: 3px;
+
+        a {
+
+            display: block;
+
+            color: #666;
+
+            .ccc-action-button-list-item {
+                width: 215px;
+                margin-bottom: 0;
+                margin-right: 30px;
+                float: left;
+                .title {
+                    color: @blue3;
+                }
+
+                .visual {
+                    text-align: center;
+                    i {
+                        font-size: 30px;
+                        display: inline-block;
+                        height: 60px;
+                        padding: 15px;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .ccc-action-button-list-item-description {
+                font-family: @reading-font-family;
+                text-decoration: none;
+                font-size: 18px;
+                font-weight: 300;
+                margin-bottom: 0px;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+
+/*============ RESPONSIVE STYLES ============*/
+
+@media (max-width: @screen-md-min) {
+
+    ccc-action-button-descriptions-list {
+        .ccc-action-button-descriptions-list-item a {
+            .ccc-action-button-list-item {
+                float: none;
+                width: 100%;
+                margin-right: 0px;
+            }
+            .ccc-action-button-list-item-description {
+                padding: 10px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+}

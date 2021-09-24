@@ -1,0 +1,72 @@
+{
+		"userAccountId": "f066db8d-eb39-4680-addd-c0844ac78625",
+		"username": "kcounselor@democollege.edu",
+		"emailAddress": "kcounselor@unicon.net",
+		"password": "$2a$10$zPm7g8r8DWxrc0I.8pOBoepkVt2wveVPWxUijqT.tkHLUKD3bV2nW",
+		"displayName": "C",
+		"firstName": "C",
+		"middleInitial": null,
+		"lastName": "Counselor",
+		"phoneNumber": null,
+		"extension": null,
+		"enabled": true,
+		"securityGroupDtos": [
+			{
+				"securityGroupId": 11,
+				"groupName": "COUNSELOR",
+				"description": "Counselor security group",
+				"securityPermissionDtos": []
+			}
+		],
+		"namespace": null,
+		"colleges": [
+			{
+				"cccId": "ZZ1",
+				"districtCCCId": "ZZ0",
+				"name": "Unicollege",
+				"streetAddress1": "1760 East Pecos Road",
+				"streetAddress2": "Suite 432",
+				"city": "Gilbert",
+				"postalCode": "85295",
+				"url": "http://www.unicon.net",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ1",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			},
+			{
+				"cccId": "ZZ3",
+				"districtCCCId": "ZZ0",
+				"name": "CCCTC College A",
+				"streetAddress1": "1 Apereo Drive",
+				"streetAddress2": "",
+				"city": "Oroville",
+				"postalCode": "95965",
+				"url": "http://cccnext.net/",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ3",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			}
+		],
+		"collegeIds": [
+			"ZZ1",
+			"ZZ3"
+		],
+		"districts": null,
+		"primaryCollegeId": "ZZ1",
+		"testLocations": [
+		]
+	}

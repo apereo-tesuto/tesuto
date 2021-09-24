@@ -1,0 +1,84 @@
+ccc-student-profile {
+    display: block;
+
+    .ccc-student-profile-user-badge {
+        margin-bottom: 1em;
+        position: relative;
+
+        .text-fade {
+            display: none;
+        }
+    }
+
+    .ccc-student-profile-section-title {
+        font-size: 175%;
+        margin-bottom: 0;
+    }
+
+    .ccc-student-profile-section-desc {
+        margin: 10px 0 5px 0;
+        max-width: none;
+    }
+
+    .ccc-student-profile-subsection {
+        margin: 2em 0;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    .ccc-student-profile-activations {
+        display: flex;
+        display: -ms-flexbox;
+
+        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        margin-right: -2em;
+
+        @media (max-width: @screen-lg) {
+            margin-right: -2em;
+        }
+
+        @media (max-width: @screen-md) {
+            margin-right: -1em;
+        }
+
+        @media (max-width: @screen-sm) {
+            margin-right: 0;
+        }
+    }
+
+    .ccc-student-profile-zero-state {
+        display: flex;
+        display: -ms-flexbox;
+        justify-content: center;
+        -ms-flex-pack: center;
+        align-items: center;
+        -ms-flex-align: center;
+        flex-direction: column;
+        -ms-flex-direction: column;
+        background: @blue4;
+        position: relative;
+        width: 48%;
+        margin: .5em 1em .5em 0;
+        padding: 2em 1em;
+
+        @media (max-width: @screen-md-min) {
+            width: 100%;
+        }
+
+        @media (max-width: @screen-sm-min) {
+            width: 100%;
+            margin: .5em 0;
+        }
+
+        .border-radius(5px);
+
+        h4 {
+            color: #fff;
+            font-size: 1.5em;
+            margin-bottom: 1em;
+        }
+    }
+}

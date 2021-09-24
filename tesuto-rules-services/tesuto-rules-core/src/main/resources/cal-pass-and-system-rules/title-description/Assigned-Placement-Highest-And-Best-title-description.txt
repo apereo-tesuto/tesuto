@@ -1,0 +1,2 @@
+title:Highest and Best Assigned Placement
+decription:Highest and Best Placement is selected from a set of placements.

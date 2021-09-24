@@ -1,0 +1,97 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result
+cccid,DATA_SOURCE,DATA_SOURCE_TYPE,EP01,EP02,EP03,EP04,EP05,EP06,EP07,EP08,EP09,transferLevel,program
+68,APMS,Self Reported,a,a,q, , ,e,f,e,a,C,pre_algebra
+94,APMS,Self Reported,a,b,r,c,e,m,n,m,j,C,pre_algebra
+128,APMS,Self Reported,a,b,u,c,g,e,g,b,f,C,pre_algebra
+135,APMS,Self Reported,a,a,r,c,g,e,g,m,j,C,pre_algebra
+136,APMS,Self Reported,a,a,r,c,g,b,h,b,j,C,pre_algebra
+161,APMS,Self Reported,a,a,t,c,d,k,k,f,g,C,pre_algebra
+198,APMS,Self Reported,a,a,t,c,h,k,k,f,g,C,pre_algebra
+205,APMS,Self Reported,a,a,s,c,j,k,j,m,d,C,pre_algebra
+253,APMS,Self Reported,a,c,u,h,n,f,n,m,j,C,pre_algebra
+254,APMS,Self Reported,a,c,u, , ,f,d,f,d,C,pre_algebra
+283,APMS,Self Reported,a,a,s,c,d,f,g,e,d,C,pre_algebra
+332,APMS,Self Reported,a,a,t,c,a,e,a,e,a,C,pre_algebra
+344,APMS,Self Reported,a,a,r, , ,e,g,m,g,C,pre_algebra
+348,APMS,Self Reported,a,b,t,c,h,f,d,f,d,C,pre_algebra
+368,APMS,Self Reported,a,a,s,c,g,k,d,f,c,C,pre_algebra
+375,APMS,Self Reported,a,a,t,h,n,m,n,m,j,C,pre_algebra
+384,APMS,Self Reported,a,a,q,c,e,i,i,k,h,C,pre_algebra
+397,APMS,Self Reported,a,b,u,h,g,e,g,e,c,C,pre_algebra
+402,APMS,Self Reported,a,a,q,c,h,m,d,m,d,C,pre_algebra
+424,APMS,Self Reported,a,b,s, , ,k,g,k,g,C,pre_algebra
+425,APMS,Self Reported,a,b,u, , ,m,e,m,j,C,pre_algebra
+430,APMS,Self Reported,a,a,t, , ,f,g,e,f,C,pre_algebra
+440,APMS,Self Reported,a,a,t,c,e,f,k,b,a,C,pre_algebra
+454,APMS,Self Reported,a,a,s,c,g,j,j,a,i,C,pre_algebra
+477,APMS,Self Reported,a,a,s, , ,f,b,f,f,C,pre_algebra
+479,APMS,Self Reported,a,a,t,c,f,f,g,f,e,C,pre_algebra
+516,APMS,Self Reported,a,a,t, , ,j,f,f,f,C,pre_algebra
+531,APMS,Self Reported,a,a,q,c,d,f,n,e,j,C,pre_algebra
+567,APMS,Self Reported,a,a,r,c,g,b,g,b,g,C,pre_algebra
+574,APMS,Self Reported,a,a,q,c,d,e,g,e,g,C,pre_algebra
+588,APMS,Self Reported,a,a,r,h,g,m,g,m,j,C,pre_algebra
+605,APMS,Self Reported,a,a,t,c,g,f,d,f,d,C,pre_algebra
+614,APMS,Self Reported,a,a,q,c,n,f,n,m,j,C,pre_algebra
+618,APMS,Self Reported,a,a,s,c,d,f,j,e,b,C,pre_algebra
+633,APMS,Self Reported,a,b,t, , ,f,f,c,e,C,pre_algebra
+645,APMS,Self Reported,a,a,r,c,c,f,h,e,f,C,pre_algebra
+656,APMS,Self Reported,a,a,t, , ,f,a,f,a,C,pre_algebra
+657,APMS,Self Reported,a,b,r,c,g,f,a,e,g,C,pre_algebra
+696,APMS,Self Reported,a,a,s,c,g,e,j,f,g,C,pre_algebra
+700,APMS,Self Reported,a,b,t,c,g,f,n,f,j,C,pre_algebra
+711,APMS,Self Reported,a,a,r,c,d,k,k,g,j,C,pre_algebra
+716,APMS,Self Reported,a,a,t,c,g,k,n,f,f,C,pre_algebra
+728,APMS,Self Reported,a,a,t,c,f,f,e,f,f,C,pre_algebra
+752,APMS,Self Reported,a,b,s,c,g,g,g,g,g,C,pre_algebra
+774,APMS,Self Reported,a,a,s,c,g,h,g,h,g,C,pre_algebra
+778,APMS,Self Reported,a,a,t,c,d,f,g,f,g,C,pre_algebra
+783,APMS,Self Reported,a,a,t, , ,f,h,f,h,C,pre_algebra
+799,APMS,Self Reported,a,a,s,c,g,h,g,h,g,C,pre_algebra
+813,APMS,Self Reported,a,a,t,c,c,f,g,f,b,C,pre_algebra
+861,APMS,Self Reported,a,a,q,c,f,f,j,e,a,C,pre_algebra
+873,APMS,Self Reported,a,a,r, , ,f,g,b,f,C,pre_algebra
+874,APMS,Self Reported,a,b,t,c,n,l,k,k,h,C,pre_algebra
+884,APMS,Self Reported,a,a,r,f,j,e,e,m,g,C,pre_algebra
+885,APMS,Self Reported,a,b,u, , ,f,g,e,g,C,pre_algebra
+893,APMS,Self Reported,a,a,t,c,n,m,n,b,j,C,pre_algebra
+898,APMS,Self Reported,a,b,t,c,d,f,a,f,a,C,pre_algebra
+901,APMS,Self Reported,a,a,t, , ,d,g,d,g,C,pre_algebra
+904,APMS,Self Reported,a,a,s,c,f,f,f,f,f,C,pre_algebra
+924,APMS,Self Reported,a,a,t,c,d,b,g,b,g,C,pre_algebra
+945,APMS,Self Reported,a,a,s,c,j,k,e,k,j,C,pre_algebra
+955,APMS,Self Reported,a,a,t,c,g,e,h,b,g,C,pre_algebra
+983,APMS,Self Reported,a,a,t,c,h,k,e,k,c,C,pre_algebra
+1018,APMS,Self Reported,a,a,r,c,n,f,g,e,g,C,pre_algebra
+1021,APMS,Self Reported,a,a,r,c,f,f,j,e,g,C,pre_algebra
+1078,APMS,Self Reported,a,a,r,c,g,e,c,m,j,C,pre_algebra
+1119,APMS,Self Reported,a,b,u, , ,h,e,c,g,C,pre_algebra
+1147,APMS,Self Reported,a,a,r,c,g,f,j,e,d,C,pre_algebra
+1171,APMS,Self Reported,a,a,r,c,a,f,h,e,d,C,pre_algebra
+1173,APMS,Self Reported,a,b,u,c,h,f,h,e,e,C,pre_algebra
+1185,APMS,Self Reported,a,b,t, , ,f,g,f,g,C,pre_algebra
+1188,APMS,Self Reported,a,a,r, , ,f,e,f,j,C,pre_algebra
+1197,APMS,Self Reported,a,a,r,c,d,f,g,b,g,C,pre_algebra
+1214,APMS,Self Reported,a,a,t,c,g,k,g,k,g,C,pre_algebra
+1227,APMS,Self Reported,a,b,s, , ,k,j,f,f,C,pre_algebra
+1235,APMS,Self Reported,a,b,s,b,g,k,k,f,a,C,pre_algebra
+1239,APMS,Self Reported,a,a,t,c,d,k,j,f,d,C,pre_algebra
+1248,APMS,Self Reported,a,a,t,c,a,h,j,f,d,C,pre_algebra
+1272,APMS,Self Reported,a,b,r,c,g,f,g,f,g,C,pre_algebra
+1302,APMS,Self Reported,a,a,t,c,g,f,d,f,d,C,pre_algebra
+1305,APMS,Self Reported,a,b,u, , ,f,j,e,f,C,pre_algebra
+1307,APMS,Self Reported,a,a,r,a,f,f,g,b,f,C,pre_algebra
+1311,APMS,Self Reported,a,b,u,c,a,f,h,b,d,C,pre_algebra
+1316,APMS,Self Reported,a,a,s,c,j,f,g,f,c,C,pre_algebra
+1338,APMS,Self Reported,a,b,u, , ,f,g,f,g,C,pre_algebra
+1371,APMS,Self Reported,a,a,t,c,a,f,g,b,g,C,pre_algebra
+1392,APMS,Self Reported,a,b,u,c,d,e,g,e,g,C,pre_algebra
+1404,APMS,Self Reported,a,b,u,c,f,f,f,f,g,C,pre_algebra
+1421,APMS,Self Reported,a,b,t,c,f,k,j,f,e,C,pre_algebra
+1425,APMS,Self Reported,a,a,t,c,j,h,e,f,d,C,pre_algebra
+1426,APMS,Self Reported,a,b,t, , ,f,g,f,g,C,pre_algebra
+1427,APMS,Self Reported,a,a,s,c,g,f,g,f,g,C,pre_algebra
+1436,APMS,Self Reported,a,c,t,c,j,e,k,b,d,C,pre_algebra
+1443,APMS,Self Reported,a,a,t,c,j,f,j,b,h,C,pre_algebra
+1457,APMS,Self Reported,a,a,t,c,d,e,j,a,h,C,pre_algebra
+1458,APMS,Self Reported,a,b,r,c,j,g,j,e,g,C,pre_algebra

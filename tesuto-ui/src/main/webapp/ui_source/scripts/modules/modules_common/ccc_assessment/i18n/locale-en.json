@@ -1,0 +1,42 @@
+{
+    "CCC_ASSESSMENT": {
+
+        "ASSESSMENT_ITEM": {
+            "SR_INVALID_WARNING": "Warning, this assessment item is invalid"
+        },
+        "INTERACTION": {
+            "TEXT_ENTRY": {
+                "VALIDATION": {
+                    "MASK_INVALID": "Looks like your response does not match the expected format.",
+                    "EMPTY": "Remember you need to provide an answer before you can move on."
+                }
+            },
+            "MATCH": {
+                "VALIDATION": {
+                    "GLOBAL_MIN": "You have to select at least {MIN, plural, one {one option} other {{MIN} options}}.",
+                    "GLOBAL_MAX": "Hold on, you are only allowed to select {{MAX}} options.",
+                    "ASSOCIABLE_MIN": "Oh no! You need to have at least {MIN, plural, one {one} other {{MIN}}} {MIN, plural, one {match} other {matches}} for this item.",
+                    "ASSOCIABLE_MAX": "Hold on, you can only select {MAX, plural, one {one} other {{MAX}}} {MAX, plural, one {match} other {matches}} for this item."
+                }
+            },
+            "CHOICE": {
+                "VALIDATION": {
+                    "MAX": "Looks like you reached the max number of choices allowed, this question only allows you to select {{MAX}} options.",
+                    "MIN": "Oops, looks like you need to select more. This question requires at least {MIN, plural, one {one selection.} other {{MIN} selections.}}"
+                }
+            },
+            "INLINE_CHOICE": {
+                "VALIDATION": {
+                    "EMPTY": "Hold on you can't move forward until you select something."
+                }
+            },
+            "EXTENDED_TEXT_ENTRY": {
+                "VALIDATION": {
+                    "MAX": "Oh no! You exceeded the max words allowed. This question allows you to enter in {{MAX}} words. Please revise your answer.",
+                    "MIN": "Oh no! You need to add more words. This question requires a minimum of {MIN, plural, one {one word} other {{MIN} words}}."
+                }
+            }
+        }
+
+    }
+}

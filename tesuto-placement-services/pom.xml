@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+	<groupId>org.cccnext.tesuto</groupId>
+	<artifactId>tesuto</artifactId>
+	<version>2.2.0-SNAPSHOT</version>
+  </parent>
+
+	<artifactId>tesuto-placement-services</artifactId>
+	<packaging>pom</packaging>
+
+    <modules>
+        <module>tesuto-placement-domain</module>
+        <module>tesuto-placement-api</module>
+        <module>tesuto-placement-core</module>
+        <module>tesuto-placement-microservice</module>
+    </modules>
+
+	<profiles>
+		<profile>
+			<id>Set the JDBC_URL</id>
+			<activation>
+				<property>
+					<name>!env.JDBC_URL_PLACEMENT</name>
+				</property>
+			</activation>
+			<properties>
+				<env.JDBC_URL_PLACEMENT>jdbc:postgresql://localhost:5432/tesuto_placement</env.JDBC_URL_PLACEMENT>
+			</properties>
+		</profile>
+		<profile>
+			<id>Set the JDBC_USER</id>
+			<activation>
+				<property>
+					<name>!env.JDBC_USER_PLACEMENT</name>
+				</property>
+			</activation>
+			<properties>
+				<env.JDBC_USER_PLACEMENT>tesuto_placement</env.JDBC_USER_PLACEMENT>
+			</properties>
+		</profile>
+		<profile>
+			<id>Set the JDBC_PASSWORD</id>
+			<activation>
+				<property>
+					<name>!env.JDBC_PASSWORD_PLACEMENT</name>
+				</property>
+			</activation>
+			<properties>
+				<env.JDBC_PASSWORD_PLACEMENT>tesuto_placement</env.JDBC_PASSWORD_PLACEMENT>
+			</properties>
+		</profile>
+	</profiles>
+
+	<repositories>
+		<repository>
+			<id>ccc-aws-release</id>
+			<url>http://ccc-maven.s3-website-us-west-2.amazonaws.com/release</url>
+		</repository>
+		<repository>
+			<id>ccc-aws-snapshot</id>
+			<url>http://ccc-maven.s3-website-us-west-2.amazonaws.com/snapshot</url>
+		</repository>
+		<!--  Project Glue repository -->
+		<!-- TODO: We should likely not use snapshots for releases -scott smith -->
+		<!-- TODO: This info is repeated in the tesuto-web/pom.xml and shouldn't be but we were having trouble with it
+		being passed down from the parent pom.xml -scott smith -->
+	  <repository>
+			<id>nexus.ccctechcenter.org</id>
+			<name>ccctech</name>
+			<url>http://nexus.ccctechcenter.org/content/groups/public</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository> 
+	</repositories>
+</project>

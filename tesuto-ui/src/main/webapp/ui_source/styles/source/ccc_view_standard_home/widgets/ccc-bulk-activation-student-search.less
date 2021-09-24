@@ -1,0 +1,120 @@
+ccc-bulk-activation-student-search {
+
+    .bulk-activation-student-search-location-card {
+        background: @warm1;
+        border-bottom: 1px solid @warm3;
+        margin-bottom: 2em;
+        padding: 1em;
+        position: relative;
+        border-radius: 0.5rem;
+
+        .assessments ul {
+            display: inline;
+        }
+
+        .tag{
+            padding: .25em;
+        }
+
+        .location .at,
+        .assessments .for {
+            background: fade(black, 10%);
+            color: fade(black, 75%);
+            display: inline-block;
+            font-size: .75rem;
+            line-height: 1.0rem;
+            margin-right: 1rem;
+            min-width: 3.0rem;
+            padding: 0.1em 1em;
+            text-align: center;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+
+        .assessments {
+            .label {
+                display: inline-block;
+            }
+        }
+
+        .edit {
+            margin: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            .btn-sm {
+                font-size: 14px;
+            }
+
+            .icon {
+                display: none;
+            }
+        }
+
+        .btn {
+            padding: 1em;
+        }
+
+        &:hover, &:focus {
+            background: @warm1;
+            border-color: rgba(0,0,0, 0.2);
+            cursor: pointer;
+            outline: none;
+
+            .edit {
+
+                .icon {
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .student-search-cccid {
+
+        .well {
+            min-height: 90px;
+            background: #fff;
+            margin-top: 15px;
+            margin-bottom: 0px;
+        }
+    }
+
+    .ccc-bulk-activation-student-search-instructions {
+        margin-top: 15px;
+        margin-left: 15px;
+
+        i {
+            margin-right: 5px;
+            font-size: 20px;
+            line-height: 12px;
+            vertical-align: middle;
+
+            &.fa-spinner {
+                color: rgba(0,0,0, 0.6);
+            }
+        }
+    }
+
+    .student-list {
+        padding-bottom: 1em;
+    }
+
+    .ccc-bulk-activation-student-search-results {
+
+        .transition-properties(opacity 400ms @ccc-cubic);
+
+        &.ng-enter {
+            opacity: 0;
+            &.ng-enter-active {
+                opacity: 1;
+            }
+        }
+
+        &.ng-leave {
+            .transition-properties(opacity 0ms @ccc-cubic);
+        }
+    }
+}

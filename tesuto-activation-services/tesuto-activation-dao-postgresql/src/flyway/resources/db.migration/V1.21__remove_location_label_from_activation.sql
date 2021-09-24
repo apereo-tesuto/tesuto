@@ -1,0 +1,1 @@
+alter table activation drop column location_label;

@@ -1,0 +1,92 @@
+.ccc-form-container {
+
+    .form-title {
+        font-size: 31px;
+    }
+
+    .form-section-title {
+        font-size: 21px;
+    }
+
+    fieldset {
+
+        legend {
+            margin-bottom: 20px;
+            font-size: 21px;
+        }
+
+        margin-bottom: 2em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .mimic-label {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 700;
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .help-block, label .help-block {
+        font-weight: normal;
+    }
+
+    .form-yes-no {
+        margin: 0.5em 0 0 0;
+
+        .form-yes-no-section {
+
+            display: block;
+            cursor: pointer;
+
+            border: 1px solid #eee;
+            margin-bottom: 3px;
+            padding: 10px 15px 10px 74px;
+            position: relative;
+            .border-radius(5px);
+
+            .icon {
+                color: #eee;
+                font-size: 24px;
+                position: absolute;
+                top: 18px;
+                left: 15px;
+            }
+
+            .help-block {
+                margin-left: -20px;
+            }
+        }
+
+        .yes.active {
+            background-color: lighten(@brand-success, 60%);
+            border: 1px solid @brand-success;
+            color: darken(@brand-success, 20%);
+
+            .icon {
+                color: @brand-success;
+            }
+
+            .help-block {
+                color: darken(@brand-success, 10%);
+            }
+        }
+
+        .no.active {
+            background-color: lighten(@brand-danger, 40%);
+            border: 1px solid @brand-danger;
+            color: darken(@brand-danger, 20%);
+
+            .icon {
+                color: @brand-danger;
+            }
+
+            .help-block {
+                color: darken(@brand-danger, 10%);
+            }
+        }
+    }
+}

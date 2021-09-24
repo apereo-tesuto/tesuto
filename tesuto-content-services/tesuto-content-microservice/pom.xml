@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.cccnext.tesuto</groupId>
+		<artifactId>tesuto-content-services</artifactId>
+		<version>2.2.0-SNAPSHOT</version>
+	</parent>
+
+
+	<artifactId>tesuto-content-microservice</artifactId>
+	<name>tesuto-content-microservice</name>
+	<packaging>jar</packaging>
+
+	<properties>
+		<application.suffix>content.ApplicationContent</application.suffix>
+		<jar.name>tesuto-content-microservice</jar.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-content-core</artifactId>
+			<version>${tesuto.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-spring-boot</artifactId>
+			<version>2.2.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.cccnext.tesuto</groupId>
+			<artifactId>tesuto-admin-domain</artifactId>
+			<version>${tesuto.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.cccnext.tesuto</groupId>
+					<artifactId>tesuto-common-domain</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.cccnext.tesuto</groupId>
+					<artifactId>tesuto-common-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+</project>

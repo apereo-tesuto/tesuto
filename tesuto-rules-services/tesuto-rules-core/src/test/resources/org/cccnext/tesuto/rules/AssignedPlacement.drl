@@ -1,0 +1,16 @@
+// Assigned Placement
+rule "da181d3c-e1f5-494f-bd9c-165adc71d3bd" when
+    map : Map()
+    ruleSetId : String(this == "12345") from map.get("RULE_SET_ID")
+    placementsView : AssignedPlacementRulesSourceDto(placements : placements) from map.get(PLACEMENTS_KEY())
+    eval(placements.size() > 0)
+    bestPlacement : PlacementViewDto() from getHighestAndBestPlacementFromList(placementsView.placements)
+    then
+        List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+        bestPlacement.setAssigned(true);
+        bestPlacement.setAssignedDate(new Date());
+        bestPlacement.setAssignedRuleSetId(ruleSetId);
+        RulesAction action = new RulesAction("ASSIGNED_PLACEMENT_ACTION");
+        action.addActionParameter("assignedPlacement", bestPlacement);
+        actions.add(action);
+end

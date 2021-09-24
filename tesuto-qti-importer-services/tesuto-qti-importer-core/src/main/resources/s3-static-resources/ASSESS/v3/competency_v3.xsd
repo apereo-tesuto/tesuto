@@ -1,0 +1,32 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="competency">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="identifier"/>
+                <xs:element type="xs:string" name="discipline" />
+                <xs:element type="xs:string" name="description"/>
+                <xs:element name="studentDescription" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="1200"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="sampleItem" minOccurs="0" maxOccurs="1">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                      <xs:maxLength value="1200"/>
+                    </xs:restriction>
+                  </xs:simpleType>
+                </xs:element>
+                <xs:element name="competencyRefs">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="competencyRef" maxOccurs="unbounded" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

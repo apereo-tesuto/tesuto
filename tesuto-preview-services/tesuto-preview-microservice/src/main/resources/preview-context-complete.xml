@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	                           http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+                           	   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+                               	   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+
+	<!-- SET UP FOR PREVIEW CONTROLLER -->
+	<bean id="childExpressionEvaluationCacheService" class="org.cccnext.tesuto.delivery.service.ChildExpressionEvaluationServiceDelivery" />
+
+	<bean id="categoryService"
+		  class="org.cccnext.tesuto.content.client.UseItemCategoryRestClient" />
+
+	<bean id="expressionEvaluationCacheUtil" class="org.cccnext.tesuto.content.service.scoring.ExpressionEvaluationService">
+		<property name="childExpressionEvaluationService" ref="childExpressionEvaluationCacheService" />
+	</bean>
+
+	<bean id="assessmentItemMapCache" class="org.springframework.cache.concurrent.ConcurrentMapCache">
+		<constructor-arg value="assessmentItemCache" />
+	</bean>
+
+	<bean id="assessmentItemRedisCache" class="org.springframework.data.redis.cache.RedisCache">
+		<constructor-arg value="assessmentItemCache" /> <!-- name -->
+		<constructor-arg value="${assessmentItemCache.prefix}" /> <!-- prefix -->
+		<constructor-arg ref="redisOps" /> <!-- redisOperations -->
+		<constructor-arg value="${assessmentItemCache.ttl}" /> <!-- expiration in seconds (one day) -->
+	</bean>
+
+	<bean id="assessmentItemCacheDao"
+		class="org.cccnext.tesuto.preview.repository.AssessmentItemRepositoryCache">
+		<constructor-arg ref="${assessmentItemCache.bean}" />
+	</bean>
+
+	<bean id="assessmentItemCacheService"
+		class="org.cccnext.tesuto.content.service.AssessmentItemServiceImpl">
+		<property name="assessmentItemRepository" ref="assessmentItemCacheDao" />
+	</bean>
+
+	<bean id="assessmentMapCache" class="org.springframework.cache.concurrent.ConcurrentMapCache">
+		<constructor-arg value="assessmentCache" />
+	</bean>
+
+	<bean id="assessmentRedisCache" class="org.springframework.data.redis.cache.RedisCache">
+		<constructor-arg value="previewAsessmentCache" /> <!-- name -->
+		<constructor-arg value="${assessmentCache.prefix}" /> <!-- prefix -->
+		<constructor-arg ref="redisOps" /> <!-- redisOperations -->
+		<constructor-arg value="${assessmentCache.ttl}" /> <!-- expiration in seconds (one day) -->
+	</bean>
+
+	<bean id="assessmentCacheDao"
+		class="org.cccnext.tesuto.preview.repository.AssessmentRepositoryCache">
+		<constructor-arg ref="${assessmentCache.bean}" />
+	</bean>
+
+	<bean id="assessmentCacheService"
+		class="org.cccnext.tesuto.content.service.AssessmentServiceImpl">
+		<property name="assessmentRepository" ref="assessmentCacheDao" />
+		<property name="assessmentItemService" ref="assessmentItemCacheService" />
+	</bean>
+
+	<bean id="assessmentSessionRedisCache" class="org.springframework.data.redis.cache.RedisCache">
+		<constructor-arg value="assessmentSessionCache" /> <!-- name -->
+		<constructor-arg value="${assessmentSessionCache.prefix}" /> <!-- prefix -->
+		<constructor-arg ref="redisOps" /> <!-- redisOperations -->
+		<constructor-arg value="${assessmentSessionCache.ttl}" /> <!-- expiration in seconds (one day) -->
+	</bean>
+
+	<bean id="assessmentSessionMapCache" class="org.springframework.cache.concurrent.ConcurrentMapCache">
+		<constructor-arg value="assessmentSession" />
+	</bean>
+
+	<bean id="assessmentSessionCacheDao"
+		class="org.cccnext.tesuto.delivery.service.AssessmentSessionCacheDao">
+		<constructor-arg ref="${assessmentSessionCache.bean}" />
+	</bean>
+
+	<bean id="taskSetCacheDao"
+		  class="org.cccnext.tesuto.delivery.service.TaskSetCacheDao">
+	  <constructor-arg ref="${assessmentSessionCache.bean}" />
+	</bean>
+	
+	
+	<bean id="selectionService"
+		class="org.cccnext.tesuto.delivery.service.SelectionServiceImpl" />
+
+	<bean id="scoringService"
+		class="org.cccnext.tesuto.delivery.service.scoring.AssessmentItemScoringServiceImpl" />
+		
+	<bean id="taskSetCacheService" class="org.cccnext.tesuto.delivery.service.TaskSetService">
+		<property name="scoringService" ref="scoringService" />
+		<property name="assessmentItemReader" ref="assessmentItemCacheService" />
+		<property name="expressionEvaluationService" ref="expressionEvaluationCacheUtil" />
+		<property name="categoryReader" ref="categoryService" />
+		<property name="selectionService" ref="selectionService" />
+	</bean>
+	
+	<bean id="assessmentSessionCacheService" class="org.cccnext.tesuto.delivery.service.AssessmentSessionService">
+		<property name ="dao" ref="assessmentSessionCacheDao"/>
+	</bean>
+
+	<bean id="competencyMapOrderServiceCache" class="org.cccnext.tesuto.preview.service.CompetencyMapOrderServiceCache" />
+
+	<bean id="deliveryService" class="org.cccnext.tesuto.delivery.service.DeliveryService">
+	    <property name="dao" ref="assessmentSessionCacheDao" />
+	    <property name="taskSetDao" ref="taskSetCacheDao" />
+		<property name="assessmentReader" ref="assessmentCacheService" />
+		<property name="taskSetService" ref="taskSetCacheService" />
+		<property name="expressionEvaluationService" ref="expressionEvaluationCacheUtil" />
+		<property name="outcomeProcessingService" ref="assessmentSessionResultCacheService" />
+	</bean>
+	
+		<bean id="psychometricsCalculationService"
+		  class="org.cccnext.tesuto.delivery.service.PsychometricsCalculationServiceImpl" />
+
+	<bean id="assessmentSessionResultCacheService"
+		  class="org.cccnext.tesuto.delivery.service.scoring.OutcomeProcessingServiceImpl" >
+		<property name="categoryReader" ref="categoryService" />
+		<property name="assessmentItemReader" ref="assessmentItemCacheService" />
+		<property name="psychometricsCalculationService" ref="psychometricsCalculationService" />
+		<property name="dao" ref="assessmentSessionCacheDao" />
+	</bean>
+
+	<bean id="assessmentSessionCacheAssemblyService" class="org.cccnext.tesuto.delivery.service.AssemblyService">
+		<property name="assessmentItemReader" ref="assessmentItemCacheService" />
+	</bean>
+
+	<bean id="deliveryCacheServiceAdapter"
+		class="org.cccnext.tesuto.delivery.service.DeliveryServiceAdapter">
+		<property name="assemblyService" ref="assessmentSessionCacheAssemblyService" />
+		<property name="deliveryService" ref="deliveryService" />
+		<property name="assessmentItemReader" ref="assessmentItemCacheService" />
+        <property name="taskSetService" ref="taskSetCacheService" />
+	</bean>
+	
+	<bean id="competencyMapDisciplineService" class="org.cccnext.tesuto.content.client.CompetencyMapDisciplineRestClient" />
+
+<!-- 
+	<bean name="competencyMapService" class="org.cccnext.tesuto.content.service.CompetencyMapServiceImpl" />
+	
+	
+
+	<bean name="competencyService" class="org.cccnext.tesuto.content.service.CompetencyServiceImpl"/>
+	 -->
+	
+	<bean name="assessmentAccessService" class="org.cccnext.tesuto.preview.service.AssessmentAccessServiceCache" />
+	
+	<bean name="proctorViewDtoAssembler" class="org.cccnext.tesuto.user.assembler.view.ProctorViewDtoAssemblerImpl" />
+	<bean name="testLocationViewDtoAssembler" class="org.cccnext.tesuto.admin.assembler.view.TestLocationViewDtoAssemblerImpl" />
+	
+	</beans>

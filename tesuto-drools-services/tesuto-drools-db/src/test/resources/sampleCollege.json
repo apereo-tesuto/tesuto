@@ -1,0 +1,7 @@
+{
+	"id":"abc",
+	"family":"ZZ1",
+	"description":"Unicon Sample College",
+	"status":"active",
+	"engines":{"sns-listener":{"name":"sns-listener", "dataSource":"maven"}}
+}

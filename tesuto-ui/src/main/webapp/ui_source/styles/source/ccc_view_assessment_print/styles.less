@@ -1,0 +1,507 @@
+@import '../ccc_view_common/styles.less';
+
+@base-font-size: 16px;
+@interaction-font-family: 'Roboto Slab', serif;
+@system-font-family: Helvetica, Verdana, Arial, sans-serif;
+
+#MathJax_Message {
+    font-family: @system-font-family;
+}
+
+
+/*========== HIGH LEVEL PRINTING STYLES ==========*/
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    height: auto;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 10mm 0 10mm 0;
+    background-color: #FAFAFA;
+    font-family: @interaction-font-family;
+}
+
+
+/*============ RENDERING LOADER ============*/
+
+.ccc-print-loading-modal {
+
+    position: fixed;
+    z-index: 999999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.3);
+
+    .ccc-print-loader-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -40px;
+        margin-top: -40px;
+        font-size: 80px;
+        color: rgba(255,255,255, 0.9);
+    }
+}
+
+
+/*========== PAGE AND PAGE ROW STYLES ==========*/
+
+@pageHorizontalPadding: 15mm;
+@printMargin: 5mm;
+
+.ccc-book-render-page {
+    position: relative; // need this so jQuery position of row is relative to this element
+    width: 210mm;
+    overflow-y: visible;
+    padding: @printMargin @pageHorizontalPadding;
+    margin: 0mm auto 10mm auto;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+    .ccc-book-render-page-inner {
+        position: relative;
+        overflow: hidden !important;
+        height: 265mm;  // this should probably be equal to the smallest setting from all browser/os combinations seen below
+    }
+
+    .ccc-book-render-page-content {
+        &.container-fluid {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+    }
+}
+
+// adjustments for page height across browsers and os combinations
+.win {
+    &.chrome {
+        .ccc-book-render-page-inner {
+            height: 265mm;
+        }
+    }
+    &.ie {
+        .ccc-book-render-page-inner {
+            height: 265mm;
+        }
+    }
+}
+.mac {
+    &.chrome {
+        .ccc-book-render-page-inner {
+            height: 265mm;
+        }
+    }
+    &.ff {
+        .ccc-book-render-page-inner {
+            height: 268mm;
+        }
+    }
+    &.safari {
+        .ccc-book-render-page-inner {
+            height: 240mm;
+        }
+    }
+}
+
+.ccc-book-render-page-row {
+    margin-bottom: 45px;
+}
+
+.ccc-book-render-page-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.ccc-book-render-page-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+/*========== ASSESSMENT ITEM STYLES ==========*/
+
+.ccc-assessment-item-stimulus {
+    p {
+        .reading-width();
+    }
+}
+
+.ccc-print-stimulus-container {
+    margin-bottom: 45px;
+}
+
+.ccc-print-stimulus-label {
+
+    font-size: 125%;
+    font-weight: bold;
+    border-bottom: 0px solid rgba(0,0,0, 0.0);
+    margin-bottom: 0px;
+    color: rgba(0,0,0, 0.7);
+
+    i {
+        margin-right: 8px;
+        display: none;
+    }
+}
+
+blockquote, .blockquote {
+    border-left: 4px solid #c8c8c8;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+}
+
+.ccc-print-assessment-item {
+
+    position: relative;
+    clear: both;
+
+    img {
+        max-width: 100%;
+    }
+
+    table {
+
+        td {
+            border: 1px solid @ccc-fg-light;
+        }
+
+        &.ccc-table {
+            td {
+                padding: 2px 5px;
+            }
+        }
+    }
+
+    display: block;
+    margin-left: 0px;
+    margin-bottom: 45px;
+
+    blockquote, .blockquote {
+        font-size: 100%;
+        margin-left: 2em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .ccc-print-assessment-item-body {
+        padding-top: 0;
+        p {
+            .reading-width();
+        }
+    }
+}
+
+
+.ccc-print-assessment-item-number {
+
+    display: block;
+    border-bottom: 2px solid rgba(0,0,0, 0.7);
+    margin-bottom: 15px;
+
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-left-radius: 0px;
+
+    .ccc-print-question-label-background {
+        display: inline-block;
+        text-align: center;
+        min-width: 2em;
+        padding: 0px 5px;
+        height: 2.1em;
+
+        border: 2px solid rgba(0,0,0, 0.7);
+        border-bottom: 0px;
+
+        color: #fff;
+        .border-radius(3px);
+        -webkit-border-bottom-right-radius: 0px;
+        -webkit-border-bottom-left-radius: 0px;
+        -moz-border-radius-bottomright: 0px;
+        -moz-border-radius-bottomleft: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .ccc-print-question-label-text {
+        display: inline-block;
+        padding-top: 0.30em;
+        color: rgba(0,0,0, 0.7);
+        font-size: 125%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-family: @system-font-family;
+    }
+}
+
+.ccc-print-assessment-item-invalid {
+    border: 2px dashed @brand-warning;
+    color: darken(@brand-warning, 20%);
+    padding: 10px;
+    text-align: center;
+    font-family: @system-font-family;
+}
+
+.ccc-interaction-prompt, prompt {
+    margin-bottom: 0.50em;
+    line-height: 157%;
+    font-size: 105%;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    text-align: left;
+    text-transform: none;
+    .reading-width();
+}
+
+.ccc-print-interaction {
+    display: block;
+    clear: both;
+    text-align: left;
+    font-size: @base-font-size; // this provides a font-size reset in case surrounding author styles changes
+    font-family: @interaction-font-family;
+    text-transform: none;
+    text-decoration: none;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 157%;
+    word-spacing: normal;
+}
+
+
+/*============ MULTIPLE CHOICE OPTIONS STYLING ===========*/
+
+.ccc-multiple-choice-bubble {
+
+    display: inline-block;
+    text-align: center;
+
+    width: 1.7em;
+    height: 1.7em;
+    text-align: center;
+    border: 2px solid rgba(0,0,0, 0.6);
+    background: #fff;
+
+    .border-radius(0.9em);
+
+    .ccc-multiple-choice-bubble-inner {
+        display: inline-block;
+        font-family: @system-font-family;
+        font-size: 95%;
+        line-height: 0;
+    }
+}
+
+.ccc-multiple-choice-options-question {
+
+    ul {
+
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0px;
+
+        padding-top: 10px;
+
+        li {
+            display: block;
+            width: 100%;
+
+            color: black;
+
+            font-weight: normal;
+
+            // this padding helps form a symmetric outline when focussed
+            padding: 0.25em;
+
+            // this padding pushes the content over passed the aboslutely positioned letter
+            padding-left: 3.0em;
+
+            // we had padding to the left of the letter so the focused highlight looks symettric so we bring the whole thing back
+            margin-left: -0.3em;
+
+            position: relative;
+            margin-bottom: 0.30em;
+
+            .ccc-multiple-choice-bubble {
+                position: absolute;
+                top: 0.21em;
+                left: 0.75em;
+                border: 0px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &.ccc-multiple-choice-options-question-orientation-horizontal {
+        ul {
+            clear: both;
+        }
+        li {
+            display: inline-block;
+            float: left;
+            min-width: 125px;
+            width: auto;
+            margin-right: 30px;
+        }
+    }
+}
+
+.ccc-multiple-choice-options-answer {
+    ul {
+
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0px;
+
+        li {
+
+            display: inline-block;
+            margin-right: 6px;
+
+            .ccc-multiple-choice-bubble {
+
+                width: 1.5em;
+                height: 1.6em;
+                font-size: 85%;
+
+                padding-top: 1px;
+                border: 1px solid rgba(0,0,0, 0.6);
+                .border-radius(0.9em);
+            }
+        }
+    }
+}
+
+
+/*============ CHOICE INTERACTION STYLING ===========*/
+
+.ccc-print-interaction-choice {
+
+}
+
+
+/*============ BUBBLE SHEET ============*/
+
+.ccc-view-assessment-print-bubble-sheet {
+    .ccc-book-render-page-row {
+        margin-bottom: 15px;
+    }
+}
+
+.ccc-print-assessment-item-bubble-sheet {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 35px;
+
+    .ccc-print-assessment-item-bubble-sheet-invalid {
+        padding-top: 4px;
+        font-family: @system-font-family;
+    }
+
+    .ccc-print-assessment-item-bubble-sheet-number {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        padding-top: 4px;
+        width: 30px;
+        text-align: left;
+    }
+    .ccc-print-assessment-item-bubble-sheet-list {
+
+    }
+}
+
+
+/*============ HEADERS AND FOOTERS ============*/
+
+@verticalHeaderPadding: 5mm;
+
+.ccc-assessment-print-header {
+    font-size: 12px;
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    font-family: @system-font-family;
+    padding: @verticalHeaderPadding 0 0 0;
+    .ccc-assessment-print-header-inner {
+        text-align: left;
+        border-bottom: 1px dashed rgba(0,0,0, 0.4);
+        padding-bottom: 5px;
+
+        .ccc-assessment-print-header-processor {
+            border-top: 1px dashed rgba(0,0,0, 0.4);
+            margin-top: 5px;
+        }
+    }
+
+    .ccc-assessment-print-header-manual-info {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 10px;
+        border: 1px solid black;
+        margin-top: 5px;
+    }
+
+    .ccc-assessment-print-header-manual-info-value {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 10px;
+    }
+}
+.ccc-assessment-print-footer {
+    font-size: 12px;
+    font-family: @system-font-family;
+    padding: 0 0 @verticalHeaderPadding 0;
+    text-align: right;
+}
+
+
+/*============ ADDITIONAL PRINT RELATED STYLE HELPERS ============*/
+
+table { page-break-inside: auto; }
+
+
+/*============ PRINT ONLY STYLES ============*/
+
+// our trick to getting text to not get cutoff is to add a margin to the printed page
+// so in print mode we have to remove the simulated margin on the page ccc-book-render-page and add it back here
+@page {
+    size: A4;
+    margin: @printMargin 0mm @printMargin 0mm;
+}
+@media print {
+
+    html, body { height: auto; }
+
+    body {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .ccc-book-render-page {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        width: initial;
+        min-height: initial;
+        box-shadow: none;
+        background: initial;
+        page-break-after: always;
+        overflow-y: hidden;
+    }
+}
+

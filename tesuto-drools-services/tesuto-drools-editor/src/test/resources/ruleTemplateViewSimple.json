@@ -1,0 +1,16 @@
+{
+	"id":"efbb69b1-c2ac-4d1c-a562-c991426827be",
+	"application":"sns-listener",
+	"title":"Simple Event",
+	"status":"draft",
+	"version":"",
+	"category":"category",
+	"event":"simple-event",
+	"competencyMapDiscipline":"competencyMapDsicipline",
+	"family":"cccMisCode",
+	"description":"description",
+	"definitions":"map : Map()\n",
+	"imports":"import java.util.Map\nimport java.util.List\nimport java.util.ArrayList\n",
+	"whenStatement":"studentGPA : Double(this >= 3.25) from map.get(\"STUDENT_GPA\")",
+	"thenClause":"System.out.print(studentGPA);"
+}

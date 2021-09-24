@@ -1,0 +1,216 @@
+{
+	"id": "324f0919-6d96-4c99-b735-1a72f9e685f7",
+	"family": "SYS",
+	"engine": "tesuto",
+	"version": "1",
+	"title": "ERP Reading Decision Logic",
+	"status": "published",
+	"event": "MULTIPLE_MEASURE_PLACEMENT",
+	"category": "mmComponentPlacementLogic",
+	"competencyMapDiscipline": "ENGLISH",
+	"description": "<p>Use results from Calpas endpoint to calculate a reading placement</p>",
+	"conditionFreetext": "map : Map()\n    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())\n    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())\n    subjectArea : String() from map.get(SUBJECT_AREA_KEY())\n    cccMisCode : String() from map.get(MISCODE_KEY())\n    trackingId : String() from map.get(TRACKING_ID_KEY())\n    facts : Map() from variableSet.facts\n    multipleMeasureVariableSetId: String() from variableSet.id\n    dataSourceType: String() from variableSet.sourceType\n    dataSource: String() from variableSet.source\n    dataSourceDate: Date() from variableSet.sourceDate  ",
+	"conditionRows": [
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "ruleSetId :  String(this == \"${rule_set_id}\" ) from map.get(RULE_SET_ID_KEY())",
+			"tokensFromFreeText": [
+				"rule_set_id"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingM_UboundY} )from parseFactToBoolean((Fact)facts.get(\"readingM_UboundY\"))",
+			"tokensFromFreeText": [
+				"readingM_UboundY"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingY_UboundY} )from parseFactToBoolean((Fact)facts.get(\"readingY_UboundY\"))",
+			"tokensFromFreeText": [
+				"readingY_UboundY"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingA_UboundY} )from parseFactToBoolean((Fact)facts.get(\"readingA_UboundY\"))",
+			"tokensFromFreeText": [
+				"readingA_UboundY"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingB_UboundY} )from parseFactToBoolean((Fact)facts.get(\"readingB_UboundY\"))",
+			"tokensFromFreeText": [
+				"readingB_UboundY"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingC_UboundY} )from parseFactToBoolean((Fact)facts.get(\"readingC_UboundY\"))",
+			"tokensFromFreeText": [
+				"readingC_UboundY"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingM_UboundA} )from parseFactToBoolean((Fact)facts.get(\"readingM_UboundA\"))",
+			"tokensFromFreeText": [
+				"readingM_UboundA"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingA_UboundA} )from parseFactToBoolean((Fact)facts.get(\"readingA_UboundA\"))",
+			"tokensFromFreeText": [
+				"readingA_UboundA"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingB_UboundA} )from parseFactToBoolean((Fact)facts.get(\"readingB_UboundA\"))",
+			"tokensFromFreeText": [
+				"readingB_UboundA"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingC_UboundA} )from parseFactToBoolean((Fact)facts.get(\"readingC_UboundA\"))",
+			"tokensFromFreeText": [
+				"readingC_UboundA"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingM_UboundB} )from parseFactToBoolean((Fact)facts.get(\"readingM_UboundB\"))",
+			"tokensFromFreeText": [
+				"readingM_UboundB"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingB_UboundB} )from parseFactToBoolean((Fact)facts.get(\"readingB_UboundB\"))",
+			"tokensFromFreeText": [
+				"readingB_UboundB"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "Boolean(this == ${readingC_UboundB} )from parseFactToBoolean((Fact)facts.get(\"readingC_UboundB\"))",
+			"tokensFromFreeText": [
+				"readingC_UboundB"
+			]
+		},
+		{
+			"publishedObject": null,
+			"publishedObjectField": null,
+			"condition": null,
+			"value1": null,
+			"value2": null,
+			"publishedName": null,
+			"freetext": "highestReadingLevel : String(this.equals(\"${highest_level_reading_course}\")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())",
+			"tokensFromFreeText": [
+				"highest_level_reading_course"
+			]
+		}
+	],
+	"actionFreetext": "     \tList<RulesAction> actions = (List<RulesAction>) map.get(\"actions\");\n     \tPlacementComponentActionResult placement = new PlacementComponentActionResult();\n        placement.setCccid(student.getCccid());\n        placement.setTransferLevel(\"${transfer_level}\");\n        placement.setLevelsBelowTransfer(${levels_below_transfer});\n        placement.setSubjectArea(subjectArea);\n        placement.setCollegeId(cccMisCode);\n         placement.setTrackingId(trackingId);\n         placement.setRuleId(\"${rule_id}\");\n        placement.setRuleSetId(ruleSetId);\n        placement.setRuleSetRowId(\"${rule_set_row_id}\");\n        placement.setRowNumber(\"${row_number}\");\n        placement.setCompetencyMapDiscipline(\"ENGLISH\");\n        placement.addProgram(\"reading\");\n        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);\n        placement.setDataSource(dataSource);\n        placement.setDataSourceDate(dataSourceDate);\n        placement.setDataSourceType(dataSourceType);\n        placement.setStandalonePlacement(true);\n        placement.setInsufficientData(${insufficient_data});\n        filterByCollegeSubjectPlacement(actions, placement);",
+	"actionRows": [],
+	"variableTypes": {
+		
+	},
+	"customImports": [
+		"java.util.Date",
+		"org.cccnext.tesuto.placement.view.MmapDataSourceType",
+		"java.lang.Double",
+		"java.lang.String",
+		"java.util.stream.Collectors",
+		"org.cccnext.tesuto.rules.view.BasicStudentView",
+		"org.cccnext.tesuto.domain.multiplemeasures.VariableSet",
+		"org.cccnext.tesuto.domain.multiplemeasures.Fact",
+		"org.cccnext.tesuto.domain.multiplemeasures.PlacementComponentActionResult",
+		"function org.apache.commons.lang3.StringUtils.isBlank",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.STUDENT_VIEW_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.MULTIPLE_MEASURE_VARIABLE_SET_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.SUBJECT_AREA_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.TRACKING_ID_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.MISCODE_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.RULE_SET_ID_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.HIGHEST_READING_LEVEL_COURSE_KEY",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToDouble",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToBoolean",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToInteger",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToString",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseDouble",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.parseInteger",
+		"function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement"
+	],
+	"testTokenValues": "rule_set_id,readingM_UboundY,readingY_UboundY,readingA_UboundY,readingB_UboundY,readingC_UboundY,readingM_UboundA,readingA_UboundA,readingB_UboundA,readingC_UboundA,readingM_UboundB,readingB_UboundB,readingC_UboundB,highest_level_reading_course,transfer_level,levels_below_transfer,insufficient_data\n${rule_set_id},true,,,,,,,,,,,,0,TO,-1,false",
+	"customFunctions": null
+}

@@ -1,0 +1,50 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result
+cccid,DATA_SOURCE,DATA_SOURCE_TYPE,EP01,EP02,EP03,EP04,EP05,EP06,EP07,EP08,EP09,transferLevel,program
+33,APMS,Self Reported,a,a,l,a,j,k,g,k,g,Y,math_trig
+40,APMS,Self Reported,a,b,k,a,f,k,j,f,c,Y,math_trig
+63,APMS,Self Reported,a,a,j,a,d,k,d,k,d,Y,math_trig
+71,APMS,Self Reported,a,a,i, , ,k,g,k,g,Y,math_trig
+129,APMS,Self Reported,a,b,k,c,a,f,a,f,a,Y,math_trig
+130,APMS,Self Reported,a,a,k,b,d,k,c,k,g,Y,math_trig
+137,APMS,Self Reported,a,a,m,c,e,k,e,k,e,Y,math_trig
+178,APMS,Self Reported,a,a,l,a,g,l,g,l,g,Y,math_trig
+180,APMS,Self Reported,a,a,m,c,d,k,g,k,g,Y,math_trig
+185,APMS,Self Reported,a,a,l,b,d,l,g,l,g,Y,math_trig
+276,APMS,Self Reported,a,a,m,c,n,k,e,k,e,Y,math_trig
+280,APMS,Self Reported,a,b,i, , ,k,h,j,a,Y,math_trig
+313,APMS,Self Reported,a,a,i,b,d,k,d,k,d,Y,math_trig
+357,APMS,Self Reported,a,b,j, , ,k,n,f,d,Y,math_trig
+361,APMS,Self Reported,a,a,j,c,d,k,d,k,d,Y,math_trig
+409,APMS,Self Reported,a,a,m,c,d,k,g,k,f,Y,math_trig
+419,APMS,Self Reported,a,a,i,b,d,k,g,k,g,Y,math_trig
+464,APMS,Self Reported,a,a,k,b,d,k,a,k,a,Y,math_trig
+466,APMS,Self Reported,a,a,k,a,c,k,f,k,f,Y,math_trig
+469,APMS,Self Reported,a,a,l,c,g,k,g,k,g,Y,math_trig
+476,APMS,Self Reported,a,b,k, , ,k,j,f,c,Y,math_trig
+512,APMS,Self Reported,a,a,k,c,d,k,g,k,g,Y,math_trig
+578,APMS,Self Reported,a,a,l,c,d,k,d,k,d,Y,math_trig
+612,APMS,Self Reported,a,b,i,c,c,f,a,f,a,Y,math_trig
+661,APMS,Self Reported,a,a,l,c,a,k,g,k,g,Y,math_trig
+663,APMS,Self Reported,a,b,j, , ,k,d,k,d,Y,math_trig
+690,APMS,Self Reported,a,a,i,c,e,k,g,k,g,Y,math_trig
+703,APMS,Self Reported,a,a,m,c,d,k,d,k,d,Y,math_trig
+719,APMS,Self Reported,a,a,j,c,j,k,g,k,g,Y,math_trig
+782,APMS,Self Reported,a,a,m,c,d,k,d,k,d,Y,math_trig
+784,APMS,Self Reported,a,a,l,b,g,k,d,k,d,Y,math_trig
+888,APMS,Self Reported,a,a,l,b,g,k,g,k,g,Y,math_trig
+902,APMS,Self Reported,a,a,m,c,d,l,g,l,g,Y,math_trig
+961,APMS,Self Reported,a,a,m,c,d,k,g,k,g,Y,math_trig
+1019,APMS,Self Reported,a,a,m,c,f,k,c,k,g,Y,math_trig
+1044,APMS,Self Reported,a,a,k,h,f,c,g,k,g,Y,math_trig
+1047,APMS,Self Reported,a,a,k, , ,k,g,k,g,Y,math_trig
+1065,APMS,Self Reported,a,a,i,c,a,e,f,k,c,Y,math_trig
+1081,APMS,Self Reported,a,a,k,b,g,k,g,k,g,Y,math_trig
+1097,APMS,Self Reported,a,a,i,b,f,k,e,k,e,Y,math_trig
+1133,APMS,Self Reported,a,a,l,b,f,k,f,k,f,Y,math_trig
+1152,APMS,Self Reported,a,a,m,c,j,k,g,k,g,Y,math_trig
+1178,APMS,Self Reported,a,a,m,b,g,l,a,l,a,Y,math_trig
+1209,APMS,Self Reported,a,a,l,c,d,k,g,k,g,Y,math_trig
+1233,APMS,Self Reported,a,a,l,b,g,l,g,l,g,Y,math_trig
+1303,APMS,Self Reported,a,a,j, , ,k,a,k,a,Y,math_trig
+1354,APMS,Self Reported,a,a,m,b,f,k,c,k,c,Y,math_trig
+1412,APMS,Self Reported,a,a,j,c,f,k,e,k,d,Y,math_trig

@@ -1,0 +1,22 @@
+{
+	"id": "be76d32d-669e-4931-90f3-9ef4074f6702",
+	"ruleId": "efbb69b1-c2ac-4d1c-a562-c991426827be",
+	"application": "sns-listener",
+	"title": "Is Veteran",
+	"version": "1",
+	"variableRows": [
+		{
+			"name": "variableRowName",
+			"variables": [
+				{
+					"name": "cccid",
+					"value": "AAA4444"
+				},
+				{
+					"name": "lower",
+					"value": "1.0"
+				}
+			]
+		}
+	]
+}

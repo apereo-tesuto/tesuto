@@ -1,0 +1,66 @@
+ccc-activations-by-student {
+
+    .ccc-activation-inner {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        margin: 0.5em 0;
+        position: relative;
+        border-radius: 0.5rem;
+
+        &:hover {
+            background: rgba(0, 70, 173, 0.1);
+            border-color: @blue;
+            cursor: pointer;
+        }
+    }
+
+    .student {
+        padding: 0.5em 1em;
+        position: relative;
+    }
+
+    .student-name {
+        font-size: 1.2em;
+
+        .text-fade {
+            display: none;
+        }
+
+        .last-name {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .cccid {
+            font-size: 0.9em;
+            color: rgba(0, 0, 0, 0.65);
+            margin-top: 0.25em;
+        }
+    }
+
+    .activation {
+        background: rgba(255, 255, 255, 0.75);
+        border-radius: 4px;
+        margin: .25em 0;
+        padding: 0.5em 1em;
+        white-space: normal;
+
+        .test-status {
+            display: inline-block;
+            padding: 0.5em 0.6em;
+            margin-right: 4px;
+            font-size: 75%;
+            line-height: 1;
+            min-width: 8em;
+            text-transform: capitalize;
+            white-space: nowrap;
+            vertical-align: baseline;
+        }
+
+        .test-status-icon {
+            display: inline-block;
+            padding: 0.5em 0.6em;
+            vertical-align: bottom;
+        }
+    }
+
+}

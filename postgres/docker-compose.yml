@@ -1,0 +1,19 @@
+version: "3"
+services:
+  postgres:
+    restart: 'always'
+    ports:
+      - '5434:5432'
+    environment:
+      - "FILLA_DB_USER=filla"
+      - "FILLA_DB_PASSWORD=filla"
+      - "FILLA_DB_DATABASE=filladb1"
+      - "POSTGRES_PASSWORD=password"
+    build: '.'
+    networks:
+      infranet:
+        aliases:
+          - 'postgres'
+
+networks:
+  infranet:

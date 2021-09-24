@@ -1,0 +1,157 @@
+ccc-overall-performance {
+    .performance-graph {
+        .graph {
+            position: relative;
+            margin-bottom: 2em;
+        }
+
+        .graph-label {
+            font-size: 0.7em;
+            font-weight: 300;
+            padding-bottom: 1em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .graph.bar {
+            height: 60px;
+
+            .graph-labels,
+            .graph-bars {
+                .clearfix();
+            }
+
+            .graph-labels {
+                height: 20px;
+            }
+
+            .graph-bars {
+                background: #f5f5f5;
+                border: 2px solid @gray-light;
+                box-shadow: inset 2px 2px 12px rgba(0,0,0,0.3);
+                height: 50px;
+                position: absolute;
+                top: 30px;
+                left: 0;
+                width: 100%;
+                z-index: 3;
+                border-radius: .25em;
+            }
+
+            .graph-label,
+            .graph-bar {
+                position: absolute;
+                width: 20%
+            }
+
+            .graph-label.below-middle,
+            .graph-bar.below-middle {
+                left: 20%
+            }
+
+            .graph-label.average,
+            .graph-bar.average {
+                left: 40%
+            }
+
+            .graph-label.above-middle,
+            .graph-bar.above-middle {
+                left: 60%
+            }
+
+            .graph-label.above-average,
+            .graph-bar.above-average {
+                left: 80%
+            }
+
+            .graph-label.below-average {
+                text-align: left;
+            }
+
+            .graph-label.above-average {
+                text-align: right;
+            }
+
+            .graph-label.measure {
+                color: darken(@gold1, 10%);
+                font-weight: 600;
+            }
+
+            .graph-bar {
+                height: 46px;
+                z-index: 2;
+                text-align: center;
+            }
+
+            .graph-bar.below-average {
+                border-right: 2px solid fade(white, 50%);
+            }
+
+            .graph-bar.average,
+            .graph-bar.below-middle,
+            .graph-bar.above-middle {
+                border-left: 2px solid fade(black, 10%);
+                border-right: 2px solid fade(white, 50%);
+            }
+
+            .graph-bar.above-average {
+                border-left: 2px solid fade(black, 10%);
+            }
+
+            .marker {
+                background-color: fade(white, 10%);
+                border: 10px solid @gold1;
+                border-radius: 0.25rem;
+                box-shadow: 0 0 8px fade(black, 50%);
+                height: 60px;
+                width: 20%;
+                position: absolute;
+                top: 25px;
+                left: 0%;
+                z-index: 10;
+
+                &.one {
+                    left: 0;
+                }
+                &.two {
+                    left: 20%;
+                }
+                &.three {
+                    left: 40%;
+                }
+                &.four {
+                    left: 60%;
+                }
+                &.five {
+                    left: 80%;
+                }
+            }
+
+            .graph-bar.measured-above,
+            .graph-bar.measure {
+                background-color: lighten(@blue, 10%);
+            }
+        }
+
+        .class-percentage {
+            color: #666;
+            display: block;
+            padding-top: .5em;
+
+            .number {
+                font-size: 1.5em;
+                font-weight: 600;
+            }
+
+            .percent {
+                font-size: 1.25em;
+            }
+        }
+
+        .measure {
+            .class-percentage {
+                color: #fff;
+            }
+        }
+    }
+}

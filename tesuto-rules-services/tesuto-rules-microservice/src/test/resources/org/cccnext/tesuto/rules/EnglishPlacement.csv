@@ -1,0 +1,11 @@
+miscode,subject_area,gpa_cum,grade_level,english,cst,cst_english,transfer_level,transfer_level_index
+${miscode},${subject_area},2.6,11,,,,Y,0
+${miscode},${subject_area},2.3,11,,,,A,1
+${miscode},${subject_area},2,11,,,,B,2
+${miscode},${subject_area},1.4,11,,,,C,3
+${miscode},${subject_area},2.6,12,,,,Y,0
+${miscode},${subject_area},2.2,12,2,,,A,1
+${miscode},${subject_area},1.8,12,1,,,B,2
+${miscode},${subject_area},1.8,12,,288,,B,2
+${miscode},${subject_area},1.7,12,,,,C,3
+${miscode},${subject_area},1.5,12,,,,C,3

@@ -1,0 +1,59 @@
+ccc-performance-by-category {
+
+    .competency-table {
+        margin: 0 0 3em 0;
+
+        h4 {
+            margin-top: 10px;
+        }
+
+        th {
+            text-align: center;
+
+            &:first-of-type {
+                text-align: left;
+            }
+        }
+
+        tbody {
+
+            td {
+                text-align: center;
+
+                &:first-child {
+                    text-align: left;
+                }
+            }
+        }
+
+        .fa-check-circle {
+            color: lighten(@blue, 15%);
+            font-size: 2em;
+
+        }
+
+        .percentage {
+            display: block;
+            font-weight: 600;
+            line-height: 3em;
+            text-align: center;
+            height: 3em;
+            width: 3em;
+
+            &.highest {
+                background: #0065fa;
+                border-radius: 50%;
+                color: #fff;
+
+                .percent {
+                    color: rgba(255, 255, 255, 0.8);
+                }
+            }
+
+            .percent {
+                color: rgba(68, 68, 68, 0.7);
+                font-size: 0.9em;
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+	<title>CCC Rules Editor Deployment Tool</title>
+	<link href="css/angular-bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+		table {border: 1px solid #cccc;}
+		tbody tr:nth-child(even) {background-color: #eee;}
+		th {border-bottom: 1px solid black;}
+		th.empty {border-bottom: none;}
+		td {text-align: left; vertical-align: top;}
+	</style>
+</head>
+<body ng-app="colleges">
+<div class="container">
+<div ng-controller="CollegeServiceCtrl" ng-cloak class="ng-cloak">
+
+	<h1>Families</h1>
+	<table class="col-sm-12 table table-fixed">
+		<thead>
+			<tr>
+				<th class="col-md-1">Family Code</th>
+				<th class="col-md-4">Description</th>
+				<th class="col-md-4">Engines</th>
+				<th class="col-md-1">Status</th>
+				<th class="col-md-1 empty"></th>
+				<th class="col-md-1 empty"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="college in colleges | orderBy:'cccMisCode'">
+				<td class="col-md-1" ng-bind="college.cccMisCode"></td>
+				<td class="col-md-4" ng-bind="college.description"></td>
+				<td class="col-md-4" ng-bind="getCollegeApplicationNames(college.applications)"></td>
+				<td class="col-md-1" ng-bind="college.status"></td>
+				<td class="col-md-1"><button class="btn btn-default" ng-click="editCollege(college, formCollege)">Edit</button></td>
+				<td class="col-md-1"><button class="btn btn-default" ng-click="deleteCollege(college, formCollege)">Delete</button></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>Family</h2>
+	<form name="formCollege">
+		<div class="col-sm-12">
+			<div class="col-sm-3"><b>ID</b></div>
+			<div class="col-sm-9" ng-bind="selectedCollegeId || '-'"></div>
+		</div>
+		<div class="col-sm-12">
+			<div class="col-sm-3"><label for="cscMis">Family Code</label></div>
+			<div class="col-sm-9"><input id="cscMis" type="text" ng-model="selectedCollegeCccMisCode" name="cccMisCode" maxlength="3" minlenth="3" required /></div>
+		</div>
+		<div class="col-sm-12">
+			<div class="col-sm-3"><label for="cscDesc">Description</label></div>
+			<div class="col-sm-9"><input id="cscDesc" type="text" ng-model="selectedCollegeDescription" name="description" required /></div>
+		</div>
+		<div class="col-sm-12">
+			<div class="col-sm-3"><label for="cscStatus">Status</label></div>
+			<div class="col-sm-9">
+				<select id="cscStatus" ng-model="selectedCollegeStatus" required>
+					<option>inactive</option>
+					<option>active</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<h3>Engines</h3>
+			<table class="table table-fixed">
+				<thead>
+					<tr>
+						<th class="col-sm-2">Name</th>
+						<th class="col-sm-1">Datasource</th>
+						<th class="col-sm-1">GroupId</th>
+						<th class="col-sm-1">ArtifactId</th>
+						<th class="col-sm-1">Version</th>
+						<th class="col-sm-2">Status</th>
+						<th class="col-sm-1 empty"></th>
+						<th class="col-sm-1 empty"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="application in selectedCollegeApplications">
+						<td class="col-sm-3" ng-bind="application.name"></td>
+						<td class="col-sm-2" ng-bind="application.dataSource"></td>
+						<td class="col-sm-3" ng-bind="application.groupId"></td>
+						<td class="col-sm-3" ng-bind="application.artifactId"></td>
+						<td class="col-sm-1" ng-bind="application.version"></td>
+						<td class="col-sm-2" ng-bind="application.status"></td>
+						<td class="col-sm-1"><button class="btn btn-default" ng-click="editApplication(application)">Edit</button></td>
+						<td class="col-sm-1"><button class="btn btn-default" ng-click="deleteApplication(application)">Delete</button></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td class="col-sm-3">
+							<input type="text" name="name" maxlength="100" ng-model="selectedApplicationName" />
+						</td>
+					  <td class="col-sm-1">
+					    <select ng-model="selectedApplicationDataSource">
+					        <option>maven</option>
+					        <option>editor</option>
+					    </select>
+					  </td>
+						<td class="col-sm-3"><input type="text" name="groupId" size="30" maxlength="100" ng-model="selectedApplicationGroupId" /></td>
+						<td class="col-sm-3"><input type="text" name="artifactId" size="30" maxlength="100" ng-model="selectedApplicationArtifactId" /></td>
+						<td class="col-sm-1"><input type="text" name="version" maxlength="100" ng-model="selectedApplicationVersion" /></td>
+						<td class="col-sm-2"></td><!-- status -->
+						<td class="col-sm-1"><button class="btn btn-secondary" ng-click="updateApplication()" ng-disabled="isInvalidApplication()">Update</button></td>
+						<td class="col-sm-1"><button class="btn btn-default" ng-click="clearApplication()">Clear</button></td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<div class="col-sm-12">
+			<button class="btn btn-default btnDisabled" ng-click="clearCollege(formCollege)">Clear</button>
+			<button class="btn btn-primary" ng-click="saveCollege(formCollege)" ng-disabled="formAnswer.$valid && isInvalidCollege()">Save</button>
+		</div>
+	</form>
+
+</div> <!-- CollegeServiceCtrl -->
+</div> <!-- .container -->
+<script src="js/angular-bootstrap.js" type="text/javascript"></script>
+<script src="js/colleges.js"></script>
+</body>
+</html>

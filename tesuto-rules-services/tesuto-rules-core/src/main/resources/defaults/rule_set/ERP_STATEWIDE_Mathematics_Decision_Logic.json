@@ -1,0 +1,18 @@
+{
+	"id": "9ab3b5a5-c550-41eb-bc9b-2a802c452f96",
+	"family": "SYS",
+	"engine": "tesuto",
+	"version": "1",
+	"title": "Statewide and ERP MMAP Mathematics Decision Logic - May 2016",
+	"status": "published",
+	"event": "MULTIPLE_MEASURE_PLACEMENT",
+	"category": "mmComponentPlacementLogic",
+	"competencyMapDiscipline": "MATH",
+	"description": "Execute the statewide and ERP MMAP Mathematics decision logic to generate the Multiple Measures, High School Transcript based placement component",
+	"ruleSetRowIds": [
+		"19819a51-9d9c-45a1-a1d2-807f8e0548ad",
+		"446f4075-9c67-4c66-81aa-5f0758d916ae"
+	],
+	"ruleSetDrl": null,
+	"ruleSetDrlValidationCsv": null
+}

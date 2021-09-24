@@ -1,0 +1,76 @@
+ccc-activation-details-card {
+
+    .well {
+        background: @warm1;
+        border-bottom: 1px solid @warm3;
+        margin-bottom: 2em;
+        padding: 1em;
+        position: relative;
+        border-radius: 0.5rem;
+    }
+
+    display: block;
+
+    .assessments ul {
+        display: inline;
+    }
+
+    .tag{
+        padding: .25em;
+    }
+
+    .location .at,
+    .assessments .for {
+        background: fade(black, 10%);
+        color: fade(black, 75%);
+        display: inline-block;
+        font-size: .75rem;
+        line-height: 1.0rem;
+        margin-right: 1rem;
+        min-width: 3.0rem;
+        padding: 0.1em 1em;
+        text-align: center;
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
+
+    .assessments {
+        .label {
+            display: inline-block;
+        }
+    }
+
+    .edit {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .btn-sm {
+            font-size: 14px;
+        }
+
+        .icon {
+            display: none;
+        }
+    }
+
+    .btn {
+        padding: 1em;
+    }
+
+    &:hover, &:focus {
+        background: @warm1;
+        border-color: rgba(0,0,0, 0.2);
+        cursor: pointer;
+        outline: none;
+
+        .edit {
+
+            .icon {
+                display: inline-block;
+                margin-right: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+/*============= CHOICE INPUT ============*/
+
+ccc-choice-input {
+
+    .no-select();
+    position: relative;
+
+    .radio, .checkbox {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    display: inline-block;
+
+    .ccc-choice-input-background {
+        display: inline-block;
+        text-align: center;
+
+        width: 2.2em;
+        height: 2.2em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        border: 3px solid rgba(0,0,0, 0.2);
+        background: #fff;
+        .border-radius(1.1em);
+    }
+
+    .ccc-choice-input-text {
+        display: inline-block;
+        font-family: Helvetica, Verdana, Arial, sans-serif;
+        padding-top: 0.19em;
+    }
+
+    .ccc-choice-input-checkbox-container {
+        display: inline-block;
+        position: absolute;
+        left: -1.1em;
+        top: 0.20em;
+        font-size: 150%;
+    }
+
+    .checkbox {
+        .ccc-choice-input-background {
+            .border-radius(0.2em);
+        }
+    }
+
+    .selected {
+        .ccc-choice-input-background {
+            border: 3px solid rgba(0,0,0, 0.35);
+            background: rgba(0,0,0, 0.60);
+        }
+        .ccc-choice-input-text {
+            color: #fff;
+        }
+        .ccc-choice-input-checkbox-container {
+            color: rgba(0,0,0, 0.55);
+        }
+    }
+
+    &:hover {
+        .ccc-choice-input-background {
+            border: 3px solid rgba(0,0,0, 0.75);
+        }
+    }
+}

@@ -1,0 +1,160 @@
+ccc-student-card-list {
+
+    display: block;
+
+    .student-cards {
+
+        .ccc-student-card {
+            margin-left: 3em;
+        }
+
+        .number-wrapper {
+            position: relative;
+
+            .list-number {
+                position: absolute;
+                top: 0;
+                bottom: -2em;
+                left: -1em;
+                background: @warm1;
+                border: 1px solid @warm3;
+                font-size: 1.25em;
+                padding: 0.1em 0.5em;
+                text-align: center;
+                vertical-align: top;
+                width: 1.75em;
+            }
+        }
+
+        .user {
+
+            border: none;
+            border-bottom: 1px dotted #ddd;
+            cursor: auto;
+            padding: 1em;
+            margin: 0;
+            width: 100% !important;
+            background: #fff;
+
+            .emphasize {
+                font-weight: normal;
+            }
+
+            .transition-properties(0.6s @ccc-cubic all);
+
+            &:first-child {
+                border-top: 1px dotted #ddd;
+            }
+
+            .list-number,
+            .remove {
+                display: inline-block;
+                padding-bottom: .5em;
+            }
+
+            .list-number {
+                display: inline-block;
+            }
+
+            .card-data {
+                position: relative;
+                margin-left: 1em;
+            }
+
+            .remove {
+                float: right;
+            }
+
+            .card-wrapper {
+                margin-left: 1.5em;
+            }
+
+            &.ng-enter {
+                opacity: 0.0;
+                background: lighten(@brand-primary, 25%);
+                .transform(translateX(300px));
+
+                &.ng-enter-active {
+                    opacity: 1.0;
+                    background: #fff;
+                    .transform(translateX(0px));
+                }
+            }
+
+            &.ng-leave {
+                opacity: 1.0;
+                .transform(translateX(0px));
+                &.ng-leave-active {
+                    opacity: 0.0;
+                    .transform(translateX(300px));
+                }
+            }
+        }
+    }
+
+
+    &.warning {
+
+        .student-cards {
+
+            .emphasize {
+                color: @state-warning-text;
+            }
+
+            li {
+
+                .list-number {
+                    position: absolute;
+                    top: 0;
+                    bottom: -2em;
+                    left: -1em;
+                    background: darken(@brand-warning, 30%);
+                    color: fade(#fff, 90%);
+                    border: 1px solid darken(@brand-warning, 30%);
+                    font-size: 1.25em;
+                    padding: 0.1em 0.5em;
+                    text-align: center;
+                    vertical-align: top;
+                    width: 1.75em;
+                }
+            }
+        }
+    }
+
+    &.success {
+
+        .emphasize {
+            color: @state-success-text;
+        }
+
+        .student-cards {
+
+            li {
+
+                .list-number {
+                    position: absolute;
+                    top: 0;
+                    bottom: -2em;
+                    left: -1em;
+                    background: darken(@brand-success, 10%);
+                    color: fade(#fff, 90%);
+                    border: 1px solid darken(@brand-success, 10%);
+                    font-size: 1.25em;
+                    padding: 0.1em 0.5em;
+                    text-align: center;
+                    vertical-align: top;
+                    width: 1.75em;
+                }
+            }
+        }
+    }
+}
+
+.ccc-student-card-list-set {
+    ccc-student-card-list ul.student-cards li.user:last-child {
+        border-bottom: 0px;
+    }
+    ccc-student-card-list ul.student-cards {
+        margin-bottom: 0px;
+    }
+}

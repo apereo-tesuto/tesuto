@@ -1,0 +1,2 @@
+insert into "security_permission" (security_permission_id, created_on_date, last_updated_date, description) values
+  ('STORE_STATIC_REPORT', timestamp 'now', timestamp 'now', 'Allows user to store static reports to s3 bucket.');

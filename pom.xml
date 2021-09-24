@@ -1,0 +1,639 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.2.RELEASE</version>
+		<relativePath />
+	</parent>
+	<groupId>org.cccnext.tesuto</groupId>
+	<artifactId>tesuto</artifactId>
+	<version>2.2.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+
+	<properties>
+		<dynamo-sdk.version>1.11.477</dynamo-sdk.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java-version>11</java-version>
+		<spring-version>4.3.14.RELEASE</spring-version>
+		<spring-security-version>5.0.3.RELEASE</spring-security-version>
+		<spring-data-commons-version>2.0.5.RELEASE</spring-data-commons-version>
+		<spring-security-saml2-core-version>1.0.2.RELEASE</spring-security-saml2-core-version>
+		<spring-session.version>1.3.5.RELEASE</spring-session.version>
+		<spring-session-data-redis.version>2.1.2.RELEASE</spring-session-data-redis.version>
+		<springfox-version>2.6.1</springfox-version>
+		<tomcat-version>7.0.47</tomcat-version>
+		<aspectj-version>1.9.2</aspectj-version>
+		<aws-version>1.11.343</aws-version>
+		<hibernate-version>5.2.4.Final</hibernate-version>
+		<!-- Flyway defaults -->
+		<flyway-version>4.1.0</flyway-version>
+		<flyway.migration.location>filesystem:src/flyway/resources/db.migration</flyway.migration.location>
+		<flyway.migration.location.profile>filesystem:src/flyway/resources/db.profile.local</flyway.migration.location.profile>
+		<env.flyway.schemas>public</env.flyway.schemas>
+		<env.baseline.on.migrate>true</env.baseline.on.migrate>
+		<postgresql-jdbc-version>9.4-1201-jdbc41</postgresql-jdbc-version>
+		<servlet-api-version>3.1.0</servlet-api-version>
+		<tesuto.version>2.2.0-SNAPSHOT</tesuto.version>
+		<disable.assessments>disable.assessments=true</disable.assessments>
+		<disable.assessments.token>disable.assessments=true</disable.assessments.token>
+		<tesuto.placement.application>tesuto-placement-application</tesuto.placement.application>
+		<!-- <placement.includes>required.default.value</placement.includes> <placement.includes.token>required.default.value</placement.includes.token> -->
+		<placement.includes>default.value.so.nothing.changes.if.profile.not.set</placement.includes>
+		<placement.includes.token>default.value.so.nothing.changes.if.profile.not.set</placement.includes.token>
+		<tesuto.active.services.token>tesuto.active.services=.*</tesuto.active.services.token>
+		<tesuto.active.services>tesuto.active.services=admin,placement,rules</tesuto.active.services>
+		<jsr250-api.version>1.0</jsr250-api.version>
+		<toolsjar>${JAVA_TOOLS}</toolsjar>
+
+		<java.version>11</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+
+		<!-- Library versions -->
+		<!-- as of 07/10/19 -->
+		<amazon-sqs-java-messaging-lib.version>1.0.6</amazon-sqs-java-messaging-lib.version>
+		<!-- as of 07/10/19 -->
+		<aws-java-sdk.version>1.11.589</aws-java-sdk.version>
+		<!-- as of 07/10/19 -->
+		<aws-java-sdk-s3.version>1.11.589</aws-java-sdk-s3.version>
+		<!-- as of 07/10/19 -->
+		<aws-kinesis.version>1.11.589</aws-kinesis.version>
+		<!-- as of 08/08/19 -->
+		<!-- as of 01/28/19 -->
+		<commons-beanutils.version>1.8.3</commons-beanutils.version>
+		<!-- as of 01/28/19 -->
+		<commons-collections.version>3.2.2</commons-collections.version>
+		<!-- as of 01/28/19 -->
+		<commons-csv.version>1.6</commons-csv.version>
+		<!-- as of 08/08/19 -->
+		<!-- as of 07/10/19 -->
+		<commons-lang3.version>3.9</commons-lang3.version>
+		<!-- as of 01/28/19 -->
+		<drools.version>7.16.0.Final</drools.version>
+		<!-- as of 01/28/19 -->
+		<jackson-databind.version>2.9.8</jackson-databind.version>
+		<!-- as of 01/28/19 -->
+		<junit.version>4.12</junit.version>
+		<!-- as of 01/28/19 -->
+		<log4j-api.version>2.11.1</log4j-api.version>
+		<!-- as of 01/28/19 -->
+		<log4j-core.version>2.11.1</log4j-core.version>
+		<!-- as of 01/28/19 -->
+		<log4j-over-slf4j.version>1.7.25</log4j-over-slf4j.version>
+		<!-- as of 01/28/19 -->
+		<lombok.version>1.18.4</lombok.version>
+		<!-- as of 09/11/19 -->
+		<nimbus.version>7.8</nimbus.version>
+		<!-- as of 01/28/19 -->
+		<otj-pg-embedded.version>0.13.0</otj-pg-embedded.version>
+		<!-- version combo -->
+		<spring.dynamodb.version>4.5.5</spring.dynamodb.version>
+		<!-- as of 01/28/19 -->
+		<spring-security-oauth2.version>2.3.4.RELEASE</spring-security-oauth2.version>
+		<!-- as of 01/28/19 -->
+		<swagger.version>2.9.2</swagger.version>
+		<!-- This is the version SB 2.1.2 is using <tomcat.version>9.0.14</tomcat.version> -->
+		
+		<javax.annotation.version>1.3.2</javax.annotation.version>
+
+	</properties>
+
+
+	<!-- If you are using JaCoCo, Java 11 needs this version <groupId>org.jacoco</groupId> 
+		<artifactId>jacoco-maven-plugin</artifactId> <version>0.8.3</version> For 
+		mockito testing: <dependency> <groupId>org.mockito</groupId> <artifactId>mockito-core</artifactId> 
+		<version>2.23.4</version> <scope>test</scope> </dependency> -->
+
+	<profiles>
+		<profile>
+			<id>placement</id>
+			<modules>
+				<module>tesuto-router</module>
+				<module>tesuto-common-data-model</module>
+				<module>tesuto-common-identity</module>
+				<module>tesuto-common-web</module>
+				<module>tesuto-sqs-listener</module>
+				<module>tesuto-message</module>
+				<module>tesuto-dependencies</module>
+				<module>tesuto-common-docker</module>
+				<module>tesuto-test-dependencies</module>
+				<module>tesuto-placement-view</module>
+				<module>tesuto-operational-data-store</module>
+				<module>tesuto-operational-data-store-service</module>
+				<module>tesuto-placement-notification-lambda</module>
+				<module>tesuto-common-domain</module>
+				<module>tesuto-common-api</module>
+				<module>tesuto-spring-boot</module>
+				<module>tesuto-admin-services</module>
+				<module>tesuto-content-services/tesuto-content-domain</module>
+				<module>tesuto-content-services/tesuto-content-api</module>
+				<module>tesuto-delivery-services/tesuto-delivery-api</module>
+				<module>tesuto-activation-services/tesuto-activation-api</module>
+				<module>tesuto-placement-services</module>
+				<module>tesuto-drools-services</module>
+				<module>tesuto-rules-services</module>
+				<module>tesuto-ui</module>
+			</modules>
+			<properties>
+				<disable.assessments>disable.assessments=true</disable.assessments>
+				<disable.assessments.token>disable.assessments=false</disable.assessments.token>
+				<placement.includes.token>"org.cccnext.tesuto.placement","org.cccnext.tesuto.client","org.cccnext.tesuto.content.client",</placement.includes.token>
+				<placement.includes>"org.cccnext.tesuto.placement","org.cccnext.tesuto.placementonly",</placement.includes>
+				<tesuto.active.services>tesuto.active.services=admin,placement,rules</tesuto.active.services>
+			</properties>
+		</profile>
+		<profile>
+			<id>complete</id>
+			<modules>
+				<module>tesuto-router</module>
+				<module>tesuto-sqs-listener</module>
+				<module>tesuto-common-data-model</module>
+				<module>tesuto-common-identity</module>
+				<module>tesuto-common-web</module>
+				<module>tesuto-message</module>
+				<module>tesuto-dependencies</module>
+				<module>tesuto-common-docker</module>
+				<module>tesuto-test-dependencies</module>
+				<module>tesuto-placement-view</module>
+				<module>tesuto-operational-data-store</module>
+				<module>tesuto-operational-data-store-service</module>
+				<module>tesuto-placement-notification-lambda</module>
+				<module>tesuto-common-domain</module>
+				<module>tesuto-common-api</module>
+				<module>tesuto-spring-boot</module>
+				<module>tesuto-admin-services</module>
+				<module>tesuto-content-services</module>
+				<module>tesuto-delivery-services</module>
+				<module>tesuto-activation-services</module>
+				<module>tesuto-placement-services</module>
+				<module>tesuto-qti-importer-services</module>
+				<module>tesuto-drools-services</module>
+				<module>tesuto-rules-services</module>
+				<module>tesuto-preview-services</module>
+				<module>tesuto-reports-services</module>
+				<module>tesuto-ui</module>
+
+			</modules>
+			<properties>
+				<disable.assessments>disable.assessments=false</disable.assessments>
+				<disable.assessments.token>disable.assessments=true</disable.assessments.token>
+				<placement.includes>"org.cccnext.tesuto.placement","org.cccnext.tesuto.client","org.cccnext.tesuto.content.client",</placement.includes>
+				<placement.includes.token>"org.cccnext.tesuto.placement","org.cccnext.tesuto.placementonly",</placement.includes.token>
+				<tesuto.active.services>tesuto.active.services=activation,admin,delivery,content,placement,preview,qti-importer,reports,rules</tesuto.active.services>
+			</properties>
+		</profile>
+		<profile>
+			<id>assessment</id>
+			<modules>
+				<module>tesuto-router</module>
+				<module>tesuto-sqs-listener</module>
+				<module>tesuto-common-data-model</module>
+				<module>tesuto-common-identity</module>
+				<module>tesuto-common-web</module>
+				<module>tesuto-message</module>
+				<module>tesuto-common-docker</module>
+				<module>tesuto-dependencies</module>
+				<module>tesuto-test-dependencies</module>
+				<module>tesuto-common-domain</module>
+				<module>tesuto-common-api</module>
+				<module>tesuto-spring-boot</module>
+				<module>tesuto-admin-services</module>
+				<module>tesuto-content-services</module>
+				<module>tesuto-delivery-services</module>
+				<module>tesuto-activation-services</module>
+				<module>tesuto-qti-importer-services</module>
+				<module>tesuto-preview-services</module>
+				<module>tesuto-reports-services</module>
+				<module>tesuto-ui</module>
+			</modules>
+			<properties>
+				<disable.assessments>disable.assessments=false</disable.assessments>
+				<disable.assessments.token>disable.assessments=true</disable.assessments.token>
+				<tesuto.active.services>tesuto.active.services=activation,admin,content,delivery,preview,qti-importer,reports</tesuto.active.services>
+			</properties>
+		</profile>
+		<profile>
+			<id>core</id>
+			<modules>
+				<module>tesuto-sqs-listener</module>
+				<module>tesuto-common-data-model</module>
+				<module>tesuto-common-identity</module>
+				<module>tesuto-common-web</module>
+				<module>tesuto-message</module>
+				<module>tesuto-common-docker</module>
+				<module>tesuto-dependencies</module>
+				<module>tesuto-test-dependencies</module>
+				<module>tesuto-common-domain</module>
+				<module>tesuto-common-api</module>
+				<module>tesuto-spring-boot</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>min_assessment</id>
+			<modules>
+				<module>tesuto-router</module>
+				<module>tesuto-sqs-listener</module>
+				<module>tesuto-common-data-model</module>
+				<module>tesuto-common-identity</module>
+				<module>tesuto-common-web</module>
+				<module>tesuto-message</module>
+				<module>tesuto-dependencies</module>
+				<module>tesuto-common-docker</module>
+				<module>tesuto-test-dependencies</module>
+				<module>tesuto-common-domain</module>
+				<module>tesuto-common-api</module>
+				<module>tesuto-spring-boot</module>
+				<module>tesuto-admin-services</module>
+				<module>tesuto-content-services</module>
+				<module>tesuto-delivery-services</module>
+				<module>tesuto-activation-services</module>
+				<module>tesuto-ui</module>
+			</modules>
+			<properties>
+				<disable.assessments>disable.assessments=false</disable.assessments>
+				<disable.assessments.token>disable.assessments=true</disable.assessments.token>
+				<tesuto.active.services>tesuto.active.services=delivery,activation,admin,content</tesuto.active.services>
+			</properties>
+		</profile>
+		<profile>
+			<id>Set the JDBC_URL</id>
+			<activation>
+				<property>
+					<name>!env.JDBC_URL</name>
+				</property>
+			</activation>
+			<properties>
+				<env.JDBC_URL>jdbc:postgresql://localhost:5432/tesuto</env.JDBC_URL>
+			</properties>
+		</profile>
+		<profile>
+			<id>Set the JDBC_USER</id>
+			<activation>
+				<property>
+					<name>!env.JDBC_USER</name>
+				</property>
+			</activation>
+			<properties>
+				<env.JDBC_USER>tesuto</env.JDBC_USER>
+			</properties>
+		</profile>
+		<profile>
+			<id>Set the JDBC_PASSWORD</id>
+			<activation>
+				<property>
+					<name>!env.JDBC_PASSWORD</name>
+				</property>
+			</activation>
+			<properties>
+				<env.JDBC_PASSWORD>tesuto</env.JDBC_PASSWORD>
+			</properties>
+		</profile>
+	</profiles>
+
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>central</id>
+			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+	</repositories>
+
+
+	<dependencies>
+		<!-- Keep this in the parent pom.xml and not in tesuto-dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/jdk.tools/jdk.tools -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.nimbusds</groupId>
+			<artifactId>nimbus-jose-jwt</artifactId>
+			<version>${nimbus.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>${commons-collections.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>${commons-csv.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-databind.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils-core</artifactId>
+			<version>${commons-beanutils.version}</version>
+		</dependency>
+
+		<!-- AWS -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>${aws-java-sdk.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+			<version>${aws-java-sdk-s3.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-kinesis</artifactId>
+			<version>${aws-kinesis.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>amazon-sqs-java-messaging-lib</artifactId>
+			<version>${amazon-sqs-java-messaging-lib.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.spring-data-dynamodb</groupId>
+			<artifactId>spring-data-dynamodb</artifactId>
+			<version>${spring.dynamodb.version}</version>
+		</dependency>
+
+		<!-- Swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+
+		<!-- Drools / Rules Engine -->
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+			<version>${drools.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+			<version>${drools.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-api</artifactId>
+			<version>${drools.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-ci</artifactId>
+			<version>${drools.version}</version>
+		</dependency>
+
+		<!-- Testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+		<dependency>
+			<!-- Embedded Postgres for testing -->
+			<groupId>com.opentable.components</groupId>
+			<artifactId>otj-pg-embedded</artifactId>
+			<version>${otj-pg-embedded.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>${jar.name}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<configuration>
+					<generateBackupPoms>false</generateBackupPoms>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.code.maven-replacer-plugin</groupId>
+				<artifactId>replacer</artifactId>
+				<version>1.5.3</version>
+				<executions>
+					<execution>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>replace</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includes>
+						<include>${project.basedir}/src/main/resources/application.properties</include>
+						<include>${project.basedir}/src/main/resources/common-application.properties</include>
+						<include>${project.basedir}/src/main/java/org/cccnext/tesuto/placement/ApplicationPlacement.java</include>
+					</includes>
+					<regex>true</regex>
+					<replacements>
+						<replacement>
+							<token>${disable.assessments.token}</token>
+							<value>${disable.assessments}</value>
+						</replacement>
+						<replacement>
+							<token>${placement.includes.token}</token>
+							<value>${placement.includes}</value>
+						</replacement>
+						<replacement>
+							<token>${tesuto.active.services.token}</token>
+							<value>${tesuto.active.services}</value>
+						</replacement>
+					</replacements>
+				</configuration>
+			</plugin>
+			<!-- <plugin> <groupId>org.codehaus.gmavenplus</groupId> <artifactId>gmavenplus-plugin</artifactId> 
+				<version>1.7.1</version> <executions> <execution> <goals> <goal>compile</goal> 
+				<goal>compileTests</goal> </goals> </execution> </executions> </plugin> -->
+
+			<!-- I truly hate Eclipse, but this will be nice for people who use it -->
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<additionalProjectnatures>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+					</additionalBuildcommands>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+					<useIncrementalCompilation>false</useIncrementalCompilation>
+					<executable>${JAVA_HOME}\bin\javac</executable>
+					 <encoding>${project.build.sourceEncoding}</encoding>
+                    <annotationProcessors>
+                        <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
+                    </annotationProcessors>
+				</configuration>
+			</plugin>
+       
+			
+
+			<plugin>
+				<!-- This is here only to skip unit tests during the build. Otherwise, 
+					this plugin does not need to be specified. Now it is also is used for specifying 
+					the JVM size. -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<includes>
+						<include>**/*Test.java</include>
+						<include>**/*Spec.java</include>
+					</includes>
+					<!-- Note: Running individual tests within Netbeans requires this -Dmaven.test.skip=true 
+						attribute to be set to "false" -->
+					<skipTests>false</skipTests>
+					<testFailureIgnore>false</testFailureIgnore>
+					<argLine>-Xmx512M</argLine>
+					<forkMode>once</forkMode>
+					<useSystemClassLoader>true</useSystemClassLoader>
+
+					<!-- Stuff for Selenium Integration Tests, we will need this to keep 
+						surefire from trying to run them. -->
+					<!-- <systemProperties implementation="org.mortbay.jetty.plugin.SystemProperties"> 
+						<systemProperty implementation="org.mortbay.jetty.plugin.SystemProperty"> 
+						<name>PARAM1</name> <value>local</value> </systemProperty> </systemProperties> -->
+					<excludes>
+						<exclude>**/*_Roo_*</exclude>
+						<exclude>**/org/cccnext/tesuto/selenium/**/*.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<!--This plugin's configuration is used to store Eclipse m2e settings 
+				only. It has no influence on the Maven build itself. -->
+			<!--<plugin> <groupId>org.eclipse.m2e</groupId> <artifactId>lifecycle-mapping</artifactId> 
+				<version>1.0.0</version> <configuration> <lifecycleMappingMetadata> <pluginExecutions> 
+				<pluginExecution> <pluginExecutionFilter> <groupId> org.codehaus.gmavenplus 
+				</groupId> <artifactId> gmavenplus-plugin </artifactId> <versionRange> [1.4,) 
+				</versionRange> <goals> <goal>testCompile</goal> </goals> </pluginExecutionFilter> 
+				<action> <ignore></ignore> </action> </pluginExecution> </pluginExecutions> 
+				</lifecycleMappingMetadata> </configuration> </plugin> -->
+
+			<plugin>
+				<!-- This plugin populates the ${mvngit.commit.id} value for the MANIFEST.MF -->
+				<groupId>com.github.koraktor</groupId>
+				<artifactId>mavanagaiata</artifactId>
+				<version>0.7.2</version>
+				<executions>
+					<execution>
+						<id>git-commit</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>commit</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<!-- Build an executable JAR -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<!--<classpathPrefix>lib/</classpathPrefix> -->
+							<mainClass>org.cccnext.tesuto.${application.suffix}</mainClass>
+						</manifest>
+						<manifestEntries>
+							<!-- buildNumber will be populated by Jenkins (or explicitly manually, 
+								-DbuildNumber), otherwise it will be empty -->
+							<Implementation-Build>${buildNumber}</Implementation-Build>
+							<Implementation-Build-Time>${maven.build.timestamp}</Implementation-Build-Time>
+							<Implementation-Version>${mvngit.commit.id}</Implementation-Version>
+							<git-SHA-1>${mvngit.commit.id}</git-SHA-1>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>enforce-maven</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>3.0.5</version>
+								</requireMavenVersion>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-shade-plugin</artifactId> 
+				<version>3.1.0</version> <configuration> <createDependencyReducedPom>false</createDependencyReducedPom> 
+				</configuration> <executions> <execution> <phase>package</phase> <goals> 
+				<goal>shade</goal> </goals> </execution> </executions> </plugin> -->
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,202 @@
+{
+	"lastUpdatedDate": 1523651775335,
+	"createdOnDate": 1523651749716,
+	"disciplineId": 2,
+	"collegeId": "SYS",
+	"title": "ESL - ELA Sample Full using mmlogics",
+	"description": "Unicollege ESL Subject Area for the ELA Sample Full assessment.<br>using mmlogics<br>COMPONENT LOGIC:  ID:bb54e30f-f10b-4c52-a22a-f6cb40ba1e73 TITLE : Statewide MMAP ESL Decision Logic<br>PLACEMENT LOGIC:  ID:9a324e45-075c-4b8f-b118-9ad1c9a107cb TITLE : Statewide Decision Logic<br>ASSIGNED LOGIC:  ID:68fcfd19-0130-4475-a3d2-53f1e232f6a0 TITLE : Default Assigned Placement Logic",
+	"competencyMapDiscipline": "ESL",
+	"competencyMapVersion": 1,
+	"sisCode": "SIS ESL",
+	"noPlacementMessage": null,
+	"usePrereqPlacementMethod": true,
+	"competencyAttributes": {
+		"@type": "Esl",
+		"competencyAttributeId": 1,
+		"optInMultiMeasure": true,
+		"placementComponentMmap": true,
+		"placementComponentAssess": true,
+		"useSelfReportedDataForMM": true,
+		"mmDecisionLogic": "bb54e30f-f10b-4c52-a22a-f6cb40ba1e73",
+		"mmPlacementLogic": "9a324e45-075c-4b8f-b118-9ad1c9a107cb",
+		"mmAssignedPlacementLogic": "68fcfd19-0130-4475-a3d2-53f1e232f6a0",
+		"highestLevelReadingCourse": "1",
+		"showPlacementToEsl": true,
+		"showPlacementToNativeSpeaker": true,
+		"competencyCode": "ESL"
+	},
+	"disciplineSequences": [
+		{
+			"disciplineId": 2,
+			"cb21Code": "B",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "B",
+				"levelsBelowTransfer": 2,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 2,
+					"courseId": 11,
+					"cb21Code": "B",
+					"courseGroup": 1,
+					"auditId": 12,
+					"course": {
+						"courseId": 11,
+						"name": "ESL 100",
+						"cid": "CIDESL100",
+						"subject": "ESL",
+						"number": "100",
+						"description": "ESL course 2 levels below",
+						"mmapEquivalentCode": "esl_esl",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[13]",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 2,
+			"cb21Code": "A",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "A",
+				"levelsBelowTransfer": 1,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 2,
+					"courseId": 3,
+					"cb21Code": "A",
+					"courseGroup": 1,
+					"auditId": 4,
+					"course": {
+						"courseId": 3,
+						"name": "ESL 200",
+						"cid": "CIDESL200",
+						"subject": "ESL",
+						"number": "200",
+						"description": "ESL course 1 level below",
+						"mmapEquivalentCode": "",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[5,\"AND\",8]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 8,
+								"probabilitySuccess": 50,
+								"title": "ESL CG3",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 8,
+										"competencyId": "cesl_16-20009",
+										"auditId": 10
+									},
+									{
+										"competencyGroupId": 8,
+										"competencyId": "cesl_16-10033",
+										"auditId": 9
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 2,
+			"cb21Code": "C",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "C",
+				"levelsBelowTransfer": 3,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 2,
+					"courseId": 16,
+					"cb21Code": "C",
+					"courseGroup": 1,
+					"auditId": 17,
+					"course": {
+						"courseId": 16,
+						"name": "ESL 000",
+						"cid": "CIDESL000",
+						"subject": "ESL",
+						"number": "000",
+						"description": "Lowest level ESL course.",
+						"mmapEquivalentCode": "esl_esl",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[18]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 18,
+								"probabilitySuccess": 50,
+								"title": "ESL CG5",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 18,
+										"competencyId": "cesl_16-10001",
+										"auditId": 19
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 2,
+			"cb21Code": "Y",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 2,
+					"courseId": 20,
+					"cb21Code": "Y",
+					"courseGroup": 1,
+					"auditId": 21,
+					"course": {
+						"courseId": 20,
+						"name": "ESL 300",
+						"cid": "CIDESL300",
+						"subject": "ESL",
+						"number": "300",
+						"description": "Highest transfer level ESL course offered.",
+						"mmapEquivalentCode": "esl_esl",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[22]",
+						"competencyGroups": []
+					}
+				}
+			]
+		}
+	],
+	"dirty": false
+}

@@ -1,0 +1,50 @@
+ccc-placement-component-groups {
+
+    .subject-area {
+        background-color: #f5f5f5;
+        margin: 15px 0 0 0;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .preliminary-list {
+
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: 2em;
+
+        li {
+
+            border-bottom: 1px solid #ccc;
+            padding: 3px 5px;
+
+            &:first-child {
+                border-top: 1px solid #ccc;
+            }
+
+            &:last-child {
+                border: none;
+            }
+
+            .type {
+                color: #00317a;
+                font-size: 14px;
+                font-weight: 600;
+
+                .date {
+                    display: inline-block;
+                    margin-left: 8px;
+                    font-size: 12px;
+                    color: #777777;
+                }
+            }
+
+            p {
+                display: inline-block;
+                margin-left: 8px;
+                font-size: 14px;
+                max-width: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+alter TABLE college_discipline add column competency_map_version integer;

@@ -1,0 +1,7 @@
+[
+	{
+		"path":"advisorcard/api/v1/events/bytitle",
+		"httpMethod":"POST",
+		"responseStatus":201
+	}
+]

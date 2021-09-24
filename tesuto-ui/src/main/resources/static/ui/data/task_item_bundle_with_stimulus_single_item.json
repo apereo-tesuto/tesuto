@@ -1,0 +1,58 @@
+{
+    "taskSetId": "AFDD-SDFD-SDFD-FE08",
+    "tasks": [{
+        "taskId": "AFGY-JEMD-SKJD-JKSG",
+        "stimulus": "<p>This is an item bundle with one item.  The item bundle has a stimulus at the top level, the item does not have an internal stimulus.</p><p style='text-align: center;'><img alt='picture of the big bad wolf' src='http://img1.wikia.nocookie.net/__cb20130531232910/disney/images/9/9d/Zeke_Midas_(Lobo_Feroz).png'/></p> <table class='lsi-table-text-group'><caption class='sr-only'>My Text Passage Caption</caption><thead class='sr-only'><th cope='col'>Text Passage Group Number</th><th cope='col'>Text Passage</th></thead><tbody><tr><th scope='row'><span class='text-group ccc-bg-dark ccc-fg'>1</span></th><td>I grew up with buckets, shovels, and nets waiting by the back door; hip-waders hanging in the closet; tide table charts covering the refrigerator door; and a microscope was sitting on the kitchen table. </td></tr><tr><th scope='row'><span class='text-group ccc-bg-dark ccc-fg'>2</span></th><td>Having studied, my mother is a marine biologist. Our household might have been described as uncooperative. Our meals weren’t always served in the expected order of breakfast, lunch, and supper. Everything was subservient to the disposal of the tides. When the tide was low, Mom could be found down on the mudflats. When the tide was high, she would be standing on the inlet bridge with her plankton net.</td></tr><tr><th scope='row'><span class='text-group ccc-bg-dark ccc-fg'>3</span></th><td>I have great respect for my mother. I learned early that the moon affected the tides. </td></tr><tr><th scope='row'><span class='text-group ccc-bg-dark ccc-fg'>4</span></th><td>Mom was always waiting for a full or new moon, when low tide would be lower than average and high tide higher than average. The moon being aligned with Earth and the sun when full or new, so its gravity combines with the sun’s gravity to create an even stronger gravitational pull.</td></tr><tr><th scope='row'><span class='text-group ccc-bg-dark ccc-fg'>5</span></th><td>I knew that it took about eight hours for the tides to change from high to low, sixteen hours for a complete cycle of tides. 9 I didn’t have to wait to learn these things in school. In our house they were everyday knowledge.</td></tr><tr><th scope='row'><span class='text-group ccc-bg-dark ccc-fg'>5</span></th><td>I knew that it took about eight hours for the tides to change from high to low, sixteen hours for a complete cycle of tides. 9 I didn’t have to wait to learn these things in school. In our house they were everyday knowledge.</td></tr></tbody></table><div>asldfkj aslkfdj alskfj laskjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd flaks jd alskfj laskjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd flaks alskfj laskjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd flaks alskfj laskjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd flaks alskfj laskjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd flaks alskfj laskjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd flaks askjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd fla askjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd fla askjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd fla askjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd fla askjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd fla askjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd fla askjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd fla askjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd fla askjfd laksjfd laksjfd laksjdf lkasj flkajs dflkjas fdlkjas ldfkj asldkfj alskfj laskjdf laksjd fla</div>",
+        "itemSessions": [
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                "itemSessionIndex": 17,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE1",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheets": ".lsi-table-text-group tr th:first-child {width: 5%; font-weight: bold; vertical-align: top;} .lsi-table-text-group tr td {vertical-align: top; padding: 1px 10px;} .lsi-table-text-group span.text-group {display: inline-block; padding: 1px 10px; border-radius: 50%; -moz-border-radius: 50%;}",
+                    "itemBody": "<interaction uiid=\"864f765b-10da-401a-94e6-4dbd87f40c85\"/>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c85",
+                        "responseIdentifier": "RESPONSE1",
+                        "type": "choiceInteraction",
+                        "maxChoices": "1",
+                        "minChoices": "1",
+                        "prompt": "Which value/s of \\(x\\) satisfies your equation?",
+                        "choices": [
+                            {
+                                "content": "\\(x=-3\\)",
+                                "identifier": "ChoiceA"
+                            },
+                            {
+                                "content": "\\(x=2\\)",
+                                "identifier": "ChoiceB"
+                            },
+                            {
+                                "content": "\\(x=1\\)",
+                                "identifier": "ChoiceC"
+                            },
+                            {
+                                "content": "Both B & C",
+                                "identifier": "ChoiceD"
+                            },
+                            {
+                                "content": "None of the above",
+                                "identifier": "ChoiceE"
+                            }
+                        ]
+                    }]
+                }
+            }
+        ]
+    }]
+}

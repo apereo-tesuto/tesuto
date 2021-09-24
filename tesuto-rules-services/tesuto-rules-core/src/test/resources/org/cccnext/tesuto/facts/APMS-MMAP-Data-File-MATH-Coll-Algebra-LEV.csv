@@ -1,0 +1,57 @@
+fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,fact,result,result
+cccid,DATA_SOURCE,DATA_SOURCE_TYPE,EP01,EP02,EP03,EP04,EP05,EP06,EP07,EP08,EP09,transferLevel,program
+11,APMS,Self Reported,a,b,h, , ,f,h,f,g,Y,math_col_alg
+29,APMS,Self Reported,a,a,i,b,g,f,g,f,g,Y,math_col_alg
+30,APMS,Self Reported,a,a,i,c,d,h,d,f,d,Y,math_col_alg
+31,APMS,Self Reported,a,a,k,b,d,h,c,h,c,Y,math_col_alg
+83,APMS,Self Reported,a,a,i,b,d,l,d,f,c,Y,math_col_alg
+121,APMS,Self Reported,a,a,k,c,d,i,g,i,g,Y,math_col_alg
+139,APMS,Self Reported,a,a,i, , ,h,c,h,c,Y,math_col_alg
+176,APMS,Self Reported,a,a,j,c,c,h,d,h,d,Y,math_col_alg
+230,APMS,Self Reported,a,a,i,b,d,k,f,f,c,Y,math_col_alg
+275,APMS,Self Reported,a,a,i,b,d,f,d,f,d,Y,math_col_alg
+295,APMS,Self Reported,a,a,l,c,c,h,d,h,d,Y,math_col_alg
+343,APMS,Self Reported,a,a,i,c,a,f,h,f,h,Y,math_col_alg
+389,APMS,Self Reported,a,a,k,c,g,h,g,h,d,Y,math_col_alg
+413,APMS,Self Reported,a,a,i,a,d,f,d,f,d,Y,math_col_alg
+422,APMS,Self Reported,a,a,i,c,g,h,g,h,g,Y,math_col_alg
+448,APMS,Self Reported,a,a,i, , ,f,b,f,c,Y,math_col_alg
+490,APMS,Self Reported,a,a,i,c,a,f,c,f,a,Y,math_col_alg
+505,APMS,Self Reported,a,a,k,c,d,h,d,h,d,Y,math_col_alg
+515,APMS,Self Reported,a,a,k,b,c,h,f,h,f,Y,math_col_alg
+535,APMS,Self Reported,a,a,k, , ,k,a,j,c,Y,math_col_alg
+541,APMS,Self Reported,a,a,i,c,d,f,d,f,d,Y,math_col_alg
+555,APMS,Self Reported,a,a,i,c,a,f,c,f,c,Y,math_col_alg
+597,APMS,Self Reported,a,a,k, , ,j,b,j,a,Y,math_col_alg
+635,APMS,Self Reported,a,a,i,c,c,j,f,j,f,Y,math_col_alg
+664,APMS,Self Reported,a,a,i, , ,g,g,f,g,Y,math_col_alg
+688,APMS,Self Reported,a,a,k,c,d,i,g,i,g,Y,math_col_alg
+693,APMS,Self Reported,a,a,j,b,a,h,d,h,d,Y,math_col_alg
+701,APMS,Self Reported,a,a,i,a,g,k,k,f,a,Y,math_col_alg
+715,APMS,Self Reported,a,a,l,b,d,h,g,h,g,Y,math_col_alg
+737,APMS,Self Reported,a,a,i,b,c,f,g,f,c,Y,math_col_alg
+741,APMS,Self Reported,a,a,k,c,f,h,d,h,d,Y,math_col_alg
+748,APMS,Self Reported,a,a,l,c,d,h,j,h,g,Y,math_col_alg
+786,APMS,Self Reported,a,a,j,a,f,h,g,h,c,Y,math_col_alg
+800,APMS,Self Reported,a,a,l, , ,h,a,h,a,Y,math_col_alg
+820,APMS,Self Reported,a,a,i,a,g,h,d,h,d,Y,math_col_alg
+863,APMS,Self Reported,a,a,l,c,f,h,d,h,a,Y,math_col_alg
+954,APMS,Self Reported,a,a,i,a,g,i,j,f,a,Y,math_col_alg
+966,APMS,Self Reported,a,a,l,c,d,h,g,h,g,Y,math_col_alg
+1001,APMS,Self Reported,a,a,k,c,c,h,c,h,c,Y,math_col_alg
+1017,APMS,Self Reported,a,a,i,c,d,i,g,i,g,Y,math_col_alg
+1039,APMS,Self Reported,a,b,i, , ,f,f,f,f,Y,math_col_alg
+1066,APMS,Self Reported,a,a,k, , ,h,c,h,c,Y,math_col_alg
+1090,APMS,Self Reported,a,a,i,c,n,f,d,f,d,Y,math_col_alg
+1095,APMS,Self Reported,a,a,i,c,d,f,g,f,g,Y,math_col_alg
+1105,APMS,Self Reported,a,a,l,c,d,h,d,h,d,Y,math_col_alg
+1111,APMS,Self Reported,a,a,i,a,a,f,f,f,f,Y,math_col_alg
+1115,APMS,Self Reported,a,a,i, , ,h,c,h,f,Y,math_col_alg
+1125,APMS,Self Reported,a,a,k, , ,e,c,h,c,Y,math_col_alg
+1192,APMS,Self Reported,a,a,i,c,d,f,d,f,d,Y,math_col_alg
+1196,APMS,Self Reported,a,a,i,b,f,h,f,h,f,Y,math_col_alg
+1206,APMS,Self Reported,a,a,k,b,f,f,d,h,d,Y,math_col_alg
+1290,APMS,Self Reported,a,a,k, , ,h,g,h,f,Y,math_col_alg
+1315,APMS,Self Reported,a,a,k, , ,h,g,h,g,Y,math_col_alg
+1368,APMS,Self Reported,a,a,j,b,d,h,g,h,a,Y,math_col_alg
+1433,APMS,Self Reported,a,a,k,c,d,h,a,h,a,Y,math_col_alg

@@ -1,0 +1,83 @@
+{
+		"userAccountId": "7c8a5bd3-b786-435a-88e5-2bd29c94d036",
+		"username": "A123456",
+		"emailAddress": "llocal@democollege.edu",
+		"password": "$2a$10$OVzoMIC.eCOnszx00z5lDuJjoZoPIBa1b3.yyPmhkv5SW2xdJUJTK",
+		"displayName": "Larry",
+		"firstName": "Larry",
+		"middleInitial": null,
+		"lastName": "Local",
+		"phoneNumber": null,
+		"extension": null,
+		"enabled": true,
+		"securityGroupDtos": [
+			{
+				"securityGroupId": 1,
+				"groupName": "STUDENT",
+				"description": "Student security group",
+				"securityPermissionDtos": []
+			}
+		],
+		"namespace": null,
+		"colleges": [
+			{
+				"cccId": "ZZ1",
+				"districtCCCId": "ZZ0",
+				"name": "Unicollege",
+				"streetAddress1": "1760 East Pecos Road",
+				"streetAddress2": "Suite 432",
+				"city": "Gilbert",
+				"postalCode": "85295",
+				"url": "http://www.unicon.net",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+					{
+						"id": "d490c2ab-c266-4a03-8dc1-cdb5de68f28b",
+						"name": "Unicollege Test Center",
+						"streetAddress1": null,
+						"streetAddress2": null,
+						"city": null,
+						"postalCode": null,
+						"locationType": "ON_SITE",
+						"locationStatus": "ACTIVE",
+						"collegeId": "ZZ1",
+						"collegeName": "Unicollege",
+						"capacity": 30,
+						"lastUpdatedDate": 1485793699267,
+						"enabled": true,
+						"createdOnDate": 1484334821195
+					}
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ1",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			}
+		],
+		"collegeIds": [
+			"ZZ1"
+		],
+		"districts": null,
+		"primaryCollegeId": "ZZ1",
+		"testLocations": [
+			{
+				"id": "d490c2ab-c266-4a03-8dc1-cdb5de68f28b",
+				"name": "Unicollege Test Center",
+				"streetAddress1": null,
+				"streetAddress2": null,
+				"city": null,
+				"postalCode": null,
+				"locationType": "ON_SITE",
+				"locationStatus": "ACTIVE",
+				"collegeId": "ZZ1",
+				"collegeName": "Unicollege",
+				"capacity": 30,
+				"lastUpdatedDate": 1485793699267,
+				"enabled": true,
+				"createdOnDate": 1484334821195
+			}
+		]
+	}

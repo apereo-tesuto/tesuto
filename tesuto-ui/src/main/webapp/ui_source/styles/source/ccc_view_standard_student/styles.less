@@ -1,0 +1,47 @@
+
+/*============ COMMON STYLES FOR ALL STANDARD VIEWS ROLL UP ( INCLUDES VIEW ROLLUP TOO )===========*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+@import '../ccc_view_standard_layout/styles.less';
+@import '../ccc_view_standard_common/styles.less';
+
+/*============ WIDGETS (UI components that are not necessarily associated with a directive) ============*/
+
+@import './components/ccc-student-activations.less';
+@import './components/ccc-student-general-instructions.less';
+@import './components/ccc-student-assessment-instructions.less';
+@import './components/ccc-student-start-activation-instructions.less';
+@import './components/ccc-student-placement-view.less';
+
+
+/*============ VIEW COMMON HEADER FOOTER STYLES ==============*/
+
+ccc-student-header {
+
+    li.navbar-text.cccid {
+
+        color: #fff;
+
+        margin: 0px;
+        padding: 6px 15px;
+        position: absolute;
+        right: 0;
+        top: 118px;
+
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        .border-radius(3px);
+
+        .id {
+            font-family: 'Roboto Slab', serif;
+            font-size: 125%;
+            color: #FFF;
+        }
+
+    }
+}
+
+/*============ WORKFLOWS (KINDA LIKE ROUTES) ============*/
+
+
+

@@ -1,0 +1,18 @@
+{
+	"id": "542cbc90-e51b-4a0d-bd7b-effa0382765a",
+	"family": "SYS",
+	"engine": "tesuto",
+	"version": "1",
+	"title": "Statewide and ERP Endpoint MMAP ESL Decision Logic",
+	"status": "published",
+	"event": "MULTIPLE_MEASURE_PLACEMENT",
+	"category": "mmComponentPlacementLogic",
+	"competencyMapDiscipline": "ESL",
+	"description": "Execute the statewide MMAP and ERP Endpoint decision logic to generate the Multiple Measures, High School Transcript based placement component",
+	"ruleSetRowIds": [
+		"203061a8-e5ce-4a45-b64c-aaae2e8cab20",
+		"1bddd87a-97d0-4ddf-ad3e-85f9f9e5c8ac"
+	],
+	"ruleSetDrl": null,
+	"ruleSetDrlValidationCsv": null
+}

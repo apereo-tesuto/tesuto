@@ -1,0 +1,245 @@
+{
+	"lastUpdatedDate": 1523651775342,
+	"createdOnDate": 1523651750566,
+	"disciplineId": 106,
+	"collegeId": "SYS",
+	"title": "English - ELA Sample Full using mmlogics",
+	"description": "Unicollege English Subject Area for the ELA Sample Full assessment.<br>using mmlogics<br>COMPONENT LOGIC:  ID:fd30a389-2b10-4444-8531-2a8a9402180c TITLE : Statewide MMAP English Decision Logic<br>PLACEMENT LOGIC:  ID:d9408edb-3dd6-458f-89bc-1172b8aa0586 TITLE : Statewide Decision Logic<br>ASSIGNED LOGIC:  ID:ca8ce811-4ee3-4d1a-a68b-874470967e80 TITLE : Default Assigned Placement Logic",
+	"competencyMapDiscipline": "ENGLISH",
+	"competencyMapVersion": 1,
+	"sisCode": "SIS ENGLISH",
+	"noPlacementMessage": null,
+	"usePrereqPlacementMethod": true,
+	"competencyAttributes": {
+		"@type": "English",
+		"competencyAttributeId": 105,
+		"optInMultiMeasure": true,
+		"placementComponentMmap": true,
+		"placementComponentAssess": true,
+		"useSelfReportedDataForMM": true,
+		"mmDecisionLogic": "fd30a389-2b10-4444-8531-2a8a9402180c",
+		"mmPlacementLogic": "d9408edb-3dd6-458f-89bc-1172b8aa0586",
+		"mmAssignedPlacementLogic": "ca8ce811-4ee3-4d1a-a68b-874470967e80",
+		"highestLevelReadingCourse": "1",
+		"showPlacementToEsl": true,
+		"showPlacementToNativeSpeaker": true,
+		"competencyCode": "ENGLISH"
+	},
+	"disciplineSequences": [
+		{
+			"disciplineId": 106,
+			"cb21Code": "B",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "B",
+				"levelsBelowTransfer": 2,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 106,
+					"courseId": 107,
+					"cb21Code": "B",
+					"courseGroup": 1,
+					"auditId": 108,
+					"course": {
+						"courseId": 107,
+						"name": "English 100",
+						"cid": "CIDENG100",
+						"subject": "Eng",
+						"number": "100",
+						"description": "English course 2 levels below",
+						"mmapEquivalentCode": "eng_eng",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[109]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 109,
+								"probabilitySuccess": 50,
+								"title": "English CG4",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 109,
+										"competencyId": "ceng_16-30019",
+										"auditId": 111
+									},
+									{
+										"competencyGroupId": 109,
+										"competencyId": "ceng_16-30001",
+										"auditId": 110
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 106,
+			"cb21Code": "A",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "A",
+				"levelsBelowTransfer": 1,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 106,
+					"courseId": 116,
+					"cb21Code": "A",
+					"courseGroup": 1,
+					"auditId": 117,
+					"course": {
+						"courseId": 116,
+						"name": "English 200",
+						"cid": "CIDENG200",
+						"subject": "Eng",
+						"number": "200",
+						"description": "English course 1 level below",
+						"mmapEquivalentCode": "",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[118,\"AND\",121]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 118,
+								"probabilitySuccess": 50,
+								"title": "English CG2",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 118,
+										"competencyId": "ceng_16-40036",
+										"auditId": 120
+									},
+									{
+										"competencyGroupId": 118,
+										"competencyId": "ceng_16-40016",
+										"auditId": 119
+									}
+								]
+							},
+							{
+								"competencyGroupId": 121,
+								"probabilitySuccess": 50,
+								"title": "English CG3",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 121,
+										"competencyId": "ceng_16-40016",
+										"auditId": 122
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 106,
+			"cb21Code": "C",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "C",
+				"levelsBelowTransfer": 3,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 106,
+					"courseId": 112,
+					"cb21Code": "C",
+					"courseGroup": 1,
+					"auditId": 113,
+					"course": {
+						"courseId": 112,
+						"name": "English 000",
+						"cid": "CIDENG000",
+						"subject": "Eng",
+						"number": "000",
+						"description": "Lowest level English course.",
+						"mmapEquivalentCode": "eng_eng",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[114]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 114,
+								"probabilitySuccess": 50,
+								"title": "English CG5",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 114,
+										"competencyId": "ceng_16-10040",
+										"auditId": 115
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 106,
+			"cb21Code": "Y",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 106,
+					"courseId": 123,
+					"cb21Code": "Y",
+					"courseGroup": 1,
+					"auditId": 124,
+					"course": {
+						"courseId": 123,
+						"name": "English 300",
+						"cid": "CIDENG300",
+						"subject": "Eng",
+						"number": "300",
+						"description": "Highest transfer level English course offered.",
+						"mmapEquivalentCode": "eng_eng",
+						"sisTestCode": null,
+						"competencyGroupLogic": "[125]",
+						"competencyGroups": [
+							{
+								"competencyGroupId": 125,
+								"probabilitySuccess": 50,
+								"title": "English CG1",
+								"competencyGroupMappings": [
+									{
+										"competencyGroupId": 125,
+										"competencyId": "ceng_16-40036",
+										"auditId": 126
+									}
+								]
+							}
+						]
+					}
+				}
+			]
+		}
+	],
+	"dirty": false
+}

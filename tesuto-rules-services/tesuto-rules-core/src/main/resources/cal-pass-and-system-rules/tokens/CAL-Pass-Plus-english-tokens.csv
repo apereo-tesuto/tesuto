@@ -1,0 +1,11 @@
+rule_set_id,gpa_cum,grade_level,english,cst,cst_english,transfer_level,levels_below_transfer,insufficient_data
+${rule_set_id},2.6,11,,,,Y,0,false
+${rule_set_id},2.3,11,,,,A,1,false
+${rule_set_id},2,11,,,,B,2,false
+${rule_set_id},1.4,11,,,,C,3,false
+${rule_set_id},2.6,12,,,,Y,0,false
+${rule_set_id},2.2,12,2,,,A,1,false
+${rule_set_id},1.8,12,1,,,B,2,false
+${rule_set_id},1.8,12,,288,,B,2,false
+${rule_set_id},1.7,12,,,,C,3,false
+${rule_set_id},1.5,12,,,,C,3,false

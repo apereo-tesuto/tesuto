@@ -1,0 +1,1 @@
+create index student_college_affiliation_idx_without_eppn on student_college_affiliation (student_ccc_id, mis_code);

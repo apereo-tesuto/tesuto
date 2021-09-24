@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd
+		http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.2.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.2.xsd
+				http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd">
+
+	<import resource="test-properties-context.xml" />
+
+	<import resource="test-messages-context.xml" />
+	
+	<import resource="test-dozer-context.xml" />
+
+	<context:annotation-config />
+
+
+	<context:component-scan
+		base-package="org.cccnext.tesuto.placement.service">
+		<context:exclude-filter type="regex" expression="org.cccnext.tesuto.placement.service.*Generator"/>
+		<context:exclude-filter type="regex" expression="org.cccnext.tesuto.placement.service.*Test.*"/>
+	</context:component-scan>
+
+	<context:component-scan
+		base-package="org.cccnext.tesuto.placement.config">
+	</context:component-scan>
+
+	<bean id="psychometricsCalculationService"
+		class="org.cccnext.tesuto.delivery.service.PsychometricsCalculationServiceImpl" />
+
+	<bean id="studentService"
+		class="org.cccnext.tesuto.placement.stub.StudentServiceStub" />
+
+	<bean id="userAccountService"
+		class="org.cccnext.tesuto.placement.stub.UserAccountReaderStub" />
+
+	<bean id="collegeService"
+		class="org.cccnext.tesuto.placement.stub.CollegeReaderStub" />
+
+	<bean id="ruleRestClient"
+		class="org.cccnext.tesuto.placement.stub.RuleSetRestClientStub" />
+
+
+	<bean id="studentCollegeAffiliationReader"
+		class="org.cccnext.tesuto.placement.stub.StudentCollegeAffiliationReaderStub" />
+
+	<bean id="restTemplate"
+		class="org.springframework.web.client.RestTemplate" />
+
+	
+
+	<bean id="competencyMapDisciplineService"
+		class="org.cccnext.tesuto.placement.stub.CompetencyMapDisciplineServiceStub" />
+
+	<bean id="competencyMapService"
+		class="org.cccnext.tesuto.placement.stub.CompetencyMapServiceStub" />
+
+	<bean id="competencyMapOrderService"
+		class="org.cccnext.tesuto.placement.stub.CompetencyMapOrderServiceStub" />
+		
+		
+
+</beans>

@@ -1,0 +1,1 @@
+ALTER TABLE placement ALTER COLUMN subject_area_name TYPE character varying(120);

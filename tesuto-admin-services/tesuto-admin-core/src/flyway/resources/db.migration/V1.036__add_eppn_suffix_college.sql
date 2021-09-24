@@ -1,0 +1,1 @@
+alter table college add column eppn_suffix varchar(100);

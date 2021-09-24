@@ -1,0 +1,14 @@
+{
+    "proctorName": "Rosa Remote",
+    "assessments": {
+        "0": "English",
+        "1": "Math"
+    },
+    "startDate": "Thursday, October 20",
+    "endDate": "Friday, October 21",
+    "students": {
+        "0": "Rodriguez, Domingo L.",
+        "1": "Sanchez, Luis M."
+    },
+    "passcodeLink": "https://www.google.com"
+}

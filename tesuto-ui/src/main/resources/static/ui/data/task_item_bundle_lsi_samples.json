@@ -1,0 +1,340 @@
+{
+    "taskSetId": "AFDD-SDFD-SDFD-FE11",
+    "tasks": [{
+        "taskId": "AFGY-JEMD-SKJD-JKSE",
+        "itemSessions": [
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK01",
+                "itemSessionIndex": 20,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE1",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<p><img src='ui/data/images/becky.png' class='pull-left'/> Sarah loves coffee. She enjoys the aromatics associated with this tasty beverage. She likes how each different coffee provides a different smell.</p><interaction uiid='864f765b-10da-401a-94e6-4dbd87f40c85'/>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c85",
+                        "responseIdentifier": "RESPONSE1",
+                        "type": "choiceInteraction",
+                        "maxChoices": 1,
+                        "prompt": "In this passage, what does \"aromatics\" mean?",
+                        "choices": [
+                            {
+                                "identifier": "Choice0",
+                                "content": "The way the coffee tastes."
+                            },
+                            {
+                                "identifier": "Choice1",
+                                "content": "How dark the coffee is."
+                            },
+                            {
+                                "identifier": "Choice2",
+                                "content": "How coffee smells."
+                            },
+                            {
+                                "identifier": "Choice3",
+                                "content": "How there are important rules when it comes to coffee, like how you never drink the last cup without brewing a new batch."
+                            }
+                        ]
+                    }]
+                }
+            },
+
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK02",
+                "itemSessionIndex": 21,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE2",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<div><div><p>John's car is broken. John thinks the engine is overheating. John wants to fix it himself.</p></div><interaction uiid='864f765b-10da-401a-94e6-4dbd87f40c86'/></div>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c86",
+                        "responseIdentifier": "RESPONSE2",
+                        "type": "choiceInteraction",
+                        "maxChoices": 1,
+                        "prompt": "What should John check first to fix his overheating engine?",
+                        "choices": [
+                            {
+                                "identifier": "Choice0",
+                                "content": "Coolant levels"
+                            }, {
+                                "identifier": "Choice1",
+                                "content": "Radiator leaks"
+                            }, {
+                                "identifier": "Choice2",
+                                "content": "Water pump"
+                            }, {
+                                "identifier": "Choice3",
+                                "content": "His bank account ;-)"
+                            }
+                        ]
+                    }]
+                }
+            },
+
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK03",
+                "itemSessionIndex": 22,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE3",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "  <p>   <b>Movie Listings</b>        <br/>Dollar Movie Theater<br/>2267 W. Fake St.<br/>Los Angeles, CA 90013<br/>(213) 555-6759<br/>   <b>Luke Warm Runnings</b> (R) 11:00, 1:30, 4:00, 6:30, 9:00<br/>   <b>Star Peace</b> (PG) 10:00, 12:30, 3:00, 5:30, 8:00, 10:30<br/>   <b>Mother of the Bride</b> (PG-13) 12:45, 3:15, 5:45, 8:10, 10:45<br/>   <b>Mission Somewhat Possible</b> (PG) 11:00, 1:30, 4:00, 6:30, 9:00</p></div><interaction uiid='864f765b-10da-401a-94e6-4dbd87f40c87'/></div>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c87",
+                        "responseIdentifier": "RESPONSE3",
+                        "type": "choiceInteraction",
+                        "maxChoices": 1,
+                        "prompt": "Which movie do you think will generate the most Oscar buzz?",
+                        "choices": [
+                            {
+                                "identifier": "Choice0",
+                                "content": "Luke Warm Runnings"
+                            }, {
+                                "identifier": "Choice1",
+                                "content": "Star Peace"
+                            }, {
+                                "identifier": "Choice2",
+                                "content": "Mother of the Bride"
+                            }, {
+                                "identifier": "Choice3",
+                                "content": "Mission Somewhat Possible"
+                            }
+                        ]
+                    }]
+                }
+            },
+
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK04",
+                "itemSessionIndex": 23,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE4",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<p><img src='ui/data/images/runner.png' alt='Pat' class='pull-left'/> Pat is a runner. She is able to run 8 minute miles for more than ten miles straight!</p><interaction uiid='864f765b-10da-401a-94e6-4dbd87f40c88'/>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c88",
+                        "responseIdentifier": "RESPONSE4",
+                        "type": "choiceInteraction",
+                        "maxChoices": 1,
+                        "prompt": "How many miles can Pat run in 30 minutes?",
+                        "choices": [
+                            {
+                                "identifier": "Choice0",
+                                "content": "About 2 miles"
+                            }, {
+                                "identifier": "Choice1",
+                                "content": "About 1 mile"
+                            }, {
+                                "identifier": "Choice2",
+                                "content": "About 4 miles"
+                            }, {
+                                "identifier": "Choice3",
+                                "content": "About 30 miles"
+                            }
+                        ]
+                    }]
+                }
+            },
+
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK05",
+                "itemSessionIndex": 24,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [{
+                        "identifier": "RESPONSE5",
+                        "cardinality": "SINGLE",
+                        "baseType": "IDENTIFIER",
+                        "defaultValue": null
+                    }],
+                    "stylesheet": "",
+                    "itemBody": "<div><div><table><tbody><tr><td/><td>Once there was a buffalo named Bill. He was</td></tr><tr><td/><td>the biggest buffalo in all of Wyoming. He was so</td></tr><tr><td/><td>big that it was difficult for him to fit down the playground slide.</td></tr><tr><td/><td>His friends loved to use the slide, but Bill always felt left </td></tr><tr><td>5</td><td>out. He asked his friends to help him build a larger slide that they</td></tr><tr><td/><td>could all use. They needed to find materials for this new slide. They searched</td></tr><tr><td/><td>all over town and decided that they didn't have enough money to buy materials to build such a large slide.</td></tr><tr><td/><td>They decided to go to the lake and carve out a long</td></tr><tr><td/><td>wide path from a tall hill down to the lake. They then bought some</td></tr><tr><td>10</td><td>Large cheap plastic sheets and made a big water slide into the lake!</td></tr><tr><td/><td>Bill went first and slid quick into the water. After his big splash he proclaimed himself a \"water buffalo\".</td></tr></tbody></table></div><interaction uiid='864f765b-10da-401a-94e6-4dbd87f40c89'/></div>",
+                    "interactions": [{
+                        "id": null,
+                        "uiid": "864f765b-10da-401a-94e6-4dbd87f40c89",
+                        "responseIdentifier": "RESPONSE5",
+                        "type": "choiceInteraction",
+                        "maxChoices": 1,
+                        "prompt": "Which word best describes Bill and his friends in this story?",
+                        "choices": [
+                            {
+                                "identifier": "Choice0",
+                                "content": "lazy"
+                            }, {
+                                "identifier": "Choice1",
+                                "content": "creative"
+                            }, {
+                                "identifier": "Choice2",
+                                "content": "boring"
+                            }, {
+                                "identifier": "Choice3",
+                                "content": "sad"
+                            }
+                        ]
+                    }]
+                }
+            },
+
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK06",
+                "itemSessionIndex": 25,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [
+                        {
+                            "identifier": "RESPONSE6",
+                            "cardinality": "SINGLE",
+                            "baseType": "IDENTIFIER",
+                            "defaultValue": null
+                        }, {
+                            "identifier": "RESPONSE7",
+                            "cardinality": "SINGLE",
+                            "baseType": "IDENTIFIER",
+                            "defaultValue": null
+                        }
+                    ],
+                    "stylesheet": "",
+                    "itemBody": "<div><table><tbody><tr><td><i>a</i></td><td><i>b</i></td></tr><tr><td>0</td><td>0</td></tr><tr><td>1</td><td>2</td></tr><tr><td>2</td><td>4</td></tr><tr><td>3</td><td>6</td></tr></tbody></table><div><p>The highest value for <i>a</i> is <interaction uiid='864f765b-10da-401a-94e6-4dbd87f40c90'/> and the smallest value for <i>b</i> is <interaction uiid='864f765b-10da-401a-94e6-4dbd87f40c91'/>.</p></div></div>",
+                    "interactions": [
+                        {
+                            "id": null,
+                            "uiid": "864f765b-10da-401a-94e6-4dbd87f40c90",
+                            "responseIdentifier": "RESPONSE6",
+                            "type": "textEntryInteraction",
+                            "placeholderText": ""
+                        }, {
+                            "id": null,
+                            "uiid": "864f765b-10da-401a-94e6-4dbd87f40c91",
+                            "responseIdentifier": "RESPONSE7",
+                            "type": "textEntryInteraction",
+                            "placeholderText": ""
+                        }
+                    ]
+                }
+            },
+
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK07",
+                "itemSessionIndex": 26,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [
+                        {
+                            "identifier": "RESPONSE8",
+                            "cardinality": "SINGLE",
+                            "baseType": "IDENTIFIER",
+                            "defaultValue": null
+                        }
+                    ],
+                    "stylesheet": "",
+                    "itemBody": "<div><div><p>\"Divide <i>y</i> by the product of <i>a<i/> and <i>b<i/>.\"</p></div><interaction uiid='864f765b-10da-401a-94e6-4dbd87f40c92'/></div>",
+                    "interactions": [
+                        {
+                            "id": null,
+                            "uiid": "864f765b-10da-401a-94e6-4dbd87f40c92",
+                            "responseIdentifier": "RESPONSE8",
+                            "type": "choiceInteraction",
+                            "maxChoices": 1,
+                            "prompt": "Select the expression that matches the sentence above.",
+                            "choices": [
+                                {
+                                    "identifier": "Choice0",
+                                    "content": "\\(\\frac{y}{a * b}\\)"
+                                }, {
+                                    "identifier": "Choice1",
+                                    "content": "<i>y</i> - (<i>a</i> * <i>b</i>)"
+                                }, {
+                                    "identifier": "Choice2",
+                                    "content": "\\(\\frac{y}{a} * b\\)"
+                                }, {
+                                    "identifier": "Choice3",
+                                    "content": "<i>a</i> - <i>b * y</i>"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+
+            {
+                "itemSessionId": "AFGY-JEMD-SKJD-JK08",
+                "itemSessionIndex": 27,
+                "language": null,
+                "allowSkipping": true,
+                "validateResponses": false,
+                "responses": [],
+                "assessmentItem": {
+                    "responseVars": [
+                        {
+                            "identifier": "RESPONSE9",
+                            "cardinality": "SINGLE",
+                            "baseType": "IDENTIFIER",
+                            "defaultValue": null
+                        }
+                    ],
+                    "stylesheet": "",
+                    "itemBody": "<p>The peanut butter and jelly sandwich (affectionately called a PB&J) is a tasty American staple and makes a quick, easy lunch or snack. You can have it the traditional way or you can get creative put lots of fun, tasty treats in it.</p><interaction uiid='864f765b-10da-401a-94e6-4dbd87f40c93'/>",
+                    "interactions": [
+                        {
+                            "id": null,
+                            "uiid": "864f765b-10da-401a-94e6-4dbd87f40c93",
+                            "responseIdentifier": "RESPONSE9",
+                            "type": "extendedTextInteraction",
+                            "expectedLines": 10,
+                            "minStrings": 0,
+                            "expectedLength": 200,
+                            "prompt": "What are some crazy things you have done to spice up the traditional PB&J?"
+                        }
+                    ]
+                }
+            }
+        ]
+    }]
+}

@@ -1,0 +1,75 @@
+{
+	"id":"efbb69b1-c2ac-4d1c-a562-c991426827be",
+	"application":"sns-listener",
+	"title":"Is Veteran",
+	"status":"draft",
+	"version":null,
+	"category":"category",
+	"event":"event",
+	"competencyMapDiscipline":"competencyMapDsicipline",
+	"family":"cccMisCode",
+	"description":"description",
+	"variableTypes":{"cccid":"String", "lower":"Number"},
+	"conditionFreetext":"conditionFreetext",
+	"conditionRows":[
+		{
+			"publishedName" : "map",
+			"publishedObject":"Map()"
+		},
+		{
+			"publishedName":"cccid",
+			"publishedObject":"String()",
+			"condition":"from",
+			"value1":"map.get(\"cccid\")"
+		},
+		{
+			"publishedName":"studentProfile",
+			"publishedObject":"Map()",
+			"condition":"from",
+			"value1":"map.get(\"studentProfile\")"
+		},
+		{
+			"publishedName":"attrs",
+			"publishedObject":"Map()",
+			"condition":"from",
+			"value1":"studentProfile.get(\"attrs\")"
+		},
+		{
+			"publishedName":"attributeMap",
+			"publishedObject":"Map()",
+			"condition":"from",
+			"value1":"attrs.get(\"attributeMap\")"
+		},
+		{
+			"publishedName":"veteran",
+			"publishedObject":"Object(this == true)",
+			"condition":"from",
+			"value1":"attributeMap.get(\"veterans_services\")"
+		}
+	],
+	"actionFreetext":"List<String> users = new ArrayList<String>();\nusers.add(cccid);\n",
+	"actionRows":[
+		{
+			"actionType":"MESSAGE",
+			"parameters":[
+				{
+					"name":"subject",
+					"value":"\"Thank you for your service\""
+				},
+				{
+					"name":"message-body",
+					"value":"\"To all of our veterans, we wish to show our appreciation for their dedication and sacrifice\""
+				},
+				{
+					"name":"message-body-html",
+					"value":"\"To all of our veterans, we wish to show our appreciation for their dedication and sacrifice\""
+				},
+				{
+					"name":"users",
+					"value":"users"
+				}
+			]
+		}
+	]
+}
+

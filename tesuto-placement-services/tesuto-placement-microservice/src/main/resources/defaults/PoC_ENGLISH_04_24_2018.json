@@ -1,0 +1,171 @@
+{
+	"lastUpdatedDate": 1524610632982,
+	"createdOnDate": 1524610292462,
+	"disciplineId": 7534,
+	"collegeId": "SYS",
+	"title": "PoC ENGLISH",
+	"description": "",
+	"competencyMapDiscipline": "ENGLISH",
+	"competencyMapVersion": 1,
+	"sisCode": "SIS English",
+	"noPlacementMessage": "Other factors must be considered before we can generate a placement recommendation for you.  Please see a counselor for details.",
+	"usePrereqPlacementMethod": false,
+	"competencyAttributes": {
+		"@type": "ENGLISH",
+		"competencyAttributeId": 7535,
+		"optInMultiMeasure": true,
+		"placementComponentMmap": true,
+		"placementComponentAssess": false,
+		"useSelfReportedDataForMM": false,
+		"mmDecisionLogic": "899528a0-005a-4faa-b13d-df2a8896396d",
+		"mmPlacementLogic": "054bf032-9527-4d64-a8c5-45161bf6f059",
+		"mmAssignedPlacementLogic": "9c9ae00a-817e-4625-9c62-f7d949e02b52",
+		"highestLevelReadingCourse": "integrated",
+		"showPlacementToEsl": true,
+		"showPlacementToNativeSpeaker": true,
+		"competencyCode": "ENGLISH"
+	},
+	"disciplineSequences": [
+		{
+			"disciplineId": 7534,
+			"cb21Code": "A",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "A",
+				"levelsBelowTransfer": 1,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 7534,
+					"courseId": 7540,
+					"cb21Code": "A",
+					"courseGroup": 1,
+					"auditId": 75381,
+					"course": {
+						"courseId": 7540,
+						"name": "One Level Below Transfer",
+						"cid": "CIDENGA",
+						"subject": "English:",
+						"number": "One Level Below Transfer",
+						"description": "One Level below transfer level",
+						"mmapEquivalentCode": "eng_eng",
+						"sisTestCode": "ENGA",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 7534,
+			"cb21Code": "B",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "B",
+				"levelsBelowTransfer": 2,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 7534,
+					"courseId": 7542,
+					"cb21Code": "B",
+					"courseGroup": 1,
+					"auditId": 75382,
+					"course": {
+						"courseId": 7542,
+						"name": "Two Levels Below Transfer",
+						"cid": "CIDENGB",
+						"subject": "English:",
+						"number": "Two Levels Below Transfer",
+						"description": "Two levels below transfer level",
+						"mmapEquivalentCode": "eng_eng",
+						"sisTestCode": "ENGB",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 7534,
+			"cb21Code": "Y",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "Y",
+				"levelsBelowTransfer": 0,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 7534,
+					"courseId": 7537,
+					"cb21Code": "Y",
+					"courseGroup": 1,
+					"auditId": 75380,
+					"course": {
+						"courseId": 7537,
+						"name": "Transfer Level English",
+						"cid": "CIDENGY",
+						"subject": "English:",
+						"number": "Transfer Level",
+						"description": "Transfer Level English",
+						"mmapEquivalentCode": "eng_eng",
+						"sisTestCode": "ENGY",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				}
+			]
+		},
+		{
+			"disciplineId": 7534,
+			"cb21Code": "C",
+			"courseGroup": 1,
+			"cb21": {
+				"cb21Code": "C",
+				"levelsBelowTransfer": 3,
+				"createdOn": 1523651430438,
+				"updatedOn": 1523651430438
+			},
+			"explanation": null,
+			"showStudent": true,
+			"mappingLevel": null,
+			"disciplineSequenceCourses": [
+				{
+					"disciplineId": 7534,
+					"courseId": 7544,
+					"cb21Code": "C",
+					"courseGroup": 1,
+					"auditId": 75383,
+					"course": {
+						"courseId": 7544,
+						"name": "Three Levels Below Transfer",
+						"cid": "CIDENGC",
+						"subject": "English:",
+						"number": "Three Levels Below Transfer",
+						"description": "Three Levels Below Transfer",
+						"mmapEquivalentCode": "eng_eng",
+						"sisTestCode": "ENGC",
+						"competencyGroupLogic": "",
+						"competencyGroups": []
+					}
+				}
+			]
+		}
+	],
+	"dirty": false
+}

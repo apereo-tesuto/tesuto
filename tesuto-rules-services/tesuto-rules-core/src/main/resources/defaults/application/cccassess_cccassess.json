@@ -1,0 +1,1 @@
+{"name":"tesuto","dataSource":"editor","groupId":null,"artifactId":null,"version":null,"status":"active","events":["PLACEMENT","ASSIGNED_PLACEMENT","MULTIPLE_MEASURE_PLACEMENT"],"categories":["mmAssignedPlacementLogic","mmComponentPlacementLogic","mmPlacementLogic"]}

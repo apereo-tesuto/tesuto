@@ -1,0 +1,3 @@
+JAR_BASE=tesuto-content-microservice
+JAR_NAME=/tesuto-content.jar
+JAR_OUTPUT_PATH=/opt/ccc/

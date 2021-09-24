@@ -1,0 +1,65 @@
+.ccc-dashboard-header {
+
+    .ccc-role-navbar-item {
+        width: 100%;
+    }
+}
+
+.ccc-dashboard-action {
+
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    -ms-align-items: center;
+
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+
+    background: @grayscale1;
+    border: 1px solid rgba(0,0,0, 0.2);
+    padding: 30px;
+    margin-bottom: 5px;
+    .border-radius(5px);
+
+    .ccc-dashboard-action-button {
+        width: 20%;
+        i {
+            margin-left: 0;
+        }
+    }
+
+    .ccc-dashboard-action-description {
+        padding: 6px 12px 6px 15px;
+        width: 80%;
+    }
+}
+
+/*============ RESPONSIVE ==============*/
+
+@media (max-width: @screen-md-min) {
+
+    .ccc-dashboard-action {
+        .ccc-dashboard-action-button {
+            width: 30%;
+        }
+        .ccc-dashboard-action-description {
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width: @screen-sm-min) {
+
+    .ccc-dashboard-action {
+
+        display: block;
+
+        .ccc-dashboard-action-button {
+            width: 100%;
+        }
+        .ccc-dashboard-action-description {
+            padding: 6px 0px;
+            width: 100%;
+        }
+    }
+}

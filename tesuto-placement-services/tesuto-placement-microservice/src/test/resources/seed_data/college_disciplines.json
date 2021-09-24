@@ -1,0 +1,3080 @@
+[
+  {
+    "disciplineId": 15919,
+    "collegeId": "ZZ1",
+    "title": "ESL - ELA Sample Full",
+    "description": "Unicollege ESL Subject Area for the ELA Sample Full assessment.",
+    "competencyMapDiscipline": "ESL",
+    "competencyMapVersion": 1,
+    "sisCode": "SIS ESL",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 15919,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15919,
+            "courseId": 15927,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 159053,
+            "course": {
+              "courseId": 15927,
+              "name": "ESL 300",
+              "cid": "CIDESL300",
+              "subject": "ESL",
+              "number": "300",
+              "description": "Highest transfer level ESL course offered.",
+              "mmapEquivalentCode": "esl_esl",
+              "competencyGroupLogic": "[15929]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15929,
+                  "probabilitySuccess": 50,
+                  "title": "ESL CG1",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15929,
+                      "competencyId": "cesl_16-20025",
+                      "auditId": 159321
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 15919,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15919,
+            "courseId": 15921,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "ESL 200",
+              "cid": "CIDESL200",
+              "subject": "ESL",
+              "number": "200",
+              "description": "ESL course 1 level below",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "ESL CG2",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-10041",
+                      "auditId": 159173
+                    },
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-20001",
+                      "auditId": 159172
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "ESL CG3",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-10033",
+                      "auditId": 159173
+                    },
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-20009",
+                      "auditId": 159173
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 15919,
+        "cb21Code": "B",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "B",
+          "levelsBelowTransfer": 2,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15919,
+            "courseId": 15921,
+            "cb21Code": "B",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "ESL 100",
+              "cid": "CIDESL100",
+              "subject": "ESL",
+              "number": "100",
+              "description": "ESL course 2 levels below",
+              "mmapEquivalentCode": "esl_esl",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "ESL CG4",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-10017",
+                      "auditId": 159173
+                    },
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-10033",
+                      "auditId": 159172
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 15919,
+        "cb21Code": "C",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "C",
+          "levelsBelowTransfer": 2,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15919,
+            "courseId": 15921,
+            "cb21Code": "C",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "ESL 000",
+              "cid": "CIDESL000",
+              "subject": "ESL",
+              "number": "000",
+              "description": "Lowest level ESL course.",
+              "mmapEquivalentCode": "esl_esl",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "ESL CG5",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-10001",
+                      "auditId": 159173
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 5321,
+    "collegeId": "ZZ1",
+    "title": "Math Sample Full",
+    "description": "Unicollege Math Subject Area for the Math Sample Full assessment.",
+    "competencyMapDiscipline": "MATH",
+    "competencyMapVersion": 1,
+    "sisCode": "Math",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 5321,
+        "cb21Code": "Y",
+        "courseGroup": 4,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": "The Math 800 course is the Calculus course.",
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5321,
+            "courseId": 5323,
+            "cb21Code": "Y",
+            "courseGroup": 4,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5323,
+              "name": "Math 800",
+              "cid": "CIDMATH800",
+              "subject": "Math",
+              "number": "800",
+              "description": "This course is the most difficult one offered. Congratulations for qualifying for this course.",
+              "mmapEquivalentCode": "math_calc_i",
+              "competencyGroupLogic": "[5325]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG1",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-60001",
+                      "auditId": 53194
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 5321,
+        "cb21Code": "Y",
+        "courseGroup": 3,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": "The Math 700 course is the Pre-Calculus course.",
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5321,
+            "courseId": 5323,
+            "cb21Code": "Y",
+            "courseGroup": 3,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5323,
+              "name": "Math 700",
+              "cid": "CIDMATH700",
+              "subject": "Math",
+              "number": "700",
+              "description": "This course is 2nd most difficult course. Congratulations for qualifying for this course.",
+              "mmapEquivalentCode": "math_pre_calc",
+              "competencyGroupLogic": "[5325]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG2",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-50003",
+                      "auditId": 53194
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "disciplineId": 5321,
+            "courseId": 5324,
+            "cb21Code": "Y",
+            "courseGroup": 3,
+            "auditId": 53004,
+            "course": {
+              "courseId": 5324,
+              "name": "Math 705",
+              "cid": "CIDMATH705",
+              "subject": "Math",
+              "number": "705",
+              "description": "This course is the accompanying course for Course 700.",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "",
+              "competencyGroups": []
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 5321,
+        "cb21Code": "Y",
+        "courseGroup": 2,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": "The Math 600 course is the Trigonometry course.",
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5321,
+            "courseId": 5323,
+            "cb21Code": "Y",
+            "courseGroup": 2,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5323,
+              "name": "Math 600",
+              "cid": "CIDMATH600",
+              "subject": "Math",
+              "number": "600",
+              "description": "This course is 3rd most difficult course. Congratulations for qualifying for this course.",
+              "mmapEquivalentCode": "math_trig",
+              "competencyGroupLogic": "[5325,'AND',5325]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG3",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-50003",
+                      "auditId": 53194
+                    },
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-40011",
+                      "auditId": 53194
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG4",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-40020",
+                      "auditId": 53194
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 5321,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": "The Math 500 course is the Trigonometry course.",
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5321,
+            "courseId": 5323,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5323,
+              "name": "Math 500",
+              "cid": "CIDMATH500",
+              "subject": "Math",
+              "number": "500",
+              "description": "This course is the least difficult course. Congratulations for qualifying for this course.",
+              "mmapEquivalentCode": "math_stat",
+              "competencyGroupLogic": "[5325,'OR',5325]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG5",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-30012",
+                      "auditId": 53194
+                    },
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-40011",
+                      "auditId": 53194
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG6",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-30017",
+                      "auditId": 53194
+                    },
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-40007",
+                      "auditId": 53194
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "disciplineId": 5321,
+            "courseId": 5324,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5324,
+              "name": "Math 505",
+              "cid": "CIDMATH505",
+              "subject": "Math",
+              "number": "505",
+              "description": "This course is also a choice when qualifying for Math 500.",
+              "mmapEquivalentCode": "math_col_alg",
+              "competencyGroupLogic": "",
+              "competencyGroups": []
+            }
+          },
+          {
+            "disciplineId": 5321,
+            "courseId": 5325,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5325,
+              "name": "Math 510",
+              "cid": "CIDMATH510",
+              "subject": "Math",
+              "number": "510",
+              "description": "This course is also a choice when qualifying for Math 500.",
+              "mmapEquivalentCode": "math_ge",
+              "competencyGroupLogic": "",
+              "competencyGroups": []
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 5321,
+        "cb21Code": "A",
+        "courseGroup": 2,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5321,
+            "courseId": 5330,
+            "courseGroup": 2,
+            "cb21Code": "A",
+            "auditId": 53004,
+            "course": {
+              "courseId": 5330,
+              "name": "Math 400",
+              "cid": "CIDMATH400",
+              "subject": "Math",
+              "number": "400",
+              "description": "This course is the highest non transfer level course.",
+              "mmapEquivalentCode": "math_alg",
+              "competencyGroupLogic": "[5332]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG7",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10060",
+                      "auditId": 53288
+                    },
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-20019",
+                      "auditId": 53288
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 5321,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5321,
+            "courseId": 5330,
+            "courseGroup": 1,
+            "cb21Code": "A",
+            "auditId": 53004,
+            "course": {
+              "courseId": 5330,
+              "name": "Math 300",
+              "cid": "CIDMATH300",
+              "subject": "Math",
+              "number": "300",
+              "description": "A math course below intermediate algebra.",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5332]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG8",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10057",
+                      "auditId": 53288
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG9",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-20004",
+                      "auditId": 53288
+                    },
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10050",
+                      "auditId": 53288
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG10",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-20001",
+                      "auditId": 53288
+                    },
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10050",
+                      "auditId": 53288
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 5321,
+        "cb21Code": "B",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "B",
+          "levelsBelowTransfer": 2,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5321,
+            "courseId": 5330,
+            "courseGroup": 1,
+            "cb21Code": "B",
+            "auditId": 53004,
+            "course": {
+              "courseId": 5330,
+              "name": "Math 200",
+              "cid": "CIDMATH200",
+              "subject": "Math",
+              "number": "200",
+              "description": "This course is two levels below.",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5332]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG11",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10034",
+                      "auditId": 53288
+                    },
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10050",
+                      "auditId": 53288
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 5321,
+        "cb21Code": "C",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "C",
+          "levelsBelowTransfer": 3,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5321,
+            "courseId": 5330,
+            "courseGroup": 1,
+            "cb21Code": "C",
+            "auditId": 53004,
+            "course": {
+              "courseId": 5330,
+              "name": "Math 100",
+              "cid": "CIDMATH100",
+              "subject": "Math",
+              "number": "100",
+              "description": "This course is three levels below.",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5332]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG12",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10019",
+                      "auditId": 53288
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 5321,
+        "cb21Code": "D",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "D",
+          "levelsBelowTransfer": 3,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5321,
+            "courseId": 5330,
+            "courseGroup": 1,
+            "cb21Code": "D",
+            "auditId": 53004,
+            "course": {
+              "courseId": 5330,
+              "name": "Math 000",
+              "cid": "CIDMATH000",
+              "subject": "Math",
+              "number": "000",
+              "description": "This is the lowest level course available in Math.",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5332]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG13",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10001",
+                      "auditId": 53288
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 5337,
+    "collegeId": "ZZ2",
+    "title": "ESL Rainforest Discipline",
+    "description": "",
+    "competencyMapDiscipline": "ESL",
+    "competencyMapVersion": 1,
+    "sisCode": "ESL A - 1",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 5337,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5337,
+            "courseId": 5339,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 53005,
+            "course": {
+              "courseId": 5339,
+              "name": "ESL Y - 0",
+              "cid": "ESL Y - 0",
+              "subject": "ESL Y - 0",
+              "number": "ESL Y - 0",
+              "description": "ESL Y - 0",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5341]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5341,
+                  "probabilitySuccess": 50,
+                  "title": "ESL Y - 0 Competency Group",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-20001",
+                      "auditId": 53359
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-10001",
+                      "auditId": 53356
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-10049",
+                      "auditId": 53440
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-10034",
+                      "auditId": 53357
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-10057",
+                      "auditId": 53358
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-40017",
+                      "auditId": 53355
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-20017",
+                      "auditId": 53441
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 5337,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 5337,
+            "courseId": 5346,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "auditId": 53006,
+            "course": {
+              "courseId": 5346,
+              "name": "ESL A - 1",
+              "cid": "ESL A - 1",
+              "subject": "ESL A - 1",
+              "number": "ESL A - 1",
+              "description": "ESL A - 1",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5348]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5348,
+                  "probabilitySuccess": 50,
+                  "title": "ESL A - 1 Competency Gruop",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-10002",
+                      "auditId": 53443
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-10026",
+                      "auditId": 53445
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-10028",
+                      "auditId": 159002
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-10010",
+                      "auditId": 53442
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-40046",
+                      "auditId": 159000
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-20017",
+                      "auditId": 159001
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-10050",
+                      "auditId": 53444
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 15920,
+    "collegeId": "ZZ1",
+    "title": "English - ELA Sample Full",
+    "description": "Unicollege English Subject Area for the ELA Sample Full assessment.",
+    "competencyMapDiscipline": "ENGLISH",
+    "competencyMapVersion": 1,
+    "sisCode": "SIS ENGLISH",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 15920,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15920,
+            "courseId": 15927,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 159053,
+            "course": {
+              "courseId": 15927,
+              "name": "English 300",
+              "cid": "CIDENG300",
+              "subject": "Eng",
+              "number": "300",
+              "description": "Highest transfer level English course offered.",
+              "mmapEquivalentCode": "eng_eng",
+              "competencyGroupLogic": "[15929]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15929,
+                  "probabilitySuccess": 50,
+                  "title": "English CG1",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15929,
+                      "competencyId": "ceng_16-40036",
+                      "auditId": 159321
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 15920,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15920,
+            "courseId": 15921,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "English 200",
+              "cid": "CIDENG200",
+              "subject": "Eng",
+              "number": "200",
+              "description": "English course 1 level below",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "English CG2",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-40016",
+                      "auditId": 159173
+                    },
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-40036",
+                      "auditId": 159172
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "English CG3",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-40016",
+                      "auditId": 159173
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 15920,
+        "cb21Code": "B",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "B",
+          "levelsBelowTransfer": 2,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15920,
+            "courseId": 15921,
+            "cb21Code": "B",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "English 100",
+              "cid": "CIDENG100",
+              "subject": "Eng",
+              "number": "100",
+              "description": "English course 2 levels below",
+              "mmapEquivalentCode": "eng_eng",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "English CG4",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-30001",
+                      "auditId": 159173
+                    },
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-30019",
+                      "auditId": 159172
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 15920,
+        "cb21Code": "C",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "C",
+          "levelsBelowTransfer": 2,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15920,
+            "courseId": 15921,
+            "cb21Code": "C",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "English 000",
+              "cid": "CIDENG000",
+              "subject": "Eng",
+              "number": "000",
+              "description": "Lowest level English course.",
+              "mmapEquivalentCode": "eng_eng",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "English CG5",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-10040",
+                      "auditId": 159173
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 15934,
+    "collegeId": "ZZ2",
+    "title": "English Discipline",
+    "description": "",
+    "competencyMapDiscipline": "ENGLISH",
+    "competencyMapVersion": 1,
+    "sisCode": "Eng 1 A",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 15934,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15934,
+            "courseId": 15936,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 159054,
+            "course": {
+              "courseId": 15936,
+              "name": "Eng 0 Y",
+              "cid": "Eng 1 A",
+              "subject": "Eng 1 A",
+              "number": "Eng 1 A",
+              "description": "Eng 1 A",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15938]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15938,
+                  "probabilitySuccess": 50,
+                  "title": "Eng 1 A Competency Group",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-10011",
+                      "auditId": 159328
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-10023",
+                      "auditId": 159329
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-20002",
+                      "auditId": 159325
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-10003",
+                      "auditId": 159326
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-10006",
+                      "auditId": 159327
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-10018",
+                      "auditId": 159324
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-20001",
+                      "auditId": 159410
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 15934,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15934,
+            "courseId": 15943,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "auditId": 159055,
+            "course": {
+              "courseId": 15943,
+              "name": "Eng 1 Y",
+              "cid": "Eng 1 A",
+              "subject": "Eng 1 A",
+              "number": "Eng 1 A",
+              "description": "Eng 1 A",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15945]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15945,
+                  "probabilitySuccess": 50,
+                  "title": "Eng 1 A",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10002",
+                      "auditId": 159416
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10027",
+                      "auditId": 159415
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-20001",
+                      "auditId": 159417
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10026",
+                      "auditId": 159412
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10039",
+                      "auditId": 159414
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10006",
+                      "auditId": 159413
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10018",
+                      "auditId": 159411
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 15902,
+    "collegeId": "ZZ2",
+    "title": "Math Discipline",
+    "description": "",
+    "competencyMapDiscipline": "MATH",
+    "competencyMapVersion": 1,
+    "sisCode": "Math SIS",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 15902,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15902,
+            "courseId": 15904,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 159050,
+            "course": {
+              "courseId": 15904,
+              "name": "Math 0 Y",
+              "cid": "Math 0 Y",
+              "subject": "Math 0 Y",
+              "number": "Math 0 Y",
+              "description": "Math 0 Y",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15907]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15907,
+                  "probabilitySuccess": 50,
+                  "title": "Math 0 Y Competency Group",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "6.0.0.cmath16-10000",
+                      "auditId": 159007
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-10057",
+                      "auditId": 159100
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-10035",
+                      "auditId": 159009
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-10001",
+                      "auditId": 159006
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-60001",
+                      "auditId": 159004
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-10002",
+                      "auditId": 159008
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "6.1.0.cmath16-10000",
+                      "auditId": 159005
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-10026",
+                      "auditId": 159003
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 15902,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 15902,
+            "courseId": 15912,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "auditId": 159051,
+            "course": {
+              "courseId": 15912,
+              "name": "Math A 1",
+              "cid": "Math A 1",
+              "subject": "Math A 1",
+              "number": "Math A 1",
+              "description": "Math A 1",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15914]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15914,
+                  "probabilitySuccess": 50,
+                  "title": "Math A 1 Competency Group",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10058",
+                      "auditId": 159109
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10009",
+                      "auditId": 159103
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-20010",
+                      "auditId": 159102
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10046",
+                      "auditId": 159106
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10025",
+                      "auditId": 159107
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-20004",
+                      "auditId": 159170
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10010",
+                      "auditId": 159104
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10047",
+                      "auditId": 159108
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-20002",
+                      "auditId": 159101
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10024",
+                      "auditId": 159105
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 16919,
+    "collegeId": "ZZ3",
+    "title": "ESL - ELA Sample Full",
+    "description": "Unicollege ESL Subject Area for the ELA Sample Full assessment.",
+    "competencyMapDiscipline": "ESL",
+    "competencyMapVersion": 1,
+    "sisCode": "SIS ESL",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 16919,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16919,
+            "courseId": 15927,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 159053,
+            "course": {
+              "courseId": 15927,
+              "name": "ESL 300",
+              "cid": "CIDESL300",
+              "subject": "ESL",
+              "number": "300",
+              "description": "Highest transfer level ESL course offered.",
+              "mmapEquivalentCode": "esl_esl",
+              "competencyGroupLogic": "[15929]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15929,
+                  "probabilitySuccess": 50,
+                  "title": "ESL CG1",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15929,
+                      "competencyId": "cesl_16-20025",
+                      "auditId": 159321
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 16919,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16919,
+            "courseId": 15921,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "ESL 200",
+              "cid": "CIDESL200",
+              "subject": "ESL",
+              "number": "200",
+              "description": "ESL course 1 level below",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "ESL CG2",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-10041",
+                      "auditId": 159173
+                    },
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-20001",
+                      "auditId": 159172
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "ESL CG3",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-10033",
+                      "auditId": 159173
+                    },
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-20009",
+                      "auditId": 159173
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 16919,
+        "cb21Code": "B",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "B",
+          "levelsBelowTransfer": 2,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16919,
+            "courseId": 15921,
+            "cb21Code": "B",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "ESL 100",
+              "cid": "CIDESL100",
+              "subject": "ESL",
+              "number": "100",
+              "description": "ESL course 2 levels below",
+              "mmapEquivalentCode": "esl_esl",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "ESL CG4",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-10017",
+                      "auditId": 159173
+                    },
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-10033",
+                      "auditId": 159172
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 16919,
+        "cb21Code": "C",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "C",
+          "levelsBelowTransfer": 2,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16919,
+            "courseId": 15921,
+            "cb21Code": "C",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "ESL 000",
+              "cid": "CIDESL000",
+              "subject": "ESL",
+              "number": "000",
+              "description": "Lowest level ESL course.",
+              "mmapEquivalentCode": "esl_esl",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "ESL CG5",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "cesl_16-10001",
+                      "auditId": 159173
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 6321,
+    "collegeId": "ZZ3",
+    "title": "Math Sample Full",
+    "description": "Unicollege Math Subject Area for the Math Sample Full assessment.",
+    "competencyMapDiscipline": "MATH",
+    "competencyMapVersion": 1,
+    "sisCode": "Math",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 6321,
+        "cb21Code": "Y",
+        "courseGroup": 4,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": "The Math 800 course is the Calculus course.",
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6321,
+            "courseId": 5323,
+            "cb21Code": "Y",
+            "courseGroup": 4,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5323,
+              "name": "Math 800",
+              "cid": "CIDMATH800",
+              "subject": "Math",
+              "number": "800",
+              "description": "This course is the most difficult one offered. Congratulations for qualifying for this course.",
+              "mmapEquivalentCode": "math_calc_i",
+              "competencyGroupLogic": "[5325]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG1",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-60001",
+                      "auditId": 53194
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 6321,
+        "cb21Code": "Y",
+        "courseGroup": 3,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": "The Math 700 course is the Pre-Calculus course.",
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6321,
+            "courseId": 5323,
+            "cb21Code": "Y",
+            "courseGroup": 3,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5323,
+              "name": "Math 700",
+              "cid": "CIDMATH700",
+              "subject": "Math",
+              "number": "700",
+              "description": "This course is 2nd most difficult course. Congratulations for qualifying for this course.",
+              "mmapEquivalentCode": "math_pre_calc",
+              "competencyGroupLogic": "[5325]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG2",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-50003",
+                      "auditId": 53194
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "disciplineId": 6321,
+            "courseId": 5324,
+            "cb21Code": "Y",
+            "courseGroup": 3,
+            "auditId": 53004,
+            "course": {
+              "courseId": 5324,
+              "name": "Math 705",
+              "cid": "CIDMATH705",
+              "subject": "Math",
+              "number": "705",
+              "description": "This course is the accompanying course for Course 700.",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "",
+              "competencyGroups": []
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 6321,
+        "cb21Code": "Y",
+        "courseGroup": 2,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": "The Math 600 course is the Trigonometry course.",
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6321,
+            "courseId": 5323,
+            "cb21Code": "Y",
+            "courseGroup": 2,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5323,
+              "name": "Math 600",
+              "cid": "CIDMATH600",
+              "subject": "Math",
+              "number": "600",
+              "description": "This course is 3rd most difficult course. Congratulations for qualifying for this course.",
+              "mmapEquivalentCode": "math_trig",
+              "competencyGroupLogic": "[5325,'AND',5325]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG3",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-50003",
+                      "auditId": 53194
+                    },
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-40011",
+                      "auditId": 53194
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG4",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-40020",
+                      "auditId": 53194
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 6321,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": "The Math 500 course is the Trigonometry course.",
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6321,
+            "courseId": 5323,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5323,
+              "name": "Math 500",
+              "cid": "CIDMATH500",
+              "subject": "Math",
+              "number": "500",
+              "description": "This course is the least difficult course. Congratulations for qualifying for this course.",
+              "mmapEquivalentCode": "math_stat",
+              "competencyGroupLogic": "[5325,'OR',5325]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG5",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-30012",
+                      "auditId": 53194
+                    },
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-40011",
+                      "auditId": 53194
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 5325,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG6",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-30017",
+                      "auditId": 53194
+                    },
+                    {
+                      "competencyGroupId": 5325,
+                      "competencyId": "cmath16-40007",
+                      "auditId": 53194
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "disciplineId": 6321,
+            "courseId": 5324,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5324,
+              "name": "Math 505",
+              "cid": "CIDMATH505",
+              "subject": "Math",
+              "number": "505",
+              "description": "This course is also a choice when qualifying for Math 500.",
+              "mmapEquivalentCode": "math_col_alg",
+              "competencyGroupLogic": "",
+              "competencyGroups": []
+            }
+          },
+          {
+            "disciplineId": 6321,
+            "courseId": 5325,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 53003,
+            "course": {
+              "courseId": 5325,
+              "name": "Math 510",
+              "cid": "CIDMATH510",
+              "subject": "Math",
+              "number": "510",
+              "description": "This course is also a choice when qualifying for Math 500.",
+              "mmapEquivalentCode": "math_ge",
+              "competencyGroupLogic": "",
+              "competencyGroups": []
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 6321,
+        "cb21Code": "A",
+        "courseGroup": 2,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6321,
+            "courseId": 5330,
+            "courseGroup": 2,
+            "cb21Code": "A",
+            "auditId": 53004,
+            "course": {
+              "courseId": 5330,
+              "name": "Math 400",
+              "cid": "CIDMATH400",
+              "subject": "Math",
+              "number": "400",
+              "description": "This course is the highest non transfer level course.",
+              "mmapEquivalentCode": "math_alg",
+              "competencyGroupLogic": "[5332]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG7",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10060",
+                      "auditId": 53288
+                    },
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-20019",
+                      "auditId": 53288
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 6321,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6321,
+            "courseId": 5330,
+            "courseGroup": 1,
+            "cb21Code": "A",
+            "auditId": 53004,
+            "course": {
+              "courseId": 5330,
+              "name": "Math 300",
+              "cid": "CIDMATH300",
+              "subject": "Math",
+              "number": "300",
+              "description": "A math course below intermediate algebra.",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5332]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG8",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10057",
+                      "auditId": 53288
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG9",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-20004",
+                      "auditId": 53288
+                    },
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10050",
+                      "auditId": 53288
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG10",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-20001",
+                      "auditId": 53288
+                    },
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10050",
+                      "auditId": 53288
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 6321,
+        "cb21Code": "B",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "B",
+          "levelsBelowTransfer": 2,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6321,
+            "courseId": 5330,
+            "courseGroup": 1,
+            "cb21Code": "B",
+            "auditId": 53004,
+            "course": {
+              "courseId": 5330,
+              "name": "Math 200",
+              "cid": "CIDMATH200",
+              "subject": "Math",
+              "number": "200",
+              "description": "This course is two levels below.",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5332]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG11",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10034",
+                      "auditId": 53288
+                    },
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10050",
+                      "auditId": 53288
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 6321,
+        "cb21Code": "C",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "C",
+          "levelsBelowTransfer": 3,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6321,
+            "courseId": 5330,
+            "courseGroup": 1,
+            "cb21Code": "C",
+            "auditId": 53004,
+            "course": {
+              "courseId": 5330,
+              "name": "Math 100",
+              "cid": "CIDMATH100",
+              "subject": "Math",
+              "number": "100",
+              "description": "This course is three levels below.",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5332]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG12",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10019",
+                      "auditId": 53288
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 6321,
+        "cb21Code": "D",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "D",
+          "levelsBelowTransfer": 3,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6321,
+            "courseId": 5330,
+            "courseGroup": 1,
+            "cb21Code": "D",
+            "auditId": 53004,
+            "course": {
+              "courseId": 5330,
+              "name": "Math 000",
+              "cid": "CIDMATH000",
+              "subject": "Math",
+              "number": "000",
+              "description": "This is the lowest level course available in Math.",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5332]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5332,
+                  "probabilitySuccess": 50,
+                  "title": "Math CG13",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5332,
+                      "competencyId": "cmath16-10001",
+                      "auditId": 53288
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 6337,
+    "collegeId": "ZZ4",
+    "title": "ESL Rainforest Discipline",
+    "description": "",
+    "competencyMapDiscipline": "ESL",
+    "competencyMapVersion": 1,
+    "sisCode": "ESL A - 1",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 6337,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6337,
+            "courseId": 5339,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 53005,
+            "course": {
+              "courseId": 5339,
+              "name": "ESL Y - 0",
+              "cid": "ESL Y - 0",
+              "subject": "ESL Y - 0",
+              "number": "ESL Y - 0",
+              "description": "ESL Y - 0",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5341]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5341,
+                  "probabilitySuccess": 50,
+                  "title": "ESL Y - 0 Competency Group",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-20001",
+                      "auditId": 53359
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-10001",
+                      "auditId": 53356
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-10049",
+                      "auditId": 53440
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-10034",
+                      "auditId": 53357
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-10057",
+                      "auditId": 53358
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-40017",
+                      "auditId": 53355
+                    },
+                    {
+                      "competencyGroupId": 5341,
+                      "competencyId": "cesl_16-20017",
+                      "auditId": 53441
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 6337,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 6337,
+            "courseId": 5346,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "auditId": 53006,
+            "course": {
+              "courseId": 5346,
+              "name": "ESL A - 1",
+              "cid": "ESL A - 1",
+              "subject": "ESL A - 1",
+              "number": "ESL A - 1",
+              "description": "ESL A - 1",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[5348]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 5348,
+                  "probabilitySuccess": 50,
+                  "title": "ESL A - 1 Competency Gruop",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-10002",
+                      "auditId": 53443
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-10026",
+                      "auditId": 53445
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-10028",
+                      "auditId": 159002
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-10010",
+                      "auditId": 53442
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-40046",
+                      "auditId": 159000
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-20017",
+                      "auditId": 159001
+                    },
+                    {
+                      "competencyGroupId": 5348,
+                      "competencyId": "cesl_16-10050",
+                      "auditId": 53444
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 16920,
+    "collegeId": "ZZ3",
+    "title": "English - ELA Sample Full",
+    "description": "Unicollege English Subject Area for the ELA Sample Full assessment.",
+    "competencyMapDiscipline": "ENGLISH",
+    "competencyMapVersion": 1,
+    "sisCode": "SIS ENGLISH",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 16920,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16920,
+            "courseId": 15927,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 159053,
+            "course": {
+              "courseId": 15927,
+              "name": "English 300",
+              "cid": "CIDENG300",
+              "subject": "Eng",
+              "number": "300",
+              "description": "Highest transfer level English course offered.",
+              "mmapEquivalentCode": "eng_eng",
+              "competencyGroupLogic": "[15929]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15929,
+                  "probabilitySuccess": 50,
+                  "title": "English CG1",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15929,
+                      "competencyId": "ceng_16-40036",
+                      "auditId": 159321
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 16920,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16920,
+            "courseId": 15921,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "English 200",
+              "cid": "CIDENG200",
+              "subject": "Eng",
+              "number": "200",
+              "description": "English course 1 level below",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "English CG2",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-40016",
+                      "auditId": 159173
+                    },
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-40036",
+                      "auditId": 159172
+                    }
+                  ]
+                },
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "English CG3",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-40016",
+                      "auditId": 159173
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 16920,
+        "cb21Code": "B",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "B",
+          "levelsBelowTransfer": 2,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16920,
+            "courseId": 15921,
+            "cb21Code": "B",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "English 100",
+              "cid": "CIDENG100",
+              "subject": "Eng",
+              "number": "100",
+              "description": "English course 2 levels below",
+              "mmapEquivalentCode": "eng_eng",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "English CG4",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-30001",
+                      "auditId": 159173
+                    },
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-30019",
+                      "auditId": 159172
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 16920,
+        "cb21Code": "C",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "C",
+          "levelsBelowTransfer": 2,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": true,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16920,
+            "courseId": 15921,
+            "cb21Code": "C",
+            "courseGroup": 1,
+            "auditId": 159052,
+            "course": {
+              "courseId": 15921,
+              "name": "English 000",
+              "cid": "CIDENG000",
+              "subject": "Eng",
+              "number": "000",
+              "description": "Lowest level English course.",
+              "mmapEquivalentCode": "eng_eng",
+              "competencyGroupLogic": "[15923]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15923,
+                  "probabilitySuccess": 50,
+                  "title": "English CG5",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15923,
+                      "competencyId": "ceng_16-10040",
+                      "auditId": 159173
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 16934,
+    "collegeId": "ZZ4",
+    "title": "English Discipline",
+    "description": "",
+    "competencyMapDiscipline": "ENGLISH",
+    "competencyMapVersion": 1,
+    "sisCode": "Eng 1 A",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 16934,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16934,
+            "courseId": 15936,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 159054,
+            "course": {
+              "courseId": 15936,
+              "name": "Eng 0 Y",
+              "cid": "Eng 1 A",
+              "subject": "Eng 1 A",
+              "number": "Eng 1 A",
+              "description": "Eng 1 A",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15938]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15938,
+                  "probabilitySuccess": 50,
+                  "title": "Eng 1 A Competency Group",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-10011",
+                      "auditId": 159328
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-10023",
+                      "auditId": 159329
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-20002",
+                      "auditId": 159325
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-10003",
+                      "auditId": 159326
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-10006",
+                      "auditId": 159327
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-10018",
+                      "auditId": 159324
+                    },
+                    {
+                      "competencyGroupId": 15938,
+                      "competencyId": "ceng_16-20001",
+                      "auditId": 159410
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 16934,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16934,
+            "courseId": 15943,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "auditId": 159055,
+            "course": {
+              "courseId": 15943,
+              "name": "Eng 1 Y",
+              "cid": "Eng 1 A",
+              "subject": "Eng 1 A",
+              "number": "Eng 1 A",
+              "description": "Eng 1 A",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15945]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15945,
+                  "probabilitySuccess": 50,
+                  "title": "Eng 1 A",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10002",
+                      "auditId": 159416
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10027",
+                      "auditId": 159415
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-20001",
+                      "auditId": 159417
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10026",
+                      "auditId": 159412
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10039",
+                      "auditId": 159414
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10006",
+                      "auditId": 159413
+                    },
+                    {
+                      "competencyGroupId": 15945,
+                      "competencyId": "ceng_16-10018",
+                      "auditId": 159411
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "disciplineId": 16902,
+    "collegeId": "ZZ4",
+    "title": "Math Discipline",
+    "description": "",
+    "competencyMapDiscipline": "MATH",
+    "competencyMapVersion": 1,
+    "sisCode": "Math SIS",
+    "usePrereqPlacementMethod": true,
+    "disciplineSequences": [
+      {
+        "disciplineId": 16902,
+        "cb21Code": "Y",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "Y",
+          "levelsBelowTransfer": 0,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16902,
+            "courseId": 15904,
+            "cb21Code": "Y",
+            "courseGroup": 1,
+            "auditId": 159050,
+            "course": {
+              "courseId": 15904,
+              "name": "Math 0 Y",
+              "cid": "Math 0 Y",
+              "subject": "Math 0 Y",
+              "number": "Math 0 Y",
+              "description": "Math 0 Y",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15907]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15907,
+                  "probabilitySuccess": 50,
+                  "title": "Math 0 Y Competency Group",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "6.0.0.cmath16-10000",
+                      "auditId": 159007
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-10057",
+                      "auditId": 159100
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-10035",
+                      "auditId": 159009
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-10001",
+                      "auditId": 159006
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-60001",
+                      "auditId": 159004
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-10002",
+                      "auditId": 159008
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "6.1.0.cmath16-10000",
+                      "auditId": 159005
+                    },
+                    {
+                      "competencyGroupId": 15907,
+                      "competencyId": "cmath16-10026",
+                      "auditId": 159003
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "disciplineId": 16902,
+        "cb21Code": "A",
+        "courseGroup": 1,
+        "cb21": {
+          "cb21Code": "A",
+          "levelsBelowTransfer": 1,
+          "createdOn": 1485548613875,
+          "updatedOn": 1485548613875
+        },
+        "explanation": null,
+        "showStudent": false,
+        "mappingLevel": null,
+        "disciplineSequenceCourses": [
+          {
+            "disciplineId": 16902,
+            "courseId": 15912,
+            "cb21Code": "A",
+            "courseGroup": 1,
+            "auditId": 159051,
+            "course": {
+              "courseId": 15912,
+              "name": "Math A 1",
+              "cid": "Math A 1",
+              "subject": "Math A 1",
+              "number": "Math A 1",
+              "description": "Math A 1",
+              "mmapEquivalentCode": "",
+              "competencyGroupLogic": "[15914]",
+              "competencyGroups": [
+                {
+                  "competencyGroupId": 15914,
+                  "probabilitySuccess": 50,
+                  "title": "Math A 1 Competency Group",
+                  "competencyGroupMappings": [
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10058",
+                      "auditId": 159109
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10009",
+                      "auditId": 159103
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-20010",
+                      "auditId": 159102
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10046",
+                      "auditId": 159106
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10025",
+                      "auditId": 159107
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-20004",
+                      "auditId": 159170
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10010",
+                      "auditId": 159104
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10047",
+                      "auditId": 159108
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-20002",
+                      "auditId": 159101
+                    },
+                    {
+                      "competencyGroupId": 15914,
+                      "competencyId": "cmath16-10024",
+                      "auditId": 159105
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

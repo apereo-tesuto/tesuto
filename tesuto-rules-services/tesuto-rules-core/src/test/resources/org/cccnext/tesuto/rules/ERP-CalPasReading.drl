@@ -1,0 +1,626 @@
+package net.ccctechcenter.drools
+
+import java.util.Map
+import java.util.List
+import java.util.ArrayList
+import org.ccctc.common.droolscommon.RulesAction
+
+import java.util.Date
+import org.cccnext.tesuto.placement.view.MmapDataSourceType
+import java.lang.Double
+import java.lang.String
+import java.util.stream.Collectors
+import org.cccnext.tesuto.rules.view.BasicStudentView
+import org.cccnext.tesuto.domain.multiplemeasures.VariableSet
+import org.cccnext.tesuto.domain.multiplemeasures.Fact
+import org.cccnext.tesuto.domain.multiplemeasures.PlacementComponentActionResult
+import function org.apache.commons.lang3.StringUtils.isBlank
+import function org.cccnext.tesuto.rules.function.DrlFunctions.STUDENT_VIEW_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.MULTIPLE_MEASURE_VARIABLE_SET_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.SUBJECT_AREA_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.TRACKING_ID_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.MISCODE_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.RULE_SET_ID_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.HIGHEST_READING_LEVEL_COURSE_KEY
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToBoolean
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseFactToString
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseDouble
+import function org.cccnext.tesuto.rules.function.DrlFunctions.parseInteger
+import function org.cccnext.tesuto.rules.function.DrlFunctions.filterByCollegeSubjectPlacement
+
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:1"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingM_UboundY"))
+	highestReadingLevel : String(this.equals("0")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("TO");
+	        placement.setLevelsBelowTransfer(-1);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("1");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:2"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingY_UboundY"))
+	highestReadingLevel : String(this.equals("0")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("Y");
+	        placement.setLevelsBelowTransfer(0);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("2");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:3"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingA_UboundY"))
+	highestReadingLevel : String(this.equals("0")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("A");
+	        placement.setLevelsBelowTransfer(1);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("3");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:4"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingB_UboundY"))
+	highestReadingLevel : String(this.equals("0")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("B");
+	        placement.setLevelsBelowTransfer(2);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("4");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:5"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingC_UboundY"))
+	highestReadingLevel : String(this.equals("0")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("C");
+	        placement.setLevelsBelowTransfer(2);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("5");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:6"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingM_UboundA"))
+	highestReadingLevel : String(this.equals("1")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("TO");
+	        placement.setLevelsBelowTransfer(-1);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("6");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:7"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingA_UboundA"))
+	highestReadingLevel : String(this.equals("1")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("A");
+	        placement.setLevelsBelowTransfer(1);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("7");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:8"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingB_UboundA"))
+	highestReadingLevel : String(this.equals("1")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("B");
+	        placement.setLevelsBelowTransfer(2);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("8");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:9"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingC_UboundA"))
+	highestReadingLevel : String(this.equals("1")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("C");
+	        placement.setLevelsBelowTransfer(3);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("9");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:10"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingM_UboundB"))
+	highestReadingLevel : String(this.equals("2")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("TO");
+	        placement.setLevelsBelowTransfer(-1);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("10");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:11"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingB_UboundB"))
+	highestReadingLevel : String(this.equals("2")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("B");
+	        placement.setLevelsBelowTransfer(2);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("11");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:12"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == true )from parseFactToBoolean((Fact)facts.get("readingC_UboundB"))
+	highestReadingLevel : String(this.equals("2")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("C");
+	        placement.setLevelsBelowTransfer(3);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("12");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:13"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingM_UboundY"))
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingY_UboundY"))
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingA_UboundY"))
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingB_UboundY"))
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingC_UboundY"))
+	highestReadingLevel : String(this.equals("0")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("D");
+	        placement.setLevelsBelowTransfer(4);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("13");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:14"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingM_UboundA"))
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingA_UboundA"))
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingB_UboundA"))
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingC_UboundA"))
+	highestReadingLevel : String(this.equals("1")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("D");
+	        placement.setLevelsBelowTransfer(4);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("14");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end
+rule "ERP Reading Decision Logic:324f0919-6d96-4c99-b735-1a72f9e685f7:rowname-:rulesetrowid-84324c9a-cbdc-45ee-a6b5-c993762adf4e:rulesetid-null:15"
+when
+	map : Map()
+	    student : BasicStudentView() from map.get(STUDENT_VIEW_KEY())
+	    variableSet : VariableSet() from map.get(MULTIPLE_MEASURE_VARIABLE_SET_KEY())
+	    subjectArea : String() from map.get(SUBJECT_AREA_KEY())
+	    cccMisCode : String() from map.get(MISCODE_KEY())
+	    trackingId : String() from map.get(TRACKING_ID_KEY())
+	    facts : Map() from variableSet.facts
+	    multipleMeasureVariableSetId: String() from variableSet.id
+	    dataSourceType: String() from variableSet.sourceType
+	    dataSource: String() from variableSet.source
+	    dataSourceDate: Date() from variableSet.sourceDate  
+	ruleSetId :  String(this == "${rule_set_id}" ) from map.get(RULE_SET_ID_KEY())
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingM_UboundB"))
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingB_UboundB"))
+	Boolean(this == false )from parseFactToBoolean((Fact)facts.get("readingC_UboundB"))
+	highestReadingLevel : String(this.equals("2")) from  map.get(HIGHEST_READING_LEVEL_COURSE_KEY())
+then
+	     	List<RulesAction> actions = (List<RulesAction>) map.get("actions");
+	     	PlacementComponentActionResult placement = new PlacementComponentActionResult();
+	        placement.setCccid(student.getCccid());
+	        placement.setTransferLevel("D");
+	        placement.setLevelsBelowTransfer(4);
+	        placement.setSubjectArea(subjectArea);
+	        placement.setCollegeId(cccMisCode);
+	         placement.setTrackingId(trackingId);
+	         placement.setRuleId("324f0919-6d96-4c99-b735-1a72f9e685f7");
+	        placement.setRuleSetId(ruleSetId);
+	        placement.setRuleSetRowId("84324c9a-cbdc-45ee-a6b5-c993762adf4e");
+	        placement.setRowNumber("15");
+	        placement.setCompetencyMapDiscipline("ENGLISH");
+	        placement.addProgram("reading");
+	        placement.setMultipleMeasureVariableSetId(multipleMeasureVariableSetId);
+	        placement.setDataSource(dataSource);
+	        placement.setDataSourceDate(dataSourceDate);
+	        placement.setDataSourceType(dataSourceType);
+	        placement.setStandalonePlacement(true);
+	        placement.setInsufficientData(false);
+	        filterByCollegeSubjectPlacement(actions, placement);
+end

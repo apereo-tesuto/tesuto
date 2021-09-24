@@ -1,0 +1,323 @@
+ccc-district-list {
+
+    .district {
+
+        background: rgba(0, 0, 0, 0.05);
+        border: 3px solid rgba(0, 0, 0, 0.1);
+        margin-bottom: 4em;
+        border-radius: 0.5rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .district-header {
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+
+            .title {
+                margin: 0 0 0.25em 0;
+                text-transform: capitalize;
+            }
+            .address {
+                color: rgba(0, 0, 0, 0.7);
+                font-size: 0.85em;
+                margin: 0;
+            }
+        }
+
+        .district-body {
+
+            background: #fff;
+
+            > .actions {
+                background: rgba(0, 0, 0, 0.025);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                padding: 0.25rem 2rem;
+            }
+            > .content {
+                padding: 5px 20px 15px 20px;
+            }
+        }
+
+        .list-container {
+
+            margin-bottom: 0px;
+
+            .user-list-container {
+                margin-bottom: 30px;
+            }
+
+            > .title {
+                background: rgba(0, 70, 173, 0.1);
+                border: 1px solid rgba(0, 70, 173, 0.1);
+                border-bottom-width: 3px;
+                color: @blueDark;
+                font-size: 1.5em;
+                font-weight: 400;
+                padding: 0.25em;
+                border-radius: 0.25rem;
+
+                margin-top: 15px;
+
+                .icon {
+                    height: 2em;
+                    margin-right: 0.5em;
+                }
+
+                .list-container-add-button {
+                    margin-top: 5px;
+                    margin-right: 5px;
+                    .fa {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+
+        .mm-opt-in-container {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 0.25rem;
+        }
+
+        .mm-opt-in-container:before,
+        .mm-opt-in-container:after {
+            content: " ";
+            display: table;
+        }
+        .mm-opt-in-container:after {
+            clear: both;
+        }
+
+        .user-list {
+
+            .name {
+                line-height: 1.4em;
+                .text-fade {
+                    height: 1.4em;
+                }
+            }
+
+            .roles {
+                .data-label {
+                    display: none;
+                }
+                .role {
+                    color: #888;
+                    font-style: italic;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .assessment-list {
+
+            &.assessment-list-not-selectable {
+                .assessment {
+                    &:hover, &:focus {
+                        border: 1px solid rgba(255,255,255, 0);
+                        border-bottom: 1px solid #ddd;
+                        cursor: default
+                    }
+
+                    &:last-child {
+                        &:hover, &:focus {
+                            border-bottom: 1px solid rgba(255,255,255, 0);
+                        }
+                    }
+                }
+            }
+
+            .assessment {
+                background: white;
+                border: 1px solid rgba(255,255,255, 0);
+                border-bottom: 1px solid #ddd;
+                overflow: hidden;
+                padding: 0.5rem 1rem;
+                position: relative;
+                border-radius: 0.25rem;
+
+                &:hover, &:focus {
+                    border: 1px solid @ccc-fg-highlight;
+                    border-bottom: 1px solid @ccc-fg-highlight;
+                    cursor: pointer;
+                }
+
+                &:last-child {
+                    border-bottom: 1px solid rgba(255,255,255, 0);
+                    &:hover, &:focus {
+                        border-bottom: 1px solid @ccc-fg-highlight;
+                    }
+                }
+            }
+
+            .name {
+
+                color: @blue;
+                font-weight: 600;
+                height: 1.4em;
+                margin: 0;
+                overflow: hidden;
+                position: relative;
+                white-space: nowrap;
+
+                .text-fade {
+                    height: 1.4em;
+                    width: 45px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+                    background-image: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+                    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+                    background-repeat: repeat-x;
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffffff', GradientType=1);
+                }
+            }
+
+            .data-group {
+                display: block;
+                font-size: 0.8em;
+                white-space: nowrap;
+
+                .data-label, .data {
+                    color: #888;
+                    font-size: 1em;
+                    font-style: italic;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .college-list .actions {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            margin-bottom: 1em;
+        }
+
+        .allowed {
+            color: #5cb85c;
+        }
+
+        .denied {
+            color: #d9534f;
+        }
+
+        .list-separator {
+            background: #eee;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            height: 6px;
+        }
+
+        .user-list-stacked {
+
+            .user {
+
+                border: 1px solid rgba(0,0,0, 0);
+                border-bottom: 1px solid #ddd;
+                padding: 0.5rem 1rem;
+
+                border-radius: 0.25rem;
+
+                &:last-child {
+                    border-bottom-color: #fff;
+                }
+
+                &:hover, &:focus {
+                    border: 1px solid @brand-primary;
+                }
+            }
+
+            .name {
+                font-size: 1em;
+                font-weight: 400;
+
+                .last {
+                    color: @blue;
+                    font-weight: 600;
+                }
+            }
+
+            .role {
+                color: #888;
+                font-style: italic;
+                font-weight: 300;
+                font-size: .8em;
+                margin-right: .5em;
+                text-transform: capitalize;
+                display: inline-block;
+
+                &:after {
+                    content: ',';
+                }
+                &:last-child {
+                    &:after {
+                        content: '';
+                    }
+                }
+            }
+        }
+    }
+
+    .ccc-district-list-edit-college {
+        height: 32px;
+    }
+
+    .expand-collapse-list {
+
+        > li {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 0.25rem;
+            padding: 5px 0 10px 0;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &.open > .expand-collapse-item, &.open > ccc-test-location-summary > .expand-collapse-item {
+
+                background: @blue;
+                border-radius: 0.25rem;
+
+                > .title {
+                    color: #fff;
+                }
+
+                .suspension-indicator {
+                    color: #f0ad4e;
+                }
+            }
+        }
+
+        .expand-collapse-toggle {
+            float: left;
+            padding-left: 0px;
+            padding-right: 0px;
+            height: 32px;
+            width: 32px;
+            text-align: center;
+        }
+        .expand-collapse-item {
+
+            padding: 7px;
+
+            > .title {
+                display: block;
+                margin: 0;
+                line-height: 32px;
+                margin-left: 35px;
+                padding: 0px 0px 0px 10px;
+            }
+        }
+        .expand-collapse-body {
+            margin-left: 35px;
+        }
+
+        &.level-one > li > .expand-collapse-item .title {
+            font-size: 21px;
+        }
+        &.level-two > li > .expand-collapse-item .title {
+            font-size: 17.5px;
+        }
+    }
+}

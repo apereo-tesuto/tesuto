@@ -1,0 +1,78 @@
+{
+    "CCC_ACTIVATIONS": {
+        "LOGS": {
+            "TABLE_CAPTION": "Assessment Status Logs",
+            "HEADERS": {
+                "TIMESTAMP": "Timestamp",
+                "LOG_ENTRY": "Log Entry"
+            },
+            "STATUS_MESSAGES": {
+                "CREATED": "Activation created by {{creatorName}}",
+                "EDITED": "Activation edited by {{userName}}",
+                "EDITED_TEST_EVENT": "Test event edited by {{userName}}",
+                "IN_PROGRESS": "Session started by {{userName}}",
+                "COMPLETE": "Session completed by {{userName}}",
+                "DEACTIVATED": "Session deactivated by {{userName}}",
+                "PAUSED": "Session paused by {{userName}}",
+                "REACTIVATED": "Session reactivated by {{userName}}",
+                "PENDING_SCORING": "Scoring started by {{userName}}",
+                "COLLISION": "Session deactivated by {{userName}} (Collision)",
+                "ASSESSED": "Student assessed"
+            }
+        },
+        "CARD": {
+            "STATUS": {
+                "UPCOMING": "Upcoming",
+                "READY": "Ready",
+                "IN_PROGRESS": "In Progress",
+                "PAUSED": "Paused",
+                "COMPLETE": "Complete",
+                "DEACTIVATED": "Deactivated",
+                "EXPIRED": "Expired",
+                "INCOMPLETE": "Incomplete",
+                "PENDING_SCORING": "Pending Scoring"
+            },
+            "LABEL": {
+                "PAPER": "Paper"
+            },
+            "CONTROLS": {
+                "SCORE": "Score",
+                "PRINT": "Print",
+                "EDIT": "Edit",
+                "DEACTIVATE": "Deactivate",
+                "SHOW_RESULTS": "Show Results",
+                "SHOW_TEST_RESULTS": "Test Results",
+                "HIDE_RESULTS": "Hide Results",
+                "REACTIVATE": "Reactivate",
+                "START": "Start",
+                "CONTINUE": "Continue"
+            },
+            "DETAILS": {
+                "LAST_ACTIVITY": "Last Activity: ",
+                "TIME_ON_ASSESSMENT": "Time On Assessment: ",
+                "EXPIRES": "Expires: ",
+                "EXPIRED": "Expired On: ",
+                "COMPLETED": "Completed: ",
+                "INACTIVE": "Inactive: ",
+                "ACCOMMODATIONS": "Accommodations: ",
+                "DETAIL": "Detail: ",
+                "SHOW": "Show",
+                "HIDE": "Hide",
+                "LOG": "Log"
+            },
+            "RESULTS": {
+                "TITLE": "Results",
+                "TEST_RESULTS_BUTTON": "Test Results Details"
+            }
+        },
+        "TEST_EVENT_REACTIVATE": {
+            "TITLE": "Cannot reactivate outside of test event",
+            "MSG_WARNING": "In order to prevent conflicts and problems with test events, assessments that were deactivated within a test event cannot be reactivated outside of the test event.",
+            "MSG_NO_PERMISSION": "If the test event is still active or upcoming, the student can be re-added to the test event within the test event management section. Managing test events may require special permission within the assessment app. If you need access to test events and do not have it, please contact your administrator",
+            "MSG_PERMISSION": "If the test event is still active or upcoming, the student can be re-added to the test event within the test event management section.",
+            "BUTTON_OKAY": "Got it",
+            "BUTTON_CANCEL": "Close",
+            "BUTTON_CONFIRM": "View Event"
+        }
+    }
+}

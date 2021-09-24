@@ -1,0 +1,91 @@
+
+/*============ COMMON STYLES FOR ALL STANDARD VIEWS ROLL UP ( INCLUDES VIEW ROLLUP TOO )===========*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+@import '../ccc_view_standard_layout/styles.less';
+@import '../ccc_view_standard_common/styles.less';
+
+
+/*============ WIDGETS (UI components that are not necessarily associated with a directive) ============*/
+
+@import './components/ccc-dashboard-metrics-health-check.less';
+@import './components/ccc-dashboard-metrics-versions.less';
+@import './components/ccc-dashboard-metrics-lambdas.less';
+@import './components/ccc-dashboard-metrics-rules.less';
+@import './components/ccc-micro-service-properties.less';
+
+
+/*============ GLOBAL STYLES METRICS ============*/
+
+ccc-dashboard-main {
+    display: block;
+    padding-bottom: 300px;
+}
+
+.tab-panel-content {
+    padding: 30px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #d8d8d8;
+    border-left: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+    border-top: 1px solid transparent;
+}
+.panel-content {
+    padding: 30px;
+    background: #f5f5f5;
+    border: 1px solid #d8d8d8;
+}
+
+.panel-content-dropdown {
+    margin-bottom: 15px;
+}
+
+.metrics-chart-label, .dropdown-label {
+    opacity: 0.9;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 125%;
+    text-transform: uppercase;
+    color: #337ab7;
+}
+
+.dropdown-label {
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.metrics-chart {
+    max-height: 200px !important;
+}
+.metrics-chart-short {
+    max-height: 150px !important;
+}
+.metrics-chart-shortest {
+    max-height: 125px !important;
+}
+
+/*========= ITEM SEARCH AND TABLE RESULTS ===========*/
+
+.search-results-highlight {
+    background: rgba(255, 193, 7, 0.5);
+    text-decoration: underline;
+}
+
+.ccc-dashboard-search-results-meta {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #337ab7;
+
+    .ccc-dashboard-search-results-warning {
+        color: #c29200;
+        display: block;
+    }
+}
+
+.ccc-dashboard-search-results {
+    display: block;
+    margin-top: 10px;
+
+    .ccc-dashboard-search-results-title {
+        font-weight: bold;
+    }
+}

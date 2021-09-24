@@ -1,0 +1,38 @@
+.ccc-full-view-container {
+
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    .ccc-full-view-content-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .ccc-full-view-overlay-container {
+        position: absolute;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        overflow: visible;
+    }
+}
+
+/*============ BOOTSTRAP MODAL OVERRIDES ============*/
+
+.ccc-invert {
+    .modal-backdrop {
+        background: #fff;
+    }
+    .modal-backdrop.in {
+        opacity: 0.8;
+    }
+    .modal-content {
+        border: 2px solid rgba(255, 255, 255, 0.75);
+    }
+}

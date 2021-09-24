@@ -1,0 +1,219 @@
+# docker run --name tesuto-router --net=host -it --rm -p 8443:8443 docker.dev.ccctechcenter.org/tesuto-router:2.1.0-SNAPSHOT
+# Note that the container ID can be used if the image is not tagged.
+# docker run --name tesuto-ui --net=host -it --rm -p 8080:8080 -p 8444:8444 464a126691ec
+# docker run --name tesuto-ui --net=host -it --rm -p 8080:8080 -p 8444:8444 docker.dev.ccctechcenter.org/tesuto-ui:2.1.0-SNAPSHOT
+# docker run --name tesuto-placement --net=host -it --rm -p 8081:8081 -p 8445:8445 docker.dev.ccctechcenter.org/tesuto-placement:2.1.0-SNAPSHOT
+# docker run --name tesuto-rules --net=host -it --rm -v $HOME/.aws:/root/.aws -p 8086:8086 -p 8446:8446 docker.dev.ccctechcenter.org/tesuto-rules:2.1.0-SNAPSHOT
+#activation   port:8001, 8441, 8081
+#admin        port:8002, 8442, 8082
+#content      port:8004, 8444, 8084
+#delivery     port:8005, 8445, 8085
+#placement    port:8006, 8446, 8086
+#preview      port:8007
+#qti-importer port:8008
+#reports      port:8009
+#rules        port:8010, 8450, 8090
+#ui           port:8011, 8452, 8092
+#router       port:8003
+
+# docker run --name postgresdb -e POSTGRES_PASSWORD=root -d postgres:alpine
+  tesuto-postgresdb:
+    container_name: tesuto-postgresdb
+    restart: always
+    environment:
+      - "FILLA_DB_USER=filla"
+      - "FILLA_DB_PASSWORD=filla"
+      - "FILLA_DB_DATABASE=filladb1"
+      - "POSTGRES_PASSWORD=password"
+    build: './postgres'
+    ports:
+      - 5432:5432
+    net: host
+# docker run --name some-mongo -d mongo:4.0.1-windowsservercore-1803
+# docker container run -it -e MONGODB_ADMIN_USER=root -e MONGODB_ADMIN_PASS=mySuperSecurePassword 
+#        -e MONGODB_APPLICATION_DATABASE=tesuto 
+#        -e MONGODB_APPLICATION_USER=tesuto 
+#        -e MONGODB_APPLICATION_PASS=tesuto 
+#        -p 27017:27017 tesuto-mongo
+  tesuto-mongo:
+    image: tesuto-mongo
+    container_name: tesuto-mongo
+    restart: always
+    environment:
+      - MONGODB_ADMIN_USER=root
+      - MONGODB_ADMIN_PASS=mySuperSecurePassword
+      - MONGODB_APPLICATION_DATABASE=tesuto
+      - MONGODB_APPLICATION_USER=tesuto 
+      - MONGODB_APPLICATION_PASS=tesuto 
+    ports:
+      - 27017:27017
+    net: host
+# docker run --name some-redis -d redis:5.0-rc-alpine
+  tesuto-redis:
+    image: redis:5.0-rc-alpine
+    container_name: tesuto-redis
+    ports:
+      - 6379:6379
+    net: host
+# docker run -p 9324:9324 sherazahmed83/elasticmq
+  tesuto-elasticmq:
+    image: tesuto-elasticmq
+    container_name: tesuto-elasticmq
+    ports:
+      - 9324:9324
+    net: host
+# docker run -d --name dynamoDB -e DYNAMODB_PORT=443 -p 8000:443 cnadiminti/dynamodb-local:latest
+  tesuto-dynamodb:
+    image: cnadiminti/dynamodb-local:latest
+    container_name: tesuto-dynamodb
+    command: "-sharedDb"
+    restart: always
+    ports:
+      - 8000:8000
+    environment:
+      - AWS_ACCESS_KEY_ID=
+      - AWS_SECRET_ACCESS_KEY=
+      - AWS_DEFAULT_REGION=us-west-2
+    net: host
+# docker run --name tesuto-activation 8001, 8441
+# tesuto-activation-api/target/tesuto-activation-api.jar
+# tesuto-activation-core/target/tesuto-activation-core.jar
+# tesuto-activation-dao-postgresql/target/tesuto-activation-dao-postgresql.jar
+# tesuto-activation-microservice/target/tesuto-activation.jar
+# docker image build -t tesuto-activation .
+# docker container run --name tesuto-activtion_test -p 8001:8001 -p 8441:8441 -it tesuto-activation
+  tesuto-activation:
+    image: tesuto-activation
+    container_name: tesuto-activation
+    ports:
+      - 8441:8441
+      - 8001:8001
+      - 8081:8081
+    net: host
+# docker run --name tesuto-content 8004, 8444
+# tesuto-content-api/target/tesuto-content-api.jar
+# tesuto-content-core/target/tesuto-content-core.jar
+# tesuto-content-dao-mongo/target/tesuto-content-dao-mongo.jar
+# tesuto-content-domain/target/tesuto-content-domain.jar
+# tesuto-content-microservice/target/tesuto-content-microservice.jar
+  tesuto-content:
+    image: tesuto-content
+    container_name: tesuto-content
+    ports:
+      - 8444:8444
+      - 8004:8004
+      - 8084:8084
+    net: host
+# docker run --name tesuto-delivery 8005, 8445
+# tesuto-delivery-api/target/tesuto-delivery-api.jar
+# tesuto-delivery-core/target/tesuto-delivery-core.jar
+# tesuto-delivery-dao-mongo/target/
+# tesuto-delivery-dao-postgres
+# tesuto-delivery-microservice/target/tesuto-delivery-microservice.jar
+  tesuto-delivery:
+    image: tesuto-delivery
+    container_name: tesuto-delivery
+    ports:
+      - 8445:8445
+      - 8005:8005
+      - 8085:8085
+    net: host
+# docker run --name tesuto-qti-importer 8008, 8448
+# tesuto-importer-api/target/tesuto-dependencies.jar
+# tesuto-qti-importer-core/target/tesuto-qti-importer-core.jar
+# tesuto-qti-importer-microservice/target/tesuto-qti-importer-microservice.jar
+  tesuto-qti-importer:
+    image: tesuto-qti-importer
+    container_name: tesuto-qti-importer
+    ports:
+      - 8448:8448
+      - 8008:8008
+    net: host
+# docker run --name tesuto-admin 8002, 8442
+# tesuto-admin-api/target/tesuto-activation-api.jar
+# tesuto-admin-core/target/tesuto-admin-core.jar
+# tesuto-admin-domain/target/tesuto-admin-domain.jar
+# tesuto-admin-microservice/target/tesuto-admin-microservice.jar
+  tesuto-admin:
+    image: tesuto-admin
+    container_name: tesuto-admin
+    ports:
+      - 8442:8442
+      - 8002:8002
+      #- 8452:8452
+      - 8082:8082
+    net: host
+# docker run --name tesuto-router 8003, 8443
+# target/tesuto-router.jar
+  tesuto-router:
+    image: tesuto-router
+    container_name: tesuto-router
+    ports:
+      - 8443:8443
+      - 8003:8003
+    net: host
+# docker run --name tesuto-ui 8011, 8451
+# target/tesuto-ui.jar
+  tesuto-ui:
+    image: tesuto-ui
+    container_name: tesuto-ui
+    #environment:
+     # - "saml.metadata.provider.classpath=metadata/assess-localhost-metadata.xml"
+    ports:
+      - 8080:8080
+      #- 8444:8444
+      - 8011:8011
+      - 8451:8451
+      - 8092:8092
+      - 8452:8452
+# Enabled for remote debugging and JVM inspection with JMX
+      #- 10000:10000
+      #- 10001:10001
+      #- 1099:1099
+    net: host
+# docker run --name tesuto-placement-services 8006, 8446
+# tesuto-placement-api/target/tesuto-placement-api.jar
+# tesuto-placement-core/target/tesuto-placement-core.jar
+# tesuto-placement-domain/target/tesuto-placement-domain.jar
+# tesuto-placement-microservice/target/tesuto-placement-microservice.jar
+  tesuto-placement:
+    image: tesuto-placement
+    container_name: tesuto-placement
+    ports:
+      #- 8081:8081
+      #- 8445:8445
+      - 8006:8006
+      - 8446:8446
+      - 8086:8086
+# Enabled for remote debugging and JVM inspection with JMX
+      #- 10000:10000
+      #- 10001:10001
+      #- 1099:1099
+    net: host
+# docker run --name tesuto-rules-services 8010, 8450
+# tesuto-rules-api/target/tesuto-rules-api.jar
+# tesuto-rules-core/target/tesuto-drools-core.jar
+# tesuto-rules-microservice/target/tesuto-rules-microservice.jar
+  tesuto-rules:
+    image: tesuto-rules
+    container_name: tesuto-rules
+    volumes:
+      - ~/.aws:/root/.aws
+    ports:
+      #- 8086:8086
+      #- 8446:8446
+      - 8010:8010
+      - 8450:8450
+      - 8090:8090
+# Uncomment to enable remote debugging and JVM inspection with JMX
+      #- 10000:10000
+      #- 10001:10001
+      #- 1099:1099
+#    networks:
+#      - ccc-network
+    net: host
+# preview 8447
+# reports 8449
+
+#networks:
+#    ccc-network:

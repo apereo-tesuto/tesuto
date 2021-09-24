@@ -1,0 +1,4 @@
+Placement components structure:
+id:cccid:cb21code:cb21level:createdOn:courseGroup:collegeId:subjectAreaId:subjectAreaVersion:selfReportedData:standalone:elaIndicator:trackingId
+
+createdOn = yyyy-mm-dd

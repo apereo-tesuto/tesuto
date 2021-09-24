@@ -1,0 +1,1 @@
+alter TABLE course alter column cid drop not NULL;

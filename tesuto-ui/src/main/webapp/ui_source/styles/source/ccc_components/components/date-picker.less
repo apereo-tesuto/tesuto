@@ -1,0 +1,265 @@
+.date-range-input-group {
+    max-width: 210px;
+    .dropdown-menu {
+        padding-top: 0px;
+    }
+    .input-group-btn {
+        i {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    button[role="heading"] {
+        font-size: 115%;
+    }
+}
+
+.date-picker-container {
+
+    position: relative;
+
+    border: none;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+
+    padding: 0px;
+    z-index: 1600;
+
+    .date-picker-container-triangle {
+        position: absolute;
+        top: -9px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid @blue1;
+    }
+
+    button.btn {
+        margin-right: 0;
+    }
+
+    td, th {
+
+        padding: 3px;
+
+        button.btn {
+
+            border: 2px solid rgba(0,0,0,0);
+
+            padding: 2px 6px;
+            .border-radius(0px);
+
+            &.muted {
+                color: #aaa;
+                background-color: @grayscale1;
+            }
+
+            &[disabled], &[disabled].muted {
+                border-color: #ddd;
+                color: #bbb;
+                &:hover, &:active, &:focus {
+                    border-color: #ddd;
+                    color: #bbb;
+                    span {
+                        position: relative;
+                        top: 0px;
+                    }
+                }
+            }
+
+            &[disabled].muted {
+                background-color: #f8f8f8;
+            }
+        }
+    }
+
+    thead {
+
+        background: #fff;
+
+        .view-header {
+            height: 48px;
+            .btn {
+                border: none;
+                box-shadow: none;
+                background: @blue1;
+                color: @brand-primary;
+                font-weight: 100;
+                strong {font-weight: 100;}
+                &:hover, &:active, &:focus {
+                    border: none;
+                    box-shadow: none;
+                    color: darken(@brand-primary, 10%);
+                    background: none;
+                }
+                &.pull-right {margin-right: 10px; font-size: 12px;}
+                &.pull-left {margin-left: 10px; font-size: 12px;}
+            }
+        }
+        .view-labels {
+            cursor: default;
+            color: #fff;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            border-top: 1px solid #fff;
+        }
+
+        td, th {
+            button.btn {
+                &:hover, &:focus {
+                    background: none;
+                    color: @blue1;
+                    .text-muted {
+                        color: #666;
+                    }
+                    .text-info {
+                        color: @grayscale10;
+                    }
+                }
+                &[disabled], &[disabled].muted {
+                    border: none;
+                    color: #444;
+                    &:hover {
+                        color: #444;
+                    }
+                }
+            }
+        }
+
+        tr {
+            border-bottom: 1px solid #fff;
+            &:first-child {
+                border-bottom: 1px solid #ccc;
+                th button {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                }
+            }
+            &:last-child {
+                th small {
+                    display: inline-block;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        td, th {
+
+            color: @brand-primary;
+
+            button.btn {
+
+                font-size: 16px;
+
+                background: none;
+                color: @brand-primary;
+                i {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+
+    tbody {
+
+        td, th {
+
+            button.btn {
+
+                padding-top: 1px;
+                padding-bottom: 1px;
+
+                .border-radius(3px);
+
+                &.active  {
+                    background: #fff;
+                    box-shadow: none;
+                    border: 2px solid rgba(0,0,0, 0.5);
+                    .text-info {
+                        color: @blue1;
+                    }
+                }
+                &.btn-info  {
+                    .text-info {
+                        color: #fff;
+                    }
+                }
+
+                span {
+
+                    font-weight: bold;
+
+                    display: inline-block;
+                    text-align: center;
+                    padding: 3px 0px;
+                    border-bottom: 2px solid rgba(0,0,0,0);
+
+                    &.text-info {
+                        color: #444;
+                        border-bottom: 2px solid darken(@brand-primary, 5%);
+                    }
+                    &.text-muted {
+                        color: @grayscale6;
+                        font-weight: normal;
+                    }
+                }
+
+                &:hover, &:focus {
+                    background: #666;
+                    color: #fff;
+                    .text-muted {
+                        color: #eee;
+                    }
+                    .text-info {
+                        color: #fff;
+                    }
+                }
+
+                &.active  {
+                    &:hover, &:focus {
+
+                        span {
+                            .text-muted {
+                                color: #eee;
+                            }
+                            .text-info {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    span {
+                        &.text-info {
+                            border-bottom: 2px solid #fff;
+                        }
+                    }
+                }
+
+                &.btn-info.active, &.btn-info {
+                    span {
+                        &.text-info {
+                            color: #fff;
+                            border-bottom: 2px solid #fff;
+                        }
+                    }
+                }
+
+                &.btn-info {
+                    background: @brand-primary;
+                    color:#fff;
+                    &:hover, &:active, &:focus {
+                        color:#fff;
+                    }
+                }
+            }
+
+        }
+    }
+}

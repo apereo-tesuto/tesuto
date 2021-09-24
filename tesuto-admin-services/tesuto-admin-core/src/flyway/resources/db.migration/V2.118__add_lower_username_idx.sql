@@ -1,0 +1,1 @@
+create UNIQUE INDEX lower_username_idx on user_account (lower(username));

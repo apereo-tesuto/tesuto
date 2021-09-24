@@ -1,0 +1,136 @@
+{
+		"userAccountId": null,
+		"username": "remotemanager@democollege.edu",
+		"emailAddress": "remotemanager@democollege.edu",
+		"password": "$2a$10$Kxza5SKxI3Nnlsrddkv3degdoVbOwcaw9WA2bTGnmp423iSiSOGoC",
+		"displayName": "RemoteManager",
+		"firstName": "Remote",
+		"middleInitial": "A",
+		"lastName": "Manager",
+		"phoneNumber": null,
+		"extension": null,
+		"enabled": true,
+		"securityGroupDtos": [
+			{
+				"securityGroupId": 15,
+				"groupName": "REMOTE_PROCTORING_MANAGER",
+				"description": "Remote Proctoring Manager",
+				"securityPermissionDtos": []
+			}
+		],
+		"namespace": null,
+		"colleges": [
+			{
+				"cccId": "ZZ1",
+				"districtCCCId": "ZZ0",
+				"name": "Unicollege",
+				"streetAddress1": "1760 East Pecos Road",
+				"streetAddress2": "Suite 432",
+				"city": "Gilbert",
+				"postalCode": "85295",
+				"url": "http://www.unicon.net",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+					{
+						"id": "b89566e2-0111-4144-ad83-4faf3416a555",
+						"name": "Remote Unicollege Test Location",
+						"streetAddress1": null,
+						"streetAddress2": null,
+						"city": null,
+						"postalCode": null,
+						"locationType": "REMOTE",
+						"locationStatus": "ACTIVE",
+						"collegeId": "ZZ1",
+						"collegeName": "Unicollege",
+						"capacity": null,
+						"lastUpdatedDate": 1485793699212,
+						"enabled": true,
+						"createdOnDate": 1485553088701
+					}
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ1",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			},
+			{
+				"cccId": "ZZ2",
+				"districtCCCId": "ZZ0",
+				"name": "Rainforest College",
+				"streetAddress1": "1760 East Pecos Road",
+				"streetAddress2": "Suite 432",
+				"city": "Gilbert",
+				"postalCode": "85295",
+				"url": "http://www.unicon.net",
+				"eppnSuffix": "democollege.edu",
+				"createdDate": 1485571337077,
+				"lastUpdatedDate": 1485571337077,
+				"testLocations": [
+					{
+						"id": "a6a8be06-3da6-4bfc-b3b3-b6d08673a123",
+						"name": "Remote Rainforest College",
+						"streetAddress1": null,
+						"streetAddress2": null,
+						"city": null,
+						"postalCode": null,
+						"locationType": "REMOTE",
+						"locationStatus": "ACTIVE",
+						"collegeId": "ZZ2",
+						"collegeName": "Rainforest College",
+						"capacity": null,
+						"lastUpdatedDate": 1485793699256,
+						"enabled": true,
+						"createdOnDate": 1485555569629
+					}
+				],
+				"collegeAttributeDto": {
+					"collegeId": "ZZ2",
+					"englishPlacementOption": "BOTH",
+					"eslPlacementOption": "BOTH"
+				}
+			}
+		],
+		"collegeIds": [
+			"ZZ1",
+			"ZZ2"
+		],
+		"districts": null,
+		"primaryCollegeId": "ZZ1",
+		"testLocations": [
+			{
+				"id": "b89566e2-0111-4144-ad83-4faf3416a555",
+				"name": "Remote Unicollege Test Location",
+				"streetAddress1": null,
+				"streetAddress2": null,
+				"city": null,
+				"postalCode": null,
+				"locationType": "REMOTE",
+				"locationStatus": "ACTIVE",
+				"collegeId": "ZZ1",
+				"collegeName": "Unicollege",
+				"capacity": null,
+				"lastUpdatedDate": 1485793699212,
+				"enabled": true,
+				"createdOnDate": 1485553088701
+			},
+			{
+				"id": "a6a8be06-3da6-4bfc-b3b3-b6d08673a123",
+				"name": "Remote Rainforest College",
+				"streetAddress1": null,
+				"streetAddress2": null,
+				"city": null,
+				"postalCode": null,
+				"locationType": "REMOTE",
+				"locationStatus": "ACTIVE",
+				"collegeId": "ZZ2",
+				"collegeName": "Rainforest College",
+				"capacity": null,
+				"lastUpdatedDate": 1485793699256,
+				"enabled": true,
+				"createdOnDate": 1485555569629
+			}
+		]
+	}

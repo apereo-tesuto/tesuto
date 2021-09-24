@@ -1,0 +1,26 @@
+{
+    "CCC_VIEW_STANDARD_LAYOUT": {
+        "HEADER": {
+            "HELP": "Help",
+            "SETTINGS": "Settings",
+            "SIGN_OUT": "Logout",
+            "PASSCODES": "Passcodes"
+        },
+        "FOOTER": {
+            "TERMS_OF_USE": "Terms of Use",
+            "PRIVACY_STATEMENT": "Privacy Statement",
+            "ACCESSIBILITY": "Accessibility",
+            "COPYRIGHT": "Tesuto is licensed to the Apereo Foundation under the Creative Commons Attribution 3.0 United States License."
+        },
+        "PAGE_TITLES": {
+            "NOT_AVAILABLE": "View not available"
+        },
+        "NOT_AVAILABLE": {
+            "TITLE": "Whoops! We could not load the page you were looking for.",
+            "BODY": "You may not have permissions or the page may not exist. You can try a different url or can try to log out and log back in."
+        },
+        "SUB_NAV": {
+            "BACK_TEXT": "Navigate back to,"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+dynamo:
+  image: docker.dev.ccctechcenter.org/dynamo-local:1.0.0-SNAPSHOT
+  container_name: dynamo
+  ports:
+    - 8000:8000
+  # Comment out volumes if you want a clean start each time  
+  #volumes:
+  #  - ~/docker/containers/dynamo:/dynamodb_local_db
+  environment:
+    - AWS_ACCESS_KEY_ID=
+    - AWS_SECRET_ACCESS_KEY=
+    - AWS_DEFAULT_REGION=us-west-2
+    
+drools-editor:
+  image: docker.dev.ccctechcenter.org/drools-editor:3.1.0-RC6
+  container_name: drools-editor
+  ports: 
+    - 8080:8080
+  volumes:
+    - ~/docker/containers/creds:/opt/ccc/config
+  links:
+    - dynamo
+  environment:
+    - aws.region=us-west-2
+    - AWS_ACCESS_KEY_ID=AKIAJ3JFIJPQHKCLOW2Q
+    - AWS_SECRET_ACCESS_KEY=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

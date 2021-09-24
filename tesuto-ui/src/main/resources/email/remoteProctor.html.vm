@@ -1,0 +1,22 @@
+<html>
+<body>
+
+<div style="padding: 15px; border: 2px solid #000000; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; zoom: 1; border-image: initial; display: inline-block; width:75%;">
+
+	<div><img src="https://localhost:8443/images/ccc-logo.png" width="250" height="40" /></div>
+
+	<h3 style="color: #000000;">Hi ${remoteProctorViewDto.displayName}!</h3>
+
+		<div style="border: 2px solid #CCC; padding: 15px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; zoom: 1; border-image: initial; display: inline-block; width:95%;">
+	
+			<p><label style="color: #000; font-weight: bold; display: inline-block; width: 150px;">Your display name is:</label> ${remoteProctorDto.remoteProctorDisplayName}<br/><br/></p>
+		
+			<p><a href="https://localhost:8443/" style="color:  #19AE4B; text-decoration: none;">Please log in here</a></p>
+
+		</div>
+
+</div>
+
+</body>
+
+</html>
